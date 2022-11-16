@@ -1,0 +1,131 @@
+---
+execute:
+    echo: false
+    warning: false
+---
+
+# VACCINATION_FORECAST {.unnumbered}
+
+```{r,eval=TRUE,echo=FALSE}
+#| label: source-filefolder
+dr <- "C:/Users/ajp5303/OneDrive - Washington State Executive Branch Agencies/source_scripts"
+```
+
+```{r,eval=TRUE,echo=FALSE}
+#| label: source-files
+source(paste0(dr,"/dbconnection.R"))
+source(paste0(dr,"/dqguide_functions.R"))
+```
+
+## Description
+
+The vaccination_forecast table contains administrative details on forecasted vaccine data.
+
+## Columns
+
+```{r}
+#| label: vfore-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_VACCINATION_FORECAST")) %>% colnames())) %>%
+mutate(Type = tbl(synapse, in_schema("dbo", "H33_VACCINATION_FORECAST")) %>% head(1) %>% as_tibble() %>% 
+                   sapply(class)) %>%
+ gt() %>%
+ gt_theme_espn()
+
+```
+
+## Category Description
+
+```{r}
+#| label: vfore-table
+vforevar_tabl <-
+tibble(Coding = c(#family_code codes
+                  "10","5","1","24","33", 
+                  
+                  #forecast cvx codes
+                  "88","3","115","213","139"), 
+                  
+            
+       Description = c(#family_code descriptor
+                      "Flu",
+                      "MMR",
+                      "DTaP/DT/Td",
+                      "Tdap",
+                      "Coronavirus (SARS-CoV-2)(COVID-19)",
+                      #link to sharepoint - https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared%20Documents/CEDAR/CEDAR%20Data%20Dictionaries/Family_Code%20Values%20Table.xlsx?d=w545db4b21b99464ea49f8f2a26656d4a&csf=1&web=1&e=PT3WT6
+                       
+                      #forecast cvx descriptor 
+                      "influenza, unspecified formulation",
+                      "MMR",
+                      "Tdap",
+                      "SARS-COV-2 (COVID-19) vaccine,UNSPECIFIED",
+                      "Td(adult) unspecified formulation"),
+                      #link to https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cvx
+      
+       
+       Variable = c(#family_code category
+                    "FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE",
+                    
+                    #forecast_cvx codes category
+                    "FORECAST_CVX_CODE","FORECAST_CVX_CODE","FORECAST_CVX_CODE","FORECAST_CVX_CODE",
+                    "FORECAST_CVX_CODE"),
+              
+                    
+      Space = " ") %>%
+       gt(rowname_col = "Space", groupname_col = "Variable") %>%
+       tab_header(title = "Variable Coding") %>%
+       cols_width(Coding~px(200),
+                  Description~px(400),
+                  Space~px(150)) %>%
+       cols_align(align = "left") %>%
+       tab_footnote(
+                    footnote = 
+                      gt::md(paste0("A full list of Family Codes is available at: ",
+                    {"https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared%20Documents/CEDAR/CEDAR%20Data%20Dictionaries/Family_Code%20Values%20Table.xlsx?d=w545db4b21b99464ea49f8f2a26656d4a&csf=1&web=1&e=PT3WT6"}
+                    )),
+                    locations = cells_row_groups(groups = "FAMILY_CODE")
+       ) %>%
+       tab_footnote(
+                    footnote = 
+                      gt::md(paste0("A full list of Forecast CVX codes is available at: ",
+                    {"https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cvx"}
+                    )),
+                    locations = cells_row_groups(groups = "FORECAST_CVX_CODE")
+       ) %>%
+       gt_theme_espn()
+
+vforevar_tabl
+```
+
+```{r}
+vacforecode <- tibble(
+  Codes = c("Family Codes", "Forecast CVX Codes"),
+  Links = c("https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared%20Documents/CEDAR/CEDAR%20Data%20Dictionaries/Family_Code%20Values%20Table.xlsx?d=w545db4b21b99464ea49f8f2a26656d4a&csf=1&web=1&e=PT3WT6",
+           "https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cvx"))
+
+vacforecode_tab <- vacforecode %>%
+  mutate(Links = sprintf('<p><a href = "%s">%s</a>', Links, Links), 
+         Links = map(Links, gt::html)) %>%
+  gt() %>%
+  tab_header(title = "Full Code Lists for Vaccine Forecast Table") %>%
+  cols_align(align = "left") %>%
+  cols_width(Codes~px(200),
+             Links~px(800)) %>%
+  gt_theme_espn()
+
+vacforecode_tab
+```
+
+## Statistics
+
+Insert statistics here
+
+```{r}
+#| label: vfore-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_VACCINATION_FORECAST")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_VACCINATION_FORECAST"))) %>% nrow2()
+       ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```

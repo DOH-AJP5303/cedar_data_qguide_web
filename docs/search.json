@@ -1,0 +1,121 @@
+[
+  {
+    "objectID": "IRMS_FACILITY_ORDER_SET.html#description",
+    "href": "IRMS_FACILITY_ORDER_SET.html#description",
+    "title": "IRMS_FACILITY_ORDER_SET",
+    "section": "Description",
+    "text": "Description\nDescription"
+  },
+  {
+    "objectID": "IRMS_FACILITY_ORDER_SET.html#columns",
+    "href": "IRMS_FACILITY_ORDER_SET.html#columns",
+    "title": "IRMS_FACILITY_ORDER_SET",
+    "section": "Columns",
+    "text": "Columns"
+  },
+  {
+    "objectID": "IRMS_FACILITY_ORDER_SET.html#category-description",
+    "href": "IRMS_FACILITY_ORDER_SET.html#category-description",
+    "title": "IRMS_FACILITY_ORDER_SET",
+    "section": "Category Description",
+    "text": "Category Description"
+  },
+  {
+    "objectID": "IRMS_FACILITY_ORDER_SET.html#statistics",
+    "href": "IRMS_FACILITY_ORDER_SET.html#statistics",
+    "title": "IRMS_FACILITY_ORDER_SET",
+    "section": "Statistics",
+    "text": "Statistics"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "CEDAR Data Quality Guide",
+    "section": "",
+    "text": "CEDAR - the Cloud Environment for Data Analytics and Reporting - is two things. It is a cloud-based repository where data reside and can be accessed to support the creation of reports, dashboards and other data products, as well as any form of analysis. It is also a set of cloud-based tools for data scientists, informaticians and epidemiologists to use in that analysis and creation of data products. CEDAR’s goal is to be the single trusted source of information for analytics.\nThis guide provides detailed descriptions of CEDAR tables, selected data dictionaries, and descriptive statistics."
+  },
+  {
+    "objectID": "VACC_GROUP_FAMILY.html#description",
+    "href": "VACC_GROUP_FAMILY.html#description",
+    "title": "VACC_GROUP_FAMILY",
+    "section": "Description",
+    "text": "Description\nThe vacc_group_family table contains the descriptions of each respective group and family vaccine code. There are 33 codes total."
+  },
+  {
+    "objectID": "VACC_GROUP_FAMILY.html#columns",
+    "href": "VACC_GROUP_FAMILY.html#columns",
+    "title": "VACC_GROUP_FAMILY",
+    "section": "Columns",
+    "text": "Columns\n\n\n\n\n\n\n  \n  \n    \n      Columns\n      Type\n    \n  \n  \n    GROUP_CODE\nnumeric\n    FAMILY_CODE\nnumeric\n    DESCRIPTION\ncharacter\n    CREATEDATETIME\nPOSIXct, POSIXt\n    SysStartTime\nPOSIXct, POSIXt\n    SysEndTime\nPOSIXct, POSIXt\n    tsExtract\ncharacter"
+  },
+  {
+    "objectID": "VACC_GROUP_FAMILY.html#category-description",
+    "href": "VACC_GROUP_FAMILY.html#category-description",
+    "title": "VACC_GROUP_FAMILY",
+    "section": "Category Description",
+    "text": "Category Description\n\n\n\n\n\n\n  \n    \n    \n    \n  \n  \n    \n      Variable Coding\n    \n    \n  \n  \n    \n      \n      Coding\n      Description\n    \n  \n  \n    \n      GROUP_CODE1\n    \n     \n10\nDTaP\n     \n11\nTdap\n     \n25\nMENINGOCOCCAL B, RECOMBINANT\n     \n26\nMENINGOCOCCAL B, OMV\n     \n30\nPolio\n     \n40\nMMR\n     \n50\nHib\n     \n60\nHep A\n     \n70\nHep B\n     \n80\nVaricella\n     \n110\nRotavirus\n     \n120\nInfluenza\n     \n130\nPneumo (PCV7)\n     \n170\nHep B - 2 Dose\n     \n180\nAnthrax\n     \n190\nSmallpox Vaccination\n     \n220\nMeasles\n     \n230\nMumps\n     \n240\nRubella\n     \n250\nPneumo (PPV23)\n     \n260\nMeningococcal\n     \n271\nHPV\n     \n280\nHerpes Zoster\n     \n290\nNOVEL INFLUENZA H1N1-09\n     \n300\nCholera\n     \n310\nJapanese Encephalitis\n     \n320\nRabies\n     \n330\nTyphoid\n     \n340\nYellow Fever\n     \n350\nCoronavirus (SARS-CoV-2)(COVID-19)\n     \n360\nEbola\n     \n370\nDengue\n     \n380\nOrthopoxvirus\n    \n      FAMILY_CODE1\n    \n     \n1\nDTaP\n     \n24\nTdap\n     \n25\nMENINGOCOCCAL B, RECOMBINANT\n     \n26\nMENINGOCOCCAL B, OMV\n     \n3\nPolio\n     \n5\nMMR\n     \n2\nHib\n     \n9\nHep A\n     \n4\nHep B\n     \n6\nVaricella\n     \n20\nRotavirus\n     \n10\nInfluenza\n     \n11\nPneumo (PCV7)\n     \n12\nHep B - 2 Dose\n     \n13\nAnthrax\n     \n14\nSmallpox Vaccination\n     \n15\nMeasles\n     \n16\nMumps\n     \n17\nRubella\n     \n18\nPneumo (PPV23)\n     \n7\nMeningococcal\n     \n21\nHPV\n     \n22\nHerpes Zoster\n     \n23\nNOVEL INFLUENZA H1N1-09\n     \n28\nCholera\n     \n29\nJapanese Encephalitis\n     \n30\nRabies\n     \n31\nTyphoid\n     \n32\nYellow Fever\n     \n33\nCoronavirus (SARS-CoV-2)(COVID-19)\n     \n34\nEbola\n     \n35\nDengue\n     \n36\nOrthopoxvirus\n  \n  \n  \n    \n      1 A full list of Family and Group codes is available at: https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared%20Documents/CEDAR/CEDAR%20Data%20Dictionaries/Vaccine%20Group%20Code%20Values%20Table.xlsx?d=wa5d24116122446c89b871b14addcdf63&csf=1&web=1&e=pE54y9\n    \n  \n\n\n\n\n\n\n\n\n\n\n  \n    \n    \n  \n  \n    \n      Full Code Lists for Vaccine Group Family Table\n    \n    \n  \n  \n    \n      Codes\n      Links\n    \n  \n  \n    Family and Group Codes\nhttps://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared%20Documents/CEDAR/CEDAR%20Data%20Dictionaries/Vaccine%20Group%20Code%20Values%20Table.xlsx?d=wa5d24116122446c89b871b14addcdf63&csf=1&web=1&e=pE54y9"
+  },
+  {
+    "objectID": "VACC_GROUP_FAMILY.html#statistics",
+    "href": "VACC_GROUP_FAMILY.html#statistics",
+    "title": "VACC_GROUP_FAMILY",
+    "section": "Statistics",
+    "text": "Statistics\nInsert statistics here\n\n\n\n\n\n\n  \n  \n    \n      Number of Columns\n      Number of Rows\n    \n  \n  \n    7\n33"
+  },
+  {
+    "objectID": "CONTRAINDICATION_DESC.html#description",
+    "href": "CONTRAINDICATION_DESC.html#description",
+    "title": "CONTRAINDICATION_DESC",
+    "section": "Description",
+    "text": "Description\nDescription"
+  },
+  {
+    "objectID": "CONTRAINDICATION_DESC.html#columns",
+    "href": "CONTRAINDICATION_DESC.html#columns",
+    "title": "CONTRAINDICATION_DESC",
+    "section": "Columns",
+    "text": "Columns\n\n\n\n\n\n\n  \n  \n    \n      Columns\n      Type\n    \n  \n  \n    CONTRA_CODE\nnumeric\n    DESCRIPTION\ncharacter\n    IS_IMMUNITY\ncharacter\n    CONTRA_TYPE\ncharacter\n    INACTIVE_STATUS\ncharacter\n    IS_PERMANENT\ncharacter\n    CONCEPT_CODE\ncharacter\n    BEST_ASIIS_VACC_CODE\nnumeric\n    CREATEDATETIME\nPOSIXct, POSIXt\n    SysStartTime\nPOSIXct, POSIXt\n    SysEndTime\nPOSIXct, POSIXt\n    tsExtract\ncharacter"
+  },
+  {
+    "objectID": "CONTRAINDICATION_DESC.html#category-description",
+    "href": "CONTRAINDICATION_DESC.html#category-description",
+    "title": "CONTRAINDICATION_DESC",
+    "section": "Category Description",
+    "text": "Category Description\nThis section contains variable coding for relevant columns within the contraindication_desc table."
+  },
+  {
+    "objectID": "CONTRAINDICATION_DESC.html#statistics",
+    "href": "CONTRAINDICATION_DESC.html#statistics",
+    "title": "CONTRAINDICATION_DESC",
+    "section": "Statistics",
+    "text": "Statistics\n\n\n\n\n\n\n  \n  \n    \n      Number of Columns\n      Number of Rows\n    \n  \n  \n    12\n138"
+  },
+  {
+    "objectID": "COUNTRY_CODE.html#description",
+    "href": "COUNTRY_CODE.html#description",
+    "title": "COUNTRY_CODE",
+    "section": "Description",
+    "text": "Description\nDescription"
+  },
+  {
+    "objectID": "COUNTRY_CODE.html#columns",
+    "href": "COUNTRY_CODE.html#columns",
+    "title": "COUNTRY_CODE",
+    "section": "Columns",
+    "text": "Columns\n\n\n\n\n\n\n  \n  \n    \n      Columns\n      Type\n    \n  \n  \n    FIPS_CODE\ncharacter\n    GMI_COUNTRY_CODE\ncharacter\n    ISO_2DIGIT_CODE\ncharacter\n    ISO_3DIGIT_CODE\ncharacter\n    COUNTRY_NAME\ncharacter\n    COUNTRY_LONG_NAME\ncharacter\n    SOVEREIGN\ncharacter\n    COLOR_MAP\ncharacter\n    INACTIVE_STATUS\ncharacter\n    CREATEDATETIME\nPOSIXct, POSIXt\n    SysStartTime\nPOSIXct, POSIXt\n    SysEndTime\nPOSIXct, POSIXt\n    tsExtract\ncharacter"
+  },
+  {
+    "objectID": "COUNTRY_CODE.html#category-description",
+    "href": "COUNTRY_CODE.html#category-description",
+    "title": "COUNTRY_CODE",
+    "section": "Category Description",
+    "text": "Category Description\nThis section contains variable coding for relevant columns within the country_code table."
+  },
+  {
+    "objectID": "COUNTRY_CODE.html#statistics",
+    "href": "COUNTRY_CODE.html#statistics",
+    "title": "COUNTRY_CODE",
+    "section": "Statistics",
+    "text": "Statistics\n\n\n\n\n\n\n  \n  \n    \n      Number of Columns\n      Number of Rows\n    \n  \n  \n    13\n262"
+  }
+]

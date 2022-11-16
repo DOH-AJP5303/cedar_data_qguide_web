@@ -1,0 +1,88 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "CEDAR Data Quality Guide"
+  author: "Data Quality Team"
+  date: today
+  sidebar:
+    style: "docked"
+    search: true
+  
+  chapters:
+    - index.qmd
+    - tablelist.qmd
+    - part: "Tables"
+      chapters:
+        - ADDRESS_RESERVE.qmd
+        - ADVERSE_REACTION_RESERVE.qmd
+        - ASIIS_VACC_CODE.qmd
+        - CDC_TO_ASIIS_VACC_CODE.qmd
+        - CONTRAINDICATION_DESC.qmd
+        - COUNTRY_CODE.qmd
+        - COUNTY_CODE.qmd
+        - ELIGIBILITY_CATEGORIES.qmd
+        - EXEMPTION_FORM_HEADER.qmd
+        - EXEMPTION_FORM_VACCS.qmd
+        - FACILITY_MASTER.qmd
+        - FACILITY_TYPE.qmd
+        - GEOCODING_ZIPCODES.qmd
+        - GRADE_LEVELS.qmd
+        - INVALID_VACCINATION.qmd
+        - IRMS.qmd
+        - IRMS_FACILITY_ORDER_SET.qmd
+        - LOOKUP.qmd
+        - LOT_LOG_ACTION_CODE.qmd
+        - LOT_NUMBER.qmd
+        - LOT_NUMBER_AUDIT.qmd
+        - ORDER_ITEMS.qmd
+        - ORDER_SET.qmd
+        - ORDER_SET_ASSOCIATION.qmd
+        - ORDERS.qmd
+        - PATIENT_CONTRA_RESERVE.qmd
+        - PATIENT_CONTRAINDICATION.qmd
+        - PATIENT_MASTER.qmd
+        - PATIENT_RACE_MASTER.qmd
+        - PATIENT_RESERVE.qmd
+        - PATIENT_SCHOOL_NURSE.qmd
+        - PATIENT_VACCINE_DEFERRAL.qmd
+        - PHONE_RESERVE.qmd
+        - PHYSICIAN_MASTER.qmd
+        - SCHOOL.qmd
+        - SCHOOL_DISTRICT.qmd
+        - SCHOOL_NURSE_IMMUNITY.qmd
+        - SEROLOGY_INVALID_DATA.qmd
+        - SEROLOGY_TEST_RESULT.qmd
+        - SEROLOGY_TYPE_CODE.qmd
+        - TRANSFER.qmd
+        - TRANSFER_ITEMS.qmd
+        - VACC_GROUP_FAMILY.qmd
+        - VACCINATION_FORECAST.qmd
+        - VACCINATION_MASTER.qmd
+        - VACCINATION_RESERVE.qmd
+        - VACCINE_FAMILY.qmd
+        - VACCINE_FAMILY_CODE.qmd
+        - VACCINE_FUNDING_SOURCE.qmd
+        - VACCINE_PRODUCT.qmd
+        - VACCINE_PRODUCT_MAPPING.qmd
+        - VACMAN_ASIIS_CODE.qmd
+        - VALID_VACCINATION.qmd
+        - WEB_VACCINE_FAMILY_CODE.qmd
+        
+  page-navigation: true
+  updated: today
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    css: styles2.scss
+    
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+

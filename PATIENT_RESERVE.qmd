@@ -1,0 +1,115 @@
+---
+execute:
+    echo: false
+    warning: false
+---
+
+# PATIENT_RESERVE {.unnumbered}
+
+```{r,eval=TRUE,echo=FALSE}
+#| label: source-filefolder
+dr <- "C:/Users/ajp5303/OneDrive - Washington State Executive Branch Agencies/source_scripts"
+```
+
+```{r,eval=TRUE,echo=FALSE}
+#| label: source-files
+source(paste0(dr,"/dbconnection.R"))
+source(paste0(dr,"/dqguide_functions.R"))
+```
+
+## Description
+
+The patient_reserve table contains entries for each time patient information is updated. This includes information on each patient including address, gender, race, and other demographic details.
+
+## Columns
+
+```{r}
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_PATIENT_RESERVE")) %>% colnames()),
+       Type = tbl(synapse, in_schema("dbo", "H33_PATIENT_RESERVE")) %>% head(1) %>% as_tibble() %>% sapply(class)
+       ) %>%
+  gt() %>%
+  gt_theme_espn()
+```
+
+## Category Description
+
+This section contains variable coding for relevant columns within the patient reserve table.
+
+```{r}
+#| label: patient-variable-table
+ptvar_tabl <-
+tibble(Coding = c(#gender
+                  "F","M","O","U",
+                  
+                  #race
+                  1,2,4,5,6,7,8,9,
+                  
+                  #ethnicity
+                  1,2,3, 
+                  
+                  #vfc eligible
+                  0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18),
+       
+       Description = c(
+                #gender descriptor
+               "Female","Male","Other","Unknown", 
+               
+               #race descriptor
+               "White","Black or African American","Asian", "American Indian or Alaskan Native","Other",
+               "Native Hawaiian or other Pacific Islander", "Multi_racial","Unknown",
+               
+               #ethnicity descriptor
+               "Hispanic or Latino","Not Hispanic or Latino","Unknown", 
+               
+               #vfc descriptor
+               "Ineligible","Medicaid","Uninsured","Nat. Amer.or Alaskan","Underinsured","null","KidsCare", 
+               "Hoosier HWise Pkg C","CHIP","Healthy Kids","Private Insurance (WAA01)","Adult State","Private",
+               "State Vaccine","LACHIP-Affordable Plan Ineligible","LAHIPP-Ineligible","WAA01","317","Medicare"
+               ),
+       
+       Variable = c(#gender category
+                    "PAT_GENDER","PAT_GENDER","PAT_GENDER","PAT_GENDER", 
+                    
+                    #race category
+                    "PAT_RACE","PAT_RACE","PAT_RACE","PAT_RACE","PAT_RACE","PAT_RACE","PAT_RACE","PAT_RACE", 
+                    
+                    #ethnicity category
+                    "PAT_ETHNICITY","PAT_ETHNICITY","PAT_ETHNICITY", 
+                    
+                    #vfc category
+                    "VFC_ELIGIBLE","VFC_ELIGIBLE","VFC_ELIGIBLE","VFC_ELIGIBLE","VFC_ELIGIBLE","VFC_ELIGIBLE",
+                    "VFC_ELIGIBLE","VFC_ELIGIBLE","VFC_ELIGIBLE","VFC_ELIGIBLE","VFC_ELIGIBLE","VFC_ELIGIBLE",
+                    "VFC_ELIGIBLE","VFC_ELIGIBLE","VFC_ELIGIBLE","VFC_ELIGIBLE","VFC_ELIGIBLE","VFC_ELIGIBLE",
+                    "VFC_ELIGIBLE"
+                    ),
+       
+       Space = " ") %>%
+       gt(rowname_col = "Space",groupname_col = "Variable") %>%
+       tab_header(
+                      title = "Variable Coding"
+       ) %>%
+       cols_width(Coding~px(200),
+                  Description~px(390),
+                  Space~px(110)) %>%
+       cols_align(align = "left") %>%
+       tab_footnote(
+                    footnote = "Each row may contain more than one selection for race.",
+                    locations = cells_row_groups(groups = "PAT_RACE")
+       ) %>%
+       gt_theme_espn()
+
+ptvar_tabl
+```
+
+## Statistics
+
+```{r}
+#| label: ptrsv-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_PATIENT_RESERVE")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_PATIENT_RESERVE")) %>% nrow2())
+       ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows") %>%
+  gt_theme_espn()
+```

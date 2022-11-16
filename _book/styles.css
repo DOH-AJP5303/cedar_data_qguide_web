@@ -1,0 +1,16 @@
+/* css styles */
+
+#quarto-margin-navbar {
+  margin-right: -600px;
+  margin-left: 500px;
+}
+
+#quarto-margin-content {
+  margin-right: 1000px;
+  margin-left: -500px;
+}
+
+#quarto-navbar-margin {
+  margin-right: 1000px;
+  margin-left: -500px;
+}

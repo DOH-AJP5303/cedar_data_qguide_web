@@ -1,0 +1,55 @@
+---
+execute:
+    echo: false
+    warning: false
+---
+
+# ADDRESS_RESERVE {.unnumbered}
+
+```{r,eval=TRUE,echo=FALSE}
+#| label: source-filefolder
+dr <- "C:/Users/ajp5303/OneDrive - Washington State Executive Branch Agencies/source_scripts"
+```
+
+```{r,eval=TRUE,echo=FALSE}
+#| label: source-files
+source(paste0(dr,"/dbconnection.R"))
+source(paste0(dr,"/dqguide_functions.R"))
+```
+
+## Description
+
+address reserve description
+
+## Columns
+
+```{r}
+#| label: addrsv-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_ADDRESS_RESERVE")) %>% colnames()),
+       Type = tbl(synapse, in_schema("dbo", "H33_ADDRESS_RESERVE")) %>% head(1) %>% as_tibble() %>% sapply(class)
+       ) %>%
+ gt() %>%
+ gt_theme_espn()
+```
+
+## Category Description
+
+This section contains variable coding for relevant columns within the address reserve table.
+
+```{r}
+#| label: addrsv-ptvartab
+
+```
+
+## Statistics
+
+```{r}
+#| label: addrsv-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_ADDRESS_RESERVE")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_ADDRESS_RESERVE"))) %>% nrow2()
+       ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```

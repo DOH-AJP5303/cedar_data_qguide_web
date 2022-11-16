@@ -1,0 +1,275 @@
+---
+execute:
+    echo: false
+    warning: false
+---
+
+# VACCINATION_RESERVE {.unnumbered}
+
+```{r,eval=TRUE,echo=FALSE}
+#| label: source-filefolder
+dr <- "C:/Users/ajp5303/OneDrive - Washington State Executive Branch Agencies/source_scripts"
+```
+
+```{r,eval=TRUE,echo=FALSE}
+#| label: source-files
+source(paste0(dr,"/dbconnection.R"))
+source(paste0(dr,"/dqguide_functions.R"))
+```
+
+## Description
+
+The vaccination_reserve table contains details on historical vaccination data, including registry information, vaccination dosage and data sources.
+
+## Columns
+
+```{r}
+#| label: vcrsv-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_VACCINATION_RESERVE")) %>% colnames())) %>%
+ mutate(Type = tbl(synapse, in_schema("dbo", "H33_VACCINATION_RESERVE")) %>% head(1) %>% as_tibble() %>% 
+                   sapply(class)) %>%
+ gt() %>%
+ gt_theme_espn()
+```
+
+## Category Description
+
+```{r}
+#| label: vcrsv-table
+vrsv_tabl <-
+tibble(Coding = c(#top 5 iis vaccination code
+                  "3036","75","3035","2070","2041",  
+                  #full list in table cdc_to_asiis_vacc_code
+                  
+                  #top 5 cdc vacc code
+                  "300","150","229","197","171",
+                  #link to full url: https://www2a.cdc.gov/vaccines/iis/iisstandards/?rpt=cpt
+                  
+                  #top 5 cpt vacc code
+                  "91312","90715","90686","90670","90750",  
+                  #link to full url: https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cpt
+                  
+                  #top 15 manufacturer codes
+                  "PFR","PMC","MOD","SEQ","SKB", "MSD","IDB","MSP","SP","BN","MBL","JSN","DVX","WAL","MED", 
+                 # link to full url https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=mvx
+                
+                 #coded terms for anatomical site 6
+                 "LD","RD","LVL","RVL","LLFA","RLFA",  
+                 #full vocabulary set:
+                 #https://phinvads.cdc.gov/vads/ViewValueSet.action?id=98257779-17B8-DF11-9BDD-0015173D1785
+
+                 #adverse reaction codes 7
+                  "26","42","44","48","46","51","32",  
+                  #data set in data dictionary - need to post to sharepoint (link: https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared%20Documents/CEDAR/CEDAR%20Data%20Dictionaries/Adverse_Reaction%20Code%20Values%20Table.xlsx?d=w7ac90aeede44401db78dddf8cbdee908&csf=1&web=1&e=7PJKg9)
+                  
+                 #data reporting_method IIS internal codes 
+                  "DTT","REALTIME_HL7","DIRECT_DATA_ENTRY","VITAL_STATISTICS","VITAL_STATS","BATCH_HL7",
+                  "PAPER_DATA_ENTRY","REMOTE_CLINIC", 
+                  
+                  #ndc_number codes
+                  "59267-1000-02","80777-0273-99","58160-0823-11","80777-0273-10","00005-1971-02"), 
+                   #link: https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=ndc
+            
+       Description = c(#iis vacc code descriptor 5
+                      "COVID-19, mRNA, LNP-S, bivalent booster, PF, 30 mcg/0.3 mL dose (CDC code 300)",
+                      "Influenza, injectable, quadrivalent, preservative free (CDC code 150)",
+                      "COVID-19, mRNA, LNP-S, bivalent booster, PF, 50 mcg/0.5 mL or 25mcg/0.25 mL dose (CDC code 229)",
+                      "influenza, high-dose seasonal, quadrivalent, preservative free (CDC code 197)",
+                      "Influenza, injectable, Madin Darby Canine Kidney, preservative free, quadrivalent (CDC code 
+                       171)", 
+                       
+                       #cdc vacc code descriptor 5
+                       "COVID-19, mRNA, LNP-S, bivalent booster, PF, 30 mcg/0.3 mL dose",
+                       "Influenza, injectable, quadrivalent, preservative free",
+                       "COVID-19, mRNA, LNP-S, bivalent booster, PF, 50 mcg/0.5 mL or 25mcg/0.25 mL dose", 
+                       "Influenza, high-dose, quadrivalent",
+                       "Influenza, injectable, MDCK, preservative free, quadrivalent", 
+       
+                       #cpt vacc code descriptor 5
+                       "Pfizer™ COVID-19 Vaccine - Bivalent Booster, Gray Cap",
+                       "Adacel™ Tdap Vaccine",
+                       "Fluarix™ Influenza Vaccine",
+                       "Prevnar 13™ Pneumococcal Vaccine",
+                       "Shingrix™ Zoster Vaccine", 
+                       
+                       #manufacturer code descriptor 15
+                       "Pfizer, Inc.",
+                       "Sanofi Pasteur",
+                       "Moderna US, Inc.",
+                       "Seqirus",
+                       "GlaxoSmithKline",
+                       "Merck and Co., Inc.",
+                       "ID Biomedical",
+                       "MSP Vaccine Company - (partnership Merck and Sanofi Pasteur)",
+                       "Assumed misscoded value for Sanofi Pasteur (PMC)",
+                       "Bavarian Nordic A/S",
+                       "Massachusetts Biologic Laboratories",
+                       "Janssen",
+                       "Dynavax, Inc.",
+                       "Wyeth",
+                       "MedImmune, Inc. (AstraZeneca)",
+       
+                        #anatomical site descriptor 6
+                        "Left Deltoid",
+                        "Right Deltoid",
+                        "Left Vastus Lateralis",
+                        "Right Vastus Lateralis",
+                        "Left Lower Forearm",
+                        "Right Lower Forearm",
+                        
+                        #adverse reaction code descriptor 6
+                        "Other",
+                        "Vasovagal syncope (7 days)",
+                        "Life threatening adverse event",
+                        "An important medical event that based on appropriate medical judgement may jeopardize the
+                         individual and may require medical or surgical intervention",
+                        "Persistent or significant incapacity or substantial disruption of the ability to 
+                         conduct normal life functions",
+                        "Serious Adverse Event regardless of causality",
+                        "Any acute complications or sequelae (including death) of above events 
+                         (interval - not applicable)",
+                        
+                        #reporting_method code descriptor 8
+                        "DTT Import: Entered into the IIS via a manual data upload",
+                        "HL7: Entered into the IIS via an HL7 message from a provider’s EHR",
+                        "Direct data entry: Entered into the IIS manually",
+                        "Entered into the IIS via vital statistics record",
+                        "Entered into the IIS via vital statistics record",
+                        "Batch HL7 import",
+                        "Direct data entry from paper record",
+                        "Direct data entry from Remote clinic",
+                        
+                        #ndc_number descriptor 5
+                        "Pfizer COVID-19, mRNA, LNP-S, PF, 30 mcg/0.3 mL dose",
+                        "Moderna COVID-19, mRNA, LNP-S, PF, 100 mcg/0.5mL dose or 50 mcg/0.25mL dose",
+                        "Shingrix zoster recombinant",
+                        "Moderna COVID-19, mRNA, LNP-S, PF, 100 mcg/0.5mL dose or 50 mcg/0.25mL dose",
+                        "Prevnar 13 Pneumococcal conjugate PCV 13"),
+                        
+                        
+       
+       Variable = c(#vaccination code category 5
+                    "ASIIS_VACC_CODE","ASIIS_VACC_CODE","ASIIS_VACC_CODE","ASIIS_VACC_CODE","ASIIS_VACC_CODE",
+                    
+                    #cdc vacc category 5
+                    "CDC_VACC_CODE","CDC_VACC_CODE","CDC_VACC_CODE","CDC_VACC_CODE","CDC_VACC_CODE",
+                    
+                    #cpt category 5
+                    "CPT_VACC_CODE","CPT_VACC_CODE","CPT_VACC_CODE","CPT_VACC_CODE","CPT_VACC_CODE", 
+                    
+                    #manufacturer category 15
+                    "manufacturer","manufacturer","manufacturer","manufacturer","manufacturer","manufacturer",
+                    "manufacturer","manufacturer","manufacturer","manufacturer","manufacturer","manufacturer",
+                    "manufacturer","manufacturer","manufacturer",
+       
+                    #anatomical site category 6
+                    "anatomical_site","anatomical_site","anatomical_site","anatomical_site","anatomical_site",
+                    "anatomical_site",
+                    
+                    #adverse reaction code category 6
+                    "adverse_reaction","adverse_reaction","adverse_reaction","adverse_reaction","adverse_reaction",
+                    "adverse_reaction","adverse_reaction",
+       
+                    #reporting_method code category 8
+                    "reporting_method","reporting_method","reporting_method","reporting_method","reporting_method",
+                    "reporting_method","reporting_method","reporting_method",
+                    
+                    #ndc_number category 5
+                    "ndc_number","ndc_number","ndc_number","ndc_number","ndc_number"),
+                    
+                    
+      Space = " ") %>%
+       gt(rowname_col = "Space", groupname_col = "Variable") %>%
+       tab_header(title = "Variable Coding"
+       ) %>%
+       cols_width(Coding~px(200),
+                  Description~px(600),
+                  Space~px(150)) %>%
+       cols_align(align = "left") %>%
+       tab_footnote(
+                    footnote = 
+                      gt::md(paste0("A full list of CDC Vaccination Codes is available at: ",
+                    {"https://www2a.cdc.gov/vaccines/iis/iisstandards/?rpt=cpt"}
+                    )),
+                    locations = cells_row_groups(groups = "CDC_VACC_CODE")
+       ) %>%
+       tab_footnote(
+                    footnote = 
+                      gt::md(paste0("A full list of Vaccination CPT Codes is available at: ",
+                    {"https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cpt"}
+                    )),
+                    locations = cells_row_groups(groups = "CPT_VACC_CODE")
+       ) %>%
+       tab_footnote(
+                    footnote = 
+                      gt::md(paste0("A full list of Vaccine Manufacter Codes is available at: ",
+                    {"https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=mvx"}
+                    )),
+                    locations = cells_row_groups(groups = "manufacturer")
+       ) %>%
+       tab_footnote(
+                    footnote = 
+                      gt::md(paste0("A full vocabulary list of coded terms for vaccination sites is available at: ",
+                    {"https://phinvads.cdc.gov/vads/ViewValueSet.action?id=98257779-17B8-DF11-9BDD-0015173D1785"}
+                    )),
+                    locations = cells_row_groups(groups = "anatomical_site")
+       ) %>%
+  
+       tab_footnote(
+                    footnote = 
+                      gt::md(paste0("A full list of Reaction Site Codes is available at: ",
+                    {"https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared%20Documents/CEDAR/CEDAR%20Data%20Dictionaries/Adverse_Reaction%20Code%20Values%20Table.xlsx?d=w7ac90aeede44401db78dddf8cbdee908&csf=1&web=1&e=7PJKg9"}
+                    )),
+                    locations = cells_row_groups(groups = "adverse_reaction")
+       ) %>%
+       tab_footnote(
+                    footnote = 
+                      gt::md(paste0("A full list of NDC Number Codes is available at: ",
+                    {"https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=ndc"}
+                    )),
+                    locations = cells_row_groups(groups = "ndc_number")
+       ) %>%
+       gt_theme_espn()
+
+vrsv_tabl
+```
+
+```{r}
+vaccrsvcode <- tibble(
+  Codes = c("CDC Vaccination Codes", "Vaccination CPT Codes","Vaccine Manufacter Codes","Vaccination Sites",
+            "Reaction Site Codes","NDC Number Codes"),
+  Links = c("https://www2a.cdc.gov/vaccines/iis/iisstandards/?rpt=cpt",
+           "https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cpt",
+           "https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=mvx",
+           "https://phinvads.cdc.gov/vads/ViewValueSet.action?id=98257779-17B8-DF11-9BDD-0015173D1785",
+           "https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared%20Documents/CEDAR/CEDAR%20Data%20Dictionaries/Adverse_Reaction%20Code%20Values%20Table.xlsx?d=w7ac90aeede44401db78dddf8cbdee908&csf=1&web=1&e=7PJKg9",
+           "https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=ndc")
+)
+
+vaccrsvcode_tab <- vaccrsvcode %>%
+  mutate(Links = sprintf('<p><a href = "%s">%s</a>', Links, Links), 
+         Links = map(Links, gt::html)) %>%
+  gt() %>%
+  tab_header(title = "Full Code Lists for Vaccine Reserve Table") %>%
+  cols_align(align = "left") %>%
+  cols_width(Codes~px(200),
+             Links~px(800)) %>%
+  gt_theme_espn()
+
+vaccrsvcode_tab
+```
+
+## Statistics
+
+Insert statistics here
+
+```{r}
+#| label: vcrsv-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_VACCINATION_RESERVE")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_VACCINATION_RESERVE"))) %>% nrow2()
+       ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```

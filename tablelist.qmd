@@ -1,0 +1,34 @@
+---
+execute:
+    echo: false
+    warning: false
+---
+# Table List {.unnumbered}
+
+```{r,eval=TRUE,echo=FALSE}
+#| label: source-filefolder
+dr <- "C:/Users/ajp5303/OneDrive - Washington State Executive Branch Agencies/source_scripts"
+```
+
+```{r,eval=TRUE,echo=FALSE}
+#| label: source-files
+source(paste0(dr,"/dbconnection.R"))
+source(paste0(dr,"/dqguide_functions.R"))
+```
+
+```{r}
+#| label : table-count
+tbcnt <- tibble(Tables = DBI::dbListTables(synapse)) %>%
+filter(grepl('H33',Tables)) %>%
+count()
+```
+
+There are currently `r tbcnt` tables in CEDAR. A complete list is included below:
+
+```{r}
+#| label : table-list
+tibble(Tables = DBI::dbListTables(synapse)) %>%
+filter(grepl('H33',Tables)) %>%
+gt() %>%
+gt_theme_espn()
+```

@@ -1,0 +1,28 @@
+---
+execute:
+    echo: false
+    warning: false
+---
+
+# SEROLOGY_TYPE_CODE {.unnumbered}
+
+```{r,eval=TRUE,echo=FALSE}
+#| label: source-filefolder
+dr <- "C:/Users/ajp5303/OneDrive - Washington State Executive Branch Agencies/source_scripts"
+```
+
+```{r,eval=TRUE,echo=FALSE}
+#| label: source-files
+source(paste0(dr,"/dbconnection.R"))
+source(paste0(dr,"/dqguide_functions.R"))
+```
+
+## Description
+
+Description
+
+## Columns
+
+## Category Description
+
+## Statistics

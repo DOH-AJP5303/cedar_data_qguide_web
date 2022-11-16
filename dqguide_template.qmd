@@ -1,0 +1,1511 @@
+---
+title: "CEDAR Data Quality Guide"
+author: "Data Quality Team"
+date: "Last Updated: `r format(Sys.time(), '%d %B, %Y')`"
+toc: true
+toc-location: left
+toc-depth: 5
+smooth-scroll: true
+format: 
+  html:
+    html-math-method: katex
+    code-tools: false
+    self-contained: true
+    theme: cosmo
+    anchor-sections: false
+execute:
+    echo: false
+    warning: false
+---
+
+```{r,eval=TRUE,echo=FALSE}
+#| label: source-filefolder
+dr <- "C:/Users/ajp5303/OneDrive - Washington State Executive Branch Agencies/source_scripts"
+```
+
+```{r,eval=TRUE,echo=FALSE}
+#| label: source-files
+source(paste0(dr,"/dbconnection.R"))
+source(paste0(dr,"/dqguide_functions.R"))
+```
+
+## Introduction
+
+CEDAR - the Cloud Environment for Data Analytics and Reporting - is two things. It is a cloud-based repository where data reside and can be accessed to support the creation of reports, dashboards and other data products, as well as any form of analysis. It is also a set of cloud-based tools for data scientists, informaticians and epidemiologists to use in that analysis and creation of data products. CEDAR's goal is to be the single trusted source of information for analytics.
+
+## List of Tables
+
+```{r}
+#| label : table-count
+tbcnt <- tibble(Tables = DBI::dbListTables(synapse)) %>%
+filter(grepl('H33',Tables)) %>%
+count()
+```
+
+There are currently `r tbcnt` tables in CEDAR. A complete list is included below:
+
+```{r}
+#| label : table-list
+tibble(Tables = DBI::dbListTables(synapse)) %>%
+filter(grepl('H33',Tables)) %>%
+gt() %>%
+gt_theme_espn()
+```
+
+## Table Details
+
+### ADDRESS_RESERVE
+
+::: panel-tabset
+#### Description
+
+address reserve description
+
+#### Columns
+
+```{r}
+#| label: addrsv-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_ADDRESS_RESERVE")) %>% colnames()),
+       Type = tbl(synapse, in_schema("dbo", "H33_ADDRESS_RESERVE")) %>% head(1) %>% as_tibble() %>% sapply(class)
+       ) %>%
+ gt() %>%
+ gt_theme_espn()
+```
+
+#### Category Description
+
+This section contains variable coding for relevant columns within the address reserve table.
+
+```{r}
+#| label: addrsv-ptvartab
+
+```
+
+#### Statistics
+
+```{r}
+#| label: addrsv-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_ADDRESS_RESERVE")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_ADDRESS_RESERVE"))) %>% nrow2()
+       ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```
+:::
+
+### ADVERSE_REACTION_RESERVE
+
+::: panel-tabset
+#### Description
+
+Description
+
+#### Columns
+
+```{r}
+#| label: advrr-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_ADVERSE_REACTION_RESERVE")) %>% colnames()),
+       Type = tbl(synapse, in_schema("dbo", "H33_ADVERSE_REACTION_RESERVE")) %>% head(1) %>% as_tibble() %>%
+                  sapply(class)
+  ) %>%
+  gt() %>%
+  gt_theme_espn()
+```
+
+#### Category Description
+
+This section contains variable coding for relevant columns within the adverse reaction table.
+
+```{r}
+#| label: tab-advrrtab
+
+```
+
+#### Statistics
+
+```{r}
+#| label: advrr-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_ADVERSE_REACTION_RESERVE")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_ADVERSE_REACTION_RESERVE"))) %>% nrow2()
+  ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```
+:::
+
+### ASIIS_VACC_CODE
+
+::: panel-tabset
+#### Description
+
+Description
+
+#### Columns
+
+```{r}
+#| label: asissvc-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_ASIIS_VACC_CODE")) %>% colnames()),
+       Type = tbl(synapse, in_schema("dbo", "H33_ASIIS_VACC_CODE")) %>% head(1) %>% as_tibble() %>% sapply(class)
+  ) %>%
+  gt() %>%
+  gt_theme_espn()
+```
+
+#### Category Description
+
+This section contains variable coding for relevant columns within the ASIIS VACC_CODE table.
+
+```{r}
+#| label: tab-asissvctab
+
+```
+
+#### Statistics
+
+```{r}
+#| label: asissvc-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_ASIIS_VACC_CODE")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_ASIIS_VACC_CODE"))) %>% nrow2()
+  ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```
+:::
+
+### CDC_TO_ASIIS_VACC_CODE
+
+::: panel-tabset
+#### Description
+
+Description
+
+#### Columns
+
+```{r}
+#| label: cdcassis-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_CDC_TO_ASIIS_VACC_CODE")) %>% colnames()),
+       Type = tbl(synapse, in_schema("dbo", "H33_CDC_TO_ASIIS_VACC_CODE")) %>% head(1) %>% as_tibble() %>% sapply(class)
+  ) %>%
+  gt() %>%
+  gt_theme_espn()
+```
+
+#### Category Description
+
+This section contains variable coding for relevant columns within the CDC_TO_ASIIS_VACC_CODE table.
+
+```{r}
+#| label: cdcassis-ptvartab
+
+```
+
+#### Statistics
+
+```{r}
+#| label: cdcassis-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_CDC_TO_ASIIS_VACC_CODE")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_CDC_TO_ASIIS_VACC_CODE"))) %>% nrow2()
+  ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```
+:::
+
+### CONTRAINDICATION_DESC
+
+::: panel-tabset
+
+#### Description
+
+Description
+
+#### Columns
+
+```{r}
+#| label: contradesc-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_CONTRAINDICATION_DESC")) %>% colnames()),
+       Type = tbl(synapse, in_schema("dbo", "H33_CONTRAINDICATION_DESC")) %>% head(1) %>% as_tibble() %>% sapply(class)
+  ) %>%
+  gt() %>%
+  gt_theme_espn()
+```
+
+#### Category Description
+
+This section contains variable coding for relevant columns within the contraindication_desc table.
+
+```{r}
+#| label: tab-contradesctab
+
+```
+
+#### Statistics
+
+```{r}
+#| label: contradesc-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_CONTRAINDICATION_DESC")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_CONTRAINDICATION_DESC"))) %>% nrow2()
+  ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```
+:::
+
+### COUNTRY_CODE
+
+::: panel-tabset
+#### Description
+
+Description
+
+#### Columns
+
+```{r}
+#| label: councd-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_COUNTRY_CODE")) %>% colnames()),
+       Type = tbl(synapse, in_schema("dbo", "H33_COUNTRY_CODE")) %>% head(1) %>% as_tibble() %>% sapply(class)
+  ) %>%
+  gt() %>%
+  gt_theme_espn()
+```
+
+#### Category Description
+
+This section contains variable coding for relevant columns within the country_code table.
+
+```{r}
+#| label: tab-councdtab
+
+```
+
+#### Statistics
+
+```{r}
+#| label: councd-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_COUNTRY_CODE")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_COUNTRY_CODE"))) %>% nrow2()
+  ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```
+:::
+
+### COUNTY_CODE
+
+::: panel-tabset
+#### Description
+
+Description
+
+#### Columns
+
+```{r}
+#| label: cntcd-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_COUNTY_CODE")) %>% colnames()),
+       Type = tbl(synapse, in_schema("dbo", "H33_COUNTY_CODE")) %>% head(1) %>% as_tibble() %>% sapply(class)
+  ) %>%
+  gt() %>%
+  gt_theme_espn()
+```
+
+#### Category Description
+
+This section contains variable coding for relevant columns within the county code table.
+
+```{r}
+#| label: tab-cntcdtab
+
+```
+
+#### Statistics
+
+```{r}
+#| label: cntcd-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_COUNTY_CODE")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_COUNTY_CODE"))) %>% nrow2()
+  ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```
+:::
+
+### ELIGIBILITY_CATEGORIES
+
+::: panel-tabset
+#### Description
+
+Description
+
+#### Columns
+
+```{r}
+#| label: eligcat-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_ELIGIBILITY_CATEGORIES")) %>% colnames()),
+       Type = tbl(synapse, in_schema("dbo", "H33_ELIGIBILITY_CATEGORIES")) %>% head(1) %>% as_tibble() %>% sapply(class)
+  ) %>%
+  gt() %>%
+  gt_theme_espn()
+```
+
+#### Category Description
+
+This section contains variable coding for relevant columns within the eligibility categories table.
+
+```{r}
+#| label: tab-eligcattab
+
+```
+
+#### Statistics
+
+```{r}
+#| label: eligcat-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_ELIGIBILITY_CATEGORIES")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_ELIGIBILITY_CATEGORIES"))) %>% nrow2()
+  ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```
+:::
+
+### EXEMPTION_FORM_HEADER
+
+::: panel-tabset
+#### Description
+
+Description
+
+#### Columns
+
+```{r}
+#| label: exemptfd-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_EXEMPTION_FORM_HEADER")) %>% colnames()),
+       Type = tbl(synapse, in_schema("dbo", "H33_EXEMPTION_FORM_HEADER")) %>% head(1) %>% as_tibble() %>% sapply(class)
+  ) %>%
+  gt() %>%
+  gt_theme_espn()
+```
+
+#### Category Description
+
+This section contains variable coding for relevant columns within the exemption form header table.
+
+```{r}
+#| label: tab-exemptfdtab
+
+```
+
+#### Statistics
+
+```{r}
+#| label: exemptfd-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_EXEMPTION_FORM_HEADER")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_EXEMPTION_FORM_HEADER"))) %>% nrow2()
+  ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```
+:::
+
+### EXEMPTION_FORM_VACCS
+
+::: panel-tabset
+#### Description
+
+Description
+
+#### Columns
+
+```{r}
+#| label: exemptfvac-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_EXEMPTION_FORM_VACCS")) %>% colnames()),
+       Type = tbl(synapse, in_schema("dbo", "H33_EXEMPTION_FORM_VACCS")) %>% head(1) %>% as_tibble() %>% sapply(class)
+  ) %>%
+  gt() %>%
+  gt_theme_espn()
+```
+
+#### Category Description
+
+This section contains variable coding for relevant columns within the exemption form vaccs table.
+
+```{r}
+#| label: tab-exemptfvactab
+
+```
+
+#### Statistics
+
+```{r}
+#| label: exemptfvac-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_EXEMPTION_FORM_VACCS")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_EXEMPTION_FORM_VACCS"))) %>% nrow2()
+  ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```
+:::
+
+### FACILITY_MASTER
+
+::: panel-tabset
+#### Description
+
+Description
+
+#### Columns
+
+```{r}
+#| label: facmstr-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_FACILITY_MASTER")) %>% colnames()),
+       Type = tbl(synapse, in_schema("dbo", "H33_FACILITY_MASTER")) %>% head(1) %>% as_tibble() %>% sapply(class)
+  ) %>%
+  gt() %>%
+  gt_theme_espn()
+```
+
+#### Category Description
+
+This section contains variable coding for relevant columns within the facility master table.
+
+```{r}
+#| label: tab-facmstrtab
+
+```
+
+#### Statistics
+
+```{r}
+#| label: facmstr-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_FACILITY_MASTER")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_FACILITY_MASTER"))) %>% nrow2()
+  ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```
+:::
+
+### FACILITY_TYPE
+
+### GEOCODING_ZIPCODES
+
+### GRADE_LEVELS
+
+### INVALID_VACCINATION
+
+### IRMS
+
+### IRMS_FACILITY_ORDER_SET
+
+### LOOKUP
+
+### LOT_LOG_ACTION_CODE
+
+### LOT_NUMBER
+
+### LOT_NUMBER_AUDIT
+
+### LOT_NUMBER_LOG
+
+### ORDER_ITEMS
+
+### ORDER_SET
+
+### ORDER_SET_ASSOCIATION
+
+### ORDERS
+
+### PATIENT_CONTRA_RESERVE
+
+### PATIENT_CONTRAINDICATION
+
+### PATIENT_MASTER
+
+::: panel-tabset
+#### Description
+
+The patient_master table contains the most up to date information on each patient including address, gender, race, and other demographic details.
+
+#### Columns
+
+```{r}
+#| label: ptmstr-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_PATIENT_MASTER")) %>% colnames()),
+       Type = tbl(synapse, in_schema("dbo", "H33_PATIENT_MASTER")) %>% head(1) %>% as_tibble() %>% sapply(class)
+       ) %>%
+ gt() %>%
+ gt_theme_espn()
+```
+
+#### Category Description
+
+This section contains variable coding for relevant columns within the patient master table.
+
+```{r}
+#| label: ptmstr-ptvartab
+ptvar_tabl <-
+tibble(Coding = c(#gender
+                  "F","M","O","U",
+                  
+                  #race
+                  1,2,4,5,6,7,8,9,
+                  
+                  #ethnicity
+                  1,2,3, 
+                  
+                  #vfc eligible
+                  0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18),
+       
+       Description = c(
+                #gender descriptor
+               "Female","Male","Other","Unknown", 
+               
+               #race descriptor
+               "White","Black or African American","Asian", "American Indian or Alaskan Native","Other",
+               "Native Hawaiian or other Pacific Islander", "Multi_racial","Unknown",
+               
+               #ethnicity descriptor
+               "Hispanic or Latino","Not Hispanic or Latino","Unknown", 
+               
+               #vfc descriptor
+               "Ineligible","Medicaid","Uninsured","Nat. Amer.or Alaskan","Underinsured","null","KidsCare", 
+               "Hoosier HWise Pkg C","CHIP","Healthy Kids","Private Insurance (WAA01)","Adult State","Private",
+               "State Vaccine","LACHIP-Affordable Plan Ineligible","LAHIPP-Ineligible","WAA01","317","Medicare"
+               ),
+       
+       Variable = c(#gender category
+                    "PAT_GENDER","PAT_GENDER","PAT_GENDER","PAT_GENDER", 
+                    
+                    #race category
+                    "PAT_RACE","PAT_RACE","PAT_RACE","PAT_RACE","PAT_RACE","PAT_RACE","PAT_RACE","PAT_RACE", 
+                    
+                    #ethnicity category
+                    "PAT_ETHNICITY","PAT_ETHNICITY","PAT_ETHNICITY", 
+                    
+                    #vfc category
+                    "VFC_ELIGIBLE","VFC_ELIGIBLE","VFC_ELIGIBLE","VFC_ELIGIBLE","VFC_ELIGIBLE","VFC_ELIGIBLE",
+                    "VFC_ELIGIBLE","VFC_ELIGIBLE","VFC_ELIGIBLE","VFC_ELIGIBLE","VFC_ELIGIBLE","VFC_ELIGIBLE",
+                    "VFC_ELIGIBLE","VFC_ELIGIBLE","VFC_ELIGIBLE","VFC_ELIGIBLE","VFC_ELIGIBLE","VFC_ELIGIBLE",
+                    "VFC_ELIGIBLE"
+                    ),
+       
+       Space = " ") %>%
+       gt(rowname_col = "Space",groupname_col = "Variable") %>%
+       tab_header(
+                      title = "Variable Coding"
+       ) %>%
+       cols_width(Coding~px(200),
+                  Description~px(390),
+                  Space~px(110)) %>%
+       cols_align(align = "left") %>%
+       tab_footnote(
+                    footnote = "Each row may contain more than one selection for race.",
+                    locations = cells_row_groups(groups = "PAT_RACE")
+       ) %>%
+       gt_theme_espn()
+
+ptvar_tabl
+```
+
+#### Statistics
+
+```{r}
+#| label: ptmstr-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_PATIENT_MASTER")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_PATIENT_MASTER"))) %>% nrow2()
+       ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```
+:::
+
+### PATIENT_RACE_MASTER
+
+### PATIENT_RACE_RESERVE
+
+### PATIENT_RESERVE
+
+::: panel-tabset
+#### Description
+
+The patient_reserve table contains entries for each time patient information is updated. This includes information on each patient including address, gender, race, and other demographic details.
+
+#### Columns
+
+```{r}
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_PATIENT_RESERVE")) %>% colnames()),
+       Type = tbl(synapse, in_schema("dbo", "H33_PATIENT_RESERVE")) %>% head(1) %>% as_tibble() %>% sapply(class)
+       ) %>%
+  gt() %>%
+  gt_theme_espn()
+```
+
+#### Category Description
+
+This section contains variable coding for relevant columns within the patient reserve table.
+
+```{r}
+#| label: patient-variable-table
+ptvar_tabl
+```
+
+#### Statistics
+
+```{r}
+#| label: ptrsv-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_PATIENT_RESERVE")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_PATIENT_RESERVE")) %>% nrow2())
+       ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows") %>%
+  gt_theme_espn()
+```
+:::
+
+### PATIENT_SCHOOL_NURSE
+
+### PATIENT_VACCINE_DEFERRAL
+
+### PHONE_RESERVE
+
+### PHYSICIAN_MASTER
+
+### SCHOOL
+
+### SCHOOL_DISTRICT
+
+### SCHOOL_NURSE_IMMUNITY
+
+### SEROLOGY_RESERVE
+
+### SEROLOGY_TEST_RESULT
+
+### SEROLOGY_TYPE_CODE
+
+### TRANSFER
+
+### TRANSFER_ITEMS
+
+### VACC_GROUP_FAMILY
+
+::: panel-tabset
+#### Description
+
+The vacc_group_family table contains the descriptions of each respective group and family vaccine code. There are 33 codes total.
+
+#### Columns
+
+```{r}
+#| label: vcgrp-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_VACC_GROUP_FAMILY")) %>% colnames())) %>%
+ mutate(Type = tbl(synapse, in_schema("dbo", "H33_VACC_GROUP_FAMILY")) %>% head(1) %>% as_tibble() %>% 
+                   sapply(class)) %>%
+ gt() %>%
+ gt_theme_espn()
+```
+
+#### Category Description
+
+```{r}
+#| label: vcgrp-table
+vcgrp_tabl <-
+tibble(Coding = c(#group_code codes
+                  "10","11","25","26","30","40","50","60","70","80","110","120","130","170","180","190",
+                  "220","230","240","250","260","271","280","290","300","310","320","330","340","350","360",
+                  "370","380",
+
+                  #family codes
+                  "1","24","25","26","3","5","2","9","4","6","20","10","11","12","13","14","15","16","17",
+                  "18","7","21","22","23","28","29","30","31","32","33","34","35","36"),
+       
+       Description = c(#descriptor for both columns
+                       "DTaP","Tdap","MENINGOCOCCAL B, RECOMBINANT","MENINGOCOCCAL B, OMV","Polio","MMR",
+                       "Hib","Hep A","Hep B","Varicella","Rotavirus","Influenza","Pneumo (PCV7)",
+                       "Hep B - 2 Dose","Anthrax","Smallpox Vaccination","Measles","Mumps","Rubella",
+                       "Pneumo (PPV23)","Meningococcal","HPV","Herpes Zoster","NOVEL INFLUENZA H1N1-09",
+                       "Cholera","Japanese Encephalitis","Rabies","Typhoid","Yellow Fever",
+                       "Coronavirus (SARS-CoV-2)(COVID-19)","Ebola","Dengue","Orthopoxvirus",
+                       "DTaP","Tdap","MENINGOCOCCAL B, RECOMBINANT","MENINGOCOCCAL B, OMV","Polio",
+                       "MMR","Hib","Hep A","Hep B","Varicella","Rotavirus","Influenza","Pneumo (PCV7)",
+                       "Hep B - 2 Dose","Anthrax","Smallpox Vaccination","Measles","Mumps","Rubella",
+                       "Pneumo (PPV23)","Meningococcal","HPV","Herpes Zoster","NOVEL INFLUENZA H1N1-09","Cholera",
+                       "Japanese Encephalitis","Rabies","Typhoid","Yellow Fever","Coronavirus (SARS-CoV-2)(COVID-19)",
+                       "Ebola","Dengue","Orthopoxvirus"),
+#link to sharepoint - https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared%20Documents/CEDAR/CEDAR%20Data%20Dictionaries/Vaccine%20Group%20Code%20Values%20Table.xlsx?d=wa5d24116122446c89b871b14addcdf63&csf=1&web=1&e=pE54y9
+
+                      
+       Variable = c(#group_code category
+                    "GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE",
+                    "GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE",
+                    "GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE",
+                    "GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE",
+                    "GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE",
+                    "GROUP_CODE","GROUP_CODE","GROUP_CODE",
+                    
+                    #family_code category
+                    "FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE",
+                    "FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE",
+                    "FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE",
+                    "FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE",
+                    "FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE",
+                    "FAMILY_CODE","FAMILY_CODE","FAMILY_CODE"),
+                    
+      Space = " ") %>%
+      gt(rowname_col = "Space", groupname_col = "Variable") %>%
+      tab_header(title = "Variable Coding"
+      ) %>%
+      cols_width(Coding~px(200),
+                  Description~px(400),
+                  Space~px(150)) %>%
+       cols_align(align = "left") %>%
+       tab_footnote(
+                    footnote = 
+                      gt::md(paste0("A full list of Family and Group codes is available at: ",
+                    {"https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared%20Documents/CEDAR/CEDAR%20Data%20Dictionaries/Vaccine%20Group%20Code%20Values%20Table.xlsx?d=wa5d24116122446c89b871b14addcdf63&csf=1&web=1&e=pE54y9"}
+                    )),
+                    locations = cells_row_groups(groups = c("FAMILY_CODE","GROUP_CODE"))
+       ) %>%
+       gt_theme_espn()
+
+vcgrp_tabl
+```
+
+```{r}
+vacgrpcode <- tibble(
+  Codes = c("Family and Group Codes"),
+  Links = c("https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared%20Documents/CEDAR/CEDAR%20Data%20Dictionaries/Vaccine%20Group%20Code%20Values%20Table.xlsx?d=wa5d24116122446c89b871b14addcdf63&csf=1&web=1&e=pE54y9"))
+
+vacgrpcode_tab <- vacgrpcode %>%
+  mutate(Links = sprintf('<p><a href = "%s">%s</a>', Links, Links), 
+         Links = map(Links, gt::html)) %>%
+  gt() %>%
+  tab_header(title = "Full Code Lists for Vaccine Group Family Table") %>%
+  cols_align(align = "left") %>%
+  cols_width(Codes~px(200),
+             Links~px(800)) %>%
+  gt_theme_espn()
+
+vacgrpcode_tab
+```
+
+#### Statistics
+
+Insert statistics here
+
+```{r}
+#| label: vcgrp-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_VACC_GROUP_FAMILY")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_VACC_GROUP_FAMILY"))) %>% nrow2()
+       ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```
+:::
+
+### VACCINATION_FORECAST
+
+::: panel-tabset
+#### Description
+
+The vaccination_forecast table contains administrative details on forecasted vaccine data.
+
+#### Columns
+
+```{r}
+#| label: vfore-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_VACCINATION_FORECAST")) %>% colnames())) %>%
+mutate(Type = tbl(synapse, in_schema("dbo", "H33_VACCINATION_FORECAST")) %>% head(1) %>% as_tibble() %>% 
+                   sapply(class)) %>%
+ gt() %>%
+ gt_theme_espn()
+
+```
+
+#### Category Description
+
+```{r}
+#| label: vfore-table
+vforevar_tabl <-
+tibble(Coding = c(#family_code codes
+                  "10","5","1","24","33", 
+                  
+                  #forecast cvx codes
+                  "88","3","115","213","139"), 
+                  
+            
+       Description = c(#family_code descriptor
+                      "Flu",
+                      "MMR",
+                      "DTaP/DT/Td",
+                      "Tdap",
+                      "Coronavirus (SARS-CoV-2)(COVID-19)",
+                      #link to sharepoint - https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared%20Documents/CEDAR/CEDAR%20Data%20Dictionaries/Family_Code%20Values%20Table.xlsx?d=w545db4b21b99464ea49f8f2a26656d4a&csf=1&web=1&e=PT3WT6
+                       
+                      #forecast cvx descriptor 
+                      "influenza, unspecified formulation",
+                      "MMR",
+                      "Tdap",
+                      "SARS-COV-2 (COVID-19) vaccine,UNSPECIFIED",
+                      "Td(adult) unspecified formulation"),
+                      #link to https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cvx
+      
+       
+       Variable = c(#family_code category
+                    "FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE",
+                    
+                    #forecast_cvx codes category
+                    "FORECAST_CVX_CODE","FORECAST_CVX_CODE","FORECAST_CVX_CODE","FORECAST_CVX_CODE",
+                    "FORECAST_CVX_CODE"),
+              
+                    
+      Space = " ") %>%
+       gt(rowname_col = "Space", groupname_col = "Variable") %>%
+       tab_header(title = "Variable Coding") %>%
+       cols_width(Coding~px(200),
+                  Description~px(400),
+                  Space~px(150)) %>%
+       cols_align(align = "left") %>%
+       tab_footnote(
+                    footnote = 
+                      gt::md(paste0("A full list of Family Codes is available at: ",
+                    {"https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared%20Documents/CEDAR/CEDAR%20Data%20Dictionaries/Family_Code%20Values%20Table.xlsx?d=w545db4b21b99464ea49f8f2a26656d4a&csf=1&web=1&e=PT3WT6"}
+                    )),
+                    locations = cells_row_groups(groups = "FAMILY_CODE")
+       ) %>%
+       tab_footnote(
+                    footnote = 
+                      gt::md(paste0("A full list of Forecast CVX codes is available at: ",
+                    {"https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cvx"}
+                    )),
+                    locations = cells_row_groups(groups = "FORECAST_CVX_CODE")
+       ) %>%
+       gt_theme_espn()
+
+vforevar_tabl
+```
+
+```{r}
+vacforecode <- tibble(
+  Codes = c("Family Codes", "Forecast CVX Codes"),
+  Links = c("https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared%20Documents/CEDAR/CEDAR%20Data%20Dictionaries/Family_Code%20Values%20Table.xlsx?d=w545db4b21b99464ea49f8f2a26656d4a&csf=1&web=1&e=PT3WT6",
+           "https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cvx"))
+
+vacforecode_tab <- vacforecode %>%
+  mutate(Links = sprintf('<p><a href = "%s">%s</a>', Links, Links), 
+         Links = map(Links, gt::html)) %>%
+  gt() %>%
+  tab_header(title = "Full Code Lists for Vaccine Forecast Table") %>%
+  cols_align(align = "left") %>%
+  cols_width(Codes~px(200),
+             Links~px(800)) %>%
+  gt_theme_espn()
+
+vacforecode_tab
+```
+
+#### Statistics
+
+Insert statistics here
+
+```{r}
+#| label: vfore-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_VACCINATION_FORECAST")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_VACCINATION_FORECAST"))) %>% nrow2()
+       ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```
+:::
+
+### VACCINATION_MASTER
+
+::: panel-tabset
+#### Description
+
+The vaccination_master table contains details on vaccination events, including vaccination code, facility and ordering provider, lot number, and manufacturer details.
+
+#### Columns
+
+```{r}
+#| label: vcmstr-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_VACCINATION_MASTER")) %>% colnames()),
+       Type = tbl(synapse, in_schema("dbo", "H33_VACCINATION_MASTER")) %>% head(1) %>% as_tibble() %>% sapply(class)
+       ) %>%
+ gt() %>%
+ gt_theme_espn()
+```
+
+#### Category Description
+
+```{r}
+#| label: vcmstr-table
+vcvar_tabl <-
+tibble(Coding = c(#top 5 iis vaccination code 
+                  "3036","75","3035","2070","2041", 
+                  #full list in table cdc_to_asiis_vacc_code
+                  
+                  "300","150","229","197","171", #top 5 cdc vacc code 
+                  #link to full url: https://www2a.cdc.gov/vaccines/iis/iisstandards/?rpt=cpt
+                  
+                  #top 5 cpt
+                  "91312","90715","90686","90670","90750",  
+                  #vacc code link to full url:   https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cpt
+                  
+                  #top 15 manufacturer codes
+                  "PFR","PMC","MOD","SEQ","SKB", "MSD","IDB","MSP","SP","BN","MBL","JSN","DVX","WAL","MED", 
+                 # link to full url https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=mvx
+                
+                 "LD","RD","LVL","RVL","LLFA","RLFA", #coded terms for vaccination site
+                 #full vocabulary set:
+                 #https://phinvads.cdc.gov/vads/ViewValueSet.action?id=98257779-17B8-DF11-9BDD-0015173D1785
+                
+                 #adverse reaction codes
+                 "26","42","44","48","46","51","32"),  
+                 #data set in data dictionary - need to post to sharepoint
+                  
+            
+       Description = c(#iis vacc code descriptor
+                      "COVID-19, mRNA, LNP-S, bivalent booster, PF, 30 mcg/0.3 mL dose (CDC code 300)", 
+                      "Influenza, injectable, quadrivalent, preservative free (CDC code 150)",
+                      "COVID-19, mRNA, LNP-S, bivalent booster, PF, 50 mcg/0.5 mL or 25mcg/0.25 mL dose (CDC code 229)",
+                      "influenza, high-dose seasonal, quadrivalent, preservative free (CDC code 197)",
+                      "Influenza, injectable, Madin Darby Canine Kidney, preservative free, quadrivalent 
+                      (CDC code 171)", 
+                       
+                       #cdc vacc code descriptor
+                       "COVID-19, mRNA, LNP-S, bivalent booster, PF, 30 mcg/0.3 mL dose",
+                       "Influenza, injectable, quadrivalent, preservative free",
+                       "COVID-19, mRNA, LNP-S, bivalent booster, PF, 50 mcg/0.5 mL or 25mcg/0.25 mL dose", 
+                       "Influenza, high-dose, quadrivalent",
+                       "Influenza, injectable, MDCK, preservative free, quadrivalent", 
+       
+                       #cpt vacc code descriptor
+                       "Pfizer™ COVID-19 Vaccine - Bivalent Booster, Gray Cap",
+                       "Adacel™ Tdap Vaccine",
+                       "Fluarix™ Influenza Vaccine",
+                       "Prevnar 13™ Pneumococcal Vaccine",
+                       "Shingrix™ Zoster Vaccine", 
+                       
+                       #manufacturer code descriptor
+                       "Pfizer, Inc.",
+                       "Sanofi Pasteur",
+                       "Moderna US, Inc.",
+                       "Seqirus",
+                       "GlaxoSmithKline",
+                       "Merck and Co., Inc.",
+                       "ID Biomedical",
+                       "MSP Vaccine Company - (partnership Merck and Sanofi Pasteur)",
+                       "Assumed misscoded value for Sanofi Pasteur (PMC)",
+                       "Bavarian Nordic A/S",
+                       "Massachusetts Biologic Laboratories",
+                       "Janssen",
+                       "Dynavax, Inc.",
+                       "Wyeth",
+                       "MedImmune, Inc. (AstraZeneca)",
+       
+       
+                        #anatomical site descriptor
+                        "Left Deltoid",
+                        "Right Deltoid",
+                        "Left Vastus Lateralis",
+                        "Right Vastus Lateralis",
+                        "Left Lower Forearm",
+                        "Right Lower Forearm",
+                        
+                        #adverse reaction code descriptor
+                        "Other",
+                        "Vasovagal syncope (7 days)",
+                        "Life threatening adverse event",
+                        "An important medical event that based on appropriate medical judgement may jeopardize the
+                         individual and may require medical or surgical intervention",
+                        "Persistent or significant incapacity or substantial disruption of the ability to 
+                         conduct normal life functions",
+                        "Serious Adverse Event regardless of causality",
+                        "Any acute complications or sequelae (including death) of above events 
+                         (interval - not applicable)"),
+       
+      Variable = c(#vaccination code category
+                    "ASIIS_VACC_CODE","ASIIS_VACC_CODE","ASIIS_VACC_CODE","ASIIS_VACC_CODE","ASIIS_VACC_CODE",
+                    
+                    #cdc vacc category
+                    "CDC_VACC_CODE","CDC_VACC_CODE","CDC_VACC_CODE","CDC_VACC_CODE","CDC_VACC_CODE",
+                    
+                    #cpt category
+                    "CPT_VACC_CODE","CPT_VACC_CODE","CPT_VACC_CODE","CPT_VACC_CODE","CPT_VACC_CODE", 
+                    
+                    #manufacturer category
+                    "manufacturer","manufacturer","manufacturer","manufacturer","manufacturer","manufacturer",
+                    "manufacturer","manufacturer","manufacturer","manufacturer","manufacturer","manufacturer",
+                    "manufacturer","manufacturer","manufacturer",
+       
+                    #anatomical site category
+                    "anatomical_site","anatomical_site","anatomical_site","anatomical_site","anatomical_site",
+                    "anatomical_site","anatomical_site",
+                    
+                    #adverse reaction code category
+                    "adverse_reaction","adverse_reaction","adverse_reaction","adverse_reaction","adverse_reaction",
+                    "adverse_reaction"),
+       
+      Space = " ") %>%
+       gt(rowname_col = "Space", groupname_col = "Variable") %>%
+       tab_header(title = "Variable Coding") %>%
+       cols_width(Coding~px(200),
+                  Description~px(600),
+                  Space~px(150)) %>%
+       cols_align(align = "left") %>%
+       tab_footnote(
+                    footnote = 
+                      gt::md(paste0("A full list of CDC Vaccination Codes is available at: ",
+                    {"https://www2a.cdc.gov/vaccines/iis/iisstandards/?rpt=cpt"}
+                    )),
+                    locations = cells_row_groups(groups = "CDC_VACC_CODE")
+       ) %>%
+       tab_footnote(
+                    footnote = 
+                      gt::md(paste0("A full list of Vaccination CPT Codes is available at: ",
+                    {"https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cpt"}
+                    )),
+                    locations = cells_row_groups(groups = "CPT_VACC_CODE")
+       ) %>%
+       tab_footnote(
+                    footnote = 
+                      gt::md(paste0("A full list of Vaccine Manufacter Codes is available at: ",
+                    {"https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=mvx"}
+                    )),
+                    locations = cells_row_groups(groups = "manufacturer")
+       ) %>%
+       tab_footnote(
+                    footnote = 
+                      gt::md(paste0("A full vocabulary list of coded terms for vaccination sites is available at: ",
+                    {"https://phinvads.cdc.gov/vads/ViewValueSet.action?id=98257779-17B8-DF11-9BDD-0015173D1785"}
+                    )),
+                    locations = cells_row_groups(groups = "anatomical_site")
+       ) %>%
+       gt_theme_espn()
+
+vcvar_tabl
+```
+
+```{r}
+vaccmstrode <- tibble(
+  Codes = c("CDC Vaccination Codes", "Vaccination CPT Codes","Vaccine Manufacter Codes","Vaccination Sites"),
+  Links = c("https://www2a.cdc.gov/vaccines/iis/iisstandards/?rpt=cpt",
+           "https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cpt",
+           "https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=mvx",
+           "https://phinvads.cdc.gov/vads/ViewValueSet.action?id=98257779-17B8-DF11-9BDD-0015173D1785")
+)
+
+vacmstrcode_tab <- vaccmstrode %>%
+  mutate(Links = sprintf('<p><a href = "%s">%s</a>', Links, Links), 
+         Links = map(Links, gt::html)) %>%
+  gt() %>%
+  tab_header(title = "Full Code Lists for Vaccine Master Table") %>%
+  cols_align(align = "left") %>%
+  cols_width(Codes~px(200),
+             Links~px(800)) %>%
+  gt_theme_espn()
+
+vacmstrcode_tab
+```
+
+#### Statistics
+
+15.59% of records have a CDC_VACC_CODE value of "217" (COVID-19, mRNA, LNP-S, PF, 30 mcg/0.3 mL dose, tris-sucrose).
+
+20.26% of records list the primary manufacturer as Pfizer, Inc. 21.34% of records did not have a manufacturer value \[null\].
+
+86.67% of records have no CPT_VACC_CODE value reported \[null\]. The most frequently reported CPT value is 90715 at 1.66%.
+
+The most frequently occurring value for AIIS_VACC_CODE is "3015" (11.32%) followed by "2080" (10.86%) Note: The above statistics include cases with a vacc_date value between 1/1/22 and 11/1/22.
+
+```{r}
+#| label: vcmstr-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_VACCINATION_MASTER")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_VACCINATION_MASTER"))) %>% nrow2()
+       ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```
+:::
+
+### VACCINATION_RESERVE
+
+::: panel-tabset
+#### Description
+
+The vaccination_reserve table contains details on historical vaccination data, including registry information, vaccination dosage and data sources.
+
+#### Columns
+
+```{r}
+#| label: vcrsv-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_VACCINATION_RESERVE")) %>% colnames())) %>%
+ mutate(Type = tbl(synapse, in_schema("dbo", "H33_VACCINATION_RESERVE")) %>% head(1) %>% as_tibble() %>% 
+                   sapply(class)) %>%
+ gt() %>%
+ gt_theme_espn()
+```
+
+#### Category Description
+
+```{r}
+#| label: vcrsv-table
+vrsv_tabl <-
+tibble(Coding = c(#top 5 iis vaccination code
+                  "3036","75","3035","2070","2041",  
+                  #full list in table cdc_to_asiis_vacc_code
+                  
+                  #top 5 cdc vacc code
+                  "300","150","229","197","171",
+                  #link to full url: https://www2a.cdc.gov/vaccines/iis/iisstandards/?rpt=cpt
+                  
+                  #top 5 cpt vacc code
+                  "91312","90715","90686","90670","90750",  
+                  #link to full url: https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cpt
+                  
+                  #top 15 manufacturer codes
+                  "PFR","PMC","MOD","SEQ","SKB", "MSD","IDB","MSP","SP","BN","MBL","JSN","DVX","WAL","MED", 
+                 # link to full url https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=mvx
+                
+                 #coded terms for anatomical site 6
+                 "LD","RD","LVL","RVL","LLFA","RLFA",  
+                 #full vocabulary set:
+                 #https://phinvads.cdc.gov/vads/ViewValueSet.action?id=98257779-17B8-DF11-9BDD-0015173D1785
+
+                 #adverse reaction codes 7
+                  "26","42","44","48","46","51","32",  
+                  #data set in data dictionary - need to post to sharepoint (link: https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared%20Documents/CEDAR/CEDAR%20Data%20Dictionaries/Adverse_Reaction%20Code%20Values%20Table.xlsx?d=w7ac90aeede44401db78dddf8cbdee908&csf=1&web=1&e=7PJKg9)
+                  
+                 #data reporting_method IIS internal codes 
+                  "DTT","REALTIME_HL7","DIRECT_DATA_ENTRY","VITAL_STATISTICS","VITAL_STATS","BATCH_HL7",
+                  "PAPER_DATA_ENTRY","REMOTE_CLINIC", 
+                  
+                  #ndc_number codes
+                  "59267-1000-02","80777-0273-99","58160-0823-11","80777-0273-10","00005-1971-02"), 
+                   #link: https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=ndc
+            
+       Description = c(#iis vacc code descriptor 5
+                      "COVID-19, mRNA, LNP-S, bivalent booster, PF, 30 mcg/0.3 mL dose (CDC code 300)",
+                      "Influenza, injectable, quadrivalent, preservative free (CDC code 150)",
+                      "COVID-19, mRNA, LNP-S, bivalent booster, PF, 50 mcg/0.5 mL or 25mcg/0.25 mL dose (CDC code 229)",
+                      "influenza, high-dose seasonal, quadrivalent, preservative free (CDC code 197)",
+                      "Influenza, injectable, Madin Darby Canine Kidney, preservative free, quadrivalent (CDC code 
+                       171)", 
+                       
+                       #cdc vacc code descriptor 5
+                       "COVID-19, mRNA, LNP-S, bivalent booster, PF, 30 mcg/0.3 mL dose",
+                       "Influenza, injectable, quadrivalent, preservative free",
+                       "COVID-19, mRNA, LNP-S, bivalent booster, PF, 50 mcg/0.5 mL or 25mcg/0.25 mL dose", 
+                       "Influenza, high-dose, quadrivalent",
+                       "Influenza, injectable, MDCK, preservative free, quadrivalent", 
+       
+                       #cpt vacc code descriptor 5
+                       "Pfizer™ COVID-19 Vaccine - Bivalent Booster, Gray Cap",
+                       "Adacel™ Tdap Vaccine",
+                       "Fluarix™ Influenza Vaccine",
+                       "Prevnar 13™ Pneumococcal Vaccine",
+                       "Shingrix™ Zoster Vaccine", 
+                       
+                       #manufacturer code descriptor 15
+                       "Pfizer, Inc.",
+                       "Sanofi Pasteur",
+                       "Moderna US, Inc.",
+                       "Seqirus",
+                       "GlaxoSmithKline",
+                       "Merck and Co., Inc.",
+                       "ID Biomedical",
+                       "MSP Vaccine Company - (partnership Merck and Sanofi Pasteur)",
+                       "Assumed misscoded value for Sanofi Pasteur (PMC)",
+                       "Bavarian Nordic A/S",
+                       "Massachusetts Biologic Laboratories",
+                       "Janssen",
+                       "Dynavax, Inc.",
+                       "Wyeth",
+                       "MedImmune, Inc. (AstraZeneca)",
+       
+                        #anatomical site descriptor 6
+                        "Left Deltoid",
+                        "Right Deltoid",
+                        "Left Vastus Lateralis",
+                        "Right Vastus Lateralis",
+                        "Left Lower Forearm",
+                        "Right Lower Forearm",
+                        
+                        #adverse reaction code descriptor 6
+                        "Other",
+                        "Vasovagal syncope (7 days)",
+                        "Life threatening adverse event",
+                        "An important medical event that based on appropriate medical judgement may jeopardize the
+                         individual and may require medical or surgical intervention",
+                        "Persistent or significant incapacity or substantial disruption of the ability to 
+                         conduct normal life functions",
+                        "Serious Adverse Event regardless of causality",
+                        "Any acute complications or sequelae (including death) of above events 
+                         (interval - not applicable)",
+                        
+                        #reporting_method code descriptor 8
+                        "DTT Import: Entered into the IIS via a manual data upload",
+                        "HL7: Entered into the IIS via an HL7 message from a provider’s EHR",
+                        "Direct data entry: Entered into the IIS manually",
+                        "Entered into the IIS via vital statistics record",
+                        "Entered into the IIS via vital statistics record",
+                        "Batch HL7 import",
+                        "Direct data entry from paper record",
+                        "Direct data entry from Remote clinic",
+                        
+                        #ndc_number descriptor 5
+                        "Pfizer COVID-19, mRNA, LNP-S, PF, 30 mcg/0.3 mL dose",
+                        "Moderna COVID-19, mRNA, LNP-S, PF, 100 mcg/0.5mL dose or 50 mcg/0.25mL dose",
+                        "Shingrix zoster recombinant",
+                        "Moderna COVID-19, mRNA, LNP-S, PF, 100 mcg/0.5mL dose or 50 mcg/0.25mL dose",
+                        "Prevnar 13 Pneumococcal conjugate PCV 13"),
+                        
+                        
+       
+       Variable = c(#vaccination code category 5
+                    "ASIIS_VACC_CODE","ASIIS_VACC_CODE","ASIIS_VACC_CODE","ASIIS_VACC_CODE","ASIIS_VACC_CODE",
+                    
+                    #cdc vacc category 5
+                    "CDC_VACC_CODE","CDC_VACC_CODE","CDC_VACC_CODE","CDC_VACC_CODE","CDC_VACC_CODE",
+                    
+                    #cpt category 5
+                    "CPT_VACC_CODE","CPT_VACC_CODE","CPT_VACC_CODE","CPT_VACC_CODE","CPT_VACC_CODE", 
+                    
+                    #manufacturer category 15
+                    "manufacturer","manufacturer","manufacturer","manufacturer","manufacturer","manufacturer",
+                    "manufacturer","manufacturer","manufacturer","manufacturer","manufacturer","manufacturer",
+                    "manufacturer","manufacturer","manufacturer",
+       
+                    #anatomical site category 6
+                    "anatomical_site","anatomical_site","anatomical_site","anatomical_site","anatomical_site",
+                    "anatomical_site",
+                    
+                    #adverse reaction code category 6
+                    "adverse_reaction","adverse_reaction","adverse_reaction","adverse_reaction","adverse_reaction",
+                    "adverse_reaction","adverse_reaction",
+       
+                    #reporting_method code category 8
+                    "reporting_method","reporting_method","reporting_method","reporting_method","reporting_method",
+                    "reporting_method","reporting_method","reporting_method",
+                    
+                    #ndc_number category 5
+                    "ndc_number","ndc_number","ndc_number","ndc_number","ndc_number"),
+                    
+                    
+      Space = " ") %>%
+       gt(rowname_col = "Space", groupname_col = "Variable") %>%
+       tab_header(title = "Variable Coding"
+       ) %>%
+       cols_width(Coding~px(200),
+                  Description~px(600),
+                  Space~px(150)) %>%
+       cols_align(align = "left") %>%
+       tab_footnote(
+                    footnote = 
+                      gt::md(paste0("A full list of CDC Vaccination Codes is available at: ",
+                    {"https://www2a.cdc.gov/vaccines/iis/iisstandards/?rpt=cpt"}
+                    )),
+                    locations = cells_row_groups(groups = "CDC_VACC_CODE")
+       ) %>%
+       tab_footnote(
+                    footnote = 
+                      gt::md(paste0("A full list of Vaccination CPT Codes is available at: ",
+                    {"https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cpt"}
+                    )),
+                    locations = cells_row_groups(groups = "CPT_VACC_CODE")
+       ) %>%
+       tab_footnote(
+                    footnote = 
+                      gt::md(paste0("A full list of Vaccine Manufacter Codes is available at: ",
+                    {"https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=mvx"}
+                    )),
+                    locations = cells_row_groups(groups = "manufacturer")
+       ) %>%
+       tab_footnote(
+                    footnote = 
+                      gt::md(paste0("A full vocabulary list of coded terms for vaccination sites is available at: ",
+                    {"https://phinvads.cdc.gov/vads/ViewValueSet.action?id=98257779-17B8-DF11-9BDD-0015173D1785"}
+                    )),
+                    locations = cells_row_groups(groups = "anatomical_site")
+       ) %>%
+  
+       tab_footnote(
+                    footnote = 
+                      gt::md(paste0("A full list of Reaction Site Codes is available at: ",
+                    {"https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared%20Documents/CEDAR/CEDAR%20Data%20Dictionaries/Adverse_Reaction%20Code%20Values%20Table.xlsx?d=w7ac90aeede44401db78dddf8cbdee908&csf=1&web=1&e=7PJKg9"}
+                    )),
+                    locations = cells_row_groups(groups = "adverse_reaction")
+       ) %>%
+       tab_footnote(
+                    footnote = 
+                      gt::md(paste0("A full list of NDC Number Codes is available at: ",
+                    {"https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=ndc"}
+                    )),
+                    locations = cells_row_groups(groups = "ndc_number")
+       ) %>%
+       gt_theme_espn()
+
+vrsv_tabl
+```
+
+```{r}
+vaccrsvcode <- tibble(
+  Codes = c("CDC Vaccination Codes", "Vaccination CPT Codes","Vaccine Manufacter Codes","Vaccination Sites",
+            "Reaction Site Codes","NDC Number Codes"),
+  Links = c("https://www2a.cdc.gov/vaccines/iis/iisstandards/?rpt=cpt",
+           "https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cpt",
+           "https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=mvx",
+           "https://phinvads.cdc.gov/vads/ViewValueSet.action?id=98257779-17B8-DF11-9BDD-0015173D1785",
+           "https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared%20Documents/CEDAR/CEDAR%20Data%20Dictionaries/Adverse_Reaction%20Code%20Values%20Table.xlsx?d=w7ac90aeede44401db78dddf8cbdee908&csf=1&web=1&e=7PJKg9",
+           "https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=ndc")
+)
+
+vaccrsvcode_tab <- vaccrsvcode %>%
+  mutate(Links = sprintf('<p><a href = "%s">%s</a>', Links, Links), 
+         Links = map(Links, gt::html)) %>%
+  gt() %>%
+  tab_header(title = "Full Code Lists for Vaccine Reserve Table") %>%
+  cols_align(align = "left") %>%
+  cols_width(Codes~px(200),
+             Links~px(800)) %>%
+  gt_theme_espn()
+
+vaccrsvcode_tab
+```
+
+#### Statistics
+
+Insert statistics here
+
+```{r}
+#| label: vcrsv-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_VACCINATION_RESERVE")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_VACCINATION_RESERVE"))) %>% nrow2()
+       ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```
+:::
+
+### VACCINE_FAMILY
+
+### VACCINE_FAMILY_CODE
+
+### VACCINE_FUNDING_SOURCE
+
+::: panel-tabset
+#### Description
+
+The vaccine_funding_source table contains descriptions of funding_source_id coded values, as well as the vtracks_code and quick_indicator values.
+
+#### Columns
+
+```{r}
+#| label: vcfund-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_VACCINE_FUNDING_SOURCE")) %>% colnames())) %>%
+ mutate(Type = tbl(synapse, in_schema("dbo", "H33_VACCINE_FUNDING_SOURCE")) %>% head(1) %>% as_tibble() %>% 
+                   sapply(class)) %>%
+ gt() %>%
+ gt_theme_espn()
+```
+
+#### Category Description
+
+```{r}
+#| label: vcfund-table
+vcfund_tabl <-
+tibble(Coding = c(#funding source IDs
+                  "30","60","20","50","40","100","70","10", 
+                  
+                  #VTracks Codes
+                  "NA","317","PRVT","STATE","VFC","PAN","SPLIT","PUB"),
+		  
+       Description = c(#funding source ID descriptor
+			                 "Not applicable","PHSA - Section 317","Privately Supplied", "State Supplied", 
+			                 "Vaccine for Children", "Pandemic","Split","Publicly Supplied",
+
+                       #vtracks code descriptor - same as above
+                     "Not applicable","PHSA - Section 317","Privately Supplied", "State Supplied", 
+                     "Vaccine for Children", "Pandemic","Split","Publicly Supplied"),
+
+       
+       Variable = c(#funding source ID code
+                    "FUNDING_SOURCE_ID","FUNDING_SOURCE_ID","FUNDING_SOURCE_ID","FUNDING_SOURCE_ID",
+                    "FUNDING_SOURCE_ID","FUNDING_SOURCE_ID","FUNDING_SOURCE_ID","FUNDING_SOURCE_ID",
+                    
+                    #vtracks code
+		                "vtrcks_code","vtrcks_code","vtrcks_code","vtrcks_code","vtrcks_code","vtrcks_code",
+		                "vtrcks_code","vtrcks_code"),
+                    
+      Space = " ") %>%
+  
+       gt(rowname_col = "Space", groupname_col = "Variable") %>%
+       tab_header(title = "Variable Coding"
+       ) %>%
+       cols_width(Coding~px(200),
+                  Description~px(600),
+                  Space~px(150)) %>%
+       cols_align(align = "left") %>%
+       gt_theme_espn()
+
+vcfund_tabl
+```
+
+#### Statistics
+
+Insert statistics here
+
+```{r}
+#| label: vcfund-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_VACCINE_FUNDING_SOURCE")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_VACCINE_FUNDING_SOURCE"))) %>% nrow2()
+       ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```
+:::
+
+### VACCINE_PRODUCT
+
+### VACCINE_PRODUCT_MAPPING
+
+### VACMAN_ASIIS_CODE
+
+### VALID_VACCINATION
+
+### WEB_VACCINE_FAMILY_CODE

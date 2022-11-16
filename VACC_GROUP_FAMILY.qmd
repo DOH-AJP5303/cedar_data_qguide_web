@@ -1,0 +1,132 @@
+---
+execute:
+    echo: false
+    warning: false
+---
+
+# VACC_GROUP_FAMILY {.unnumbered}
+
+```{r,eval=TRUE,echo=FALSE}
+#| label: source-filefolder
+dr <- "C:/Users/ajp5303/OneDrive - Washington State Executive Branch Agencies/source_scripts"
+```
+
+```{r,eval=TRUE,echo=FALSE}
+#| label: source-files
+source(paste0(dr,"/dbconnection.R"))
+source(paste0(dr,"/dqguide_functions.R"))
+```
+
+## Description
+
+The vacc_group_family table contains the descriptions of each respective group and family vaccine code. There are 33 codes total.
+
+## Columns
+
+```{r}
+#| label: vcgrp-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_VACC_GROUP_FAMILY")) %>% colnames())) %>%
+ mutate(Type = tbl(synapse, in_schema("dbo", "H33_VACC_GROUP_FAMILY")) %>% head(1) %>% as_tibble() %>% 
+                   sapply(class)) %>%
+ gt() %>%
+ gt_theme_espn()
+```
+
+## Category Description
+
+```{r}
+#| label: vcgrp-table
+vcgrp_tabl <-
+tibble(Coding = c(#group_code codes
+                  "10","11","25","26","30","40","50","60","70","80","110","120","130","170","180","190",
+                  "220","230","240","250","260","271","280","290","300","310","320","330","340","350","360",
+                  "370","380",
+
+                  #family codes
+                  "1","24","25","26","3","5","2","9","4","6","20","10","11","12","13","14","15","16","17",
+                  "18","7","21","22","23","28","29","30","31","32","33","34","35","36"),
+       
+       Description = c(#descriptor for both columns
+                       "DTaP","Tdap","MENINGOCOCCAL B, RECOMBINANT","MENINGOCOCCAL B, OMV","Polio","MMR",
+                       "Hib","Hep A","Hep B","Varicella","Rotavirus","Influenza","Pneumo (PCV7)",
+                       "Hep B - 2 Dose","Anthrax","Smallpox Vaccination","Measles","Mumps","Rubella",
+                       "Pneumo (PPV23)","Meningococcal","HPV","Herpes Zoster","NOVEL INFLUENZA H1N1-09",
+                       "Cholera","Japanese Encephalitis","Rabies","Typhoid","Yellow Fever",
+                       "Coronavirus (SARS-CoV-2)(COVID-19)","Ebola","Dengue","Orthopoxvirus",
+                       "DTaP","Tdap","MENINGOCOCCAL B, RECOMBINANT","MENINGOCOCCAL B, OMV","Polio",
+                       "MMR","Hib","Hep A","Hep B","Varicella","Rotavirus","Influenza","Pneumo (PCV7)",
+                       "Hep B - 2 Dose","Anthrax","Smallpox Vaccination","Measles","Mumps","Rubella",
+                       "Pneumo (PPV23)","Meningococcal","HPV","Herpes Zoster","NOVEL INFLUENZA H1N1-09","Cholera",
+                       "Japanese Encephalitis","Rabies","Typhoid","Yellow Fever","Coronavirus (SARS-CoV-2)(COVID-19)",
+                       "Ebola","Dengue","Orthopoxvirus"),
+#link to sharepoint - https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared%20Documents/CEDAR/CEDAR%20Data%20Dictionaries/Vaccine%20Group%20Code%20Values%20Table.xlsx?d=wa5d24116122446c89b871b14addcdf63&csf=1&web=1&e=pE54y9
+
+                      
+       Variable = c(#group_code category
+                    "GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE",
+                    "GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE",
+                    "GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE",
+                    "GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE",
+                    "GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE",
+                    "GROUP_CODE","GROUP_CODE","GROUP_CODE",
+                    
+                    #family_code category
+                    "FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE",
+                    "FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE",
+                    "FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE",
+                    "FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE",
+                    "FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE",
+                    "FAMILY_CODE","FAMILY_CODE","FAMILY_CODE"),
+                    
+      Space = " ") %>%
+      gt(rowname_col = "Space", groupname_col = "Variable") %>%
+      tab_header(title = "Variable Coding"
+      ) %>%
+      cols_width(Coding~px(200),
+                  Description~px(400),
+                  Space~px(150)) %>%
+       cols_align(align = "left") %>%
+       tab_footnote(
+                    footnote = 
+                      gt::md(paste0("A full list of Family and Group codes is available at: ",
+                    {"https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared%20Documents/CEDAR/CEDAR%20Data%20Dictionaries/Vaccine%20Group%20Code%20Values%20Table.xlsx?d=wa5d24116122446c89b871b14addcdf63&csf=1&web=1&e=pE54y9"}
+                    )),
+                    locations = cells_row_groups(groups = c("FAMILY_CODE","GROUP_CODE"))
+       ) %>%
+       gt_theme_espn()
+
+vcgrp_tabl
+```
+
+```{r}
+vacgrpcode <- tibble(
+  Codes = c("Family and Group Codes"),
+  Links = c("https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared%20Documents/CEDAR/CEDAR%20Data%20Dictionaries/Vaccine%20Group%20Code%20Values%20Table.xlsx?d=wa5d24116122446c89b871b14addcdf63&csf=1&web=1&e=pE54y9"))
+
+vacgrpcode_tab <- vacgrpcode %>%
+  mutate(Links = sprintf('<p><a href = "%s">%s</a>', Links, Links), 
+         Links = map(Links, gt::html)) %>%
+  gt() %>%
+  tab_header(title = "Full Code Lists for Vaccine Group Family Table") %>%
+  cols_align(align = "left") %>%
+  cols_width(Codes~px(200),
+             Links~px(800)) %>%
+  gt_theme_espn()
+
+vacgrpcode_tab
+```
+
+## Statistics
+
+Insert statistics here
+
+```{r}
+#| label: vcgrp-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_VACC_GROUP_FAMILY")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_VACC_GROUP_FAMILY"))) %>% nrow2()
+       ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```

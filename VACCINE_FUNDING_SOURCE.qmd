@@ -1,0 +1,90 @@
+---
+execute:
+    echo: false
+    warning: false
+---
+
+# VACCINE_FUNDING_SOURCE {.unnumbered}
+
+```{r,eval=TRUE,echo=FALSE}
+#| label: source-filefolder
+dr <- "C:/Users/ajp5303/OneDrive - Washington State Executive Branch Agencies/source_scripts"
+```
+
+```{r,eval=TRUE,echo=FALSE}
+#| label: source-files
+source(paste0(dr,"/dbconnection.R"))
+source(paste0(dr,"/dqguide_functions.R"))
+```
+
+## Description
+
+The vaccine_funding_source table contains descriptions of funding_source_id coded values, as well as the vtracks_code and quick_indicator values.
+
+## Columns
+
+```{r}
+#| label: vcfund-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_VACCINE_FUNDING_SOURCE")) %>% colnames())) %>%
+ mutate(Type = tbl(synapse, in_schema("dbo", "H33_VACCINE_FUNDING_SOURCE")) %>% head(1) %>% as_tibble() %>% 
+                   sapply(class)) %>%
+ gt() %>%
+ gt_theme_espn()
+```
+
+## Category Description
+
+```{r}
+#| label: vcfund-table
+vcfund_tabl <-
+tibble(Coding = c(#funding source IDs
+                  "30","60","20","50","40","100","70","10", 
+                  
+                  #VTracks Codes
+                  "NA","317","PRVT","STATE","VFC","PAN","SPLIT","PUB"),
+		  
+       Description = c(#funding source ID descriptor
+			                 "Not applicable","PHSA - Section 317","Privately Supplied", "State Supplied", 
+			                 "Vaccine for Children", "Pandemic","Split","Publicly Supplied",
+
+                       #vtracks code descriptor - same as above
+                     "Not applicable","PHSA - Section 317","Privately Supplied", "State Supplied", 
+                     "Vaccine for Children", "Pandemic","Split","Publicly Supplied"),
+
+       
+       Variable = c(#funding source ID code
+                    "FUNDING_SOURCE_ID","FUNDING_SOURCE_ID","FUNDING_SOURCE_ID","FUNDING_SOURCE_ID",
+                    "FUNDING_SOURCE_ID","FUNDING_SOURCE_ID","FUNDING_SOURCE_ID","FUNDING_SOURCE_ID",
+                    
+                    #vtracks code
+		                "vtrcks_code","vtrcks_code","vtrcks_code","vtrcks_code","vtrcks_code","vtrcks_code",
+		                "vtrcks_code","vtrcks_code"),
+                    
+      Space = " ") %>%
+  
+       gt(rowname_col = "Space", groupname_col = "Variable") %>%
+       tab_header(title = "Variable Coding"
+       ) %>%
+       cols_width(Coding~px(200),
+                  Description~px(600),
+                  Space~px(150)) %>%
+       cols_align(align = "left") %>%
+       gt_theme_espn()
+
+vcfund_tabl
+```
+
+## Statistics
+
+Insert statistics here
+
+```{r}
+#| label: vcfund-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_VACCINE_FUNDING_SOURCE")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_VACCINE_FUNDING_SOURCE"))) %>% nrow2()
+       ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```

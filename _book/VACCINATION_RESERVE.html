@@ -1,0 +1,2664 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.189">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>CEDAR Data Quality Guide - VACCINATION_RESERVE</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./VACCINE_FAMILY.html" rel="next">
+<link href="./VACCINATION_MASTER.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles2.scss">
+</head>
+
+<body class="nav-sidebar docked">
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">VACCINATION_RESERVE</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">CEDAR Data Quality Guide</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Introduction</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tablelist.html" class="sidebar-item-text sidebar-link">Table List</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Tables</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ADDRESS_RESERVE.html" class="sidebar-item-text sidebar-link">ADDRESS_RESERVE</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ADVERSE_REACTION_RESERVE.html" class="sidebar-item-text sidebar-link">ADVERSE_REACTION_RESERVE</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ASIIS_VACC_CODE.html" class="sidebar-item-text sidebar-link">ASIIS_VACC_CODE</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./CDC_TO_ASIIS_VACC_CODE.html" class="sidebar-item-text sidebar-link">CDC_TO_ASIIS_VACC_CODE</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./CONTRAINDICATION_DESC.html" class="sidebar-item-text sidebar-link">CONTRAINDICATION_DESC</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./COUNTRY_CODE.html" class="sidebar-item-text sidebar-link">COUNTRY_CODE</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./COUNTY_CODE.html" class="sidebar-item-text sidebar-link">COUNTY_CODE</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ELIGIBILITY_CATEGORIES.html" class="sidebar-item-text sidebar-link">ELIGIBILITY_CATEGORIES</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./EXEMPTION_FORM_HEADER.html" class="sidebar-item-text sidebar-link">EXEMPTION_FORM_HEADER</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./EXEMPTION_FORM_VACCS.html" class="sidebar-item-text sidebar-link">EXEMPTION_FORM_VACCS</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./FACILITY_MASTER.html" class="sidebar-item-text sidebar-link">FACILITY_MASTER</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./FACILITY_TYPE.html" class="sidebar-item-text sidebar-link">FACILITY_TYPE</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./GEOCODING_ZIPCODES.html" class="sidebar-item-text sidebar-link">GEOCODING_ZIPCODES</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./GRADE_LEVELS.html" class="sidebar-item-text sidebar-link">GRADE_LEVELS</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./INVALID_VACCINATION.html" class="sidebar-item-text sidebar-link">INVALID_VACCINATION</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./IRMS.html" class="sidebar-item-text sidebar-link">IRMS</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./IRMS_FACILITY_ORDER_SET.html" class="sidebar-item-text sidebar-link">IRMS_FACILITY_ORDER_SET</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./LOOKUP.html" class="sidebar-item-text sidebar-link">LOOKUP</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./LOT_LOG_ACTION_CODE.html" class="sidebar-item-text sidebar-link">LOT_LOG_ACTION_CODE</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./LOT_NUMBER.html" class="sidebar-item-text sidebar-link">LOT_NUMBER</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./LOT_NUMBER_AUDIT.html" class="sidebar-item-text sidebar-link">LOT_NUMBER_AUDIT</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ORDER_ITEMS.html" class="sidebar-item-text sidebar-link">ORDER_ITEMS</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ORDER_SET.html" class="sidebar-item-text sidebar-link">ORDER_SET</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ORDER_SET_ASSOCIATION.html" class="sidebar-item-text sidebar-link">ORDER_SET_ASSOCIATION</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ORDERS.html" class="sidebar-item-text sidebar-link">ORDERS</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./PATIENT_CONTRA_RESERVE.html" class="sidebar-item-text sidebar-link">PATIENT_CONTRA_RESERVE</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./PATIENT_CONTRAINDICATION.html" class="sidebar-item-text sidebar-link">PATIENT_CONTRAINDICATION</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./PATIENT_MASTER.html" class="sidebar-item-text sidebar-link">PATIENT_MASTER</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./PATIENT_RACE_MASTER.html" class="sidebar-item-text sidebar-link">PATIENT_RACE_MASTER</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./PATIENT_RESERVE.html" class="sidebar-item-text sidebar-link">PATIENT_RESERVE</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./PATIENT_SCHOOL_NURSE.html" class="sidebar-item-text sidebar-link">PATIENT_SCHOOL_NURSE</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./PATIENT_VACCINE_DEFERRAL.html" class="sidebar-item-text sidebar-link">PATIENT_VACCINE_DEFERRAL</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./PHONE_RESERVE.html" class="sidebar-item-text sidebar-link">PHONE_RESERVE</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./PHYSICIAN_MASTER.html" class="sidebar-item-text sidebar-link">PHYSICIAN_MASTER</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./SCHOOL.html" class="sidebar-item-text sidebar-link">SCHOOL</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./SCHOOL_DISTRICT.html" class="sidebar-item-text sidebar-link">SCHOOL_DISTRICT</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./SCHOOL_NURSE_IMMUNITY.html" class="sidebar-item-text sidebar-link">SCHOOL_NURSE_IMMUNITY</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./SEROLOGY_INVALID_DATA.html" class="sidebar-item-text sidebar-link">SEROLOGY_INVALID_DATA</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./SEROLOGY_TEST_RESULT.html" class="sidebar-item-text sidebar-link">SEROLOGY_TEST_RESULT</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./SEROLOGY_TYPE_CODE.html" class="sidebar-item-text sidebar-link">SEROLOGY_TYPE_CODE</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./TRANSFER.html" class="sidebar-item-text sidebar-link">TRANSFER</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./TRANSFER_ITEMS.html" class="sidebar-item-text sidebar-link">TRANSFER_ITEMS</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./VACC_GROUP_FAMILY.html" class="sidebar-item-text sidebar-link">VACC_GROUP_FAMILY</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./VACCINATION_FORECAST.html" class="sidebar-item-text sidebar-link">VACCINATION_FORECAST</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./VACCINATION_MASTER.html" class="sidebar-item-text sidebar-link">VACCINATION_MASTER</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./VACCINATION_RESERVE.html" class="sidebar-item-text sidebar-link active">VACCINATION_RESERVE</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./VACCINE_FAMILY.html" class="sidebar-item-text sidebar-link">VACCINE_FAMILY</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./VACCINE_FAMILY_CODE.html" class="sidebar-item-text sidebar-link">VACCINE_FAMILY_CODE</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./VACCINE_FUNDING_SOURCE.html" class="sidebar-item-text sidebar-link">VACCINE_FUNDING_SOURCE</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./VACCINE_PRODUCT.html" class="sidebar-item-text sidebar-link">VACCINE_PRODUCT</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./VACCINE_PRODUCT_MAPPING.html" class="sidebar-item-text sidebar-link">VACCINE_PRODUCT_MAPPING</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./VACMAN_ASIIS_CODE.html" class="sidebar-item-text sidebar-link">VACMAN_ASIIS_CODE</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./VALID_VACCINATION.html" class="sidebar-item-text sidebar-link">VALID_VACCINATION</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./WEB_VACCINE_FAMILY_CODE.html" class="sidebar-item-text sidebar-link">WEB_VACCINE_FAMILY_CODE</a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#description" id="toc-description" class="nav-link active" data-scroll-target="#description">Description</a></li>
+  <li><a href="#columns" id="toc-columns" class="nav-link" data-scroll-target="#columns">Columns</a></li>
+  <li><a href="#category-description" id="toc-category-description" class="nav-link" data-scroll-target="#category-description">Category Description</a></li>
+  <li><a href="#statistics" id="toc-statistics" class="nav-link" data-scroll-target="#statistics">Statistics</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">VACCINATION_RESERVE</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<section id="description" class="level2">
+<h2 class="anchored" data-anchor-id="description">Description</h2>
+<p>The vaccination_reserve table contains details on historical vaccination data, including registry information, vaccination dosage and data sources.</p>
+</section>
+<section id="columns" class="level2">
+<h2 class="anchored" data-anchor-id="columns">Columns</h2>
+<div class="cell">
+<div class="cell-output-display">
+
+<div id="aevrnaodtq" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+html {
+  font-family: Lato, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+:where(#aevrnaodtq) .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 700px;
+  border-top-style: solid;
+  border-top-width: 3px;
+  border-top-color: rgba(255, 255, 255, 0);
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+:where(#aevrnaodtq) .gt_heading {
+  background-color: #FFFFFF;
+  text-align: left;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#aevrnaodtq) .gt_title {
+  color: #333333;
+  font-size: 24px;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+:where(#aevrnaodtq) .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+:where(#aevrnaodtq) .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#aevrnaodtq) .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#aevrnaodtq) .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+:where(#aevrnaodtq) .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+:where(#aevrnaodtq) .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+:where(#aevrnaodtq) .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+:where(#aevrnaodtq) .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+:where(#aevrnaodtq) .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+:where(#aevrnaodtq) .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+:where(#aevrnaodtq) .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+:where(#aevrnaodtq) .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+:where(#aevrnaodtq) .gt_row {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #F6F7F7;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+:where(#aevrnaodtq) .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#aevrnaodtq) .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+:where(#aevrnaodtq) .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+:where(#aevrnaodtq) .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#aevrnaodtq) .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+:where(#aevrnaodtq) .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+:where(#aevrnaodtq) .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#aevrnaodtq) .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#aevrnaodtq) .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+:where(#aevrnaodtq) .gt_striped {
+  background-color: #FAFAFA;
+}
+
+:where(#aevrnaodtq) .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#aevrnaodtq) .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#aevrnaodtq) .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#aevrnaodtq) .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#aevrnaodtq) .gt_sourcenote {
+  font-size: 12px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#aevrnaodtq) .gt_left {
+  text-align: left;
+}
+
+:where(#aevrnaodtq) .gt_center {
+  text-align: center;
+}
+
+:where(#aevrnaodtq) .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+:where(#aevrnaodtq) .gt_font_normal {
+  font-weight: normal;
+}
+
+:where(#aevrnaodtq) .gt_font_bold {
+  font-weight: bold;
+}
+
+:where(#aevrnaodtq) .gt_font_italic {
+  font-style: italic;
+}
+
+:where(#aevrnaodtq) .gt_super {
+  font-size: 65%;
+}
+
+:where(#aevrnaodtq) .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+:where(#aevrnaodtq) .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+:where(#aevrnaodtq) .gt_indent_1 {
+  text-indent: 5px;
+}
+
+:where(#aevrnaodtq) .gt_indent_2 {
+  text-indent: 10px;
+}
+
+:where(#aevrnaodtq) .gt_indent_3 {
+  text-indent: 15px;
+}
+
+:where(#aevrnaodtq) .gt_indent_4 {
+  text-indent: 20px;
+}
+
+:where(#aevrnaodtq) .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">Columns</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col">Type</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_left">IRMS_SYS_ID</td>
+<td class="gt_row gt_center">numeric</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">IRMS_PAT_ID</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">ASIIS_PAT_ID_PTR</td>
+<td class="gt_row gt_center">numeric</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">ASIIS_VACC_CODE</td>
+<td class="gt_row gt_center gt_striped">numeric</td></tr>
+    <tr><td class="gt_row gt_left">CDC_VACC_CODE</td>
+<td class="gt_row gt_center">numeric</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">CPT_VACC_CODE</td>
+<td class="gt_row gt_center gt_striped">numeric</td></tr>
+    <tr><td class="gt_row gt_left">VACC_DATE</td>
+<td class="gt_row gt_center">POSIXct, POSIXt</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">HISTORICAL</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">LOT_NUM</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">MANUFACTURER</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">MANU_CODE</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">VACCINATOR</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">VFC_ELIGIBLE</td>
+<td class="gt_row gt_center">numeric</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">ANATOMICAL_SITE</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">ADVERSE_REACTION_CODE</td>
+<td class="gt_row gt_center">numeric</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">IRMS_FAC_ID</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">IRMS_PHY_ID</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">DISTRICT_NUMBER</td>
+<td class="gt_row gt_center gt_striped">numeric</td></tr>
+    <tr><td class="gt_row gt_left">LAST_USER_TO_UPDATE</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">VIS_PUBLICATION</td>
+<td class="gt_row gt_center gt_striped">POSIXct, POSIXt</td></tr>
+    <tr><td class="gt_row gt_left">VIS_PUBLICATION2</td>
+<td class="gt_row gt_center">POSIXct, POSIXt</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">VIS_PUBLICATION3</td>
+<td class="gt_row gt_center gt_striped">POSIXct, POSIXt</td></tr>
+    <tr><td class="gt_row gt_left">VIS_PUBLICATION4</td>
+<td class="gt_row gt_center">POSIXct, POSIXt</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">VIS_FORM_GIVEN</td>
+<td class="gt_row gt_center gt_striped">POSIXct, POSIXt</td></tr>
+    <tr><td class="gt_row gt_left">TB_INDURATION</td>
+<td class="gt_row gt_center">numeric</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">INSERT_STAMP</td>
+<td class="gt_row gt_center gt_striped">POSIXct, POSIXt</td></tr>
+    <tr><td class="gt_row gt_left">UPDATE_STAMP</td>
+<td class="gt_row gt_center">POSIXct, POSIXt</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">REGISTRY_ENTRY_STAMP</td>
+<td class="gt_row gt_center gt_striped">POSIXct, POSIXt</td></tr>
+    <tr><td class="gt_row gt_left">REGISTRY_UPDATE_STAMP</td>
+<td class="gt_row gt_center">POSIXct, POSIXt</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">DELETION_DATE</td>
+<td class="gt_row gt_center gt_striped">POSIXct, POSIXt</td></tr>
+    <tr><td class="gt_row gt_left">SEQUENCE_ID</td>
+<td class="gt_row gt_center">numeric</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">PVN</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">USE_REGISTRY_INVENTORY</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">LOT_NUMBER_CODE</td>
+<td class="gt_row gt_center gt_striped">numeric</td></tr>
+    <tr><td class="gt_row gt_left">RC_SNAPSHOT_ID</td>
+<td class="gt_row gt_center">numeric</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">INSERTED_BY</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">IS_PUBLICLY_SUPPLIED</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">REFERRING_ORGANIZATION_CODE</td>
+<td class="gt_row gt_center gt_striped">numeric</td></tr>
+    <tr><td class="gt_row gt_left">COMMENTS</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">COMPROMISED_CODE</td>
+<td class="gt_row gt_center gt_striped">numeric</td></tr>
+    <tr><td class="gt_row gt_left">VACCINE_SAFETY_MONITOR</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">HISTORICAL_DATA</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">IS_UNVERIFIED</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">CC_VOLUME</td>
+<td class="gt_row gt_center gt_striped">numeric</td></tr>
+    <tr><td class="gt_row gt_left">OWNERSHIP_DECLINED</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">IS_MAPPED_RECORD</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">HISTORICAL_INFO_SOURCE</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">ANATOMICAL_ROUTE</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">DOSAGE_UOM</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">VERIFIED_BY</td>
+<td class="gt_row gt_center gt_striped">numeric</td></tr>
+    <tr><td class="gt_row gt_left">FORCED_DOSE_NUMBER</td>
+<td class="gt_row gt_center">numeric</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">FORCED_DOSE_REASON</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">SERVICE_TYPE</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">CONFIDENTIAL_SERVICE</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">ICD9_CODE</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">CAMPAIGN_ID</td>
+<td class="gt_row gt_center gt_striped">numeric</td></tr>
+    <tr><td class="gt_row gt_left">REPORTING_METHOD</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">DOSE_SIZE</td>
+<td class="gt_row gt_center gt_striped">numeric</td></tr>
+    <tr><td class="gt_row gt_left">TIER_ID</td>
+<td class="gt_row gt_center">numeric</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">MAP_VFC_ELIGIBLE</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">IRMS_VACC_ID</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">ORDERING_PROVIDER_ID</td>
+<td class="gt_row gt_center gt_striped">numeric</td></tr>
+    <tr><td class="gt_row gt_left">FUNDING_SOURCE_ID</td>
+<td class="gt_row gt_center">numeric</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">IMPORT_LOG_ID</td>
+<td class="gt_row gt_center gt_striped">numeric</td></tr>
+    <tr><td class="gt_row gt_left">NDC_NUMBER</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">UNIQUE_IMPORT_ID</td>
+<td class="gt_row gt_center gt_striped">numeric</td></tr>
+    <tr><td class="gt_row gt_left">LOT_DEC_FAIL_CD</td>
+<td class="gt_row gt_center">numeric</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">MAP_IS_PROCESSED</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">COMPLETION_STATUS</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">VACCINE_ORDER_INTENT</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">IS_FM_ELIMINATED_SITE_VACC</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">IWEB_VACC_EVENT_ID</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">ORIGINATING_IIS</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">CREATEDATETIME</td>
+<td class="gt_row gt_center gt_striped">POSIXct, POSIXt</td></tr>
+    <tr><td class="gt_row gt_left">SysStartTime</td>
+<td class="gt_row gt_center">POSIXct, POSIXt</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">SysEndTime</td>
+<td class="gt_row gt_center gt_striped">POSIXct, POSIXt</td></tr>
+    <tr><td class="gt_row gt_left">tsExtract</td>
+<td class="gt_row gt_center">character</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="category-description" class="level2">
+<h2 class="anchored" data-anchor-id="category-description">Category Description</h2>
+<div class="cell">
+<div class="cell-output-display">
+
+<div id="lzyhcaokqq" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+html {
+  font-family: Lato, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#lzyhcaokqq .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 700px;
+  border-top-style: solid;
+  border-top-width: 3px;
+  border-top-color: rgba(255, 255, 255, 0);
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#lzyhcaokqq .gt_heading {
+  background-color: #FFFFFF;
+  text-align: left;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#lzyhcaokqq .gt_title {
+  color: #333333;
+  font-size: 24px;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#lzyhcaokqq .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#lzyhcaokqq .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lzyhcaokqq .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#lzyhcaokqq .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#lzyhcaokqq .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#lzyhcaokqq .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#lzyhcaokqq .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#lzyhcaokqq .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#lzyhcaokqq .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#lzyhcaokqq .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#lzyhcaokqq .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#lzyhcaokqq .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#lzyhcaokqq .gt_row {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #F6F7F7;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#lzyhcaokqq .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lzyhcaokqq .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#lzyhcaokqq .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#lzyhcaokqq .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lzyhcaokqq .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#lzyhcaokqq .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#lzyhcaokqq .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lzyhcaokqq .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lzyhcaokqq .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#lzyhcaokqq .gt_striped {
+  background-color: #FAFAFA;
+}
+
+#lzyhcaokqq .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lzyhcaokqq .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#lzyhcaokqq .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lzyhcaokqq .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#lzyhcaokqq .gt_sourcenote {
+  font-size: 12px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lzyhcaokqq .gt_left {
+  text-align: left;
+}
+
+#lzyhcaokqq .gt_center {
+  text-align: center;
+}
+
+#lzyhcaokqq .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#lzyhcaokqq .gt_font_normal {
+  font-weight: normal;
+}
+
+#lzyhcaokqq .gt_font_bold {
+  font-weight: bold;
+}
+
+#lzyhcaokqq .gt_font_italic {
+  font-style: italic;
+}
+
+#lzyhcaokqq .gt_super {
+  font-size: 65%;
+}
+
+#lzyhcaokqq .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#lzyhcaokqq .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#lzyhcaokqq .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#lzyhcaokqq .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#lzyhcaokqq .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#lzyhcaokqq .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#lzyhcaokqq .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" style="table-layout: fixed;; width: 700px">
+  <colgroup>
+    <col style="width:150px;">
+    <col style="width:200px;">
+    <col style="width:600px;">
+  </colgroup>
+  <thead class="gt_header">
+    <tr>
+      <td colspan="3" class="gt_heading gt_title gt_font_normal gt_bottom_border" style="">Variable Coding</td>
+    </tr>
+    
+  </thead>
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col"></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">Coding</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr class="gt_group_heading_row">
+      <td colspan="3" class="gt_group_heading">ASIIS_VACC_CODE</td>
+    </tr>
+    <tr class="gt_row_group_first"><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">3036</td>
+<td class="gt_row gt_left">COVID-19, mRNA, LNP-S, bivalent booster, PF, 30 mcg/0.3 mL dose (CDC code 300)</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">75</td>
+<td class="gt_row gt_left gt_striped">Influenza, injectable, quadrivalent, preservative free (CDC code 150)</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">3035</td>
+<td class="gt_row gt_left">COVID-19, mRNA, LNP-S, bivalent booster, PF, 50 mcg/0.5 mL or 25mcg/0.25 mL dose (CDC code 229)</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">2070</td>
+<td class="gt_row gt_left gt_striped">influenza, high-dose seasonal, quadrivalent, preservative free (CDC code 197)</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">2041</td>
+<td class="gt_row gt_left">Influenza, injectable, Madin Darby Canine Kidney, preservative free, quadrivalent (CDC code 
+                       171)</td></tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="3" class="gt_group_heading">CDC_VACC_CODE<sup class="gt_footnote_marks">1</sup></td>
+    </tr>
+    <tr class="gt_row_group_first"><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">300</td>
+<td class="gt_row gt_left gt_striped">COVID-19, mRNA, LNP-S, bivalent booster, PF, 30 mcg/0.3 mL dose</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">150</td>
+<td class="gt_row gt_left">Influenza, injectable, quadrivalent, preservative free</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">229</td>
+<td class="gt_row gt_left gt_striped">COVID-19, mRNA, LNP-S, bivalent booster, PF, 50 mcg/0.5 mL or 25mcg/0.25 mL dose</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">197</td>
+<td class="gt_row gt_left">Influenza, high-dose, quadrivalent</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">171</td>
+<td class="gt_row gt_left gt_striped">Influenza, injectable, MDCK, preservative free, quadrivalent</td></tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="3" class="gt_group_heading">CPT_VACC_CODE<sup class="gt_footnote_marks">2</sup></td>
+    </tr>
+    <tr class="gt_row_group_first"><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">91312</td>
+<td class="gt_row gt_left">Pfizer™ COVID-19 Vaccine - Bivalent Booster, Gray Cap</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">90715</td>
+<td class="gt_row gt_left gt_striped">Adacel™ Tdap Vaccine</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">90686</td>
+<td class="gt_row gt_left">Fluarix™ Influenza Vaccine</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">90670</td>
+<td class="gt_row gt_left gt_striped">Prevnar 13™ Pneumococcal Vaccine</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">90750</td>
+<td class="gt_row gt_left">Shingrix™ Zoster Vaccine</td></tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="3" class="gt_group_heading">manufacturer<sup class="gt_footnote_marks">3</sup></td>
+    </tr>
+    <tr class="gt_row_group_first"><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">PFR</td>
+<td class="gt_row gt_left gt_striped">Pfizer, Inc.</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">PMC</td>
+<td class="gt_row gt_left">Sanofi Pasteur</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">MOD</td>
+<td class="gt_row gt_left gt_striped">Moderna US, Inc.</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">SEQ</td>
+<td class="gt_row gt_left">Seqirus</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">SKB</td>
+<td class="gt_row gt_left gt_striped">GlaxoSmithKline</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">MSD</td>
+<td class="gt_row gt_left">Merck and Co., Inc.</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">IDB</td>
+<td class="gt_row gt_left gt_striped">ID Biomedical</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">MSP</td>
+<td class="gt_row gt_left">MSP Vaccine Company - (partnership Merck and Sanofi Pasteur)</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">SP</td>
+<td class="gt_row gt_left gt_striped">Assumed misscoded value for Sanofi Pasteur (PMC)</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">BN</td>
+<td class="gt_row gt_left">Bavarian Nordic A/S</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">MBL</td>
+<td class="gt_row gt_left gt_striped">Massachusetts Biologic Laboratories</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">JSN</td>
+<td class="gt_row gt_left">Janssen</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">DVX</td>
+<td class="gt_row gt_left gt_striped">Dynavax, Inc.</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">WAL</td>
+<td class="gt_row gt_left">Wyeth</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">MED</td>
+<td class="gt_row gt_left gt_striped">MedImmune, Inc. (AstraZeneca)</td></tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="3" class="gt_group_heading">anatomical_site<sup class="gt_footnote_marks">4</sup></td>
+    </tr>
+    <tr class="gt_row_group_first"><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">LD</td>
+<td class="gt_row gt_left">Left Deltoid</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">RD</td>
+<td class="gt_row gt_left gt_striped">Right Deltoid</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">LVL</td>
+<td class="gt_row gt_left">Left Vastus Lateralis</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">RVL</td>
+<td class="gt_row gt_left gt_striped">Right Vastus Lateralis</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">LLFA</td>
+<td class="gt_row gt_left">Left Lower Forearm</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">RLFA</td>
+<td class="gt_row gt_left gt_striped">Right Lower Forearm</td></tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="3" class="gt_group_heading">adverse_reaction<sup class="gt_footnote_marks">5</sup></td>
+    </tr>
+    <tr class="gt_row_group_first"><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">26</td>
+<td class="gt_row gt_left">Other</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">42</td>
+<td class="gt_row gt_left gt_striped">Vasovagal syncope (7 days)</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">44</td>
+<td class="gt_row gt_left">Life threatening adverse event</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">48</td>
+<td class="gt_row gt_left gt_striped">An important medical event that based on appropriate medical judgement may jeopardize the
+                         individual and may require medical or surgical intervention</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">46</td>
+<td class="gt_row gt_left">Persistent or significant incapacity or substantial disruption of the ability to 
+                         conduct normal life functions</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">51</td>
+<td class="gt_row gt_left gt_striped">Serious Adverse Event regardless of causality</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">32</td>
+<td class="gt_row gt_left">Any acute complications or sequelae (including death) of above events 
+                         (interval - not applicable)</td></tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="3" class="gt_group_heading">reporting_method</td>
+    </tr>
+    <tr class="gt_row_group_first"><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">DTT</td>
+<td class="gt_row gt_left gt_striped">DTT Import: Entered into the IIS via a manual data upload</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">REALTIME_HL7</td>
+<td class="gt_row gt_left">HL7: Entered into the IIS via an HL7 message from a provider’s EHR</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">DIRECT_DATA_ENTRY</td>
+<td class="gt_row gt_left gt_striped">Direct data entry: Entered into the IIS manually</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">VITAL_STATISTICS</td>
+<td class="gt_row gt_left">Entered into the IIS via vital statistics record</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">VITAL_STATS</td>
+<td class="gt_row gt_left gt_striped">Entered into the IIS via vital statistics record</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">BATCH_HL7</td>
+<td class="gt_row gt_left">Batch HL7 import</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">PAPER_DATA_ENTRY</td>
+<td class="gt_row gt_left gt_striped">Direct data entry from paper record</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">REMOTE_CLINIC</td>
+<td class="gt_row gt_left">Direct data entry from Remote clinic</td></tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="3" class="gt_group_heading">ndc_number<sup class="gt_footnote_marks">6</sup></td>
+    </tr>
+    <tr class="gt_row_group_first"><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">59267-1000-02</td>
+<td class="gt_row gt_left gt_striped">Pfizer COVID-19, mRNA, LNP-S, PF, 30 mcg/0.3 mL dose</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">80777-0273-99</td>
+<td class="gt_row gt_left">Moderna COVID-19, mRNA, LNP-S, PF, 100 mcg/0.5mL dose or 50 mcg/0.25mL dose</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">58160-0823-11</td>
+<td class="gt_row gt_left gt_striped">Shingrix zoster recombinant</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">80777-0273-10</td>
+<td class="gt_row gt_left">Moderna COVID-19, mRNA, LNP-S, PF, 100 mcg/0.5mL dose or 50 mcg/0.25mL dose</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">00005-1971-02</td>
+<td class="gt_row gt_left gt_striped">Prevnar 13 Pneumococcal conjugate PCV 13</td></tr>
+  </tbody>
+  
+  <tfoot class="gt_footnotes">
+    <tr>
+      <td class="gt_footnote" colspan="3"><sup class="gt_footnote_marks">1</sup> A full list of CDC Vaccination Codes is available at: https://www2a.cdc.gov/vaccines/iis/iisstandards/?rpt=cpt</td>
+    </tr>
+    <tr>
+      <td class="gt_footnote" colspan="3"><sup class="gt_footnote_marks">2</sup> A full list of Vaccination CPT Codes is available at: https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cpt</td>
+    </tr>
+    <tr>
+      <td class="gt_footnote" colspan="3"><sup class="gt_footnote_marks">3</sup> A full list of Vaccine Manufacter Codes is available at: https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=mvx</td>
+    </tr>
+    <tr>
+      <td class="gt_footnote" colspan="3"><sup class="gt_footnote_marks">4</sup> A full vocabulary list of coded terms for vaccination sites is available at: https://phinvads.cdc.gov/vads/ViewValueSet.action?id=98257779-17B8-DF11-9BDD-0015173D1785</td>
+    </tr>
+    <tr>
+      <td class="gt_footnote" colspan="3"><sup class="gt_footnote_marks">5</sup> A full list of Reaction Site Codes is available at: https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared%20Documents/CEDAR/CEDAR%20Data%20Dictionaries/Adverse_Reaction%20Code%20Values%20Table.xlsx?d=w7ac90aeede44401db78dddf8cbdee908&amp;csf=1&amp;web=1&amp;e=7PJKg9</td>
+    </tr>
+    <tr>
+      <td class="gt_footnote" colspan="3"><sup class="gt_footnote_marks">6</sup> A full list of NDC Number Codes is available at: https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=ndc</td>
+    </tr>
+  </tfoot>
+</table>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<div id="xrkpwjpktm" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+html {
+  font-family: Lato, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#xrkpwjpktm .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 700px;
+  border-top-style: solid;
+  border-top-width: 3px;
+  border-top-color: rgba(255, 255, 255, 0);
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#xrkpwjpktm .gt_heading {
+  background-color: #FFFFFF;
+  text-align: left;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#xrkpwjpktm .gt_title {
+  color: #333333;
+  font-size: 24px;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#xrkpwjpktm .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#xrkpwjpktm .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xrkpwjpktm .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#xrkpwjpktm .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#xrkpwjpktm .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#xrkpwjpktm .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#xrkpwjpktm .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#xrkpwjpktm .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#xrkpwjpktm .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#xrkpwjpktm .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#xrkpwjpktm .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#xrkpwjpktm .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#xrkpwjpktm .gt_row {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #F6F7F7;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#xrkpwjpktm .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xrkpwjpktm .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#xrkpwjpktm .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#xrkpwjpktm .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xrkpwjpktm .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#xrkpwjpktm .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#xrkpwjpktm .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xrkpwjpktm .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xrkpwjpktm .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#xrkpwjpktm .gt_striped {
+  background-color: #FAFAFA;
+}
+
+#xrkpwjpktm .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xrkpwjpktm .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#xrkpwjpktm .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xrkpwjpktm .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#xrkpwjpktm .gt_sourcenote {
+  font-size: 12px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xrkpwjpktm .gt_left {
+  text-align: left;
+}
+
+#xrkpwjpktm .gt_center {
+  text-align: center;
+}
+
+#xrkpwjpktm .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#xrkpwjpktm .gt_font_normal {
+  font-weight: normal;
+}
+
+#xrkpwjpktm .gt_font_bold {
+  font-weight: bold;
+}
+
+#xrkpwjpktm .gt_font_italic {
+  font-style: italic;
+}
+
+#xrkpwjpktm .gt_super {
+  font-size: 65%;
+}
+
+#xrkpwjpktm .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#xrkpwjpktm .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#xrkpwjpktm .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#xrkpwjpktm .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#xrkpwjpktm .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#xrkpwjpktm .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#xrkpwjpktm .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" style="table-layout: fixed;; width: 700px">
+  <colgroup>
+    <col style="width:200px;">
+    <col style="width:800px;">
+  </colgroup>
+  <thead class="gt_header">
+    <tr>
+      <td colspan="2" class="gt_heading gt_title gt_font_normal gt_bottom_border" style="">Full Code Lists for Vaccine Reserve Table</td>
+    </tr>
+    
+  </thead>
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">Codes</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">Links</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_left">CDC Vaccination Codes</td>
+<td class="gt_row gt_left"><p><a href="https://www2a.cdc.gov/vaccines/iis/iisstandards/?rpt=cpt">https://www2a.cdc.gov/vaccines/iis/iisstandards/?rpt=cpt</a></p></td></tr>
+    <tr><td class="gt_row gt_left gt_striped">Vaccination CPT Codes</td>
+<td class="gt_row gt_left gt_striped"><p><a href="https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cpt">https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cpt</a></p></td></tr>
+    <tr><td class="gt_row gt_left">Vaccine Manufacter Codes</td>
+<td class="gt_row gt_left"><p><a href="https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=mvx">https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=mvx</a></p></td></tr>
+    <tr><td class="gt_row gt_left gt_striped">Vaccination Sites</td>
+<td class="gt_row gt_left gt_striped"><p><a href="https://phinvads.cdc.gov/vads/ViewValueSet.action?id=98257779-17B8-DF11-9BDD-0015173D1785">https://phinvads.cdc.gov/vads/ViewValueSet.action?id=98257779-17B8-DF11-9BDD-0015173D1785</a></p></td></tr>
+    <tr><td class="gt_row gt_left">Reaction Site Codes</td>
+<td class="gt_row gt_left"><p><a href="https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared%20Documents/CEDAR/CEDAR%20Data%20Dictionaries/Adverse_Reaction%20Code%20Values%20Table.xlsx?d=w7ac90aeede44401db78dddf8cbdee908&amp;csf=1&amp;web=1&amp;e=7PJKg9">https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared%20Documents/CEDAR/CEDAR%20Data%20Dictionaries/Adverse_Reaction%20Code%20Values%20Table.xlsx?d=w7ac90aeede44401db78dddf8cbdee908&amp;csf=1&amp;web=1&amp;e=7PJKg9</a></p></td></tr>
+    <tr><td class="gt_row gt_left gt_striped">NDC Number Codes</td>
+<td class="gt_row gt_left gt_striped"><p><a href="https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=ndc">https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=ndc</a></p></td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="statistics" class="level2">
+<h2 class="anchored" data-anchor-id="statistics">Statistics</h2>
+<p>Insert statistics here</p>
+<div class="cell">
+<div class="cell-output-display">
+
+<div id="mrugkhtgyf" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+html {
+  font-family: Lato, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+:where(#mrugkhtgyf) .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 700px;
+  border-top-style: solid;
+  border-top-width: 3px;
+  border-top-color: rgba(255, 255, 255, 0);
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+:where(#mrugkhtgyf) .gt_heading {
+  background-color: #FFFFFF;
+  text-align: left;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#mrugkhtgyf) .gt_title {
+  color: #333333;
+  font-size: 24px;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+:where(#mrugkhtgyf) .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+:where(#mrugkhtgyf) .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#mrugkhtgyf) .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#mrugkhtgyf) .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+:where(#mrugkhtgyf) .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+:where(#mrugkhtgyf) .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+:where(#mrugkhtgyf) .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+:where(#mrugkhtgyf) .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+:where(#mrugkhtgyf) .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+:where(#mrugkhtgyf) .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+:where(#mrugkhtgyf) .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+:where(#mrugkhtgyf) .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+:where(#mrugkhtgyf) .gt_row {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #F6F7F7;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+:where(#mrugkhtgyf) .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#mrugkhtgyf) .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+:where(#mrugkhtgyf) .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+:where(#mrugkhtgyf) .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#mrugkhtgyf) .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+:where(#mrugkhtgyf) .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+:where(#mrugkhtgyf) .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#mrugkhtgyf) .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#mrugkhtgyf) .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+:where(#mrugkhtgyf) .gt_striped {
+  background-color: #FAFAFA;
+}
+
+:where(#mrugkhtgyf) .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#mrugkhtgyf) .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#mrugkhtgyf) .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#mrugkhtgyf) .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#mrugkhtgyf) .gt_sourcenote {
+  font-size: 12px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#mrugkhtgyf) .gt_left {
+  text-align: left;
+}
+
+:where(#mrugkhtgyf) .gt_center {
+  text-align: center;
+}
+
+:where(#mrugkhtgyf) .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+:where(#mrugkhtgyf) .gt_font_normal {
+  font-weight: normal;
+}
+
+:where(#mrugkhtgyf) .gt_font_bold {
+  font-weight: bold;
+}
+
+:where(#mrugkhtgyf) .gt_font_italic {
+  font-style: italic;
+}
+
+:where(#mrugkhtgyf) .gt_super {
+  font-size: 65%;
+}
+
+:where(#mrugkhtgyf) .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+:where(#mrugkhtgyf) .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+:where(#mrugkhtgyf) .gt_indent_1 {
+  text-indent: 5px;
+}
+
+:where(#mrugkhtgyf) .gt_indent_2 {
+  text-indent: 10px;
+}
+
+:where(#mrugkhtgyf) .gt_indent_3 {
+  text-indent: 15px;
+}
+
+:where(#mrugkhtgyf) .gt_indent_4 {
+  text-indent: 20px;
+}
+
+:where(#mrugkhtgyf) .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">Number of Columns</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">Number of Rows</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_right">77</td>
+<td class="gt_row gt_right">192364097</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./VACCINATION_MASTER.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">VACCINATION_MASTER</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./VACCINE_FAMILY.html" class="pagination-link">
+        <span class="nav-page-text">VACCINE_FAMILY</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
