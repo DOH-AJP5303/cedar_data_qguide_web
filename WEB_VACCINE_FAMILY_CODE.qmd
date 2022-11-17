@@ -19,7 +19,7 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The web_vaccine_family code table contains a list of usernames associated with the update of vaccine family codes in WA IIS. Username records may be included or excluded from display in IIS.
 
 ## Columns
 
