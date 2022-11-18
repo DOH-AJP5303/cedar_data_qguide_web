@@ -19,10 +19,31 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The transfer_items table contains a list of vaccine transfer request IDs with details, including transfer reason, approved quantity, transfer quantity, and lot number code.
 
 ## Columns
+
+```{r}
+#| label: transfit-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_TRANSFER_ITEMS")) %>% colnames())) %>%
+ mutate(Type = typeof(Columns)) %>%
+ gt() %>%
+ gt_theme_espn()
+```
 
 ## Category Description
 
 ## Statistics
+
+```{r}
+#| label: transfit-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_TRANSFER_ITEMS")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_TRANSFER_ITEMS"))) %>% nrow2()
+       ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```
+
+:::
