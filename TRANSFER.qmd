@@ -19,10 +19,31 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+Like the transfer_items table, the transfer table contains a list of transfer IDs and details associated with each transfer, including the status of the transfer, approving user, and receiving user. Key information on the reviewing user, including userID, approval or denial date of the transfer, is included.
 
 ## Columns
+
+```{r}
+#| label: transf-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_TRANSFER")) %>% colnames())) %>%
+ mutate(Type = typeof(Columns)) %>%
+ gt() %>%
+ gt_theme_espn()
+```
 
 ## Category Description
 
 ## Statistics
+
+```{r}
+#| label: transf-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_TRANSFER")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_TRANSFER"))) %>% nrow2()
+       ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```
+
+:::
