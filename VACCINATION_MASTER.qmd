@@ -36,7 +36,7 @@ tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_VACCINATION_MASTER")) %>% c
 
 ```{r}
 #| label: vcmstr-table
-vcvar_tabl <-
+vcmstr_tabl <-
 tibble(Coding = c(#top 5 iis vaccination code 
                   "3036","75","3035","2070","2041", 
                   #full list in table cdc_to_asiis_vacc_code
@@ -180,11 +180,11 @@ tibble(Coding = c(#top 5 iis vaccination code
        ) %>%
        gt_theme_espn()
 
-vcvar_tabl
+vcmstr_tabl
 ```
 
 ```{r}
-vaccmstrode <- tibble(
+vaccmstrcode <- tibble(
   Codes = c("CDC Vaccination Codes", "Vaccination CPT Codes","Vaccine Manufacter Codes","Vaccination Sites"),
   Links = c("https://www2a.cdc.gov/vaccines/iis/iisstandards/?rpt=cpt",
            "https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cpt",
@@ -206,14 +206,6 @@ vacmstrcode_tab
 ```
 
 ## Statistics
-
-15.59% of records have a CDC_VACC_CODE value of "217" (COVID-19, mRNA, LNP-S, PF, 30 mcg/0.3 mL dose, tris-sucrose).
-
-20.26% of records list the primary manufacturer as Pfizer, Inc. 21.34% of records did not have a manufacturer value \[null\].
-
-86.67% of records have no CPT_VACC_CODE value reported \[null\]. The most frequently reported CPT value is 90715 at 1.66%.
-
-The most frequently occurring value for AIIS_VACC_CODE is "3015" (11.32%) followed by "2080" (10.86%) Note: The above statistics include cases with a vacc_date value between 1/1/22 and 11/1/22.
 
 ```{r}
 #| label: vcmstr-stats
