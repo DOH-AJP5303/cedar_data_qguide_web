@@ -19,10 +19,69 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The vaccine_product table contains a list of vaccine product IDs and their corresponding ASIIS_VACC_CODE values. This table also contains a description and the maker of the vaccine product.
 
 ## Columns
 
+```{r}
+#| label: vaccprod-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_VACCINE_PRODUCT")) %>% colnames()),
+       Type = tbl(synapse, in_schema("dbo", "H33_VACCINE_PRODUCT")) %>% head(1) %>% as_tibble() %>% sapply(class)
+  ) %>%
+  gt() %>%
+  gt_theme_espn()
+```
+
 ## Category Description
 
+This section contains variable coding for relevant columns within the VACCINE_PRODUCT table.
+
+```{r}
+#| label: tab-vaccprod
+vaccprod_tabl <-
+tibble(Coding = c(#top 5 iis vaccination code 
+                  "3036","75","3035","2070","2041", 
+                      
+              
+       Description = c(#iis vacc code descriptor
+                      "COVID-19, mRNA, LNP-S, bivalent booster, PF, 30 mcg/0.3 mL dose", 
+                      "influenza, injectable, quadrivalent, preservative free",
+                      "COVID-19, mRNA, LNP-S, bivalent booster, PF, 50 mcg/0.5 mL or 25mcg/0.25 mL dose",
+                      "influenza, high-dose, quadrivalent",
+                      "Influenza, injectable, MDCK, preservative free, quadrivalent", 
+                               
+      Variable = c(#vaccination code category
+                    "ASIIS_VACC_CODE","ASIIS_VACC_CODE","ASIIS_VACC_CODE","ASIIS_VACC_CODE","ASIIS_VACC_CODE",  
+                    
+      Space = " ") %>%
+       gt(rowname_col = "Space", groupname_col = "Variable") %>%
+       tab_header(title = "Variable Coding") %>%
+       cols_width(Coding~px(200),
+                  Description~px(600),
+                  Space~px(150)) %>%
+       cols_align(align = "left") %>%
+       tab_footnote(
+                    footnote = 
+                      gt::md(paste0("A full list of commonly used IIS Vaccination Codes in WA is available at: ",
+                    {"https://doh.wa.gov/sites/default/files/2022-02/348-580-ConsolidatedBestChoicesGuide.pdf"}
+                    )),
+                    locations = cells_row_groups(groups = "ASIIS_VACC_CODE")
+       ) %>%
+       gt_theme_espn()
+
+vaccprod_tabl
+```
+
 ## Statistics
+
+```{r}
+#| label: vaccprod-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_VACCINE_PRODUCT")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_VACCINE_PRODUCT"))) %>% nrow2()
+  ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```
+:::
