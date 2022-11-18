@@ -19,10 +19,72 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The vacman_asiis_code table contains details from the VacMan database managemnt system, including the ASIIS vaccine code, maker, description, and funding source of each vaccine. NDC and contract number information is provided. The VacMan system allows providers to submit vaccine inventory information to their state registry.
 
 ## Columns
 
+```{r}
+#| label: vacmanasiiscd-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_VACMAN_ASIIS_CODE")) %>% colnames())) %>%
+ mutate(Type = typeof(Columns)) %>%
+ gt() %>%
+ gt_theme_espn()
+```
+
 ## Category Description
 
+This section contains variable coding for relevant columns within the ASIIS_VACC_CODE table.
+
+```{r}
+#| label: tab-vacmanasiiscd
+vcvar_tabl <-
+tibble(Coding = c(#top 5 iis vaccination code 
+                  "3036","75","3035","2070","2041", 
+                  
+             
+                 
+       Description = c(#iis vacc code descriptor
+                      "COVID-19, mRNA, LNP-S, bivalent booster, PF, 30 mcg/0.3 mL dose", 
+                      "influenza, injectable, quadrivalent, preservative free",
+                      "COVID-19, mRNA, LNP-S, bivalent booster, PF, 50 mcg/0.5 mL or 25mcg/0.25 mL dose",
+                      "influenza, high-dose, quadrivalent",
+                      "Influenza, injectable, MDCK, preservative free, quadrivalent", 
+  
+                  
+      Variable = c(#vaccination code category
+                    "ASIIS_VACC_CODE_BKP","ASIIS_VACC_CODE_BKP","ASIIS_VACC_CODE_BKP","ASIIS_VACC_CODE_BKP","ASIIS_VACC_CODE_BKP",
+                      
+                    
+      Space = " ") %>%
+       gt(rowname_col = "Space", groupname_col = "Variable") %>%
+       tab_header(title = "Variable Coding") %>%
+       cols_width(Coding~px(200),
+                  Description~px(600),
+                  Space~px(150)) %>%
+       cols_align(align = "left") %>%
+       tab_footnote(
+                    footnote = 
+                      gt::md(paste0("A full list of the most common IIS codes in WA is available at: ",
+                    {"https://doh.wa.gov/sites/default/files/2022-02/348-580-ConsolidatedBestChoicesGuide.pdf"}
+                    )),
+                    locations = cells_row_groups(groups = "ASIIS_VACC_CODE_BKP")
+       ) %>%
+       gt_theme_espn()
+
+vacmanasiiscd_tabl
+```
+
 ## Statistics
+
+```{r}
+#| label: vacmanasiiscd-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_VACMAN_ASIIS_CODE")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_VACMAN_ASIIS_CODE"))) %>% nrow2()
+  ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```
+:::
+
