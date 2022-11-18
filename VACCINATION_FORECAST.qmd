@@ -97,12 +97,12 @@ vforevar_tabl
 ```
 
 ```{r}
-vacforecode <- tibble(
+vforecode <- tibble(
   Codes = c("Family Codes", "Forecast CVX Codes"),
   Links = c("https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared%20Documents/CEDAR/CEDAR%20Data%20Dictionaries/Family_Code%20Values%20Table.xlsx?d=w545db4b21b99464ea49f8f2a26656d4a&csf=1&web=1&e=PT3WT6",
            "https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cvx"))
 
-vacforecode_tab <- vacforecode %>%
+vforecode_tab <- vforecode %>%
   mutate(Links = sprintf('<p><a href = "%s">%s</a>', Links, Links), 
          Links = map(Links, gt::html)) %>%
   gt() %>%
@@ -112,7 +112,7 @@ vacforecode_tab <- vacforecode %>%
              Links~px(800)) %>%
   gt_theme_espn()
 
-vacforecode_tab
+vforecode_tab
 ```
 
 ## Statistics
