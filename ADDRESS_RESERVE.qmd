@@ -34,8 +34,6 @@ tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_ADDRESS_RESERVE")) %>% coln
 
 ## Category Description
 
-This section contains variable coding for relevant columns within the address reserve table.
-
 ```{r}
 #| label: addrsv-ptvartab
 
