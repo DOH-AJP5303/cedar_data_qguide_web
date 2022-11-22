@@ -19,10 +19,71 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The serology_test_result table contains a list of serology result IDs, as well as details on the result LOINC codes, SNOMED codes, and result description.
 
 ## Columns
 
+```{r}
+#| label: serologytestr-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_SEROLOGY_TEST_RESULT")) %>% colnames())) %>%
+ mutate(Type = typeof(Columns)) %>%
+ gt() %>%
+ gt_theme_espn()
+```
+
 ## Category Description
 
+```{r}
+#| label: serologytestr-table
+vcvar_tabl <-
+tibble(Coding = c("
+      
+                  
+ #LOINC codes
+
+"LA6576-8","LA6577-6","LA11885-3","LA15841-2","LA11882-0",
+
+                  
+       Description = c(#LOINC descriptor 
+
+"Positive result - SARS-CoV-2 (COVID-19) E gene [Presence] in Respiratory specimen by NAA with probe detection",
+"Negative result - SARS-CoV-2 (COVID-19) RNA [Presence] in Respiratory specimen by NAA with probe detection",
+"Equivocal result - SARS-CoV-2 (COVID-19) N gene [Presence] in Serum or Plasma by NAA with probe detection",
+"Invalid result - SARS-CoV-2 (COVID-19) ORF1ab region [Presence] in Respiratory specimen by NAA with probe detection",
+"Detected - Parainfluenza virus 1 RNA [Presence] in Nasopharynx by NAA with non-probe detection",
+                      
+       Variable = c(#group_code category
+                    "RESULT_LOINC_CODE","RESULT_LOINC_CODE","RESULT_LOINC_CODE","RESULT_LOINC_CODE","RESULT_LOINC_CODE",
+                                      
+      Space = " ") %>%
+  
+       gt(rowname_col = "Space", groupname_col = "Variable") %>%
+       tab_header(
+                      title = "Variable Coding"
+                      
+                      
+  default = list(padj = "FDR", nFound = "Genes")))
+       ) %>%
+       cols_width(Coding~px(200),
+                  Description~px(400),
+                  Space~px(100)) %>%
+       cols_align(align = "left") %>%
+       gt_theme_espn()
+
+serologytestr_tabl
+```
+
 ## Statistics
+
+```{r}
+#| label: serologytestr-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_SEROLOGY_TEST_RESULT")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_SEROLOGY_TEST_RESULT"))) %>% nrow2()
+       ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```
+
+:::
