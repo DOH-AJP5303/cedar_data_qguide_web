@@ -23,6 +23,28 @@ Description
 
 ## Columns
 
+```{r}
+#| label: schdist-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_SCHOOL_DISTRICT")) %>% colnames()),
+       Type = tbl(synapse, in_schema("dbo", "H33_SCHOOL_DISTRICT")) %>% head(1) %>% as_tibble() %>% sapply(class)
+       ) %>%
+ gt() %>%
+ gt_theme_espn()
+```
+
 ## Category Description
 
+Description
+
 ## Statistics
+
+```{r}
+#| label: schdist-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_SCHOOL_DISTRICT")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_SCHOOL_DISTRICT"))) %>% nrow2()
+       ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```

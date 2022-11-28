@@ -23,6 +23,28 @@ Description
 
 ## Columns
 
+```{r}
+#| label: ordset-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_ORDER_SET")) %>% colnames()),
+       Type = tbl(synapse, in_schema("dbo", "H33_ORDER_SET")) %>% head(1) %>% as_tibble() %>% sapply(class)
+       ) %>%
+ gt() %>%
+ gt_theme_espn()
+```
+
 ## Category Description
 
+Description
+
 ## Statistics
+
+```{r}
+#| label: ordset-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_ORDER_SET")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_ORDER_SET"))) %>% nrow2()
+       ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```

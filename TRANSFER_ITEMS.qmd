@@ -45,5 +45,3 @@ tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_TRANSFER_ITEMS")) %>% nco
              rowcnt = "Number of Rows")  %>%
   gt_theme_espn()
 ```
-
-:::

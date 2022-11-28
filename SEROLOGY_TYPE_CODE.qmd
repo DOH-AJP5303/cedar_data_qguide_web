@@ -32,7 +32,7 @@ tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_SEROLOGY_TYPE_CODE")) %>% c
   gt_theme_espn()
 ```
 
-#### Category Description
+## Category Description
 
 ```{r}
 #| label: serotype-table
@@ -91,4 +91,3 @@ tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_SEROLOGY_TYPE_CODE")) %>%
   gt_theme_espn()
 ```
 
-:::

@@ -23,7 +23,26 @@ Description
 
 ## Columns
 
+```{r}
+#| label: lotlogcd-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_LOT_LOG_ACTION_CODE")) %>% colnames()),
+       Type = tbl(synapse, in_schema("dbo", "H33_LOT_LOG_ACTION_CODE")) %>% head(1) %>% as_tibble() %>% sapply(class)
+       ) %>%
+ gt() %>%
+ gt_theme_espn()
+```
+
 ## Category Description
 
 ## Statistics
 
+```{r}
+#| label: lotlogcd-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_LOT_LOG_ACTION_CODE")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_LOT_LOG_ACTION_CODE"))) %>% nrow2()
+       ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```

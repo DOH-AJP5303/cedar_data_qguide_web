@@ -46,4 +46,3 @@ tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_TRANSFER")) %>% ncol()),
   gt_theme_espn()
 ```
 
-:::
