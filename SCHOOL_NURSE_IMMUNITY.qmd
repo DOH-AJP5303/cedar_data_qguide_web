@@ -19,10 +19,68 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The school_nurse_immunity ID contains a list of immunity IDs in the repository, as well as the corresponding IRMS_PAT_ID values. The disease name and vaccine group code is also provided.
 
 ## Columns
 
+```{r}
+#| label: schoolnurim-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_SCHOOL_NURSE_IMMUNITY")) %>% colnames())) %>%
+ mutate(Type = typeof(Columns)) %>%
+ gt() %>%
+ gt_theme_espn()
+```
+
 ## Category Description
 
+```{r}
+#| label: tab-schoolnurim
+schoolnurim_tabl <-
+tibble(Coding = c(#33 group_code codes
+
+"10","11","25","26","30","40","50","60","70","80","110","120","130","170","180","190","220","230","240","250","260","271","280","290","300","310","320","330","340","350","360","370","380",
+
+         
+       Description = c(#descriptor
+       
+"DTaP","Tdap","MENINGOCOCCAL B","RECOMBINANT","MENINGOCOCCAL B","OMV","Polio","MMR","Hib","Hep A","Hep B","Varicella","Rotavirus","Influenza","Pneumo (PCV7)","Hep B - 2 Dose","Anthrax","Smallpox Vaccination",
+"Measles","Mumps","Rubella","Pneumo (PPV23)","Meningococcal","HPV","Herpes Zoster","NOVEL INFLUENZA H1N1-09","Cholera","Japanese Encephalitis","Rabies","Typhoid","Yellow Fever","Coronavirus (SARS-CoV-2)(COVID-19)","Ebola","Dengue","Orthopoxvirus",
+
+                      
+       Variable = c(#vacc_group_code category
+                    "VACC_GROUP_CODE","VACC_GROUP_CODE","VACC_GROUP_CODE","VACC_GROUP_CODE","VACC_GROUP_CODE","VACC_GROUP_CODE","VACC_GROUP_CODE","VACC_GROUP_CODE","VACC_GROUP_CODE","VACC_GROUP_CODE","VACC_GROUP_CODE","VACC_GROUP_CODE","VACC_GROUP_CODE","VACC_GROUP_CODE","VACC_GROUP_CODE","VACC_GROUP_CODE","VACC_GROUP_CODE","VACC_GROUP_CODE","VACC_GROUP_CODE","VACC_GROUP_CODE","VACC_GROUP_CODE","VACC_GROUP_CODE","VACC_GROUP_CODE","VACC_GROUP_CODE","VACC_GROUP_CODE","VACC_GROUP_CODE","VACC_GROUP_CODE","VACC_GROUP_CODE","VACC_GROUP_CODE","VACC_GROUP_CODE","VACC_GROUP_CODE","VACC_GROUP_CODE","VACC_GROUP_CODE"
+                   
+                    
+      Space = " ") %>%
+  
+       gt(rowname_col = "Space", groupname_col = "Variable") %>%
+       tab_header(
+                      title = "Variable Coding"
+                      
+                      
+  default = list(padj = "FDR", nFound = "Genes")))
+       ) %>%
+       cols_width(Coding~px(200),
+                  Description~px(400),
+                  Space~px(100)) %>%
+       cols_align(align = "left") %>%
+       gt_theme_espn()
+
+schoolnurim_tabl
+```
+        
+
 ## Statistics
+
+
+```{r}
+#| label: schoolnurim-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_SCHOOL_NURSE_IMMUNITY")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_SCHOOL_NURSE_IMMUNITY"))) %>% nrow2()
+  ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```
+:::
