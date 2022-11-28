@@ -37,9 +37,9 @@ This section contains variable coding for relevant columns within the ASIIS_VACC
 
 ```{r}
 #| label: tab-vacmanasiiscd
-vcvar_tabl <-
+vacmanasiiscd_tabl <-
 tibble(Coding = c(#top 5 iis vaccination code 
-                  "3036","75","3035","2070","2041", 
+                  "3036","75","3035","2070","2041"), 
                   
              
                  
@@ -48,11 +48,12 @@ tibble(Coding = c(#top 5 iis vaccination code
                       "influenza, injectable, quadrivalent, preservative free",
                       "COVID-19, mRNA, LNP-S, bivalent booster, PF, 50 mcg/0.5 mL or 25mcg/0.25 mL dose",
                       "influenza, high-dose, quadrivalent",
-                      "Influenza, injectable, MDCK, preservative free, quadrivalent", 
+                      "Influenza, injectable, MDCK, preservative free, quadrivalent"), 
   
                   
       Variable = c(#vaccination code category
-                    "ASIIS_VACC_CODE_BKP","ASIIS_VACC_CODE_BKP","ASIIS_VACC_CODE_BKP","ASIIS_VACC_CODE_BKP","ASIIS_VACC_CODE_BKP",
+                    "ASIIS_VACC_CODE_BKP","ASIIS_VACC_CODE_BKP","ASIIS_VACC_CODE_BKP","ASIIS_VACC_CODE_BKP",
+                    "ASIIS_VACC_CODE_BKP"),
                       
                     
       Space = " ") %>%
@@ -86,5 +87,5 @@ tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_VACMAN_ASIIS_CODE")) %>% 
              rowcnt = "Number of Rows")  %>%
   gt_theme_espn()
 ```
-:::
 
+:::

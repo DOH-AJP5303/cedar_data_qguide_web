@@ -23,13 +23,13 @@ The serology_type_code table contains details on serology codes within IIS, incl
 
 ## Columns
 
-
 ```{r}
 #| label: serotype-colnames
-tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_SEROLOGY_TYPE_CODE")) %>% colnames())) %>%
- mutate(Type = typeof(Columns)) %>%
- gt() %>%
- gt_theme_espn()
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_SEROLOGY_TYPE_CODE")) %>% colnames()),
+       Type = tbl(synapse, in_schema("dbo", "H33_SEROLOGY_TYPE_CODE")) %>% head(1) %>% as_tibble() %>% sapply(class)
+       ) %>%
+  gt() %>%
+  gt_theme_espn()
 ```
 
 #### Category Description
@@ -37,55 +37,46 @@ tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_SEROLOGY_TYPE_CODE")) %>% c
 ```{r}
 #| label: serotype-table
 serotype_tabl <-
-tibble(Coding = c("
-      
+tibble(Coding = c(#serology_type codes
+                  "1","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64"),
                   
- #serology_type codes
-
-"1","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64"
-
-         
        Description = c(#descriptor for serology codes
-       
-       "Varicella",
-       "Serology confirmed Mumps",
-"Serology confirmed Rubella",
-"Serology confirmed Measles",
-"Serology confirmed Varicella",
-"Serology confirmed Hepatitis B",
-"Serology confirmed Hepatitis A",
-"SARS-CoV-2 IgG qualitative",
-"SARS-CoV-2 RdRp gene result",
-"SARS-CoV-2 result",
-"Overall SARS-CoV-2 result",
-"SARS-CoV-2 N gene result",
-"SARS-related CoV result",
-"SARS-CoV-2 ORF1ab region result",
-"SARS-CoV-2 Ab qualitative",
-"TB Gold, QuantiFERON",
+                      "Varicella",
+                      "Serology confirmed Mumps",
+                      "Serology confirmed Rubella",
+                      "Serology confirmed Measles",
+                      "Serology confirmed Varicella",
+                      "Serology confirmed Hepatitis B",
+                      "Serology confirmed Hepatitis A",
+                      "SARS-CoV-2 IgG qualitative",
+                      "SARS-CoV-2 RdRp gene result",
+                      "SARS-CoV-2 result",
+                      "Overall SARS-CoV-2 result",
+                      "SARS-CoV-2 N gene result",
+                      "SARS-related CoV result",
+                      "SARS-CoV-2 ORF1ab region result",
+                      "SARS-CoV-2 Ab qualitative",
+                      "TB Gold, QuantiFERON"),
                       
        Variable = c(#group_code category
-                    "SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE"
+                    "SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE",
+                    "SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE",
+                    "SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE",
+                    "SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE"),
                     
            
       Space = " ") %>%
   
        gt(rowname_col = "Space", groupname_col = "Variable") %>%
-       tab_header(
-                      title = "Variable Coding"
-                      
-                      
-  default = list(padj = "FDR", nFound = "Genes")))
-       ) %>%
-       cols_width(Coding~px(200),
+       tab_header(title = "Variable Coding") %>%
+       cols_width(Coding~px(140),
                   Description~px(400),
-                  Space~px(100)) %>%
+                  Space~px(160)) %>%
        cols_align(align = "left") %>%
        gt_theme_espn()
 
 serotype_tabl
 ```
-
 
 ## Statistics
 

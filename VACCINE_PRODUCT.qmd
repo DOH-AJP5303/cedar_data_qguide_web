@@ -40,7 +40,7 @@ This section contains variable coding for relevant columns within the VACCINE_PR
 #| label: tab-vaccprod
 vaccprod_tabl <-
 tibble(Coding = c(#top 5 iis vaccination code 
-                  "3036","75","3035","2070","2041", 
+                  "3036","75","3035","2070","2041"), 
                       
               
        Description = c(#iis vacc code descriptor
@@ -48,10 +48,10 @@ tibble(Coding = c(#top 5 iis vaccination code
                       "influenza, injectable, quadrivalent, preservative free",
                       "COVID-19, mRNA, LNP-S, bivalent booster, PF, 50 mcg/0.5 mL or 25mcg/0.25 mL dose",
                       "influenza, high-dose, quadrivalent",
-                      "Influenza, injectable, MDCK, preservative free, quadrivalent", 
+                      "Influenza, injectable, MDCK, preservative free, quadrivalent"), 
                                
       Variable = c(#vaccination code category
-                    "ASIIS_VACC_CODE","ASIIS_VACC_CODE","ASIIS_VACC_CODE","ASIIS_VACC_CODE","ASIIS_VACC_CODE",  
+                    "ASIIS_VACC_CODE","ASIIS_VACC_CODE","ASIIS_VACC_CODE","ASIIS_VACC_CODE","ASIIS_VACC_CODE"),  
                     
       Space = " ") %>%
        gt(rowname_col = "Space", groupname_col = "Variable") %>%
@@ -84,4 +84,5 @@ tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_VACCINE_PRODUCT")) %>% nc
              rowcnt = "Number of Rows")  %>%
   gt_theme_espn()
 ```
+
 :::

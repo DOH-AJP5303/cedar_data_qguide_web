@@ -192,7 +192,7 @@ vaccmstrcode <- tibble(
            "https://phinvads.cdc.gov/vads/ViewValueSet.action?id=98257779-17B8-DF11-9BDD-0015173D1785")
 )
 
-vacmstrcode_tab <- vaccmstrode %>%
+vaccmstrcode_tab <- vaccmstrcode %>%
   mutate(Links = sprintf('<p><a href = "%s">%s</a>', Links, Links), 
          Links = map(Links, gt::html)) %>%
   gt() %>%
@@ -202,7 +202,7 @@ vacmstrcode_tab <- vaccmstrode %>%
              Links~px(800)) %>%
   gt_theme_espn()
 
-vacmstrcode_tab
+vaccmstrcode_tab
 ```
 
 ## Statistics

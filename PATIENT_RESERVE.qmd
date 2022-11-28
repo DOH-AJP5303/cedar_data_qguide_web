@@ -85,8 +85,7 @@ tibble(Coding = c(#gender
        
        Space = " ") %>%
        gt(rowname_col = "Space",groupname_col = "Variable") %>%
-       tab_header(
-                      title = "Variable Coding"
+       tab_header(title = "Variable Coding"
        ) %>%
        cols_width(Coding~px(200),
                   Description~px(390),

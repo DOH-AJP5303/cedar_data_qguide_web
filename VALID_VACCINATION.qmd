@@ -41,27 +41,31 @@ tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_VALID_VACCINATION")) %>% co
 ```{r}
 #| label: validvacc-table
 validvacc_tabl <-
-tibble(Coding = c("           
-         "1","24","25","26","3","5","2","9","4","6","20","10","11","12","13","14","15","16","17","18","7","21","22","23","28","29","30","31","32","33","34","35","36",
-        #family codes
+tibble(Coding = c(#family codes
+                  "1","24","25","26","3","5","2","9","4","6","20","10","11","12","13","14","15","16","17",
+                  "18","7","21","22","23","28","29","30","31","32","33","34","35","36"),
+        
                    
        Description = c(#descriptor 
-"DTaP","Tdap","MENINGOCOCCAL B","RECOMBINANT","MENINGOCOCCAL B","OMV","Polio","MMR","Hib","Hep A","Hep B","Varicella","Rotavirus","Influenza","Pneumo (PCV7)","Hep B - 2 Dose","Anthrax","Smallpox Vaccination",
-"Measles","Mumps","Rubella","Pneumo (PPV23)","Meningococcal","HPV","Herpes Zoster","NOVEL INFLUENZA H1N1-09","Cholera","Japanese Encephalitis","Rabies","Typhoid","Yellow Fever","Coronavirus (SARS-CoV-2)(COVID-19)","Ebola","Dengue","Orthopoxvirus",
+                      "DTaP","Tdap","MENINGOCOCCAL B,RECOMBINANT","MENINGOCOCCAL B,OMV","Polio","MMR","Hib",
+                      "Hep A","Hep B","Varicella","Rotavirus","Influenza","Pneumo (PCV7)",
+                      "Hep B - 2 Dose","Anthrax","Smallpox Vaccination",
+                      "Measles","Mumps","Rubella","Pneumo (PPV23)","Meningococcal","HPV","Herpes Zoster",
+                      "NOVEL INFLUENZA H1N1-09","Cholera","Japanese Encephalitis","Rabies","Typhoid",
+                      "Yellow Fever","Coronavirus (SARS-CoV-2)(COVID-19)","Ebola","Dengue","Orthopoxvirus"),
                    
        Variable = c(#family_code category
-                    "FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_"FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE",
-              
+                    "FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE",
+                    "FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE",
+                    "FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE",
+                    "FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE",
+                    "FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE",
+                    "FAMILY_CODE","FAMILY_CODE","FAMILY_CODE"),
                    
       Space = " ") %>%
   
        gt(rowname_col = "Space", groupname_col = "Variable") %>%
-       tab_header(
-                      title = "Variable Coding"
-                      
-                      
-  default = list(padj = "FDR", nFound = "Genes")))
-       ) %>%
+       tab_header(title = "Variable Coding") %>%
        cols_width(Coding~px(200),
                   Description~px(400),
                   Space~px(100)) %>%
@@ -70,7 +74,6 @@ tibble(Coding = c("
 
 validvacc_tabl
 ```
-
 
 ## Statistics
 
