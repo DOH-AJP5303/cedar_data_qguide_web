@@ -19,7 +19,7 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The grade_levels table contains a list of grade level ID records, including details such as the description, display values, and next grade level ID.
 
 ## Columns
 
