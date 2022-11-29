@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CEDAR Data Quality Guide - FACILITY_MASTER</title>
+<title>CEDAR Data Quality Guide - PATIENT_RESERVE</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./FACILITY_TYPE.html" rel="next">
-<link href="./EXEMPTION_FORM_VACCS.html" rel="prev">
+<link href="./PATIENT_SCHOOL_NURSE.html" rel="next">
+<link href="./PATIENT_RACE_MASTER.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -72,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">FACILITY_MASTER</h1>
+      <h1 class="quarto-secondary-nav-title">PATIENT_RESERVE</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -165,7 +165,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./FACILITY_MASTER.html" class="sidebar-item-text sidebar-link active">FACILITY_MASTER</a>
+  <a href="./FACILITY_MASTER.html" class="sidebar-item-text sidebar-link">FACILITY_MASTER</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -260,7 +260,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./PATIENT_RESERVE.html" class="sidebar-item-text sidebar-link">PATIENT_RESERVE</a>
+  <a href="./PATIENT_RESERVE.html" class="sidebar-item-text sidebar-link active">PATIENT_RESERVE</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -406,7 +406,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">FACILITY_MASTER</h1>
+<h1 class="title d-none d-lg-block">PATIENT_RESERVE</h1>
 </div>
 
 
@@ -428,20 +428,20 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="description" class="level2">
 <h2 class="anchored" data-anchor-id="description">Description</h2>
-<p>The facility_master table contains details of facilities in the repository, including details on the facility name, address, and delivery instructions.</p>
+<p>The patient_reserve table contains entries for each time patient information is updated. This includes information on each patient including address, gender, race, and other demographic details.</p>
 </section>
 <section id="columns" class="level2">
 <h2 class="anchored" data-anchor-id="columns">Columns</h2>
 <div class="cell">
 <div class="cell-output-display">
 
-<div id="hclipuwpja" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="ycvsaxopei" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 html {
   font-family: Lato, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#hclipuwpja) .gt_table {
+:where(#ycvsaxopei) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -466,7 +466,7 @@ html {
   border-left-color: #D3D3D3;
 }
 
-:where(#hclipuwpja) .gt_heading {
+:where(#ycvsaxopei) .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -478,7 +478,7 @@ html {
   border-right-color: #D3D3D3;
 }
 
-:where(#hclipuwpja) .gt_title {
+:where(#ycvsaxopei) .gt_title {
   color: #333333;
   font-size: 24px;
   font-weight: initial;
@@ -490,7 +490,7 @@ html {
   border-bottom-width: 0;
 }
 
-:where(#hclipuwpja) .gt_subtitle {
+:where(#ycvsaxopei) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -502,13 +502,13 @@ html {
   border-top-width: 0;
 }
 
-:where(#hclipuwpja) .gt_bottom_border {
+:where(#ycvsaxopei) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#hclipuwpja) .gt_col_headings {
+:where(#ycvsaxopei) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -523,7 +523,7 @@ html {
   border-right-color: #D3D3D3;
 }
 
-:where(#hclipuwpja) .gt_col_heading {
+:where(#ycvsaxopei) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -543,7 +543,7 @@ html {
   overflow-x: hidden;
 }
 
-:where(#hclipuwpja) .gt_column_spanner_outer {
+:where(#ycvsaxopei) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -555,15 +555,15 @@ html {
   padding-right: 4px;
 }
 
-:where(#hclipuwpja) .gt_column_spanner_outer:first-child {
+:where(#ycvsaxopei) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#hclipuwpja) .gt_column_spanner_outer:last-child {
+:where(#ycvsaxopei) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#hclipuwpja) .gt_column_spanner {
+:where(#ycvsaxopei) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -575,7 +575,7 @@ html {
   width: 100%;
 }
 
-:where(#hclipuwpja) .gt_group_heading {
+:where(#ycvsaxopei) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -600,7 +600,7 @@ html {
   vertical-align: middle;
 }
 
-:where(#hclipuwpja) .gt_empty_group_heading {
+:where(#ycvsaxopei) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -615,15 +615,15 @@ html {
   vertical-align: middle;
 }
 
-:where(#hclipuwpja) .gt_from_md > :first-child {
+:where(#ycvsaxopei) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#hclipuwpja) .gt_from_md > :last-child {
+:where(#ycvsaxopei) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#hclipuwpja) .gt_row {
+:where(#ycvsaxopei) .gt_row {
   padding-top: 7px;
   padding-bottom: 7px;
   padding-left: 5px;
@@ -642,7 +642,7 @@ html {
   overflow-x: hidden;
 }
 
-:where(#hclipuwpja) .gt_stub {
+:where(#ycvsaxopei) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -655,7 +655,7 @@ html {
   padding-right: 5px;
 }
 
-:where(#hclipuwpja) .gt_stub_row_group {
+:where(#ycvsaxopei) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -669,11 +669,11 @@ html {
   vertical-align: top;
 }
 
-:where(#hclipuwpja) .gt_row_group_first td {
+:where(#ycvsaxopei) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#hclipuwpja) .gt_summary_row {
+:where(#ycvsaxopei) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -683,16 +683,16 @@ html {
   padding-right: 5px;
 }
 
-:where(#hclipuwpja) .gt_first_summary_row {
+:where(#ycvsaxopei) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#hclipuwpja) .gt_first_summary_row.thick {
+:where(#ycvsaxopei) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#hclipuwpja) .gt_last_summary_row {
+:where(#ycvsaxopei) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -702,7 +702,7 @@ html {
   border-bottom-color: #D3D3D3;
 }
 
-:where(#hclipuwpja) .gt_grand_summary_row {
+:where(#ycvsaxopei) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -712,7 +712,7 @@ html {
   padding-right: 5px;
 }
 
-:where(#hclipuwpja) .gt_first_grand_summary_row {
+:where(#ycvsaxopei) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -722,11 +722,11 @@ html {
   border-top-color: #D3D3D3;
 }
 
-:where(#hclipuwpja) .gt_striped {
+:where(#ycvsaxopei) .gt_striped {
   background-color: #FAFAFA;
 }
 
-:where(#hclipuwpja) .gt_table_body {
+:where(#ycvsaxopei) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -735,7 +735,7 @@ html {
   border-bottom-color: #D3D3D3;
 }
 
-:where(#hclipuwpja) .gt_footnotes {
+:where(#ycvsaxopei) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -749,7 +749,7 @@ html {
   border-right-color: #D3D3D3;
 }
 
-:where(#hclipuwpja) .gt_footnote {
+:where(#ycvsaxopei) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -758,7 +758,7 @@ html {
   padding-right: 5px;
 }
 
-:where(#hclipuwpja) .gt_sourcenotes {
+:where(#ycvsaxopei) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -772,7 +772,7 @@ html {
   border-right-color: #D3D3D3;
 }
 
-:where(#hclipuwpja) .gt_sourcenote {
+:where(#ycvsaxopei) .gt_sourcenote {
   font-size: 12px;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -780,64 +780,64 @@ html {
   padding-right: 5px;
 }
 
-:where(#hclipuwpja) .gt_left {
+:where(#ycvsaxopei) .gt_left {
   text-align: left;
 }
 
-:where(#hclipuwpja) .gt_center {
+:where(#ycvsaxopei) .gt_center {
   text-align: center;
 }
 
-:where(#hclipuwpja) .gt_right {
+:where(#ycvsaxopei) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#hclipuwpja) .gt_font_normal {
+:where(#ycvsaxopei) .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#hclipuwpja) .gt_font_bold {
+:where(#ycvsaxopei) .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#hclipuwpja) .gt_font_italic {
+:where(#ycvsaxopei) .gt_font_italic {
   font-style: italic;
 }
 
-:where(#hclipuwpja) .gt_super {
+:where(#ycvsaxopei) .gt_super {
   font-size: 65%;
 }
 
-:where(#hclipuwpja) .gt_footnote_marks {
+:where(#ycvsaxopei) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#hclipuwpja) .gt_asterisk {
+:where(#ycvsaxopei) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#hclipuwpja) .gt_indent_1 {
+:where(#ycvsaxopei) .gt_indent_1 {
   text-indent: 5px;
 }
 
-:where(#hclipuwpja) .gt_indent_2 {
+:where(#ycvsaxopei) .gt_indent_2 {
   text-indent: 10px;
 }
 
-:where(#hclipuwpja) .gt_indent_3 {
+:where(#ycvsaxopei) .gt_indent_3 {
   text-indent: 15px;
 }
 
-:where(#hclipuwpja) .gt_indent_4 {
+:where(#ycvsaxopei) .gt_indent_4 {
   text-indent: 20px;
 }
 
-:where(#hclipuwpja) .gt_indent_5 {
+:where(#ycvsaxopei) .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -852,374 +852,302 @@ html {
   <tbody class="gt_table_body">
     <tr><td class="gt_row gt_left">IRMS_SYS_ID</td>
 <td class="gt_row gt_center">numeric</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">IRMS_FAC_ID</td>
+    <tr><td class="gt_row gt_left gt_striped">IRMS_PAT_ID</td>
 <td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">ASIIS_FAC_ID</td>
+    <tr><td class="gt_row gt_left">ASIIS_PAT_ID_PTR</td>
 <td class="gt_row gt_center">numeric</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">NAME</td>
+    <tr><td class="gt_row gt_left gt_striped">PAT_FIRST_NAME</td>
 <td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">PAT_FIRST_NAME_NS</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">PAT_MIDDLE_NAME</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">PAT_MIDDLE_NAME_NS</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">PAT_LAST_NAME</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">PAT_LAST_NAME_NS</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">PAT_SUFFIX</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">PROFESSIONAL_SUFFIX</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">PAT_BIRTH_DATE</td>
+<td class="gt_row gt_center gt_striped">POSIXct, POSIXt</td></tr>
+    <tr><td class="gt_row gt_left">PAT_GENDER</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">PAT_SSN</td>
+<td class="gt_row gt_center gt_striped">numeric</td></tr>
+    <tr><td class="gt_row gt_left">PAT_MEDICAID_NUM</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">PAT_BIRTH_FILE_NUM</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">PAT_BIRTH_STATE_CODE</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">PAT_BIRTH_COUNTRY_CODE</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">PAT_RACE</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">PAT_ETHNICITY_CODE</td>
+<td class="gt_row gt_center gt_striped">numeric</td></tr>
+    <tr><td class="gt_row gt_left">PAT_LANGUAGE</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">VFC_ELIGIBLE</td>
+<td class="gt_row gt_center gt_striped">numeric</td></tr>
     <tr><td class="gt_row gt_left">ADDRESS_STREET1</td>
 <td class="gt_row gt_center">character</td></tr>
     <tr><td class="gt_row gt_left gt_striped">ADDRESS_STREET2</td>
 <td class="gt_row gt_center gt_striped">character</td></tr>
     <tr><td class="gt_row gt_left">PHYSICAL_ADDRESS</td>
 <td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">ADDRESS_CITY</td>
+    <tr><td class="gt_row gt_left gt_striped">ADDRESS_STREET_MANGLED</td>
 <td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">ADDRESS_STATE</td>
+    <tr><td class="gt_row gt_left">ADDRESS_CITY</td>
 <td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">COUNTY_CODE</td>
-<td class="gt_row gt_center gt_striped">numeric</td></tr>
-    <tr><td class="gt_row gt_left">ADDRESS_ZIP</td>
+    <tr><td class="gt_row gt_left gt_striped">ADDRESS_STATE</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">COUNTY_CODE</td>
 <td class="gt_row gt_center">numeric</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">ADDRESS_PHONE</td>
+    <tr><td class="gt_row gt_left gt_striped">ADDRESS_ZIP</td>
 <td class="gt_row gt_center gt_striped">numeric</td></tr>
-    <tr><td class="gt_row gt_left">ADDRESS_FAX</td>
+    <tr><td class="gt_row gt_left">ADDRESS_PHONE</td>
 <td class="gt_row gt_center">numeric</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">EMAIL</td>
+    <tr><td class="gt_row gt_left gt_striped">ADDRESS_EMAIL</td>
 <td class="gt_row gt_center gt_striped">character</td></tr>
     <tr><td class="gt_row gt_left">DISTRICT_NUMBER</td>
 <td class="gt_row gt_center">numeric</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">GEOCODE_X</td>
+    <tr><td class="gt_row gt_left gt_striped">SCHOOL_ID</td>
 <td class="gt_row gt_center gt_striped">numeric</td></tr>
-    <tr><td class="gt_row gt_left">GEOCODE_Y</td>
-<td class="gt_row gt_center">numeric</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">GEOCODE_STATUS</td>
-<td class="gt_row gt_center gt_striped">numeric</td></tr>
-    <tr><td class="gt_row gt_left">TIGER_LINE_ID</td>
-<td class="gt_row gt_center">numeric</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">GEOCODE_MSTATUS</td>
+    <tr><td class="gt_row gt_left">MOTHER_MAIDEN</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">MOTHER_MAIDEN_NS</td>
 <td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">CENSUS_TRACT</td>
+    <tr><td class="gt_row gt_left">GRD_FIRST_NAME</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">GRD_FIRST_NAME2</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">GRD_FIRST_NAME_NS</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">GRD_MIDDLE_NAME</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">GRD_MIDDLE_NAME2</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">GRD_LAST_NAME</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">GRD_LAST_NAME2</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">GRD_SSN</td>
+<td class="gt_row gt_center gt_striped">numeric</td></tr>
+    <tr><td class="gt_row gt_left">GRD_WORK_PHONE</td>
 <td class="gt_row gt_center">numeric</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">INACTIVE_STATUS</td>
+    <tr><td class="gt_row gt_left gt_striped">HEALTH_PLAN</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">HEALTH_PLAN_ID</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">HEALTH_PLAN_ENROLL</td>
+<td class="gt_row gt_center gt_striped">POSIXct, POSIXt</td></tr>
+    <tr><td class="gt_row gt_left">PROGRAM_LIST</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">BLOCK_RECALL</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">INACTIVE_CODE</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">COMMENTS</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">NEXT_APPOINTMENT</td>
+<td class="gt_row gt_center">POSIXct, POSIXt</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">IRMS_FAC_ID</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">IRMS_PHY_ID</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">CHART_NUMBER</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">MATCH_CODE1</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">MATCH_CODE2</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">MATCH_CODE3</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">MATCH_CODE4</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">MATCH_CODE5</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">MATCH_NUM1</td>
+<td class="gt_row gt_center gt_striped">numeric</td></tr>
+    <tr><td class="gt_row gt_left">MATCH_NUM2</td>
+<td class="gt_row gt_center">numeric</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">MATCH_NUM3</td>
+<td class="gt_row gt_center gt_striped">numeric</td></tr>
+    <tr><td class="gt_row gt_left">MATCH_NUM4</td>
+<td class="gt_row gt_center">numeric</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">MATCH_NUM5</td>
+<td class="gt_row gt_center gt_striped">numeric</td></tr>
+    <tr><td class="gt_row gt_left">DUPLICATE</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">DUP_IDENTIFIED_BY</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">MATCH_IRMS_SYS_ID</td>
+<td class="gt_row gt_center">numeric</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">MATCH_IRMS_PAT_ID</td>
 <td class="gt_row gt_center gt_striped">character</td></tr>
     <tr><td class="gt_row gt_left">INSERT_STAMP</td>
 <td class="gt_row gt_center">POSIXct, POSIXt</td></tr>
     <tr><td class="gt_row gt_left gt_striped">UPDATE_STAMP</td>
 <td class="gt_row gt_center gt_striped">POSIXct, POSIXt</td></tr>
-    <tr><td class="gt_row gt_left">OWNERSHIP_BLOCKED</td>
+    <tr><td class="gt_row gt_left">REGISTRY_ENTRY_STAMP</td>
+<td class="gt_row gt_center">POSIXct, POSIXt</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">REGISTRY_UPDATE_STAMP</td>
+<td class="gt_row gt_center gt_striped">POSIXct, POSIXt</td></tr>
+    <tr><td class="gt_row gt_left">SEND_TO_REGISTRY</td>
 <td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">HOME_FACILITY</td>
-<td class="gt_row gt_center gt_striped">numeric</td></tr>
-    <tr><td class="gt_row gt_left">VFC_PIN</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">FACILITY_TYPE_CODE</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">CONTACT_FIRST_NAME</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">CONTACT_LAST_NAME</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">ORGANIZATION_CATEGORY_CODE</td>
-<td class="gt_row gt_center">numeric</td></tr>
     <tr><td class="gt_row gt_left gt_striped">LAST_USER_TO_UPDATE</td>
 <td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">PHONE_EXT</td>
+    <tr><td class="gt_row gt_left">HISTORICAL</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">WORK_PHONE</td>
+<td class="gt_row gt_center gt_striped">numeric</td></tr>
+    <tr><td class="gt_row gt_left">WORK_PHONE_EXT</td>
 <td class="gt_row gt_center">numeric</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">DISPLAY_NAME</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">STATUS_ID</td>
+    <tr><td class="gt_row gt_left gt_striped">CELL_PHONE</td>
+<td class="gt_row gt_center gt_striped">numeric</td></tr>
+    <tr><td class="gt_row gt_left">PAGER</td>
 <td class="gt_row gt_center">numeric</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">STATUS_COMMENT</td>
+    <tr><td class="gt_row gt_left gt_striped">ADDRESS_EMAIL2</td>
 <td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">NUM_PHYSICIANS_PLANNED</td>
+    <tr><td class="gt_row gt_left">INCOME</td>
 <td class="gt_row gt_center">numeric</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">REPORTING_METHOD</td>
+    <tr><td class="gt_row gt_left gt_striped">EMPLOYER_ID</td>
+<td class="gt_row gt_center gt_striped">numeric</td></tr>
+    <tr><td class="gt_row gt_left">OCCUPATION_CODE</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">RC_SNAPSHOT_ID</td>
+<td class="gt_row gt_center gt_striped">numeric</td></tr>
+    <tr><td class="gt_row gt_left">SEQUENCE_ID</td>
+<td class="gt_row gt_center">numeric</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">BLOCK_MAIL_REASON</td>
 <td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">VENDOR_ID</td>
+    <tr><td class="gt_row gt_left">VALID_ADDRESS</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">ADDRESS_PHONE_EXT</td>
+<td class="gt_row gt_center gt_striped">numeric</td></tr>
+    <tr><td class="gt_row gt_left">FAX</td>
 <td class="gt_row gt_center">numeric</td></tr>
     <tr><td class="gt_row gt_left gt_striped">INSERTED_BY</td>
 <td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">INCLUDE_IN_MAILING</td>
+    <tr><td class="gt_row gt_left">LEGACY_PATIENT_ID</td>
 <td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">LOCAL_APPROVAL_IRMS_ID</td>
+    <tr><td class="gt_row gt_left gt_striped">NUMBER_IN_FAMILY</td>
 <td class="gt_row gt_center gt_striped">numeric</td></tr>
-    <tr><td class="gt_row gt_left">DEFAULT_RECONCILIATION_QOH</td>
+    <tr><td class="gt_row gt_left">HEALTH_PROMOTION_COMMENTS</td>
 <td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">SHIPPING_CONTACT_NAME</td>
+    <tr><td class="gt_row gt_left gt_striped">IS_ANONYMOUS</td>
 <td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">SHIPPING_ADDRESS_STREET1</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">SHIPPING_ADDRESS_STREET2</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">SHIPPING_ADDRESS_CITY</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">SHIPPING_ADDRESS_STATE</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">SHIPPING_ADDRESS_ZIP</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">SHIPPING_INSTRUCTIONS</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">ALLOW_ONLINE_ORDERS</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">ALLOW_VACCINE_TRANSFERS</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">ORDER_SET_ID</td>
-<td class="gt_row gt_center">numeric</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">MINIMUM_ORDER_DAYS</td>
-<td class="gt_row gt_center gt_striped">numeric</td></tr>
-    <tr><td class="gt_row gt_left">MANAGES_REGISTRY_INVENTORY</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">PREFERRED_DELIVERY_METHOD</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">INSURER_ID</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">INSURANCE_EXPIRE_DATE</td>
-<td class="gt_row gt_center gt_striped">POSIXct, POSIXt</td></tr>
-    <tr><td class="gt_row gt_left">INSURANCE_COVERAGE</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">FACILITY_CODE</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">FACILITY_SIZE</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">DELIVERY_POINT</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">ALTERNATE_PHONE</td>
-<td class="gt_row gt_center">numeric</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">INACTIVE_EFFECTIVE_FROM_DATE</td>
-<td class="gt_row gt_center gt_striped">POSIXct, POSIXt</td></tr>
-    <tr><td class="gt_row gt_left">INACTIVE_EFFECTIVE_TO_DATE</td>
-<td class="gt_row gt_center">POSIXct, POSIXt</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">DELIVERY_DISTANCE</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">DELIVERY_ZONE</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">PST_STATUS</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">GST_STATUS</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">IS_COLD_CHAIN_CAPABLE</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">IS_COLD_CHAIN_COMPLIANT</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">LAST_INSPECTION_DATE</td>
-<td class="gt_row gt_center gt_striped">POSIXct, POSIXt</td></tr>
-    <tr><td class="gt_row gt_left">IS_CONNECTED</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">FACILITY_COMMENT</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">LICENSE_NUMBER</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">LICENSE_EFFECTIVE_FROM_DATE</td>
-<td class="gt_row gt_center gt_striped">POSIXct, POSIXt</td></tr>
-    <tr><td class="gt_row gt_left">LICENSE_EFFECTIVE_TO_DATE</td>
-<td class="gt_row gt_center">POSIXct, POSIXt</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">ACCOUNTING_CODE</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">BILLING_CONTACT_NAME</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">BILLING_ADDRESS_STREET1</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">BILLING_ADDRESS_STREET2</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">BILLING_ADDRESS_ROOM_CODE</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">BILLING_ADDRESS_CITY</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">BILLING_ADDRESS_STATE</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">BILLING_ADDRESS_ZIP</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">SHIPPING_ADDRESS_ROOM_CODE</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">GST_EXEMPTION_CERTIFICATE</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">SUSPENSION_REASON_CODE</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">RECOMMENDED_QTY_CALCULATION</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">FACILITY_TYPE_OTHER</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">ALLOW_PUBLIC_VFC_INELIGIBLE</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">DTT_PROFILE_NAME</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">ALLOW_IRMS_LEVEL_DECREMENT</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">ALLOW_VACCINE_RETURNS</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">ENABLE_AUTO_RECEIVE</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">EXTERNAL_FACILITY_ID</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">VACCINE_CHOICE_TYPE</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">ENABLE_WAITING_ROOM</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">CERTIFYING_PROVIDER</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">CERTIFYING_PROVIDER_PHONE</td>
-<td class="gt_row gt_center gt_striped">numeric</td></tr>
-    <tr><td class="gt_row gt_left">CERTIFYING_PROVIDER_FAX</td>
-<td class="gt_row gt_center">numeric</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">CERTIFYING_PROVIDER_EMAIL</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">ORIGINAL_VFC_CERT_DATE</td>
-<td class="gt_row gt_center">POSIXct, POSIXt</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">SHIPPING_PHONE</td>
-<td class="gt_row gt_center gt_striped">numeric</td></tr>
-    <tr><td class="gt_row gt_left">SHIPPING_FAX</td>
-<td class="gt_row gt_center">numeric</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">SHIPPING_EMAIL</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">ORDER_FREQUENCY</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">ORDER_TIMING</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">ORDER_FREQUENCY_START_MONTH</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">ORDER_THRESHOLD_PERCENT</td>
-<td class="gt_row gt_center gt_striped">numeric</td></tr>
-    <tr><td class="gt_row gt_left">IS_FROZEN</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">IS_INSULATED_DOOR</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">MEASURE_TEMP_CODE</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">FACILITY_SIGNATORY</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">SHIPPING_ADDRESS_COUNTY_CODE</td>
-<td class="gt_row gt_center">numeric</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">GROUP_NPI</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">PROVIDER_TAX_ID</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">PROVIDER_TAX_ID_TYPE</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">PROVIDER_TAXONOMY</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">MEDICARE_PIN</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">MEDICARE_GROUP</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">MEDICAID_PIN</td>
-<td class="gt_row gt_center gt_striped">numeric</td></tr>
-    <tr><td class="gt_row gt_left">MEDICAID_GROUP</td>
-<td class="gt_row gt_center">numeric</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">BILLING_ENTITY_TYPE</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">ENABLE_PROVIDER_AGREEMENT</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">FACILITY_SIGNATORY_TITLE</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">SHIPPING_CONTACT_NAME2</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">SHIPPING_CONTACT_NAME3</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">SHIPPING_PHONE_EXT</td>
-<td class="gt_row gt_center">numeric</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">MAILING_ADDRESS_STREET1</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">MAILING_ADDRESS_STREET2</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">MAILING_ADDRESS_CITY</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">MAILING_ADDRESS_STATE</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">MAILING_COUNTY_CODE</td>
-<td class="gt_row gt_center gt_striped">numeric</td></tr>
-    <tr><td class="gt_row gt_left">MAILING_ADDRESS_ZIP</td>
-<td class="gt_row gt_center">numeric</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">MAILING_ADDRESS_PHONE</td>
-<td class="gt_row gt_center gt_striped">numeric</td></tr>
-    <tr><td class="gt_row gt_left">MAILING_ADDRESS_FAX</td>
-<td class="gt_row gt_center">numeric</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">MAILING_EMAIL</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">MAILING_CONTACT_NAME1</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">MAILING_CONTACT_NAME2</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">MAILING_CONTACT_NAME3</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">MAILING_PHONE_EXT</td>
-<td class="gt_row gt_center gt_striped">numeric</td></tr>
-    <tr><td class="gt_row gt_left">SHIPPING_INFO_CHANGED</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">IS_VACTRAK_USER</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">BYPASS_DOSE_LEVEL_ACC</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">VFC_STATUS_CODE</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">UPLOAD_TEMPERATURE_DATA</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">EXEMPTION_EMAIL</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">ENABLE_EXEMPTION_FORM</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">VACCINE_ADMIN_MANUAL_REPORT</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">IMPORT_INVENTORY_DATA</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">DEPOT_SHIPPING_INSTRUCTION</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">PROVIDER_FACILITY_TYPE</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">PROVIDER_FACILITY_TYPE_OTHER</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">ENROLL_SITE_VISIT_COMPL_DATE</td>
-<td class="gt_row gt_center">POSIXct, POSIXt</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">LAST_SITE_VISIT_DATE</td>
-<td class="gt_row gt_center gt_striped">POSIXct, POSIXt</td></tr>
-    <tr><td class="gt_row gt_left">COLD_STORAGE_PHYSICAL_LOCATION</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">IS_DEPOT</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">ASSIGNED_DEPOT_IRMS_SYS_ID</td>
-<td class="gt_row gt_center">numeric</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">ASSIGNED_DEPOT_ASIIS_FAC_ID</td>
-<td class="gt_row gt_center gt_striped">numeric</td></tr>
     <tr><td class="gt_row gt_left">INTERNATIONAL_ZIP</td>
 <td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">BILLING_ADDRESS_INT_ZIP</td>
+    <tr><td class="gt_row gt_left gt_striped">ADDRESS_COUNTRY_CODE</td>
 <td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">MAILING_ADDRESS_INT_ZIP</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">SHIPPING_ADDRESS_INT_ZIP</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">IS_VACCINE_RETURN_DEPOT</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">IRMS_SYS_ID_RETURN_DEPOT</td>
-<td class="gt_row gt_center gt_striped">numeric</td></tr>
-    <tr><td class="gt_row gt_left">ASIIS_FAC_ID_RETURN_DEPOT</td>
+    <tr><td class="gt_row gt_left">BIRTH_ORDER</td>
 <td class="gt_row gt_center">numeric</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">DISABLE_VFC_PUBLICLY_SUPPLIED</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">OPT_OUT_REMINDER_RECALL</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">ENROLLMENT_ID</td>
+    <tr><td class="gt_row gt_left gt_striped">MULTIPLE_BIRTH_COUNT</td>
 <td class="gt_row gt_center gt_striped">numeric</td></tr>
-    <tr><td class="gt_row gt_left">VFC_ADDITIONAL_STATUS</td>
+    <tr><td class="gt_row gt_left">SIIS_OPTOUT</td>
 <td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">PIN</td>
+    <tr><td class="gt_row gt_left gt_striped">ALIAS_FIRST_NAME</td>
 <td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">OVERRIDE_RECONCILIATION_HOLD</td>
+    <tr><td class="gt_row gt_left">ALIAS_LAST_NAME</td>
 <td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">ADDRESS_VERIFIED</td>
+    <tr><td class="gt_row gt_left gt_striped">PAT_MEDICARE_ID</td>
 <td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">DO_NOT_CLEANSE_ADDRESS</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">ADDRESS_LONGITUDE</td>
-<td class="gt_row gt_center gt_striped">numeric</td></tr>
-    <tr><td class="gt_row gt_left">ADDRESS_LATITUDE</td>
+    <tr><td class="gt_row gt_left">HEALTH_PLAN_CODE</td>
 <td class="gt_row gt_center">numeric</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">SHIPPING_ADDRESS_VERIFIED</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">DO_NOT_CLEANSE_SHIPPING_ADDR</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">SHIPPING_ADDRESS_LONGITUDE</td>
+    <tr><td class="gt_row gt_left gt_striped">PROBABILISTIC_SCORE</td>
 <td class="gt_row gt_center gt_striped">numeric</td></tr>
-    <tr><td class="gt_row gt_left">SHIPPING_ADDRESS_LATITUDE</td>
-<td class="gt_row gt_center">numeric</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">MAILING_ADDRESS_VERIFIED</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">DO_NOT_CLEANSE_MAILING_ADDR</td>
+    <tr><td class="gt_row gt_left">ALLERGIES</td>
 <td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">MAILING_ADDRESS_LONGITUDE</td>
-<td class="gt_row gt_center gt_striped">numeric</td></tr>
-    <tr><td class="gt_row gt_left">MAILING_ADDRESS_LATITUDE</td>
+    <tr><td class="gt_row gt_left gt_striped">OWNERSHIP_DECLINED</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">ASSOCIATION_ID</td>
 <td class="gt_row gt_center">numeric</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">GRADE_LEVEL_ID</td>
+<td class="gt_row gt_center gt_striped">numeric</td></tr>
+    <tr><td class="gt_row gt_left">MEDICAID_PROVIDER_ID</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">PASPORT_PHAME_ID</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">PAT_GENDER_OTHER</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">INACTIVE_CODE_OTHER</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">OPTOUT_IRMS_SYS_ID</td>
+<td class="gt_row gt_center">numeric</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">IS_MILITARY</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">PAT_DEATH_DATE</td>
+<td class="gt_row gt_center">POSIXct, POSIXt</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">BIRTH_FACILITY</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">ADMISSION_DATE</td>
+<td class="gt_row gt_center">POSIXct, POSIXt</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">SCHOOL_ENTRY_DATE</td>
+<td class="gt_row gt_center gt_striped">POSIXct, POSIXt</td></tr>
+    <tr><td class="gt_row gt_left">REPORTING_METHOD</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">ICCP</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">SSN_TYPE</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">WAITING_ROOM_ADD_DATE</td>
+<td class="gt_row gt_center gt_striped">POSIXct, POSIXt</td></tr>
+    <tr><td class="gt_row gt_left">WAITING_ROOM_DEFER_DATE</td>
+<td class="gt_row gt_center">POSIXct, POSIXt</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">WAITING_ROOM_STATUS</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">STUDENT_ID</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">ADDRESS_EMAIL_VALID</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">INVALID_EMAIL_REASON</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">MAIL_METHOD</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">GRD_TYPE</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">MULTIPLE_BIRTH_INDICATOR</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">IMPORT_LOG_ID</td>
+<td class="gt_row gt_center">numeric</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">ADV_SCORE_TOTAL</td>
+<td class="gt_row gt_center gt_striped">numeric</td></tr>
+    <tr><td class="gt_row gt_left">GRD_PHONE_USE_CODE</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">GRD_PHONE_EQUIPMENT_TYPE</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">PUBLICITY_CODE</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">UNIQUE_IMPORT_ID</td>
+<td class="gt_row gt_center gt_striped">numeric</td></tr>
+    <tr><td class="gt_row gt_left">PAT_NATIONALITY_CODE</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">ADDRESS_BUILDING</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">ADDRESS_ZONE</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">PAT_NAME_PART1</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">PAT_NAME_PART2</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">ADDRESS_INWANI_STREET</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">SMARTY_STREETS_ADDR_ID</td>
+<td class="gt_row gt_center">numeric</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">DO_NOT_CLEAN_ADDRESS</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">MYIR_EMAIL_INVITATION_SENT</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">SUBSCRIPTION_SERVICE_FLAG</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">TRANSACTION_COMPLETE</td>
+<td class="gt_row gt_center">character</td></tr>
     <tr><td class="gt_row gt_left gt_striped">CREATEDATETIME</td>
 <td class="gt_row gt_center gt_striped">POSIXct, POSIXt</td></tr>
     <tr><td class="gt_row gt_left">SysStartTime</td>
@@ -1238,23 +1166,17 @@ html {
 </section>
 <section id="category-description" class="level2">
 <h2 class="anchored" data-anchor-id="category-description">Category Description</h2>
-<p>This section contains variable coding for relevant columns within the facility master table.</p>
-<div class="cell">
-
-</div>
-</section>
-<section id="statistics" class="level2">
-<h2 class="anchored" data-anchor-id="statistics">Statistics</h2>
+<p>This section contains variable coding for relevant columns within the patient reserve table.</p>
 <div class="cell">
 <div class="cell-output-display">
 
-<div id="xujmmkzwov" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="eudienkszy" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 html {
   font-family: Lato, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#xujmmkzwov) .gt_table {
+#eudienkszy .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1279,7 +1201,7 @@ html {
   border-left-color: #D3D3D3;
 }
 
-:where(#xujmmkzwov) .gt_heading {
+#eudienkszy .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -1291,7 +1213,7 @@ html {
   border-right-color: #D3D3D3;
 }
 
-:where(#xujmmkzwov) .gt_title {
+#eudienkszy .gt_title {
   color: #333333;
   font-size: 24px;
   font-weight: initial;
@@ -1303,7 +1225,7 @@ html {
   border-bottom-width: 0;
 }
 
-:where(#xujmmkzwov) .gt_subtitle {
+#eudienkszy .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1315,13 +1237,13 @@ html {
   border-top-width: 0;
 }
 
-:where(#xujmmkzwov) .gt_bottom_border {
+#eudienkszy .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#xujmmkzwov) .gt_col_headings {
+#eudienkszy .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1336,7 +1258,7 @@ html {
   border-right-color: #D3D3D3;
 }
 
-:where(#xujmmkzwov) .gt_col_heading {
+#eudienkszy .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -1356,7 +1278,7 @@ html {
   overflow-x: hidden;
 }
 
-:where(#xujmmkzwov) .gt_column_spanner_outer {
+#eudienkszy .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -1368,15 +1290,15 @@ html {
   padding-right: 4px;
 }
 
-:where(#xujmmkzwov) .gt_column_spanner_outer:first-child {
+#eudienkszy .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#xujmmkzwov) .gt_column_spanner_outer:last-child {
+#eudienkszy .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#xujmmkzwov) .gt_column_spanner {
+#eudienkszy .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1388,7 +1310,7 @@ html {
   width: 100%;
 }
 
-:where(#xujmmkzwov) .gt_group_heading {
+#eudienkszy .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1413,7 +1335,7 @@ html {
   vertical-align: middle;
 }
 
-:where(#xujmmkzwov) .gt_empty_group_heading {
+#eudienkszy .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1428,15 +1350,15 @@ html {
   vertical-align: middle;
 }
 
-:where(#xujmmkzwov) .gt_from_md > :first-child {
+#eudienkszy .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#xujmmkzwov) .gt_from_md > :last-child {
+#eudienkszy .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#xujmmkzwov) .gt_row {
+#eudienkszy .gt_row {
   padding-top: 7px;
   padding-bottom: 7px;
   padding-left: 5px;
@@ -1455,7 +1377,7 @@ html {
   overflow-x: hidden;
 }
 
-:where(#xujmmkzwov) .gt_stub {
+#eudienkszy .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -1468,7 +1390,7 @@ html {
   padding-right: 5px;
 }
 
-:where(#xujmmkzwov) .gt_stub_row_group {
+#eudienkszy .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1482,11 +1404,11 @@ html {
   vertical-align: top;
 }
 
-:where(#xujmmkzwov) .gt_row_group_first td {
+#eudienkszy .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#xujmmkzwov) .gt_summary_row {
+#eudienkszy .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1496,16 +1418,16 @@ html {
   padding-right: 5px;
 }
 
-:where(#xujmmkzwov) .gt_first_summary_row {
+#eudienkszy .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#xujmmkzwov) .gt_first_summary_row.thick {
+#eudienkszy .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#xujmmkzwov) .gt_last_summary_row {
+#eudienkszy .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1515,7 +1437,7 @@ html {
   border-bottom-color: #D3D3D3;
 }
 
-:where(#xujmmkzwov) .gt_grand_summary_row {
+#eudienkszy .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1525,7 +1447,7 @@ html {
   padding-right: 5px;
 }
 
-:where(#xujmmkzwov) .gt_first_grand_summary_row {
+#eudienkszy .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1535,11 +1457,11 @@ html {
   border-top-color: #D3D3D3;
 }
 
-:where(#xujmmkzwov) .gt_striped {
+#eudienkszy .gt_striped {
   background-color: #FAFAFA;
 }
 
-:where(#xujmmkzwov) .gt_table_body {
+#eudienkszy .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1548,7 +1470,7 @@ html {
   border-bottom-color: #D3D3D3;
 }
 
-:where(#xujmmkzwov) .gt_footnotes {
+#eudienkszy .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1562,7 +1484,7 @@ html {
   border-right-color: #D3D3D3;
 }
 
-:where(#xujmmkzwov) .gt_footnote {
+#eudienkszy .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -1571,7 +1493,7 @@ html {
   padding-right: 5px;
 }
 
-:where(#xujmmkzwov) .gt_sourcenotes {
+#eudienkszy .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1585,7 +1507,7 @@ html {
   border-right-color: #D3D3D3;
 }
 
-:where(#xujmmkzwov) .gt_sourcenote {
+#eudienkszy .gt_sourcenote {
   font-size: 12px;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1593,64 +1515,621 @@ html {
   padding-right: 5px;
 }
 
-:where(#xujmmkzwov) .gt_left {
+#eudienkszy .gt_left {
   text-align: left;
 }
 
-:where(#xujmmkzwov) .gt_center {
+#eudienkszy .gt_center {
   text-align: center;
 }
 
-:where(#xujmmkzwov) .gt_right {
+#eudienkszy .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#xujmmkzwov) .gt_font_normal {
+#eudienkszy .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#xujmmkzwov) .gt_font_bold {
+#eudienkszy .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#xujmmkzwov) .gt_font_italic {
+#eudienkszy .gt_font_italic {
   font-style: italic;
 }
 
-:where(#xujmmkzwov) .gt_super {
+#eudienkszy .gt_super {
   font-size: 65%;
 }
 
-:where(#xujmmkzwov) .gt_footnote_marks {
+#eudienkszy .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#xujmmkzwov) .gt_asterisk {
+#eudienkszy .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#xujmmkzwov) .gt_indent_1 {
+#eudienkszy .gt_indent_1 {
   text-indent: 5px;
 }
 
-:where(#xujmmkzwov) .gt_indent_2 {
+#eudienkszy .gt_indent_2 {
   text-indent: 10px;
 }
 
-:where(#xujmmkzwov) .gt_indent_3 {
+#eudienkszy .gt_indent_3 {
   text-indent: 15px;
 }
 
-:where(#xujmmkzwov) .gt_indent_4 {
+#eudienkszy .gt_indent_4 {
   text-indent: 20px;
 }
 
-:where(#xujmmkzwov) .gt_indent_5 {
+#eudienkszy .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" style="table-layout: fixed;; width: 700px">
+  <colgroup>
+    <col style="width:110px;">
+    <col style="width:200px;">
+    <col style="width:390px;">
+  </colgroup>
+  <thead class="gt_header">
+    <tr>
+      <td colspan="3" class="gt_heading gt_title gt_font_normal gt_bottom_border" style="">Variable Coding</td>
+    </tr>
+    
+  </thead>
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col"></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">Coding</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr class="gt_group_heading_row">
+      <td colspan="3" class="gt_group_heading">PAT_GENDER</td>
+    </tr>
+    <tr class="gt_row_group_first"><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">F</td>
+<td class="gt_row gt_left">Female</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">M</td>
+<td class="gt_row gt_left gt_striped">Male</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">O</td>
+<td class="gt_row gt_left">Other</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">U</td>
+<td class="gt_row gt_left gt_striped">Unknown</td></tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="3" class="gt_group_heading">PAT_RACE<sup class="gt_footnote_marks">1</sup></td>
+    </tr>
+    <tr class="gt_row_group_first"><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">1</td>
+<td class="gt_row gt_left">White</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">2</td>
+<td class="gt_row gt_left gt_striped">Black or African American</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">4</td>
+<td class="gt_row gt_left">Asian</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">5</td>
+<td class="gt_row gt_left gt_striped">American Indian or Alaskan Native</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">6</td>
+<td class="gt_row gt_left">Other</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">7</td>
+<td class="gt_row gt_left gt_striped">Native Hawaiian or other Pacific Islander</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">8</td>
+<td class="gt_row gt_left">Multi_racial</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">9</td>
+<td class="gt_row gt_left gt_striped">Unknown</td></tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="3" class="gt_group_heading">PAT_ETHNICITY</td>
+    </tr>
+    <tr class="gt_row_group_first"><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">1</td>
+<td class="gt_row gt_left">Hispanic or Latino</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">2</td>
+<td class="gt_row gt_left gt_striped">Not Hispanic or Latino</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">3</td>
+<td class="gt_row gt_left">Unknown</td></tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="3" class="gt_group_heading">VFC_ELIGIBLE</td>
+    </tr>
+    <tr class="gt_row_group_first"><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">0</td>
+<td class="gt_row gt_left gt_striped">Ineligible</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">1</td>
+<td class="gt_row gt_left">Medicaid</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">2</td>
+<td class="gt_row gt_left gt_striped">Uninsured</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">3</td>
+<td class="gt_row gt_left">Nat. Amer.or Alaskan</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">4</td>
+<td class="gt_row gt_left gt_striped">Underinsured</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">5</td>
+<td class="gt_row gt_left">null</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">6</td>
+<td class="gt_row gt_left gt_striped">KidsCare</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">7</td>
+<td class="gt_row gt_left">Hoosier HWise Pkg C</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">8</td>
+<td class="gt_row gt_left gt_striped">CHIP</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">9</td>
+<td class="gt_row gt_left">Healthy Kids</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">10</td>
+<td class="gt_row gt_left gt_striped">Private Insurance (WAA01)</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">11</td>
+<td class="gt_row gt_left">Adult State</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">12</td>
+<td class="gt_row gt_left gt_striped">Private</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">13</td>
+<td class="gt_row gt_left">State Vaccine</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">14</td>
+<td class="gt_row gt_left gt_striped">LACHIP-Affordable Plan Ineligible</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">15</td>
+<td class="gt_row gt_left">LAHIPP-Ineligible</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">16</td>
+<td class="gt_row gt_left gt_striped">WAA01</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">17</td>
+<td class="gt_row gt_left">317</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">18</td>
+<td class="gt_row gt_left gt_striped">Medicare</td></tr>
+  </tbody>
+  
+  <tfoot class="gt_footnotes">
+    <tr>
+      <td class="gt_footnote" colspan="3"><sup class="gt_footnote_marks">1</sup> Each row may contain more than one selection for race.</td>
+    </tr>
+  </tfoot>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="statistics" class="level2">
+<h2 class="anchored" data-anchor-id="statistics">Statistics</h2>
+<div class="cell">
+<div class="cell-output-display">
+
+<div id="xetzrljcsy" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+html {
+  font-family: Lato, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+:where(#xetzrljcsy) .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 700px;
+  border-top-style: solid;
+  border-top-width: 3px;
+  border-top-color: rgba(255, 255, 255, 0);
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+:where(#xetzrljcsy) .gt_heading {
+  background-color: #FFFFFF;
+  text-align: left;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#xetzrljcsy) .gt_title {
+  color: #333333;
+  font-size: 24px;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+:where(#xetzrljcsy) .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+:where(#xetzrljcsy) .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#xetzrljcsy) .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#xetzrljcsy) .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+:where(#xetzrljcsy) .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+:where(#xetzrljcsy) .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+:where(#xetzrljcsy) .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+:where(#xetzrljcsy) .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+:where(#xetzrljcsy) .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+:where(#xetzrljcsy) .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+:where(#xetzrljcsy) .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+:where(#xetzrljcsy) .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+:where(#xetzrljcsy) .gt_row {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #F6F7F7;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+:where(#xetzrljcsy) .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#xetzrljcsy) .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+:where(#xetzrljcsy) .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+:where(#xetzrljcsy) .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#xetzrljcsy) .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+:where(#xetzrljcsy) .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+:where(#xetzrljcsy) .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#xetzrljcsy) .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#xetzrljcsy) .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+:where(#xetzrljcsy) .gt_striped {
+  background-color: #FAFAFA;
+}
+
+:where(#xetzrljcsy) .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#xetzrljcsy) .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#xetzrljcsy) .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#xetzrljcsy) .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#xetzrljcsy) .gt_sourcenote {
+  font-size: 12px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#xetzrljcsy) .gt_left {
+  text-align: left;
+}
+
+:where(#xetzrljcsy) .gt_center {
+  text-align: center;
+}
+
+:where(#xetzrljcsy) .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+:where(#xetzrljcsy) .gt_font_normal {
+  font-weight: normal;
+}
+
+:where(#xetzrljcsy) .gt_font_bold {
+  font-weight: bold;
+}
+
+:where(#xetzrljcsy) .gt_font_italic {
+  font-style: italic;
+}
+
+:where(#xetzrljcsy) .gt_super {
+  font-size: 65%;
+}
+
+:where(#xetzrljcsy) .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+:where(#xetzrljcsy) .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+:where(#xetzrljcsy) .gt_indent_1 {
+  text-indent: 5px;
+}
+
+:where(#xetzrljcsy) .gt_indent_2 {
+  text-indent: 10px;
+}
+
+:where(#xetzrljcsy) .gt_indent_3 {
+  text-indent: 15px;
+}
+
+:where(#xetzrljcsy) .gt_indent_4 {
+  text-indent: 20px;
+}
+
+:where(#xetzrljcsy) .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1663,8 +2142,8 @@ html {
     </tr>
   </thead>
   <tbody class="gt_table_body">
-    <tr><td class="gt_row gt_right">189</td>
-<td class="gt_row gt_right">8941</td></tr>
+    <tr><td class="gt_row gt_right">153</td>
+<td class="gt_row gt_right">78307920</td></tr>
   </tbody>
   
   
@@ -1777,13 +2256,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./EXEMPTION_FORM_VACCS.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">EXEMPTION_FORM_VACCS</span>
+      <a href="./PATIENT_RACE_MASTER.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">PATIENT_RACE_MASTER</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./FACILITY_TYPE.html" class="pagination-link">
-        <span class="nav-page-text">FACILITY_TYPE</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./PATIENT_SCHOOL_NURSE.html" class="pagination-link">
+        <span class="nav-page-text">PATIENT_SCHOOL_NURSE</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

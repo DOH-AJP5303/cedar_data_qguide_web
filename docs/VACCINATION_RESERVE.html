@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CEDAR Data Quality Guide - SEROLOGY_TEST_RESULT</title>
+<title>CEDAR Data Quality Guide - VACCINATION_RESERVE</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./SEROLOGY_TYPE_CODE.html" rel="next">
-<link href="./SEROLOGY_INVALID_DATA.html" rel="prev">
+<link href="./VACCINE_FAMILY.html" rel="next">
+<link href="./VACCINATION_MASTER.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -72,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">SEROLOGY_TEST_RESULT</h1>
+      <h1 class="quarto-secondary-nav-title">VACCINATION_RESERVE</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -305,7 +305,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./SEROLOGY_TEST_RESULT.html" class="sidebar-item-text sidebar-link active">SEROLOGY_TEST_RESULT</a>
+  <a href="./SEROLOGY_TEST_RESULT.html" class="sidebar-item-text sidebar-link">SEROLOGY_TEST_RESULT</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -340,7 +340,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./VACCINATION_RESERVE.html" class="sidebar-item-text sidebar-link">VACCINATION_RESERVE</a>
+  <a href="./VACCINATION_RESERVE.html" class="sidebar-item-text sidebar-link active">VACCINATION_RESERVE</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -406,7 +406,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">SEROLOGY_TEST_RESULT</h1>
+<h1 class="title d-none d-lg-block">VACCINATION_RESERVE</h1>
 </div>
 
 
@@ -428,20 +428,20 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="description" class="level2">
 <h2 class="anchored" data-anchor-id="description">Description</h2>
-<p>The serology_test_result table contains a list of serology result IDs, as well as details on the result LOINC codes, SNOMED codes, and result description.</p>
+<p>The vaccination_reserve table contains details on historical vaccination data, including registry information, vaccination dosage and data sources.</p>
 </section>
 <section id="columns" class="level2">
 <h2 class="anchored" data-anchor-id="columns">Columns</h2>
 <div class="cell">
 <div class="cell-output-display">
 
-<div id="xgttzzsack" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="aevrnaodtq" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 html {
   font-family: Lato, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#xgttzzsack) .gt_table {
+:where(#aevrnaodtq) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -466,7 +466,7 @@ html {
   border-left-color: #D3D3D3;
 }
 
-:where(#xgttzzsack) .gt_heading {
+:where(#aevrnaodtq) .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -478,7 +478,7 @@ html {
   border-right-color: #D3D3D3;
 }
 
-:where(#xgttzzsack) .gt_title {
+:where(#aevrnaodtq) .gt_title {
   color: #333333;
   font-size: 24px;
   font-weight: initial;
@@ -490,7 +490,7 @@ html {
   border-bottom-width: 0;
 }
 
-:where(#xgttzzsack) .gt_subtitle {
+:where(#aevrnaodtq) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -502,13 +502,13 @@ html {
   border-top-width: 0;
 }
 
-:where(#xgttzzsack) .gt_bottom_border {
+:where(#aevrnaodtq) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#xgttzzsack) .gt_col_headings {
+:where(#aevrnaodtq) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -523,7 +523,7 @@ html {
   border-right-color: #D3D3D3;
 }
 
-:where(#xgttzzsack) .gt_col_heading {
+:where(#aevrnaodtq) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -543,7 +543,7 @@ html {
   overflow-x: hidden;
 }
 
-:where(#xgttzzsack) .gt_column_spanner_outer {
+:where(#aevrnaodtq) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -555,15 +555,15 @@ html {
   padding-right: 4px;
 }
 
-:where(#xgttzzsack) .gt_column_spanner_outer:first-child {
+:where(#aevrnaodtq) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#xgttzzsack) .gt_column_spanner_outer:last-child {
+:where(#aevrnaodtq) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#xgttzzsack) .gt_column_spanner {
+:where(#aevrnaodtq) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -575,7 +575,7 @@ html {
   width: 100%;
 }
 
-:where(#xgttzzsack) .gt_group_heading {
+:where(#aevrnaodtq) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -600,7 +600,7 @@ html {
   vertical-align: middle;
 }
 
-:where(#xgttzzsack) .gt_empty_group_heading {
+:where(#aevrnaodtq) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -615,15 +615,15 @@ html {
   vertical-align: middle;
 }
 
-:where(#xgttzzsack) .gt_from_md > :first-child {
+:where(#aevrnaodtq) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#xgttzzsack) .gt_from_md > :last-child {
+:where(#aevrnaodtq) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#xgttzzsack) .gt_row {
+:where(#aevrnaodtq) .gt_row {
   padding-top: 7px;
   padding-bottom: 7px;
   padding-left: 5px;
@@ -642,7 +642,7 @@ html {
   overflow-x: hidden;
 }
 
-:where(#xgttzzsack) .gt_stub {
+:where(#aevrnaodtq) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -655,7 +655,7 @@ html {
   padding-right: 5px;
 }
 
-:where(#xgttzzsack) .gt_stub_row_group {
+:where(#aevrnaodtq) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -669,11 +669,11 @@ html {
   vertical-align: top;
 }
 
-:where(#xgttzzsack) .gt_row_group_first td {
+:where(#aevrnaodtq) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#xgttzzsack) .gt_summary_row {
+:where(#aevrnaodtq) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -683,16 +683,16 @@ html {
   padding-right: 5px;
 }
 
-:where(#xgttzzsack) .gt_first_summary_row {
+:where(#aevrnaodtq) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#xgttzzsack) .gt_first_summary_row.thick {
+:where(#aevrnaodtq) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#xgttzzsack) .gt_last_summary_row {
+:where(#aevrnaodtq) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -702,7 +702,7 @@ html {
   border-bottom-color: #D3D3D3;
 }
 
-:where(#xgttzzsack) .gt_grand_summary_row {
+:where(#aevrnaodtq) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -712,7 +712,7 @@ html {
   padding-right: 5px;
 }
 
-:where(#xgttzzsack) .gt_first_grand_summary_row {
+:where(#aevrnaodtq) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -722,11 +722,11 @@ html {
   border-top-color: #D3D3D3;
 }
 
-:where(#xgttzzsack) .gt_striped {
+:where(#aevrnaodtq) .gt_striped {
   background-color: #FAFAFA;
 }
 
-:where(#xgttzzsack) .gt_table_body {
+:where(#aevrnaodtq) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -735,7 +735,7 @@ html {
   border-bottom-color: #D3D3D3;
 }
 
-:where(#xgttzzsack) .gt_footnotes {
+:where(#aevrnaodtq) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -749,7 +749,7 @@ html {
   border-right-color: #D3D3D3;
 }
 
-:where(#xgttzzsack) .gt_footnote {
+:where(#aevrnaodtq) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -758,7 +758,7 @@ html {
   padding-right: 5px;
 }
 
-:where(#xgttzzsack) .gt_sourcenotes {
+:where(#aevrnaodtq) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -772,7 +772,7 @@ html {
   border-right-color: #D3D3D3;
 }
 
-:where(#xgttzzsack) .gt_sourcenote {
+:where(#aevrnaodtq) .gt_sourcenote {
   font-size: 12px;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -780,64 +780,64 @@ html {
   padding-right: 5px;
 }
 
-:where(#xgttzzsack) .gt_left {
+:where(#aevrnaodtq) .gt_left {
   text-align: left;
 }
 
-:where(#xgttzzsack) .gt_center {
+:where(#aevrnaodtq) .gt_center {
   text-align: center;
 }
 
-:where(#xgttzzsack) .gt_right {
+:where(#aevrnaodtq) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#xgttzzsack) .gt_font_normal {
+:where(#aevrnaodtq) .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#xgttzzsack) .gt_font_bold {
+:where(#aevrnaodtq) .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#xgttzzsack) .gt_font_italic {
+:where(#aevrnaodtq) .gt_font_italic {
   font-style: italic;
 }
 
-:where(#xgttzzsack) .gt_super {
+:where(#aevrnaodtq) .gt_super {
   font-size: 65%;
 }
 
-:where(#xgttzzsack) .gt_footnote_marks {
+:where(#aevrnaodtq) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#xgttzzsack) .gt_asterisk {
+:where(#aevrnaodtq) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#xgttzzsack) .gt_indent_1 {
+:where(#aevrnaodtq) .gt_indent_1 {
   text-indent: 5px;
 }
 
-:where(#xgttzzsack) .gt_indent_2 {
+:where(#aevrnaodtq) .gt_indent_2 {
   text-indent: 10px;
 }
 
-:where(#xgttzzsack) .gt_indent_3 {
+:where(#aevrnaodtq) .gt_indent_3 {
   text-indent: 15px;
 }
 
-:where(#xgttzzsack) .gt_indent_4 {
+:where(#aevrnaodtq) .gt_indent_4 {
   text-indent: 20px;
 }
 
-:where(#xgttzzsack) .gt_indent_5 {
+:where(#aevrnaodtq) .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -850,27 +850,151 @@ html {
     </tr>
   </thead>
   <tbody class="gt_table_body">
-    <tr><td class="gt_row gt_left">SEROLOGY_RESULT_ID</td>
+    <tr><td class="gt_row gt_left">IRMS_SYS_ID</td>
 <td class="gt_row gt_center">numeric</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">RESULT_SET_ID</td>
+    <tr><td class="gt_row gt_left gt_striped">IRMS_PAT_ID</td>
 <td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">RESULT_LOINC_CODE</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">RESULT_SNOMED_CODE</td>
-<td class="gt_row gt_center gt_striped">character</td></tr>
-    <tr><td class="gt_row gt_left">RESULT_DESCRIPTION</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">CONTRA_CODE</td>
+    <tr><td class="gt_row gt_left">ASIIS_PAT_ID_PTR</td>
+<td class="gt_row gt_center">numeric</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">ASIIS_VACC_CODE</td>
 <td class="gt_row gt_center gt_striped">numeric</td></tr>
-    <tr><td class="gt_row gt_left">INACTIVE_STATUS</td>
+    <tr><td class="gt_row gt_left">CDC_VACC_CODE</td>
+<td class="gt_row gt_center">numeric</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">CPT_VACC_CODE</td>
+<td class="gt_row gt_center gt_striped">numeric</td></tr>
+    <tr><td class="gt_row gt_left">VACC_DATE</td>
+<td class="gt_row gt_center">POSIXct, POSIXt</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">HISTORICAL</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">LOT_NUM</td>
 <td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">MANUFACTURER</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">MANU_CODE</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">VACCINATOR</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">VFC_ELIGIBLE</td>
+<td class="gt_row gt_center">numeric</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">ANATOMICAL_SITE</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">ADVERSE_REACTION_CODE</td>
+<td class="gt_row gt_center">numeric</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">IRMS_FAC_ID</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">IRMS_PHY_ID</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">DISTRICT_NUMBER</td>
+<td class="gt_row gt_center gt_striped">numeric</td></tr>
+    <tr><td class="gt_row gt_left">LAST_USER_TO_UPDATE</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">VIS_PUBLICATION</td>
+<td class="gt_row gt_center gt_striped">POSIXct, POSIXt</td></tr>
+    <tr><td class="gt_row gt_left">VIS_PUBLICATION2</td>
+<td class="gt_row gt_center">POSIXct, POSIXt</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">VIS_PUBLICATION3</td>
+<td class="gt_row gt_center gt_striped">POSIXct, POSIXt</td></tr>
+    <tr><td class="gt_row gt_left">VIS_PUBLICATION4</td>
+<td class="gt_row gt_center">POSIXct, POSIXt</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">VIS_FORM_GIVEN</td>
+<td class="gt_row gt_center gt_striped">POSIXct, POSIXt</td></tr>
+    <tr><td class="gt_row gt_left">TB_INDURATION</td>
+<td class="gt_row gt_center">numeric</td></tr>
     <tr><td class="gt_row gt_left gt_striped">INSERT_STAMP</td>
 <td class="gt_row gt_center gt_striped">POSIXct, POSIXt</td></tr>
-    <tr><td class="gt_row gt_left">INSERTED_BY</td>
-<td class="gt_row gt_center">character</td></tr>
-    <tr><td class="gt_row gt_left gt_striped">UPDATE_STAMP</td>
+    <tr><td class="gt_row gt_left">UPDATE_STAMP</td>
+<td class="gt_row gt_center">POSIXct, POSIXt</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">REGISTRY_ENTRY_STAMP</td>
 <td class="gt_row gt_center gt_striped">POSIXct, POSIXt</td></tr>
-    <tr><td class="gt_row gt_left">LAST_USER_TO_UPDATE</td>
+    <tr><td class="gt_row gt_left">REGISTRY_UPDATE_STAMP</td>
+<td class="gt_row gt_center">POSIXct, POSIXt</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">DELETION_DATE</td>
+<td class="gt_row gt_center gt_striped">POSIXct, POSIXt</td></tr>
+    <tr><td class="gt_row gt_left">SEQUENCE_ID</td>
+<td class="gt_row gt_center">numeric</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">PVN</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">USE_REGISTRY_INVENTORY</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">LOT_NUMBER_CODE</td>
+<td class="gt_row gt_center gt_striped">numeric</td></tr>
+    <tr><td class="gt_row gt_left">RC_SNAPSHOT_ID</td>
+<td class="gt_row gt_center">numeric</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">INSERTED_BY</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">IS_PUBLICLY_SUPPLIED</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">REFERRING_ORGANIZATION_CODE</td>
+<td class="gt_row gt_center gt_striped">numeric</td></tr>
+    <tr><td class="gt_row gt_left">COMMENTS</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">COMPROMISED_CODE</td>
+<td class="gt_row gt_center gt_striped">numeric</td></tr>
+    <tr><td class="gt_row gt_left">VACCINE_SAFETY_MONITOR</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">HISTORICAL_DATA</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">IS_UNVERIFIED</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">CC_VOLUME</td>
+<td class="gt_row gt_center gt_striped">numeric</td></tr>
+    <tr><td class="gt_row gt_left">OWNERSHIP_DECLINED</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">IS_MAPPED_RECORD</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">HISTORICAL_INFO_SOURCE</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">ANATOMICAL_ROUTE</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">DOSAGE_UOM</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">VERIFIED_BY</td>
+<td class="gt_row gt_center gt_striped">numeric</td></tr>
+    <tr><td class="gt_row gt_left">FORCED_DOSE_NUMBER</td>
+<td class="gt_row gt_center">numeric</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">FORCED_DOSE_REASON</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">SERVICE_TYPE</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">CONFIDENTIAL_SERVICE</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">ICD9_CODE</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">CAMPAIGN_ID</td>
+<td class="gt_row gt_center gt_striped">numeric</td></tr>
+    <tr><td class="gt_row gt_left">REPORTING_METHOD</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">DOSE_SIZE</td>
+<td class="gt_row gt_center gt_striped">numeric</td></tr>
+    <tr><td class="gt_row gt_left">TIER_ID</td>
+<td class="gt_row gt_center">numeric</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">MAP_VFC_ELIGIBLE</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">IRMS_VACC_ID</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">ORDERING_PROVIDER_ID</td>
+<td class="gt_row gt_center gt_striped">numeric</td></tr>
+    <tr><td class="gt_row gt_left">FUNDING_SOURCE_ID</td>
+<td class="gt_row gt_center">numeric</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">IMPORT_LOG_ID</td>
+<td class="gt_row gt_center gt_striped">numeric</td></tr>
+    <tr><td class="gt_row gt_left">NDC_NUMBER</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">UNIQUE_IMPORT_ID</td>
+<td class="gt_row gt_center gt_striped">numeric</td></tr>
+    <tr><td class="gt_row gt_left">LOT_DEC_FAIL_CD</td>
+<td class="gt_row gt_center">numeric</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">MAP_IS_PROCESSED</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">COMPLETION_STATUS</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">VACCINE_ORDER_INTENT</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">IS_FM_ELIMINATED_SITE_VACC</td>
+<td class="gt_row gt_center">character</td></tr>
+    <tr><td class="gt_row gt_left gt_striped">IWEB_VACC_EVENT_ID</td>
+<td class="gt_row gt_center gt_striped">character</td></tr>
+    <tr><td class="gt_row gt_left">ORIGINATING_IIS</td>
 <td class="gt_row gt_center">character</td></tr>
     <tr><td class="gt_row gt_left gt_striped">CREATEDATETIME</td>
 <td class="gt_row gt_center gt_striped">POSIXct, POSIXt</td></tr>
@@ -893,13 +1017,13 @@ html {
 <div class="cell">
 <div class="cell-output-display">
 
-<div id="rdyrooctby" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="lzyhcaokqq" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 html {
   font-family: Lato, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#rdyrooctby .gt_table {
+#lzyhcaokqq .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -924,7 +1048,7 @@ html {
   border-left-color: #D3D3D3;
 }
 
-#rdyrooctby .gt_heading {
+#lzyhcaokqq .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -936,7 +1060,7 @@ html {
   border-right-color: #D3D3D3;
 }
 
-#rdyrooctby .gt_title {
+#lzyhcaokqq .gt_title {
   color: #333333;
   font-size: 24px;
   font-weight: initial;
@@ -948,7 +1072,7 @@ html {
   border-bottom-width: 0;
 }
 
-#rdyrooctby .gt_subtitle {
+#lzyhcaokqq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -960,13 +1084,13 @@ html {
   border-top-width: 0;
 }
 
-#rdyrooctby .gt_bottom_border {
+#lzyhcaokqq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#rdyrooctby .gt_col_headings {
+#lzyhcaokqq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -981,7 +1105,7 @@ html {
   border-right-color: #D3D3D3;
 }
 
-#rdyrooctby .gt_col_heading {
+#lzyhcaokqq .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -1001,7 +1125,7 @@ html {
   overflow-x: hidden;
 }
 
-#rdyrooctby .gt_column_spanner_outer {
+#lzyhcaokqq .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -1013,15 +1137,15 @@ html {
   padding-right: 4px;
 }
 
-#rdyrooctby .gt_column_spanner_outer:first-child {
+#lzyhcaokqq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#rdyrooctby .gt_column_spanner_outer:last-child {
+#lzyhcaokqq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#rdyrooctby .gt_column_spanner {
+#lzyhcaokqq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1033,7 +1157,7 @@ html {
   width: 100%;
 }
 
-#rdyrooctby .gt_group_heading {
+#lzyhcaokqq .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1058,7 +1182,7 @@ html {
   vertical-align: middle;
 }
 
-#rdyrooctby .gt_empty_group_heading {
+#lzyhcaokqq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1073,15 +1197,15 @@ html {
   vertical-align: middle;
 }
 
-#rdyrooctby .gt_from_md > :first-child {
+#lzyhcaokqq .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#rdyrooctby .gt_from_md > :last-child {
+#lzyhcaokqq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#rdyrooctby .gt_row {
+#lzyhcaokqq .gt_row {
   padding-top: 7px;
   padding-bottom: 7px;
   padding-left: 5px;
@@ -1100,7 +1224,7 @@ html {
   overflow-x: hidden;
 }
 
-#rdyrooctby .gt_stub {
+#lzyhcaokqq .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -1113,7 +1237,7 @@ html {
   padding-right: 5px;
 }
 
-#rdyrooctby .gt_stub_row_group {
+#lzyhcaokqq .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1127,11 +1251,11 @@ html {
   vertical-align: top;
 }
 
-#rdyrooctby .gt_row_group_first td {
+#lzyhcaokqq .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#rdyrooctby .gt_summary_row {
+#lzyhcaokqq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1141,16 +1265,16 @@ html {
   padding-right: 5px;
 }
 
-#rdyrooctby .gt_first_summary_row {
+#lzyhcaokqq .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#rdyrooctby .gt_first_summary_row.thick {
+#lzyhcaokqq .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#rdyrooctby .gt_last_summary_row {
+#lzyhcaokqq .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1160,7 +1284,7 @@ html {
   border-bottom-color: #D3D3D3;
 }
 
-#rdyrooctby .gt_grand_summary_row {
+#lzyhcaokqq .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1170,7 +1294,7 @@ html {
   padding-right: 5px;
 }
 
-#rdyrooctby .gt_first_grand_summary_row {
+#lzyhcaokqq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1180,11 +1304,11 @@ html {
   border-top-color: #D3D3D3;
 }
 
-#rdyrooctby .gt_striped {
+#lzyhcaokqq .gt_striped {
   background-color: #FAFAFA;
 }
 
-#rdyrooctby .gt_table_body {
+#lzyhcaokqq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1193,7 +1317,7 @@ html {
   border-bottom-color: #D3D3D3;
 }
 
-#rdyrooctby .gt_footnotes {
+#lzyhcaokqq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1207,7 +1331,7 @@ html {
   border-right-color: #D3D3D3;
 }
 
-#rdyrooctby .gt_footnote {
+#lzyhcaokqq .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -1216,7 +1340,7 @@ html {
   padding-right: 5px;
 }
 
-#rdyrooctby .gt_sourcenotes {
+#lzyhcaokqq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1230,7 +1354,7 @@ html {
   border-right-color: #D3D3D3;
 }
 
-#rdyrooctby .gt_sourcenote {
+#lzyhcaokqq .gt_sourcenote {
   font-size: 12px;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1238,72 +1362,72 @@ html {
   padding-right: 5px;
 }
 
-#rdyrooctby .gt_left {
+#lzyhcaokqq .gt_left {
   text-align: left;
 }
 
-#rdyrooctby .gt_center {
+#lzyhcaokqq .gt_center {
   text-align: center;
 }
 
-#rdyrooctby .gt_right {
+#lzyhcaokqq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#rdyrooctby .gt_font_normal {
+#lzyhcaokqq .gt_font_normal {
   font-weight: normal;
 }
 
-#rdyrooctby .gt_font_bold {
+#lzyhcaokqq .gt_font_bold {
   font-weight: bold;
 }
 
-#rdyrooctby .gt_font_italic {
+#lzyhcaokqq .gt_font_italic {
   font-style: italic;
 }
 
-#rdyrooctby .gt_super {
+#lzyhcaokqq .gt_super {
   font-size: 65%;
 }
 
-#rdyrooctby .gt_footnote_marks {
+#lzyhcaokqq .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#rdyrooctby .gt_asterisk {
+#lzyhcaokqq .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#rdyrooctby .gt_indent_1 {
+#lzyhcaokqq .gt_indent_1 {
   text-indent: 5px;
 }
 
-#rdyrooctby .gt_indent_2 {
+#lzyhcaokqq .gt_indent_2 {
   text-indent: 10px;
 }
 
-#rdyrooctby .gt_indent_3 {
+#lzyhcaokqq .gt_indent_3 {
   text-indent: 15px;
 }
 
-#rdyrooctby .gt_indent_4 {
+#lzyhcaokqq .gt_indent_4 {
   text-indent: 20px;
 }
 
-#rdyrooctby .gt_indent_5 {
+#lzyhcaokqq .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
 <table class="gt_table" style="table-layout: fixed;; width: 700px">
   <colgroup>
     <col style="width:150px;">
-    <col style="width:160px;">
-    <col style="width:390px;">
+    <col style="width:200px;">
+    <col style="width:600px;">
   </colgroup>
   <thead class="gt_header">
     <tr>
@@ -1320,43 +1444,237 @@ html {
   </thead>
   <tbody class="gt_table_body">
     <tr class="gt_group_heading_row">
-      <td colspan="3" class="gt_group_heading">RESULT_LOINC_CODE</td>
+      <td colspan="3" class="gt_group_heading">ASIIS_VACC_CODE</td>
     </tr>
     <tr class="gt_row_group_first"><th scope="row" class="gt_row gt_right gt_stub"> </th>
-<td class="gt_row gt_left">LA6576-8</td>
-<td class="gt_row gt_left">Positive result - SARS-CoV-2 (COVID-19) E gene [Presence] in Respiratory specimen by NAA with probe detection</td></tr>
+<td class="gt_row gt_left">3036</td>
+<td class="gt_row gt_left">COVID-19, mRNA, LNP-S, bivalent booster, PF, 30 mcg/0.3 mL dose (CDC code 300)</td></tr>
     <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
-<td class="gt_row gt_left gt_striped">LA6577-6</td>
-<td class="gt_row gt_left gt_striped">Negative result - SARS-CoV-2 (COVID-19) RNA [Presence] in Respiratory specimen by NAA with probe detection</td></tr>
+<td class="gt_row gt_left gt_striped">75</td>
+<td class="gt_row gt_left gt_striped">Influenza, injectable, quadrivalent, preservative free (CDC code 150)</td></tr>
     <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
-<td class="gt_row gt_left">LA11885-3</td>
-<td class="gt_row gt_left">Equivocal result - SARS-CoV-2 (COVID-19) N gene [Presence] in Serum or Plasma by NAA with probe detection</td></tr>
+<td class="gt_row gt_left">3035</td>
+<td class="gt_row gt_left">COVID-19, mRNA, LNP-S, bivalent booster, PF, 50 mcg/0.5 mL or 25mcg/0.25 mL dose (CDC code 229)</td></tr>
     <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
-<td class="gt_row gt_left gt_striped">LA15841-2</td>
-<td class="gt_row gt_left gt_striped">Invalid result - SARS-CoV-2 (COVID-19) ORF1ab region [Presence] in Respiratory specimen by NAA with probe detection</td></tr>
+<td class="gt_row gt_left gt_striped">2070</td>
+<td class="gt_row gt_left gt_striped">influenza, high-dose seasonal, quadrivalent, preservative free (CDC code 197)</td></tr>
     <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
-<td class="gt_row gt_left">LA11882-0</td>
-<td class="gt_row gt_left">Detected - Parainfluenza virus 1 RNA [Presence] in Nasopharynx by NAA with non-probe detection</td></tr>
+<td class="gt_row gt_left">2041</td>
+<td class="gt_row gt_left">Influenza, injectable, Madin Darby Canine Kidney, preservative free, quadrivalent (CDC code 
+                       171)</td></tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="3" class="gt_group_heading">CDC_VACC_CODE<sup class="gt_footnote_marks">1</sup></td>
+    </tr>
+    <tr class="gt_row_group_first"><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">300</td>
+<td class="gt_row gt_left gt_striped">COVID-19, mRNA, LNP-S, bivalent booster, PF, 30 mcg/0.3 mL dose</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">150</td>
+<td class="gt_row gt_left">Influenza, injectable, quadrivalent, preservative free</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">229</td>
+<td class="gt_row gt_left gt_striped">COVID-19, mRNA, LNP-S, bivalent booster, PF, 50 mcg/0.5 mL or 25mcg/0.25 mL dose</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">197</td>
+<td class="gt_row gt_left">Influenza, high-dose, quadrivalent</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">171</td>
+<td class="gt_row gt_left gt_striped">Influenza, injectable, MDCK, preservative free, quadrivalent</td></tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="3" class="gt_group_heading">CPT_VACC_CODE<sup class="gt_footnote_marks">2</sup></td>
+    </tr>
+    <tr class="gt_row_group_first"><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">91312</td>
+<td class="gt_row gt_left">Pfizer™ COVID-19 Vaccine - Bivalent Booster, Gray Cap</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">90715</td>
+<td class="gt_row gt_left gt_striped">Adacel™ Tdap Vaccine</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">90686</td>
+<td class="gt_row gt_left">Fluarix™ Influenza Vaccine</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">90670</td>
+<td class="gt_row gt_left gt_striped">Prevnar 13™ Pneumococcal Vaccine</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">90750</td>
+<td class="gt_row gt_left">Shingrix™ Zoster Vaccine</td></tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="3" class="gt_group_heading">manufacturer<sup class="gt_footnote_marks">3</sup></td>
+    </tr>
+    <tr class="gt_row_group_first"><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">PFR</td>
+<td class="gt_row gt_left gt_striped">Pfizer, Inc.</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">PMC</td>
+<td class="gt_row gt_left">Sanofi Pasteur</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">MOD</td>
+<td class="gt_row gt_left gt_striped">Moderna US, Inc.</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">SEQ</td>
+<td class="gt_row gt_left">Seqirus</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">SKB</td>
+<td class="gt_row gt_left gt_striped">GlaxoSmithKline</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">MSD</td>
+<td class="gt_row gt_left">Merck and Co., Inc.</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">IDB</td>
+<td class="gt_row gt_left gt_striped">ID Biomedical</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">MSP</td>
+<td class="gt_row gt_left">MSP Vaccine Company - (partnership Merck and Sanofi Pasteur)</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">SP</td>
+<td class="gt_row gt_left gt_striped">Assumed misscoded value for Sanofi Pasteur (PMC)</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">BN</td>
+<td class="gt_row gt_left">Bavarian Nordic A/S</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">MBL</td>
+<td class="gt_row gt_left gt_striped">Massachusetts Biologic Laboratories</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">JSN</td>
+<td class="gt_row gt_left">Janssen</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">DVX</td>
+<td class="gt_row gt_left gt_striped">Dynavax, Inc.</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">WAL</td>
+<td class="gt_row gt_left">Wyeth</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">MED</td>
+<td class="gt_row gt_left gt_striped">MedImmune, Inc. (AstraZeneca)</td></tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="3" class="gt_group_heading">anatomical_site<sup class="gt_footnote_marks">4</sup></td>
+    </tr>
+    <tr class="gt_row_group_first"><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">LD</td>
+<td class="gt_row gt_left">Left Deltoid</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">RD</td>
+<td class="gt_row gt_left gt_striped">Right Deltoid</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">LVL</td>
+<td class="gt_row gt_left">Left Vastus Lateralis</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">RVL</td>
+<td class="gt_row gt_left gt_striped">Right Vastus Lateralis</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">LLFA</td>
+<td class="gt_row gt_left">Left Lower Forearm</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">RLFA</td>
+<td class="gt_row gt_left gt_striped">Right Lower Forearm</td></tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="3" class="gt_group_heading">adverse_reaction<sup class="gt_footnote_marks">5</sup></td>
+    </tr>
+    <tr class="gt_row_group_first"><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">26</td>
+<td class="gt_row gt_left">Other</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">42</td>
+<td class="gt_row gt_left gt_striped">Vasovagal syncope (7 days)</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">44</td>
+<td class="gt_row gt_left">Life threatening adverse event</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">48</td>
+<td class="gt_row gt_left gt_striped">An important medical event that based on appropriate medical judgement may jeopardize the
+                         individual and may require medical or surgical intervention</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">46</td>
+<td class="gt_row gt_left">Persistent or significant incapacity or substantial disruption of the ability to 
+                         conduct normal life functions</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">51</td>
+<td class="gt_row gt_left gt_striped">Serious Adverse Event regardless of causality</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">32</td>
+<td class="gt_row gt_left">Any acute complications or sequelae (including death) of above events 
+                         (interval - not applicable)</td></tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="3" class="gt_group_heading">reporting_method</td>
+    </tr>
+    <tr class="gt_row_group_first"><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">DTT</td>
+<td class="gt_row gt_left gt_striped">DTT Import: Entered into the IIS via a manual data upload</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">REALTIME_HL7</td>
+<td class="gt_row gt_left">HL7: Entered into the IIS via an HL7 message from a provider’s EHR</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">DIRECT_DATA_ENTRY</td>
+<td class="gt_row gt_left gt_striped">Direct data entry: Entered into the IIS manually</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">VITAL_STATISTICS</td>
+<td class="gt_row gt_left">Entered into the IIS via vital statistics record</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">VITAL_STATS</td>
+<td class="gt_row gt_left gt_striped">Entered into the IIS via vital statistics record</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">BATCH_HL7</td>
+<td class="gt_row gt_left">Batch HL7 import</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">PAPER_DATA_ENTRY</td>
+<td class="gt_row gt_left gt_striped">Direct data entry from paper record</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">REMOTE_CLINIC</td>
+<td class="gt_row gt_left">Direct data entry from Remote clinic</td></tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="3" class="gt_group_heading">ndc_number<sup class="gt_footnote_marks">6</sup></td>
+    </tr>
+    <tr class="gt_row_group_first"><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">59267-1000-02</td>
+<td class="gt_row gt_left gt_striped">Pfizer COVID-19, mRNA, LNP-S, PF, 30 mcg/0.3 mL dose</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">80777-0273-99</td>
+<td class="gt_row gt_left">Moderna COVID-19, mRNA, LNP-S, PF, 100 mcg/0.5mL dose or 50 mcg/0.25mL dose</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">58160-0823-11</td>
+<td class="gt_row gt_left gt_striped">Shingrix zoster recombinant</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left">80777-0273-10</td>
+<td class="gt_row gt_left">Moderna COVID-19, mRNA, LNP-S, PF, 100 mcg/0.5mL dose or 50 mcg/0.25mL dose</td></tr>
+    <tr><th scope="row" class="gt_row gt_right gt_stub"> </th>
+<td class="gt_row gt_left gt_striped">00005-1971-02</td>
+<td class="gt_row gt_left gt_striped">Prevnar 13 Pneumococcal conjugate PCV 13</td></tr>
   </tbody>
   
-  
+  <tfoot class="gt_footnotes">
+    <tr>
+      <td class="gt_footnote" colspan="3"><sup class="gt_footnote_marks">1</sup> A full list of CDC Vaccination Codes is available at: https://www2a.cdc.gov/vaccines/iis/iisstandards/?rpt=cpt</td>
+    </tr>
+    <tr>
+      <td class="gt_footnote" colspan="3"><sup class="gt_footnote_marks">2</sup> A full list of Vaccination CPT Codes is available at: https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cpt</td>
+    </tr>
+    <tr>
+      <td class="gt_footnote" colspan="3"><sup class="gt_footnote_marks">3</sup> A full list of Vaccine Manufacter Codes is available at: https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=mvx</td>
+    </tr>
+    <tr>
+      <td class="gt_footnote" colspan="3"><sup class="gt_footnote_marks">4</sup> A full vocabulary list of coded terms for vaccination sites is available at: https://phinvads.cdc.gov/vads/ViewValueSet.action?id=98257779-17B8-DF11-9BDD-0015173D1785</td>
+    </tr>
+    <tr>
+      <td class="gt_footnote" colspan="3"><sup class="gt_footnote_marks">5</sup> A full list of Reaction Site Codes is available at: https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared%20Documents/CEDAR/CEDAR%20Data%20Dictionaries/Adverse_Reaction%20Code%20Values%20Table.xlsx?d=w7ac90aeede44401db78dddf8cbdee908&amp;csf=1&amp;web=1&amp;e=7PJKg9</td>
+    </tr>
+    <tr>
+      <td class="gt_footnote" colspan="3"><sup class="gt_footnote_marks">6</sup> A full list of NDC Number Codes is available at: https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=ndc</td>
+    </tr>
+  </tfoot>
 </table>
 </div>
 </div>
 </div>
-</section>
-<section id="statistics" class="level2">
-<h2 class="anchored" data-anchor-id="statistics">Statistics</h2>
 <div class="cell">
 <div class="cell-output-display">
 
-<div id="pyqnhatgfr" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="xrkpwjpktm" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 html {
   font-family: Lato, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#pyqnhatgfr) .gt_table {
+#xrkpwjpktm .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1381,7 +1699,7 @@ html {
   border-left-color: #D3D3D3;
 }
 
-:where(#pyqnhatgfr) .gt_heading {
+#xrkpwjpktm .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -1393,7 +1711,7 @@ html {
   border-right-color: #D3D3D3;
 }
 
-:where(#pyqnhatgfr) .gt_title {
+#xrkpwjpktm .gt_title {
   color: #333333;
   font-size: 24px;
   font-weight: initial;
@@ -1405,7 +1723,7 @@ html {
   border-bottom-width: 0;
 }
 
-:where(#pyqnhatgfr) .gt_subtitle {
+#xrkpwjpktm .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1417,13 +1735,13 @@ html {
   border-top-width: 0;
 }
 
-:where(#pyqnhatgfr) .gt_bottom_border {
+#xrkpwjpktm .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#pyqnhatgfr) .gt_col_headings {
+#xrkpwjpktm .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1438,7 +1756,7 @@ html {
   border-right-color: #D3D3D3;
 }
 
-:where(#pyqnhatgfr) .gt_col_heading {
+#xrkpwjpktm .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -1458,7 +1776,7 @@ html {
   overflow-x: hidden;
 }
 
-:where(#pyqnhatgfr) .gt_column_spanner_outer {
+#xrkpwjpktm .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -1470,15 +1788,15 @@ html {
   padding-right: 4px;
 }
 
-:where(#pyqnhatgfr) .gt_column_spanner_outer:first-child {
+#xrkpwjpktm .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#pyqnhatgfr) .gt_column_spanner_outer:last-child {
+#xrkpwjpktm .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#pyqnhatgfr) .gt_column_spanner {
+#xrkpwjpktm .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1490,7 +1808,7 @@ html {
   width: 100%;
 }
 
-:where(#pyqnhatgfr) .gt_group_heading {
+#xrkpwjpktm .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1515,7 +1833,7 @@ html {
   vertical-align: middle;
 }
 
-:where(#pyqnhatgfr) .gt_empty_group_heading {
+#xrkpwjpktm .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1530,15 +1848,15 @@ html {
   vertical-align: middle;
 }
 
-:where(#pyqnhatgfr) .gt_from_md > :first-child {
+#xrkpwjpktm .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#pyqnhatgfr) .gt_from_md > :last-child {
+#xrkpwjpktm .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#pyqnhatgfr) .gt_row {
+#xrkpwjpktm .gt_row {
   padding-top: 7px;
   padding-bottom: 7px;
   padding-left: 5px;
@@ -1557,7 +1875,7 @@ html {
   overflow-x: hidden;
 }
 
-:where(#pyqnhatgfr) .gt_stub {
+#xrkpwjpktm .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -1570,7 +1888,7 @@ html {
   padding-right: 5px;
 }
 
-:where(#pyqnhatgfr) .gt_stub_row_group {
+#xrkpwjpktm .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1584,11 +1902,11 @@ html {
   vertical-align: top;
 }
 
-:where(#pyqnhatgfr) .gt_row_group_first td {
+#xrkpwjpktm .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#pyqnhatgfr) .gt_summary_row {
+#xrkpwjpktm .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1598,16 +1916,16 @@ html {
   padding-right: 5px;
 }
 
-:where(#pyqnhatgfr) .gt_first_summary_row {
+#xrkpwjpktm .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#pyqnhatgfr) .gt_first_summary_row.thick {
+#xrkpwjpktm .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#pyqnhatgfr) .gt_last_summary_row {
+#xrkpwjpktm .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1617,7 +1935,7 @@ html {
   border-bottom-color: #D3D3D3;
 }
 
-:where(#pyqnhatgfr) .gt_grand_summary_row {
+#xrkpwjpktm .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1627,7 +1945,7 @@ html {
   padding-right: 5px;
 }
 
-:where(#pyqnhatgfr) .gt_first_grand_summary_row {
+#xrkpwjpktm .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1637,11 +1955,11 @@ html {
   border-top-color: #D3D3D3;
 }
 
-:where(#pyqnhatgfr) .gt_striped {
+#xrkpwjpktm .gt_striped {
   background-color: #FAFAFA;
 }
 
-:where(#pyqnhatgfr) .gt_table_body {
+#xrkpwjpktm .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1650,7 +1968,7 @@ html {
   border-bottom-color: #D3D3D3;
 }
 
-:where(#pyqnhatgfr) .gt_footnotes {
+#xrkpwjpktm .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1664,7 +1982,7 @@ html {
   border-right-color: #D3D3D3;
 }
 
-:where(#pyqnhatgfr) .gt_footnote {
+#xrkpwjpktm .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -1673,7 +1991,7 @@ html {
   padding-right: 5px;
 }
 
-:where(#pyqnhatgfr) .gt_sourcenotes {
+#xrkpwjpktm .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1687,7 +2005,7 @@ html {
   border-right-color: #D3D3D3;
 }
 
-:where(#pyqnhatgfr) .gt_sourcenote {
+#xrkpwjpktm .gt_sourcenote {
   font-size: 12px;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1695,64 +2013,514 @@ html {
   padding-right: 5px;
 }
 
-:where(#pyqnhatgfr) .gt_left {
+#xrkpwjpktm .gt_left {
   text-align: left;
 }
 
-:where(#pyqnhatgfr) .gt_center {
+#xrkpwjpktm .gt_center {
   text-align: center;
 }
 
-:where(#pyqnhatgfr) .gt_right {
+#xrkpwjpktm .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#pyqnhatgfr) .gt_font_normal {
+#xrkpwjpktm .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#pyqnhatgfr) .gt_font_bold {
+#xrkpwjpktm .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#pyqnhatgfr) .gt_font_italic {
+#xrkpwjpktm .gt_font_italic {
   font-style: italic;
 }
 
-:where(#pyqnhatgfr) .gt_super {
+#xrkpwjpktm .gt_super {
   font-size: 65%;
 }
 
-:where(#pyqnhatgfr) .gt_footnote_marks {
+#xrkpwjpktm .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#pyqnhatgfr) .gt_asterisk {
+#xrkpwjpktm .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#pyqnhatgfr) .gt_indent_1 {
+#xrkpwjpktm .gt_indent_1 {
   text-indent: 5px;
 }
 
-:where(#pyqnhatgfr) .gt_indent_2 {
+#xrkpwjpktm .gt_indent_2 {
   text-indent: 10px;
 }
 
-:where(#pyqnhatgfr) .gt_indent_3 {
+#xrkpwjpktm .gt_indent_3 {
   text-indent: 15px;
 }
 
-:where(#pyqnhatgfr) .gt_indent_4 {
+#xrkpwjpktm .gt_indent_4 {
   text-indent: 20px;
 }
 
-:where(#pyqnhatgfr) .gt_indent_5 {
+#xrkpwjpktm .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" style="table-layout: fixed;; width: 700px">
+  <colgroup>
+    <col style="width:200px;">
+    <col style="width:800px;">
+  </colgroup>
+  <thead class="gt_header">
+    <tr>
+      <td colspan="2" class="gt_heading gt_title gt_font_normal gt_bottom_border" style="">Full Code Lists for Vaccine Reserve Table</td>
+    </tr>
+    
+  </thead>
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">Codes</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">Links</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_left">CDC Vaccination Codes</td>
+<td class="gt_row gt_left"><p><a href="https://www2a.cdc.gov/vaccines/iis/iisstandards/?rpt=cpt">https://www2a.cdc.gov/vaccines/iis/iisstandards/?rpt=cpt</a></p></td></tr>
+    <tr><td class="gt_row gt_left gt_striped">Vaccination CPT Codes</td>
+<td class="gt_row gt_left gt_striped"><p><a href="https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cpt">https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cpt</a></p></td></tr>
+    <tr><td class="gt_row gt_left">Vaccine Manufacter Codes</td>
+<td class="gt_row gt_left"><p><a href="https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=mvx">https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=mvx</a></p></td></tr>
+    <tr><td class="gt_row gt_left gt_striped">Vaccination Sites</td>
+<td class="gt_row gt_left gt_striped"><p><a href="https://phinvads.cdc.gov/vads/ViewValueSet.action?id=98257779-17B8-DF11-9BDD-0015173D1785">https://phinvads.cdc.gov/vads/ViewValueSet.action?id=98257779-17B8-DF11-9BDD-0015173D1785</a></p></td></tr>
+    <tr><td class="gt_row gt_left">Reaction Site Codes</td>
+<td class="gt_row gt_left"><p><a href="https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared%20Documents/CEDAR/CEDAR%20Data%20Dictionaries/Adverse_Reaction%20Code%20Values%20Table.xlsx?d=w7ac90aeede44401db78dddf8cbdee908&amp;csf=1&amp;web=1&amp;e=7PJKg9">https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared%20Documents/CEDAR/CEDAR%20Data%20Dictionaries/Adverse_Reaction%20Code%20Values%20Table.xlsx?d=w7ac90aeede44401db78dddf8cbdee908&amp;csf=1&amp;web=1&amp;e=7PJKg9</a></p></td></tr>
+    <tr><td class="gt_row gt_left gt_striped">NDC Number Codes</td>
+<td class="gt_row gt_left gt_striped"><p><a href="https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=ndc">https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=ndc</a></p></td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="statistics" class="level2">
+<h2 class="anchored" data-anchor-id="statistics">Statistics</h2>
+<p>Insert statistics here</p>
+<div class="cell">
+<div class="cell-output-display">
+
+<div id="mrugkhtgyf" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+html {
+  font-family: Lato, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+:where(#mrugkhtgyf) .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 700px;
+  border-top-style: solid;
+  border-top-width: 3px;
+  border-top-color: rgba(255, 255, 255, 0);
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+:where(#mrugkhtgyf) .gt_heading {
+  background-color: #FFFFFF;
+  text-align: left;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#mrugkhtgyf) .gt_title {
+  color: #333333;
+  font-size: 24px;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+:where(#mrugkhtgyf) .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+:where(#mrugkhtgyf) .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#mrugkhtgyf) .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#mrugkhtgyf) .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+:where(#mrugkhtgyf) .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+:where(#mrugkhtgyf) .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+:where(#mrugkhtgyf) .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+:where(#mrugkhtgyf) .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+:where(#mrugkhtgyf) .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+:where(#mrugkhtgyf) .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+:where(#mrugkhtgyf) .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+:where(#mrugkhtgyf) .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+:where(#mrugkhtgyf) .gt_row {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #F6F7F7;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+:where(#mrugkhtgyf) .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#mrugkhtgyf) .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+:where(#mrugkhtgyf) .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+:where(#mrugkhtgyf) .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#mrugkhtgyf) .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+:where(#mrugkhtgyf) .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+:where(#mrugkhtgyf) .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#mrugkhtgyf) .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#mrugkhtgyf) .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+:where(#mrugkhtgyf) .gt_striped {
+  background-color: #FAFAFA;
+}
+
+:where(#mrugkhtgyf) .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#mrugkhtgyf) .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#mrugkhtgyf) .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#mrugkhtgyf) .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#mrugkhtgyf) .gt_sourcenote {
+  font-size: 12px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#mrugkhtgyf) .gt_left {
+  text-align: left;
+}
+
+:where(#mrugkhtgyf) .gt_center {
+  text-align: center;
+}
+
+:where(#mrugkhtgyf) .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+:where(#mrugkhtgyf) .gt_font_normal {
+  font-weight: normal;
+}
+
+:where(#mrugkhtgyf) .gt_font_bold {
+  font-weight: bold;
+}
+
+:where(#mrugkhtgyf) .gt_font_italic {
+  font-style: italic;
+}
+
+:where(#mrugkhtgyf) .gt_super {
+  font-size: 65%;
+}
+
+:where(#mrugkhtgyf) .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+:where(#mrugkhtgyf) .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+:where(#mrugkhtgyf) .gt_indent_1 {
+  text-indent: 5px;
+}
+
+:where(#mrugkhtgyf) .gt_indent_2 {
+  text-indent: 10px;
+}
+
+:where(#mrugkhtgyf) .gt_indent_3 {
+  text-indent: 15px;
+}
+
+:where(#mrugkhtgyf) .gt_indent_4 {
+  text-indent: 20px;
+}
+
+:where(#mrugkhtgyf) .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1765,8 +2533,8 @@ html {
     </tr>
   </thead>
   <tbody class="gt_table_body">
-    <tr><td class="gt_row gt_right">15</td>
-<td class="gt_row gt_right">31</td></tr>
+    <tr><td class="gt_row gt_right">77</td>
+<td class="gt_row gt_right">192364097</td></tr>
   </tbody>
   
   
@@ -1774,7 +2542,6 @@ html {
 </div>
 </div>
 </div>
-<p>:::</p>
 
 
 </section>
@@ -1880,13 +2647,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./SEROLOGY_INVALID_DATA.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">SEROLOGY_INVALID_DATA</span>
+      <a href="./VACCINATION_MASTER.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">VACCINATION_MASTER</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./SEROLOGY_TYPE_CODE.html" class="pagination-link">
-        <span class="nav-page-text">SEROLOGY_TYPE_CODE</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./VACCINE_FAMILY.html" class="pagination-link">
+        <span class="nav-page-text">VACCINE_FAMILY</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
