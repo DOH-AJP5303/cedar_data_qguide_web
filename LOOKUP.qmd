@@ -19,7 +19,7 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The lookup table is useful for identfying lookup type codes. The table contains a list of lookup type codes, as well as a description and lookup value.
 
 ## Columns
 
