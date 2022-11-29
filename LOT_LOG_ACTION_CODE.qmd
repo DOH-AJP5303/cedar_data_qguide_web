@@ -19,7 +19,7 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The lot_log_action_code table contains a list of action codes within the system and their descriptions. 
 
 ## Columns
 
