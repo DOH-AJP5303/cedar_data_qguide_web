@@ -19,7 +19,7 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The invalid_vaccination table contains a list of record IDs associated with an invalid vaccination record. The vaccination code and invalid reason code are provided.
 
 ## Columns
 
