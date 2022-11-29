@@ -19,7 +19,7 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The exemption_form_vaccs table contains details on exemption form records, organized by disease name, request ID, and vaccination code.
 
 ## Columns
 
