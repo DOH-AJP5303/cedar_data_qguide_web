@@ -19,7 +19,7 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The lot_number table contains a list of lot number codes, as well as the corresponding lot numbers, IRMS system IDs, and manufacturer codes.
 
 ## Columns
 
