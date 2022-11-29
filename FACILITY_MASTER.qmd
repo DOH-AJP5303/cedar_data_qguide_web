@@ -19,7 +19,7 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The facility_master table contains details of facilities in the repository, including details on the facility name, address, and delivery instructions.
 
 ## Columns
 
