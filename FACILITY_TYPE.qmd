@@ -19,7 +19,7 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The facility_type table contains a list of facility type codes and the descriptions. 
 
 ## Columns
 
@@ -33,8 +33,6 @@ tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_FACILITY_TYPE")) %>% colnam
 ```
 
 ## Category Description
-
-## Statistics
 
 ## Statistics
 
