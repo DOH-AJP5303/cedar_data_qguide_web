@@ -19,7 +19,7 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The exemption_form_header contains a list of exemption request IDs, including the corresponding IRMS_SYS_IDs and IRMS_PAT_ID values.
 
 ## Columns
 
