@@ -19,7 +19,7 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The contraindication_desc table contains a list of contraindication codes, as well as the description of the contraindication, exemption, or adverse reaction provided.
 
 ## Columns
 
