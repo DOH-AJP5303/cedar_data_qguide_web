@@ -19,7 +19,8 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The cdc_to_asiis_vacc_code table contains a list of asiis vaccination codes and their respective CPT code values. A description of the vaccination code is provided.
+
 
 ## Columns
 
