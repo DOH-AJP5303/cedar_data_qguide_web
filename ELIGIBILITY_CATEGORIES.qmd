@@ -19,7 +19,7 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The eligibility_categories table contains a list of internal codes, including a description of the code and whether the code is included in the eligibility dropdown of the vaccine module.
 
 ## Columns
 
