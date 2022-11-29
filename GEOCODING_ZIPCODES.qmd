@@ -19,7 +19,7 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The geocoding_zipcodes table contains a list of zip codes, and the corresponding city, state, and county information.
 
 ## Columns
 
