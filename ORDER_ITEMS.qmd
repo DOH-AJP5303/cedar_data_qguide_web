@@ -19,7 +19,7 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The order_items table contains a list of vaccine orders and their item codes/lot numbers. This table differs from the order table as it only contains information on the vaccine order details (quantity, lot number codes) rather than the request record.
 
 ## Columns
 
