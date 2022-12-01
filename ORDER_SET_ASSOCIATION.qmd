@@ -19,7 +19,7 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The order_set_association table contains a list of order set ID records, including the IIS vaccine code and VACMAN code.
 
 ## Columns
 
