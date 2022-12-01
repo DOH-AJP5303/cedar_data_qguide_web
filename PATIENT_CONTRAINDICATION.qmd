@@ -18,8 +18,8 @@ source(paste0(dr,"/dqguide_functions.R"))
 ```
 
 ## Description
-
-Description
+ 
+The patient_contraindication table contains a list of patient records and their associated vaccine code(s) and contraindication code(s). 
 
 ## Columns
 
