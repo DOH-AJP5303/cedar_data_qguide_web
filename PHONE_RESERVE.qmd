@@ -19,7 +19,7 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The phone_reserve table contains a list of phone number records for each vaccine record ID.
 
 ## Columns
 
