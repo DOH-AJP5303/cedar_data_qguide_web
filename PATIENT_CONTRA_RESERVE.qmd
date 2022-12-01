@@ -19,7 +19,7 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The patient_contra_reserve table contains a list of patient IDs, categorized by IRMS system record ID. Contraindication codes and vaccine codes are provided.
 
 ## Columns
 
