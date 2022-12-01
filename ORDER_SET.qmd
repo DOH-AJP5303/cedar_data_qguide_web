@@ -19,7 +19,7 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The order_set table provides a list of order IDs, including the description and fulfillment type.
 
 ## Columns
 
