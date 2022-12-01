@@ -19,7 +19,7 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The school table contains a list of school record IDs, including the school description and address.
 
 ## Columns
 
