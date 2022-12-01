@@ -19,7 +19,7 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The patient_school_nurse table contains school report information by patient ID record. Report information includes the status of primary (required) vaccine record reports.
 
 ## Columns
 
