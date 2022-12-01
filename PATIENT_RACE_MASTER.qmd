@@ -19,7 +19,7 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The patient_race_master table contains a list of patient record IDs (ASIIS_PAT_ID_PTR) and their respective pat_race values. Update stamp records are provided.
 
 ## Columns
 
