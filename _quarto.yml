@@ -7,7 +7,7 @@ book:
   author: "Data Quality Team"
   date: today
   sidebar:
-    style: "docked"
+
     search: true
   
   chapters:
