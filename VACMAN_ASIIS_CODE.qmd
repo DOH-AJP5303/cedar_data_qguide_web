@@ -87,4 +87,3 @@ tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_VACMAN_ASIIS_CODE")) %>% 
              rowcnt = "Number of Rows")  %>%
   gt_theme_espn()
 ```
-
