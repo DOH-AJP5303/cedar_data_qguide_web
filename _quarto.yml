@@ -79,7 +79,7 @@ format:
   html:
     theme: 
         - cosmo
-    fontsize: 0.9em
+    fontsize: 0.8em
     toc: true
     
   pdf:
