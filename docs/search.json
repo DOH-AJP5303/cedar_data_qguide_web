@@ -1,0 +1,198 @@
+[
+  {
+    "objectID": "ADDRESS_RESERVE.html#description",
+    "href": "ADDRESS_RESERVE.html#description",
+    "title": "ADDRESS_RESERVE",
+    "section": "Description",
+    "text": "Description\nThe address_reserve table contains details of unique address IDs within the repository, including the street name, city, state, and zip code."
+  },
+  {
+    "objectID": "ADDRESS_RESERVE.html#columns",
+    "href": "ADDRESS_RESERVE.html#columns",
+    "title": "ADDRESS_RESERVE",
+    "section": "Columns",
+    "text": "Columns\n\n\n\n\n\n\n  \n  \n    \n      Columns\n      Type\n    \n  \n  \n    ADDRESS_ID\nnumeric\n    IRMS_SYS_ID\nnumeric\n    IRMS_PAT_ID\ncharacter\n    ASIIS_PAT_ID_PTR\nnumeric\n    ADDRESS_STREET1\ncharacter\n    ADDRESS_STREET2\ncharacter\n    ADDRESS_CITY\ncharacter\n    ADDRESS_STATE\ncharacter\n    ADDRESS_ZIP\nnumeric\n    ADDRESS_TYPE\ncharacter\n    ADDRESS_STREET_MANGLED\ncharacter\n    PHONE\nnumeric\n    EMAIL_ADDRESS\ncharacter\n    IS_PRIMARY\ncharacter\n    IS_VALID\ncharacter\n    INSERT_STAMP\nPOSIXct, POSIXt\n    UPDATE_STAMP\nPOSIXct, POSIXt\n    INSERTED_BY\ncharacter\n    LAST_USER_TO_UPDATE\ncharacter\n    DELETION_DATE\nPOSIXct, POSIXt\n    COUNTY_CODE\nnumeric\n    INTERNATIONAL_ZIP\ncharacter\n    ADDRESS_COUNTRY_CODE\ncharacter\n    ADDRESS_BUILDING\ncharacter\n    ADDRESS_ZONE\ncharacter\n    DO_NOT_CLEAN_ADDRESS\ncharacter\n    SMARTY_STREETS_ADDR_ID\nnumeric\n    ADDRESS_INWANI_STREET\ncharacter\n    IS_PRIMARY_INWANI\ncharacter\n    CREATEDATETIME\nPOSIXct, POSIXt\n    SysStartTime\nPOSIXct, POSIXt\n    SysEndTime\nPOSIXct, POSIXt\n    tsExtract\ncharacter"
+  },
+  {
+    "objectID": "ADDRESS_RESERVE.html#category-description",
+    "href": "ADDRESS_RESERVE.html#category-description",
+    "title": "ADDRESS_RESERVE",
+    "section": "Category Description",
+    "text": "Category Description"
+  },
+  {
+    "objectID": "ADDRESS_RESERVE.html#statistics",
+    "href": "ADDRESS_RESERVE.html#statistics",
+    "title": "ADDRESS_RESERVE",
+    "section": "Statistics",
+    "text": "Statistics\n\n\n\n\n\n\n  \n  \n    \n      Number of Columns\n      Number of Rows\n    \n  \n  \n    33\n27883945"
+  },
+  {
+    "objectID": "PHYSICIAN_MASTER.html#description",
+    "href": "PHYSICIAN_MASTER.html#description",
+    "title": "PHYSICIAN_MASTER",
+    "section": "Description",
+    "text": "Description\nThe physician_master table contains a list of physician IDs with details, including name of the physician, NPI, tax ID, contact address, and phone numbers."
+  },
+  {
+    "objectID": "PHYSICIAN_MASTER.html#columns",
+    "href": "PHYSICIAN_MASTER.html#columns",
+    "title": "PHYSICIAN_MASTER",
+    "section": "Columns",
+    "text": "Columns\n\n\n\n\n\n\n  \n  \n    \n      Columns\n      Type\n    \n  \n  \n    IRMS_SYS_ID\nnumeric\n    IRMS_PHYS_ID\ncharacter\n    IRMS_FAC_ID\ncharacter\n    ASIIS_PHYS_ID\nnumeric\n    ASIIS_FAC_ID\nnumeric\n    FIRST_NAME\ncharacter\n    MIDDLE_NAME\ncharacter\n    LAST_NAME\ncharacter\n    SUFFIX\ncharacter\n    SSN\nnumeric\n    BOMEX\nnumeric\n    DO\ncharacter\n    PHONE\nnumeric\n    FAX\nnumeric\n    EMAIL\ncharacter\n    DISTRICT_NUMBER\nnumeric\n    MEDICAID_PIN\nnumeric\n    MEDICAID_GROUP\nnumeric\n    INACTIVE_STATUS\ncharacter\n    INSERT_STAMP\nPOSIXct, POSIXt\n    UPDATE_STAMP\nPOSIXct, POSIXt\n    OWNERSHIP_BLOCKED\ncharacter\n    PHYSICIAN_CODE\ncharacter\n    PHONE_EXT\nnumeric\n    IS_VACCINE_SAFETY_MONITOR\ncharacter\n    LAST_USER_TO_UPDATE\ncharacter\n    COMMENTS\ncharacter\n    OTHER_PROVIDER_ID\ncharacter\n    GROUP_NPI\ncharacter\n    PROVIDER_TAX_ID\ncharacter\n    PROVIDER_TAX_ID_TYPE\ncharacter\n    PROVIDER_TAXONOMY\ncharacter\n    MEDICARE_PIN\ncharacter\n    MEDICARE_GROUP\ncharacter\n    BILLING_ENTITY_TYPE\ncharacter\n    MEDICAL_LICENSE_NUMBER\ncharacter\n    PROVIDER_SPECIALITY\ncharacter\n    BIRTH_DATE\nPOSIXct, POSIXt\n    NPI\ncharacter\n    TERMINAL_DIST_LICENSE_NUMBER\ncharacter\n    CREATEDATETIME\nPOSIXct, POSIXt\n    SysStartTime\nPOSIXct, POSIXt\n    SysEndTime\nPOSIXct, POSIXt\n    tsExtract\ncharacter"
+  },
+  {
+    "objectID": "PHYSICIAN_MASTER.html#category-description",
+    "href": "PHYSICIAN_MASTER.html#category-description",
+    "title": "PHYSICIAN_MASTER",
+    "section": "Category Description",
+    "text": "Category Description\nDescription"
+  },
+  {
+    "objectID": "PHYSICIAN_MASTER.html#statistics",
+    "href": "PHYSICIAN_MASTER.html#statistics",
+    "title": "PHYSICIAN_MASTER",
+    "section": "Statistics",
+    "text": "Statistics\n\n\n\n\n\n\n  \n  \n    \n      Number of Columns\n      Number of Rows\n    \n  \n  \n    44\n67041"
+  },
+  {
+    "objectID": "ADVERSE_REACTION_RESERVE.html#description",
+    "href": "ADVERSE_REACTION_RESERVE.html#description",
+    "title": "ADVERSE_REACTION_RESERVE",
+    "section": "Description",
+    "text": "Description\nDescription"
+  },
+  {
+    "objectID": "ADVERSE_REACTION_RESERVE.html#columns",
+    "href": "ADVERSE_REACTION_RESERVE.html#columns",
+    "title": "ADVERSE_REACTION_RESERVE",
+    "section": "Columns",
+    "text": "Columns\n\n\n\n\n\n\n  \n  \n    \n      Columns\n      Type\n    \n  \n  \n    IRMS_SYS_ID\nnumeric\n    IRMS_PAT_ID\ncharacter\n    ASIIS_VACC_CODE\nnumeric\n    VACC_DATE\nPOSIXct, POSIXt\n    ADVERSE_REACTION_CODE\nnumeric\n    COMMENTS\ncharacter\n    INSERT_STAMP\nPOSIXct, POSIXt\n    UPDATE_STAMP\nPOSIXct, POSIXt\n    REGISTRY_ENTRY_STAMP\nPOSIXct, POSIXt\n    REGISTRY_UPDATE_STAMP\nPOSIXct, POSIXt\n    INSERTED_BY\ncharacter\n    LAST_USER_TO_UPDATE\ncharacter\n    SEQUENCE_ID\nnumeric\n    CREATEDATETIME\nPOSIXct, POSIXt\n    SysStartTime\nPOSIXct, POSIXt\n    SysEndTime\nPOSIXct, POSIXt\n    tsExtract\ncharacter"
+  },
+  {
+    "objectID": "ADVERSE_REACTION_RESERVE.html#category-description",
+    "href": "ADVERSE_REACTION_RESERVE.html#category-description",
+    "title": "ADVERSE_REACTION_RESERVE",
+    "section": "Category Description",
+    "text": "Category Description\nThis section contains variable coding for relevant columns within the adverse reaction table."
+  },
+  {
+    "objectID": "ADVERSE_REACTION_RESERVE.html#statistics",
+    "href": "ADVERSE_REACTION_RESERVE.html#statistics",
+    "title": "ADVERSE_REACTION_RESERVE",
+    "section": "Statistics",
+    "text": "Statistics\n\n\n\n\n\n\n  \n  \n    \n      Number of Columns\n      Number of Rows\n    \n  \n  \n    17\n590"
+  },
+  {
+    "objectID": "CDC_TO_ASIIS_VACC_CODE.html#description",
+    "href": "CDC_TO_ASIIS_VACC_CODE.html#description",
+    "title": "CDC_TO_ASIIS_VACC_CODE",
+    "section": "Description",
+    "text": "Description\nThe cdc_to_asiis_vacc_code table contains a list of asiis vaccination codes and their respective CPT code values. A description of the vaccination code is provided."
+  },
+  {
+    "objectID": "CDC_TO_ASIIS_VACC_CODE.html#columns",
+    "href": "CDC_TO_ASIIS_VACC_CODE.html#columns",
+    "title": "CDC_TO_ASIIS_VACC_CODE",
+    "section": "Columns",
+    "text": "Columns\n\n\n\n\n\n\n  \n  \n    \n      Columns\n      Type\n    \n  \n  \n    CDC_VACC_CODE\nnumeric\n    ASIIS_VACC_CODE\nnumeric\n    CDC_DESCRIPTION\ncharacter\n    INACTIVE_STATUS\ncharacter\n    CREATEDATETIME\nPOSIXct, POSIXt\n    SysStartTime\nPOSIXct, POSIXt\n    SysEndTime\nPOSIXct, POSIXt\n    tsExtract\ncharacter"
+  },
+  {
+    "objectID": "CDC_TO_ASIIS_VACC_CODE.html#category-description",
+    "href": "CDC_TO_ASIIS_VACC_CODE.html#category-description",
+    "title": "CDC_TO_ASIIS_VACC_CODE",
+    "section": "Category Description",
+    "text": "Category Description\nThis section contains variable coding for relevant columns within the CDC_TO_ASIIS_VACC_CODE table."
+  },
+  {
+    "objectID": "CDC_TO_ASIIS_VACC_CODE.html#statistics",
+    "href": "CDC_TO_ASIIS_VACC_CODE.html#statistics",
+    "title": "CDC_TO_ASIIS_VACC_CODE",
+    "section": "Statistics",
+    "text": "Statistics\n\n\n\n\n\n\n  \n  \n    \n      Number of Columns\n      Number of Rows\n    \n  \n  \n    8\n259"
+  },
+  {
+    "objectID": "ASIIS_VACC_CODE.html#description",
+    "href": "ASIIS_VACC_CODE.html#description",
+    "title": "ASIIS_VACC_CODE",
+    "section": "Description",
+    "text": "Description\nThe asiis_vacc_code table contains a list of asiis vaccination code records in the repository, including a description of the vaccine, state abbreviation, and corresponding CDC and CPT codes."
+  },
+  {
+    "objectID": "ASIIS_VACC_CODE.html#columns",
+    "href": "ASIIS_VACC_CODE.html#columns",
+    "title": "ASIIS_VACC_CODE",
+    "section": "Columns",
+    "text": "Columns\n\n\n\n\n\n\n  \n  \n    \n      Columns\n      Type\n    \n  \n  \n    ASIIS_VACC_CODE\nnumeric\n    ASIIS_DESCRIPTION\ncharacter\n    BEST_CPT_CODE\nnumeric\n    BEST_CDC_CODE\nnumeric\n    INACTIVE_STATUS\ncharacter\n    BLOCKED\ncharacter\n    SORT_ORDER\nnumeric\n    LIVE_VACCINE\ncharacter\n    IS_DILUENT\ncharacter\n    IS_DILUTION_MANDATORY\ncharacter\n    TEST_RESULT\ncharacter\n    IS_NOT_ADMINISTERED\ncharacter\n    IS_HISTORY_SHORTCUT\ncharacter\n    IS_FR_HISTORY_SHORTCUT\ncharacter\n    DISPLAY_TO_USER\ncharacter\n    NOTES\ncharacter\n    STATE_SORT_ORDER\nnumeric\n    IS_PDE_HISTORY_SHORTCUT\ncharacter\n    IS_MI_HISTORY_SHORTCUT\ncharacter\n    IS_MEDICATION\ncharacter\n    DOSE_DECREMENT_QUANTITY\nnumeric\n    IS_COMBO\ncharacter\n    STATE_ABBREV\ncharacter\n    IS_UNSPECIFIED\ncharacter\n    VACC_DISPLAY_INFO\ncharacter\n    IS_NOT_LICENSED\ncharacter\n    BEST_ICD9_CODE\ncharacter\n    IS_NASAL\ncharacter\n    COMPROMISED_INTERVAL\nnumeric\n    SIIS_LEGACY_DESC\ncharacter\n    NON_VACCINE\ncharacter\n    VACC_FAMILY_FOR_REPORTS\ncharacter\n    IS_PERTUSSIS\ncharacter\n    CREATEDATETIME\nPOSIXct, POSIXt\n    SysStartTime\nPOSIXct, POSIXt\n    SysEndTime\nPOSIXct, POSIXt\n    tsExtract\ncharacter"
+  },
+  {
+    "objectID": "ASIIS_VACC_CODE.html#category-description",
+    "href": "ASIIS_VACC_CODE.html#category-description",
+    "title": "ASIIS_VACC_CODE",
+    "section": "Category Description",
+    "text": "Category Description\nThis section contains variable coding for relevant columns within the ASIIS VACC_CODE table."
+  },
+  {
+    "objectID": "ASIIS_VACC_CODE.html#statistics",
+    "href": "ASIIS_VACC_CODE.html#statistics",
+    "title": "ASIIS_VACC_CODE",
+    "section": "Statistics",
+    "text": "Statistics\n\n\n\n\n\n\n  \n  \n    \n      Number of Columns\n      Number of Rows\n    \n  \n  \n    37\n1372"
+  },
+  {
+    "objectID": "COUNTRY_CODE.html#description",
+    "href": "COUNTRY_CODE.html#description",
+    "title": "COUNTRY_CODE",
+    "section": "Description",
+    "text": "Description\nDescription"
+  },
+  {
+    "objectID": "COUNTRY_CODE.html#columns",
+    "href": "COUNTRY_CODE.html#columns",
+    "title": "COUNTRY_CODE",
+    "section": "Columns",
+    "text": "Columns\n\n\n\n\n\n\n  \n  \n    \n      Columns\n      Type\n    \n  \n  \n    FIPS_CODE\ncharacter\n    GMI_COUNTRY_CODE\ncharacter\n    ISO_2DIGIT_CODE\ncharacter\n    ISO_3DIGIT_CODE\ncharacter\n    COUNTRY_NAME\ncharacter\n    COUNTRY_LONG_NAME\ncharacter\n    SOVEREIGN\ncharacter\n    COLOR_MAP\ncharacter\n    INACTIVE_STATUS\ncharacter\n    CREATEDATETIME\nPOSIXct, POSIXt\n    SysStartTime\nPOSIXct, POSIXt\n    SysEndTime\nPOSIXct, POSIXt\n    tsExtract\ncharacter"
+  },
+  {
+    "objectID": "COUNTRY_CODE.html#category-description",
+    "href": "COUNTRY_CODE.html#category-description",
+    "title": "COUNTRY_CODE",
+    "section": "Category Description",
+    "text": "Category Description\nThis section contains variable coding for relevant columns within the country_code table."
+  },
+  {
+    "objectID": "COUNTRY_CODE.html#statistics",
+    "href": "COUNTRY_CODE.html#statistics",
+    "title": "COUNTRY_CODE",
+    "section": "Statistics",
+    "text": "Statistics\n\n\n\n\n\n\n  \n  \n    \n      Number of Columns\n      Number of Rows\n    \n  \n  \n    13\n262"
+  },
+  {
+    "objectID": "COUNTY_CODE.html#description",
+    "href": "COUNTY_CODE.html#description",
+    "title": "COUNTY_CODE",
+    "section": "Description",
+    "text": "Description\nThe county_code table contains a list of county codes in the repository, including a description of the county and state code."
+  },
+  {
+    "objectID": "COUNTY_CODE.html#columns",
+    "href": "COUNTY_CODE.html#columns",
+    "title": "COUNTY_CODE",
+    "section": "Columns",
+    "text": "Columns\n\n\n\n\n\n\n  \n  \n    \n      Columns\n      Type\n    \n  \n  \n    COUNTY_CODE\nnumeric\n    COUNTY\ncharacter\n    STATE_CODE\ncharacter\n    CREATEDATETIME\nPOSIXct, POSIXt\n    SysStartTime\nPOSIXct, POSIXt\n    SysEndTime\nPOSIXct, POSIXt\n    tsExtract\ncharacter"
+  },
+  {
+    "objectID": "COUNTY_CODE.html#category-description",
+    "href": "COUNTY_CODE.html#category-description",
+    "title": "COUNTY_CODE",
+    "section": "Category Description",
+    "text": "Category Description\nThis section contains variable coding for relevant columns within the county code table."
+  },
+  {
+    "objectID": "COUNTY_CODE.html#statistics",
+    "href": "COUNTY_CODE.html#statistics",
+    "title": "COUNTY_CODE",
+    "section": "Statistics",
+    "text": "Statistics\n\n\n\n\n\n\n  \n  \n    \n      Number of Columns\n      Number of Rows\n    \n  \n  \n    7\n3156"
+  }
+]
