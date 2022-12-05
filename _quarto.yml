@@ -9,7 +9,6 @@ book:
   sidebar:
     style: "docked"
     search: true
-  downloads: pdf
   
   chapters:
     - index.qmd
@@ -82,7 +81,7 @@ format:
     fontsize: 0.8em
     margin-left: 300px
     toc: true
-    font-family: monospace
+    font-family: font-family: "Lucida Console", Courier, monospace
     
   pdf:
     documentclass: scrreprt
