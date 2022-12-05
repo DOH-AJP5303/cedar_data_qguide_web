@@ -78,8 +78,7 @@ format:
   html:
     theme: 
         - cosmo
-    fontsize: 0.8em
-    margin-left: 300px
+    fontsize: 0.95em
     toc: true
     
   pdf:
