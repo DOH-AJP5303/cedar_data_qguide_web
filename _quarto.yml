@@ -7,7 +7,7 @@ book:
   author: "Data Quality Team"
   date: today
   sidebar:
-    style: "floating"
+    style: floating
     search: true
   execute:
     freeze: auto
