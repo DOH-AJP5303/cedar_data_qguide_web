@@ -80,8 +80,9 @@ format:
     theme: 
         - cosmo
     fontsize: 0.8em
-    margin-left: -300px
+    margin-left: -350px
     toc: true
+    font-family: monospace
     
   pdf:
     documentclass: scrreprt
