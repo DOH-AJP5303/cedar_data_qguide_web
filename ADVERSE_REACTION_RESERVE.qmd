@@ -19,7 +19,7 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The address_reaction_reserve table contains a list of records with an associated adverse reaction code.
 
 ## Columns
 
