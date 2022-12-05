@@ -9,6 +9,8 @@ book:
   sidebar:
     style: "docked"
     search: true
+  execute:
+    freeze: auto
   
   chapters:
     - index.qmd
