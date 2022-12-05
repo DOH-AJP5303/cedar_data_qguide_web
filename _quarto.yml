@@ -10,7 +10,7 @@ book:
     style: "docked"
     search: true
       location: navbar
-      type: overlay
+      type: textbox
   
   chapters:
     - index.qmd
