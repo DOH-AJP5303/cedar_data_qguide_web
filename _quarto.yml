@@ -78,7 +78,7 @@ bibliography: references.bib
 format:
   html:
     theme: 
-        - cosmo, styles2.scss
+        - cosmo
     toc: true
     
   pdf:
