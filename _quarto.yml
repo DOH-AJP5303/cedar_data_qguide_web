@@ -5,7 +5,7 @@ project:
 book:
   title: "CEDAR Data Quality Guide"
   author: "Data Quality Team"
-  date: "`r gsub( ' .*$', '', file.info( knitr::current_input() )$ctime)`"
+  date: today
   sidebar:
     style: "docked"
     search: true

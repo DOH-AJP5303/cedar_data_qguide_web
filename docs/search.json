@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "CEDAR Data Quality Guide",
     "section": "",
-    "text": "CEDAR - the Cloud Environment for Data Analytics and Reporting - is two things. It is a cloud-based repository where data reside and can be accessed to support the creation of reports, dashboards and other data products, as well as any form of analysis. It is also a set of cloud-based tools for data scientists, informaticians and epidemiologists to use in that analysis and creation of data products. CEDAR’s goal is to be the single trusted source of information for analytics.\nThis guide provides detailed descriptions of CEDAR tables, selected data dictionaries, and descriptive statistics."
+    "text": "Introduction\nCEDAR - the Cloud Environment for Data Analytics and Reporting - is two things. It is a cloud-based repository where data reside and can be accessed to support the creation of reports, dashboards and other data products, as well as any form of analysis. It is also a set of cloud-based tools for data scientists, informaticians and epidemiologists to use in that analysis and creation of data products. CEDAR’s goal is to be the single trusted source of information for analytics.\nThis guide provides detailed descriptions of CEDAR tables, selected data dictionaries, and descriptive statistics."
   },
   {
     "objectID": "ADVERSE_REACTION_RESERVE.html#description",
@@ -487,7 +487,7 @@
     "href": "LOT_LOG_ACTION_CODE.html#description",
     "title": "LOT_LOG_ACTION_CODE",
     "section": "Description",
-    "text": "Description\nDescription"
+    "text": "Description\nThe lot_log_action_code table contains a list of action codes within the system and their descriptions."
   },
   {
     "objectID": "LOT_LOG_ACTION_CODE.html#columns",
@@ -851,7 +851,7 @@
     "href": "PATIENT_VACCINE_DEFERRAL.html#description",
     "title": "PATIENT_VACCINE_DEFERRAL",
     "section": "Description",
-    "text": "Description\nDescription"
+    "text": "Description\nThe patient_vaccine_deferral table contains a list of patient record IDs and their associated deferral records. Details include the vaccine code, dose number, deferral date, and deferral reason."
   },
   {
     "objectID": "PATIENT_VACCINE_DEFERRAL.html#columns",
@@ -865,21 +865,21 @@
     "href": "PATIENT_VACCINE_DEFERRAL.html#category-description",
     "title": "PATIENT_VACCINE_DEFERRAL",
     "section": "Category Description",
-    "text": "Category Description\nDescription"
+    "text": "Category Description\nThis section contains variable coding for relevant columns within the PATIENT_VACCINE_DEFERRAL table.\n\n\n\n\n\n\n  \n    \n    \n    \n  \n  \n    \n      Variable Coding\n    \n    \n  \n  \n    \n      \n      Coding\n      Description\n    \n  \n  \n    \n      ASIIS_VACC_CODE1\n    \n     \n921\nTdap\n     \n75\ninfluenza, injectable, quadrivalent, preservative free\n     \n2061\nzoster recombinant\n     \n73\ninfluenza, injectable, quadrivalent\n     \n61\nInfluenza, seasonal, injectable\n     \n614\nPneumococcal conjugate PCV 13\n     \n2033\nHPV9\n     \n31\npneumococcal polysaccharide PPV23\n     \n2080\nCOVID-19, mRNA, LNP-S, PF, 100 mcg/0.5mL dose or 50 mcg/0.25mL dose\n     \n108\ninfluenza, unspecified formulation\n    \n      DEFERRAL_REASON\n    \n     \nALTSCHEDULE\nPatient/Parent Chooses Alternate Schedule\n     \nSHORTAGE\nVaccine Shortage\n     \n02\nOther\n     \n03\nPatient Decision\n     \nWAIT\nPatient/Parent Chooses to Wait\n     \nILLNESS\nTemporary Acute Illness\n     \n01\nReligious exemption\n     \n00\nParental Decision\n  \n  \n  \n    \n      1 A full list of IIS Vaccination Codes is available at: https://www2a.cdc.gov/vaccines/iis/iisstandards/?rpt=cpt"
   },
   {
     "objectID": "PATIENT_VACCINE_DEFERRAL.html#statistics",
     "href": "PATIENT_VACCINE_DEFERRAL.html#statistics",
     "title": "PATIENT_VACCINE_DEFERRAL",
     "section": "Statistics",
-    "text": "Statistics\n\n\n\n\n\n\n  \n  \n    \n      Number of Columns\n      Number of Rows\n    \n  \n  \n    21\n135947"
+    "text": "Statistics\n\n\n\n\n\n\n  \n  \n    \n      Number of Columns\n      Number of Rows\n    \n  \n  \n    21\n142089"
   },
   {
     "objectID": "PHONE_RESERVE.html#description",
     "href": "PHONE_RESERVE.html#description",
     "title": "PHONE_RESERVE",
     "section": "Description",
-    "text": "Description\nDescription"
+    "text": "Description\nThe phone_reserve table contains a list of phone number records for each vaccine record ID."
   },
   {
     "objectID": "PHONE_RESERVE.html#columns",
@@ -900,7 +900,7 @@
     "href": "PHONE_RESERVE.html#statistics",
     "title": "PHONE_RESERVE",
     "section": "Statistics",
-    "text": "Statistics\n\n\n\n\n\n\n  \n  \n    \n      Number of Columns\n      Number of Rows\n    \n  \n  \n    18\n53421812"
+    "text": "Statistics\n\n\n\n\n\n\n  \n  \n    \n      Number of Columns\n      Number of Rows\n    \n  \n  \n    18\n54121373"
   },
   {
     "objectID": "PHYSICIAN_MASTER.html#description",
@@ -935,7 +935,7 @@
     "href": "SCHOOL.html#description",
     "title": "SCHOOL",
     "section": "Description",
-    "text": "Description\nDescription"
+    "text": "Description\nThe school table contains a list of school record IDs, including the school description and address."
   },
   {
     "objectID": "SCHOOL.html#columns",
@@ -956,7 +956,7 @@
     "href": "SCHOOL.html#statistics",
     "title": "SCHOOL",
     "section": "Statistics",
-    "text": "Statistics\n\n\n\n\n\n\n  \n  \n    \n      Number of Columns\n      Number of Rows\n    \n  \n  \n    32\n123386"
+    "text": "Statistics\n\n\n\n\n\n\n  \n  \n    \n      Number of Columns\n      Number of Rows\n    \n  \n  \n    32\n123396"
   },
   {
     "objectID": "SCHOOL_DISTRICT.html#description",
@@ -1292,7 +1292,7 @@
     "href": "VACCINE_FAMILY.html#statistics",
     "title": "VACCINE_FAMILY",
     "section": "Statistics",
-    "text": "Statistics\n\n\n\n\n\n\n  \n  \n    \n      Number of Columns\n      Number of Rows\n    \n  \n  \n    10\n224\n  \n  \n  \n\n\n\n\n:::"
+    "text": "Statistics\n\n\n\n\n\n\n  \n  \n    \n      Number of Columns\n      Number of Rows\n    \n  \n  \n    10\n224"
   },
   {
     "objectID": "VACCINE_FAMILY_CODE.html#description",
@@ -1376,7 +1376,7 @@
     "href": "VACCINE_PRODUCT.html#statistics",
     "title": "VACCINE_PRODUCT",
     "section": "Statistics",
-    "text": "Statistics\n\n\n\n\n\n\n  \n  \n    \n      Number of Columns\n      Number of Rows\n    \n  \n  \n    17\n423\n  \n  \n  \n\n\n\n\n:::"
+    "text": "Statistics\n\n\n\n\n\n\n  \n  \n    \n      Number of Columns\n      Number of Rows\n    \n  \n  \n    17\n430"
   },
   {
     "objectID": "VACCINE_PRODUCT_MAPPING.html#description",
@@ -1404,7 +1404,7 @@
     "href": "VACCINE_PRODUCT_MAPPING.html#statistics",
     "title": "VACCINE_PRODUCT_MAPPING",
     "section": "Statistics",
-    "text": "Statistics\n\n\n\n\n\n\n  \n  \n    \n      Number of Columns\n      Number of Rows\n    \n  \n  \n    17\n787\n  \n  \n  \n\n\n\n\n:::"
+    "text": "Statistics\n\n\n\n\n\n\n  \n  \n    \n      Number of Columns\n      Number of Rows\n    \n  \n  \n    17\n789"
   },
   {
     "objectID": "VACMAN_ASIIS_CODE.html#description",
@@ -1432,7 +1432,7 @@
     "href": "VACMAN_ASIIS_CODE.html#statistics",
     "title": "VACMAN_ASIIS_CODE",
     "section": "Statistics",
-    "text": "Statistics\n\n\n\n\n\n\n  \n  \n    \n      Number of Columns\n      Number of Rows\n    \n  \n  \n    34\n414\n  \n  \n  \n\n\n\n\n:::"
+    "text": "Statistics\n\n\n\n\n\n\n  \n  \n    \n      Number of Columns\n      Number of Rows\n    \n  \n  \n    34\n420"
   },
   {
     "objectID": "VALID_VACCINATION.html#description",

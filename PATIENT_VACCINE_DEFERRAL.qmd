@@ -59,9 +59,11 @@ tibble(Coding = c(#top 10 iis vaccination code
                   
       Variable = c(#vaccination code category
                     "ASIIS_VACC_CODE","ASIIS_VACC_CODE","ASIIS_VACC_CODE","ASIIS_VACC_CODE","ASIIS_VACC_CODE",
+                    "ASIIS_VACC_CODE","ASIIS_VACC_CODE","ASIIS_VACC_CODE","ASIIS_VACC_CODE","ASIIS_VACC_CODE",
                     
                     #deferral reasons 
-                    "DEFERRAL_REASON","DEFERRAL_REASON","DEFERRAL_REASON","DEFERRAL_REASON","DEFERRAL_REASON"),
+                    "DEFERRAL_REASON","DEFERRAL_REASON","DEFERRAL_REASON","DEFERRAL_REASON","DEFERRAL_REASON",
+                    "DEFERRAL_REASON","DEFERRAL_REASON","DEFERRAL_REASON"),
                     
                     
       Space = " ") %>%
