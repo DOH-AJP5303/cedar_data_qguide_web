@@ -9,8 +9,6 @@ book:
   sidebar:
     style: "docked"
     search: true
-      location: navbar
-      type: textbox
   
   chapters:
     - index.qmd
