@@ -7,7 +7,7 @@ book:
   author: "Data Quality Team"
   date: today
   sidebar:
-    style: floating
+    style: "docked"
     search: true
   execute:
     freeze: auto
@@ -80,8 +80,7 @@ bibliography: references.bib
 format:
   html:
     theme: 
-        - cosmo
-        - styles2.scss
+        - cosmo, styles2.scss
     toc: true
     
   pdf:
