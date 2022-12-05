@@ -19,7 +19,7 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-The address_reserve table contains details of unique address IDs within the repository, including the street name, city, state, and zip code. 
+The address_reserve table contains details of unique address IDs within the repository, including the street name, city, state, and zip code.
 
 ## Columns
 
