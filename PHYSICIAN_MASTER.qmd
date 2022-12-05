@@ -19,7 +19,7 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The physician_master table contains a list of physician IDs with details, including name of the physician, NPI, tax ID, contact address, and phone numbers.
 
 ## Columns
 
