@@ -1,3 +1,5 @@
+Last Updated: `r format(Sys.Date(), "%Y-%B-%d")`
+
 # Introduction {.unnumbered}
 
 CEDAR - the Cloud Environment for Data Analytics and Reporting - is two things. It is a cloud-based repository where data reside and can be accessed to support the creation of reports, dashboards and other data products, as well as any form of analysis. It is also a set of cloud-based tools for data scientists, informaticians and epidemiologists to use in that analysis and creation of data products. CEDAR's goal is to be the single trusted source of information for analytics.

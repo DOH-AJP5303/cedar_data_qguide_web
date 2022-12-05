@@ -19,7 +19,7 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-The vaccine_product_mapping table contains a list of vaccine product ID values by system mapping ID. 
+The vaccine_product_mapping table contains a list of vaccine product ID values by system mapping ID.
 
 ## Columns
 
@@ -46,4 +46,4 @@ tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_VACCINE_PRODUCT_MAPPING")
              rowcnt = "Number of Rows")  %>%
   gt_theme_espn()
 ```
-:::
+

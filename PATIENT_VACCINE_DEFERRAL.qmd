@@ -38,26 +38,30 @@ This section contains variable coding for relevant columns within the PATIENT_VA
 
 ```{r}
 #| label: tab-ptvacdef
-vcvar_tabl <-
+ptvacdef_tabl <-
 tibble(Coding = c(#top 10 iis vaccination code 
-                  "921","75","2061","73","61","614","2033","31","2080","108"
+                  "921","75","2061","73","61","614","2033","31","2080","108",
                   
-                  "ALTSCHEDULE","SHORTAGE","02","03","WAIT","ILLNESS","01","00", 
+                   #top 8 deferral reasons
+                  "ALTSCHEDULE","SHORTAGE","02","03","WAIT","ILLNESS","01","00"), 
                   
-                  #top 8 deferral reasons
-                  
-               
        Description = c(#iis vacc code descriptor
-                     "Tdap","influenza, injectable, quadrivalent, preservative free","zoster recombinant","influenza, injectable, quadrivalent","Influenza, seasonal, injectable","Pneumococcal conjugate PCV 13","HPV9","pneumococcal polysaccharide PPV23","COVID-19, mRNA, LNP-S, PF, 100 mcg/0.5mL dose or 50 mcg/0.25mL dose","influenza, unspecified formulation"
+                     "Tdap","influenza, injectable, quadrivalent, preservative free","zoster recombinant",
+                     "influenza, injectable, quadrivalent","Influenza, seasonal, injectable",
+                     "Pneumococcal conjugate PCV 13","HPV9","pneumococcal polysaccharide PPV23",
+                     "COVID-19, mRNA, LNP-S, PF, 100 mcg/0.5mL dose or 50 mcg/0.25mL dose",
+                     "influenza, unspecified formulation",
                       
                        #deferral reasons descriptor
-                      "Patient/Parent Chooses Alternate Schedule","Vaccine Shortage","Other","Patient Decision","Patient/Parent Chooses to Wait","Temporary Acute Illness","Religious exemption","Parental Decision"
+                      "Patient/Parent Chooses Alternate Schedule","Vaccine Shortage","Other",
+                      "Patient Decision","Patient/Parent Chooses to Wait","Temporary Acute Illness",
+                      "Religious exemption","Parental Decision"),
                   
       Variable = c(#vaccination code category
                     "ASIIS_VACC_CODE","ASIIS_VACC_CODE","ASIIS_VACC_CODE","ASIIS_VACC_CODE","ASIIS_VACC_CODE",
                     
                     #deferral reasons 
-                    "DEFERRAL_REASON","DEFERRAL_REASON","DEFERRAL_REASON","DEFERRAL_REASON","DEFERRAL_REASON",
+                    "DEFERRAL_REASON","DEFERRAL_REASON","DEFERRAL_REASON","DEFERRAL_REASON","DEFERRAL_REASON"),
                     
                     
       Space = " ") %>%
@@ -78,7 +82,6 @@ tibble(Coding = c(#top 10 iis vaccination code
 
 ptvacdef_tabl
 ```
-
 
 ## Statistics
 

@@ -108,4 +108,3 @@ tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_VACCINE_FAMILY")) %>% nco
   gt_theme_espn()
 ```
 
-:::
