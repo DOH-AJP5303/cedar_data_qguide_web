@@ -19,7 +19,7 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-The county_code table contains a list of county codes in the repository, including a description of the county and state code.
+The county_code table contains a list of county codes in the repository, including a description of the county and state code. 
 
 ## Columns
 
