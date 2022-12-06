@@ -46,4 +46,3 @@ tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_VACCINE_PRODUCT_MAPPING")
              rowcnt = "Number of Rows")  %>%
   gt_theme_espn()
 ```
-

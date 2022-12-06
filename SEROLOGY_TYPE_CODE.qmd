@@ -90,4 +90,3 @@ tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_SEROLOGY_TYPE_CODE")) %>%
              rowcnt = "Number of Rows")  %>%
   gt_theme_espn()
 ```
-

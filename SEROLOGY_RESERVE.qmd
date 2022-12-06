@@ -19,7 +19,7 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-The serology_reserve table contains information on patient records with a serology result. Details on the serology draw date, type, and titer value are included. 
+The serology_reserve table contains information on patient records with a serology result. Details on the serology draw date, type, and titer value are included.
 
 ## Columns
 
@@ -36,12 +36,8 @@ tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_SEROLOGY_RESERVE")) %>% col
 ```{r}
 #| label: serres-table
 serres_tabl <-
-tibble(Coding = c("
-      
-                 
- #serology_type_codes top 16
-
-"1","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64",
+tibble(Coding = c(#serology_type_codes top 16
+                  "1","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64"),
 
                
 Description = c(#serology_type_codes
@@ -60,19 +56,15 @@ Description = c(#serology_type_codes
 "SARS-related CoV result",
 "SARS-CoV-2 ORF1ab region result",
 "SARS-CoV-2 Ab qualitative",
-"TB Gold, QuantiFERON",
+"TB Gold, QuantiFERON"),
                       
        Variable = c(#group_code category
-                    "SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE",
+                    "SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE","SEROLOGY_TYPE_CODE"),
                            
       Space = " ") %>%
   
        gt(rowname_col = "Space", groupname_col = "Variable") %>%
-       tab_header(
-                      title = "Variable Coding"
-                      
-                      
-  default = list(padj = "FDR", nFound = "Genes")))
+       tab_header(title = "Variable Coding"
        ) %>%
        cols_width(Coding~px(200),
                   Description~px(400),
@@ -95,6 +87,5 @@ tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_SEROLOGY_RESERVE")) %>% n
              rowcnt = "Number of Rows")  %>%
   gt_theme_espn()
 ```
-
 
 :::

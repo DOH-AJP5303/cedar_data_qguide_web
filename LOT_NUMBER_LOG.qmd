@@ -34,8 +34,6 @@ tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_LOT_NUMBER_LOG")) %>% colna
 
 ## Category Description
 
-
-
 ## Statistics
 
 ```{r}
@@ -48,4 +46,5 @@ tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_LOT_NUMBER_LOG")) %>% nco
              rowcnt = "Number of Rows")  %>%
   gt_theme_espn()
 ```
+
 :::
