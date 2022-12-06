@@ -19,11 +19,33 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The lot_number_log table contains information on lot number log codes within the repository. Details include the lot number, dose change(s), and transaction record of each lot number log.
 
 ## Columns
 
+```{r}
+#| label: lotnumlog-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_LOT_NUMBER_LOG")) %>% colnames()),
+       Type = tbl(synapse, in_schema("dbo", "H33_LOT_NUMBER_LOG")) %>% head(1) %>% as_tibble() %>% sapply(class)
+  ) %>%
+  gt() %>%
+  gt_theme_espn()
+```
+
 ## Category Description
+
+
 
 ## Statistics
 
+```{r}
+#| label: lotnumlog-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_LOT_NUMBER_LOG")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_LOT_NUMBER_LOG"))) %>% nrow2()
+  ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```
+:::

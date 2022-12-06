@@ -19,10 +19,32 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The physician_master table contains a list of physician IDs with details, including name of the physician, NPI, tax ID, contact address, and phone numbers.
 
 ## Columns
 
+```{r}
+#| label: physmstr-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_PHYSICIAN_MASTER")) %>% colnames()),
+       Type = tbl(synapse, in_schema("dbo", "H33_PHYSICIAN_MASTER")) %>% head(1) %>% as_tibble() %>% sapply(class)
+       ) %>%
+ gt() %>%
+ gt_theme_espn()
+```
+
 ## Category Description
 
+Description
+
 ## Statistics
+
+```{r}
+#| label: physmstr-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_PHYSICIAN_MASTER")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_PHYSICIAN_MASTER"))) %>% nrow2()
+       ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```

@@ -1,0 +1,5200 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrreprt}
+
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{5}
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{longtable}
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\makeatother
+\makeatletter
+\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={CEDAR Data Quality Guide},
+  pdfauthor={Data Quality Team},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{CEDAR Data Quality Guide}
+\author{Data Quality Team}
+\date{2022-12-06T00:00:00-08:00}
+
+\begin{document}
+\maketitle
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, frame hidden, borderline west={3pt}{0pt}{shadecolor}, enhanced, sharp corners, breakable, interior hidden]}{\end{tcolorbox}}\fi
+
+\renewcommand*\contentsname{Table of contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\bookmarksetup{startatroot}
+
+\hypertarget{introduction}{%
+\chapter*{Introduction}\label{introduction}}
+\addcontentsline{toc}{chapter}{Introduction}
+
+CEDAR - the Cloud Environment for Data Analytics and Reporting - is two
+things. It is a cloud-based repository where data reside and can be
+accessed to support the creation of reports, dashboards and other data
+products, as well as any form of analysis. It is also a set of
+cloud-based tools for data scientists, informaticians and
+epidemiologists to use in that analysis and creation of data products.
+CEDAR's goal is to be the single trusted source of information for
+analytics.
+
+This guide provides detailed descriptions of CEDAR tables, selected data
+dictionaries, and descriptive statistics.
+
+\bookmarksetup{startatroot}
+
+\hypertarget{table-list}{%
+\chapter*{Table List}\label{table-list}}
+\addcontentsline{toc}{chapter}{Table List}
+
+There are currently 114 tables in CEDAR. A complete list is included
+below:
+
+\begin{longtable}{l}
+\toprule
+Tables \\ 
+\midrule
+H33\_ADDRESS\_RESERVE \\ 
+H33\_ADVERSE\_REACTION\_RESERVE \\ 
+H33\_ASIIS\_VACC\_CODE \\ 
+H33\_CDC\_TO\_ASIIS\_VACC\_CODE \\ 
+H33\_CONTRAINDICATION\_DESC \\ 
+H33\_COUNTRY\_CODE \\ 
+H33\_COUNTY\_CODE \\ 
+H33\_ELIGIBILITY\_CATEGORIES \\ 
+H33\_EXEMPTION\_FORM\_HEADER \\ 
+H33\_EXEMPTION\_FORM\_VACCS \\ 
+H33\_FACILITY\_MASTER \\ 
+H33\_FACILITY\_TYPE \\ 
+H33\_GEOCODING\_ZIPCODES \\ 
+H33\_GRADE\_LEVELS \\ 
+H33\_INVALID\_VACCINATION \\ 
+H33\_IRMS \\ 
+H33\_IRMS\_FACILITY\_ORDER\_SET \\ 
+H33\_LOOKUP \\ 
+H33\_LOT\_LOG\_ACTION\_CODE \\ 
+H33\_LOT\_NUMBER \\ 
+H33\_LOT\_NUMBER\_AUDIT \\ 
+H33\_LOT\_NUMBER\_LOG \\ 
+H33\_ORDER\_ITEMS \\ 
+H33\_ORDER\_SET \\ 
+H33\_ORDER\_SET\_ASSOCIATION \\ 
+H33\_ORDERS \\ 
+H33\_PATIENT\_CONTRA\_RESERVE \\ 
+H33\_PATIENT\_CONTRAINDICATION \\ 
+H33\_PATIENT\_MASTER \\ 
+H33\_PATIENT\_RACE\_MASTER \\ 
+H33\_PATIENT\_RACE\_RESERVE \\ 
+H33\_PATIENT\_RESERVE \\ 
+H33\_PATIENT\_SCHOOL\_NURSE \\ 
+H33\_PATIENT\_VACCINE\_DEFERRAL \\ 
+H33\_PHONE\_RESERVE \\ 
+H33\_PHYSICIAN\_MASTER \\ 
+H33\_SCHOOL \\ 
+H33\_SCHOOL\_DISTRICT \\ 
+H33\_SCHOOL\_NURSE\_IMMUNITY \\ 
+H33\_SEROLOGY\_INVALID\_DATA \\ 
+H33\_SEROLOGY\_RESERVE \\ 
+H33\_SEROLOGY\_TEST\_RESULT \\ 
+H33\_SEROLOGY\_TYPE\_CODE \\ 
+H33\_TRANSFER \\ 
+H33\_TRANSFER\_ITEMS \\ 
+H33\_VACC\_GROUP\_FAMILY \\ 
+H33\_VACCINATION\_FORECAST \\ 
+H33\_VACCINATION\_MASTER \\ 
+H33\_VACCINATION\_RESERVE \\ 
+H33\_VACCINE\_FAMILY \\ 
+H33\_VACCINE\_FAMILY\_CODE \\ 
+H33\_VACCINE\_FUNDING\_SOURCE \\ 
+H33\_VACCINE\_PRODUCT \\ 
+H33\_VACCINE\_PRODUCT\_MAPPING \\ 
+H33\_VACMAN\_ASIIS\_CODE \\ 
+H33\_VALID\_VACCINATION \\ 
+H33\_WEB\_VACCINE\_FAMILY\_CODE \\ 
+H33\_ADDRESS\_RESERVE \\ 
+H33\_ADVERSE\_REACTION\_RESERVE \\ 
+H33\_ASIIS\_VACC\_CODE \\ 
+H33\_CDC\_TO\_ASIIS\_VACC\_CODE \\ 
+H33\_CONTRAINDICATION\_DESC \\ 
+H33\_COUNTRY\_CODE \\ 
+H33\_COUNTY\_CODE \\ 
+H33\_ELIGIBILITY\_CATEGORIES \\ 
+H33\_EXEMPTION\_FORM\_HEADER \\ 
+H33\_EXEMPTION\_FORM\_VACCS \\ 
+H33\_FACILITY\_MASTER \\ 
+H33\_FACILITY\_TYPE \\ 
+H33\_GEOCODING\_ZIPCODES \\ 
+H33\_GRADE\_LEVELS \\ 
+H33\_INVALID\_VACCINATION \\ 
+H33\_IRMS \\ 
+H33\_IRMS\_FACILITY\_ORDER\_SET \\ 
+H33\_LOOKUP \\ 
+H33\_LOT\_LOG\_ACTION\_CODE \\ 
+H33\_LOT\_NUMBER \\ 
+H33\_LOT\_NUMBER\_AUDIT \\ 
+H33\_LOT\_NUMBER\_LOG \\ 
+H33\_ORDER\_ITEMS \\ 
+H33\_ORDER\_SET \\ 
+H33\_ORDER\_SET\_ASSOCIATION \\ 
+H33\_ORDERS \\ 
+H33\_PATIENT\_CONTRA\_RESERVE \\ 
+H33\_PATIENT\_CONTRAINDICATION \\ 
+H33\_PATIENT\_MASTER \\ 
+H33\_PATIENT\_RACE\_MASTER \\ 
+H33\_PATIENT\_RACE\_RESERVE \\ 
+H33\_PATIENT\_RESERVE \\ 
+H33\_PATIENT\_SCHOOL\_NURSE \\ 
+H33\_PATIENT\_VACCINE\_DEFERRAL \\ 
+H33\_PHONE\_RESERVE \\ 
+H33\_PHYSICIAN\_MASTER \\ 
+H33\_SCHOOL \\ 
+H33\_SCHOOL\_DISTRICT \\ 
+H33\_SCHOOL\_NURSE\_IMMUNITY \\ 
+H33\_SEROLOGY\_INVALID\_DATA \\ 
+H33\_SEROLOGY\_RESERVE \\ 
+H33\_SEROLOGY\_TEST\_RESULT \\ 
+H33\_SEROLOGY\_TYPE\_CODE \\ 
+H33\_TRANSFER \\ 
+H33\_TRANSFER\_ITEMS \\ 
+H33\_VACC\_GROUP\_FAMILY \\ 
+H33\_VACCINATION\_FORECAST \\ 
+H33\_VACCINATION\_MASTER \\ 
+H33\_VACCINATION\_RESERVE \\ 
+H33\_VACCINE\_FAMILY \\ 
+H33\_VACCINE\_FAMILY\_CODE \\ 
+H33\_VACCINE\_FUNDING\_SOURCE \\ 
+H33\_VACCINE\_PRODUCT \\ 
+H33\_VACCINE\_PRODUCT\_MAPPING \\ 
+H33\_VACMAN\_ASIIS\_CODE \\ 
+H33\_VALID\_VACCINATION \\ 
+H33\_WEB\_VACCINE\_FAMILY\_CODE \\ 
+\bottomrule
+\end{longtable}
+
+\part{Tables}
+
+\hypertarget{address_reserve}{%
+\chapter*{ADDRESS\_RESERVE}\label{address_reserve}}
+\addcontentsline{toc}{chapter}{ADDRESS\_RESERVE}
+
+\hypertarget{description}{%
+\section*{Description}\label{description}}
+\addcontentsline{toc}{section}{Description}
+
+The address\_reserve table contains details of unique address IDs within
+the repository, including the street name, city, state, and zip code.
+
+\hypertarget{columns}{%
+\section*{Columns}\label{columns}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+ADDRESS\_ID & numeric \\ 
+IRMS\_SYS\_ID & numeric \\ 
+IRMS\_PAT\_ID & character \\ 
+ASIIS\_PAT\_ID\_PTR & numeric \\ 
+ADDRESS\_STREET1 & character \\ 
+ADDRESS\_STREET2 & character \\ 
+ADDRESS\_CITY & character \\ 
+ADDRESS\_STATE & character \\ 
+ADDRESS\_ZIP & numeric \\ 
+ADDRESS\_TYPE & character \\ 
+ADDRESS\_STREET\_MANGLED & character \\ 
+PHONE & numeric \\ 
+EMAIL\_ADDRESS & character \\ 
+IS\_PRIMARY & character \\ 
+IS\_VALID & character \\ 
+INSERT\_STAMP & POSIXct, POSIXt \\ 
+UPDATE\_STAMP & POSIXct, POSIXt \\ 
+INSERTED\_BY & character \\ 
+LAST\_USER\_TO\_UPDATE & character \\ 
+DELETION\_DATE & POSIXct, POSIXt \\ 
+COUNTY\_CODE & numeric \\ 
+INTERNATIONAL\_ZIP & character \\ 
+ADDRESS\_COUNTRY\_CODE & character \\ 
+ADDRESS\_BUILDING & character \\ 
+ADDRESS\_ZONE & character \\ 
+DO\_NOT\_CLEAN\_ADDRESS & character \\ 
+SMARTY\_STREETS\_ADDR\_ID & numeric \\ 
+ADDRESS\_INWANI\_STREET & character \\ 
+IS\_PRIMARY\_INWANI & character \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description}{%
+\section*{Category Description}\label{category-description}}
+\addcontentsline{toc}{section}{Category Description}
+
+\hypertarget{statistics}{%
+\section*{Statistics}\label{statistics}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+33 & 27926390 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{adverse_reaction_reserve}{%
+\chapter*{ADVERSE\_REACTION\_RESERVE}\label{adverse_reaction_reserve}}
+\addcontentsline{toc}{chapter}{ADVERSE\_REACTION\_RESERVE}
+
+\hypertarget{description-1}{%
+\section*{Description}\label{description-1}}
+\addcontentsline{toc}{section}{Description}
+
+The address\_reaction\_reserve table contains a list of records with an
+associated adverse reaction code.
+
+\hypertarget{columns-1}{%
+\section*{Columns}\label{columns-1}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+IRMS\_SYS\_ID & numeric \\ 
+IRMS\_PAT\_ID & character \\ 
+ASIIS\_VACC\_CODE & numeric \\ 
+VACC\_DATE & POSIXct, POSIXt \\ 
+ADVERSE\_REACTION\_CODE & numeric \\ 
+COMMENTS & character \\ 
+INSERT\_STAMP & POSIXct, POSIXt \\ 
+UPDATE\_STAMP & POSIXct, POSIXt \\ 
+REGISTRY\_ENTRY\_STAMP & POSIXct, POSIXt \\ 
+REGISTRY\_UPDATE\_STAMP & POSIXct, POSIXt \\ 
+INSERTED\_BY & character \\ 
+LAST\_USER\_TO\_UPDATE & character \\ 
+SEQUENCE\_ID & numeric \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-1}{%
+\section*{Category Description}\label{category-description-1}}
+\addcontentsline{toc}{section}{Category Description}
+
+This section contains variable coding for relevant columns within the
+adverse reaction table.
+
+\hypertarget{statistics-1}{%
+\section*{Statistics}\label{statistics-1}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+17 & 590 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{asiis_vacc_code}{%
+\chapter*{ASIIS\_VACC\_CODE}\label{asiis_vacc_code}}
+\addcontentsline{toc}{chapter}{ASIIS\_VACC\_CODE}
+
+\hypertarget{description-2}{%
+\section*{Description}\label{description-2}}
+\addcontentsline{toc}{section}{Description}
+
+The asiis\_vacc\_code table contains a list of asiis vaccination code
+records in the repository, including a description of the vaccine, state
+abbreviation, and corresponding CDC and CPT codes.
+
+\hypertarget{columns-2}{%
+\section*{Columns}\label{columns-2}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+ASIIS\_VACC\_CODE & numeric \\ 
+ASIIS\_DESCRIPTION & character \\ 
+BEST\_CPT\_CODE & numeric \\ 
+BEST\_CDC\_CODE & numeric \\ 
+INACTIVE\_STATUS & character \\ 
+BLOCKED & character \\ 
+SORT\_ORDER & numeric \\ 
+LIVE\_VACCINE & character \\ 
+IS\_DILUENT & character \\ 
+IS\_DILUTION\_MANDATORY & character \\ 
+TEST\_RESULT & character \\ 
+IS\_NOT\_ADMINISTERED & character \\ 
+IS\_HISTORY\_SHORTCUT & character \\ 
+IS\_FR\_HISTORY\_SHORTCUT & character \\ 
+DISPLAY\_TO\_USER & character \\ 
+NOTES & character \\ 
+STATE\_SORT\_ORDER & numeric \\ 
+IS\_PDE\_HISTORY\_SHORTCUT & character \\ 
+IS\_MI\_HISTORY\_SHORTCUT & character \\ 
+IS\_MEDICATION & character \\ 
+DOSE\_DECREMENT\_QUANTITY & numeric \\ 
+IS\_COMBO & character \\ 
+STATE\_ABBREV & character \\ 
+IS\_UNSPECIFIED & character \\ 
+VACC\_DISPLAY\_INFO & character \\ 
+IS\_NOT\_LICENSED & character \\ 
+BEST\_ICD9\_CODE & character \\ 
+IS\_NASAL & character \\ 
+COMPROMISED\_INTERVAL & numeric \\ 
+SIIS\_LEGACY\_DESC & character \\ 
+NON\_VACCINE & character \\ 
+VACC\_FAMILY\_FOR\_REPORTS & character \\ 
+IS\_PERTUSSIS & character \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-2}{%
+\section*{Category Description}\label{category-description-2}}
+\addcontentsline{toc}{section}{Category Description}
+
+This section contains variable coding for relevant columns within the
+ASIIS VACC\_CODE table.
+
+\hypertarget{statistics-2}{%
+\section*{Statistics}\label{statistics-2}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+37 & 1372 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{cdc_to_asiis_vacc_code}{%
+\chapter*{CDC\_TO\_ASIIS\_VACC\_CODE}\label{cdc_to_asiis_vacc_code}}
+\addcontentsline{toc}{chapter}{CDC\_TO\_ASIIS\_VACC\_CODE}
+
+\hypertarget{description-3}{%
+\section*{Description}\label{description-3}}
+\addcontentsline{toc}{section}{Description}
+
+The cdc\_to\_asiis\_vacc\_code table contains a list of asiis
+vaccination codes and their respective CPT code values. A description of
+the vaccination code is provided.
+
+\hypertarget{columns-3}{%
+\section*{Columns}\label{columns-3}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+CDC\_VACC\_CODE & numeric \\ 
+ASIIS\_VACC\_CODE & numeric \\ 
+CDC\_DESCRIPTION & character \\ 
+INACTIVE\_STATUS & character \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-3}{%
+\section*{Category Description}\label{category-description-3}}
+\addcontentsline{toc}{section}{Category Description}
+
+This section contains variable coding for relevant columns within the
+CDC\_TO\_ASIIS\_VACC\_CODE table.
+
+\hypertarget{statistics-3}{%
+\section*{Statistics}\label{statistics-3}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+8 & 259 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{contraindication_desc}{%
+\chapter*{CONTRAINDICATION\_DESC}\label{contraindication_desc}}
+\addcontentsline{toc}{chapter}{CONTRAINDICATION\_DESC}
+
+\hypertarget{description-4}{%
+\section*{Description}\label{description-4}}
+\addcontentsline{toc}{section}{Description}
+
+The contraindication\_desc table contains a list of contraindication
+codes, as well as the description of the contraindication, exemption, or
+adverse reaction provided.
+
+\hypertarget{columns-4}{%
+\section*{Columns}\label{columns-4}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+CONTRA\_CODE & numeric \\ 
+DESCRIPTION & character \\ 
+IS\_IMMUNITY & character \\ 
+CONTRA\_TYPE & character \\ 
+INACTIVE\_STATUS & character \\ 
+IS\_PERMANENT & character \\ 
+CONCEPT\_CODE & character \\ 
+BEST\_ASIIS\_VACC\_CODE & numeric \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-4}{%
+\section*{Category Description}\label{category-description-4}}
+\addcontentsline{toc}{section}{Category Description}
+
+This section contains variable coding for relevant columns within the
+contraindication\_desc table.
+
+\hypertarget{statistics-4}{%
+\section*{Statistics}\label{statistics-4}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+12 & 138 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{country_code}{%
+\chapter*{COUNTRY\_CODE}\label{country_code}}
+\addcontentsline{toc}{chapter}{COUNTRY\_CODE}
+
+\hypertarget{description-5}{%
+\section*{Description}\label{description-5}}
+\addcontentsline{toc}{section}{Description}
+
+The country\_code table contains a list of country code IDs, associated
+with FIPS codes. The country names and sovereign details are provided.
+
+\hypertarget{columns-5}{%
+\section*{Columns}\label{columns-5}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+FIPS\_CODE & character \\ 
+GMI\_COUNTRY\_CODE & character \\ 
+ISO\_2DIGIT\_CODE & character \\ 
+ISO\_3DIGIT\_CODE & character \\ 
+COUNTRY\_NAME & character \\ 
+COUNTRY\_LONG\_NAME & character \\ 
+SOVEREIGN & character \\ 
+COLOR\_MAP & character \\ 
+INACTIVE\_STATUS & character \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-5}{%
+\section*{Category Description}\label{category-description-5}}
+\addcontentsline{toc}{section}{Category Description}
+
+This section contains variable coding for relevant columns within the
+country\_code table.
+
+\hypertarget{statistics-5}{%
+\section*{Statistics}\label{statistics-5}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+13 & 262 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{county_code}{%
+\chapter*{COUNTY\_CODE}\label{county_code}}
+\addcontentsline{toc}{chapter}{COUNTY\_CODE}
+
+\hypertarget{description-6}{%
+\section*{Description}\label{description-6}}
+\addcontentsline{toc}{section}{Description}
+
+The county\_code table contains a list of county codes in the
+repository, including a description of the county and state code.
+
+\hypertarget{columns-6}{%
+\section*{Columns}\label{columns-6}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+COUNTY\_CODE & numeric \\ 
+COUNTY & character \\ 
+STATE\_CODE & character \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-6}{%
+\section*{Category Description}\label{category-description-6}}
+\addcontentsline{toc}{section}{Category Description}
+
+This section contains variable coding for relevant columns within the
+county code table.
+
+\hypertarget{statistics-6}{%
+\section*{Statistics}\label{statistics-6}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+7 & 3156 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{eligibility_categories}{%
+\chapter*{ELIGIBILITY\_CATEGORIES}\label{eligibility_categories}}
+\addcontentsline{toc}{chapter}{ELIGIBILITY\_CATEGORIES}
+
+\hypertarget{description-7}{%
+\section*{Description}\label{description-7}}
+\addcontentsline{toc}{section}{Description}
+
+The eligibility\_categories table contains a list of internal codes,
+including a description of the code and whether the code is included in
+the eligibility dropdown of the vaccine module.
+
+\hypertarget{columns-7}{%
+\section*{Columns}\label{columns-7}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+INTERNAL\_CODE & numeric \\ 
+DESCRIPTION & character \\ 
+HL7\_CODE & character \\ 
+INCLUDE\_IN\_IIS\_DROPDOWNS & character \\ 
+INCLUDE\_IN\_VFC\_PROVIDER\_REPORT & character \\ 
+FUNDING\_SOURCE\_ID & numeric \\ 
+SORT\_ORDER & numeric \\ 
+INSERT\_STAMP & POSIXct, POSIXt \\ 
+UPDATE\_STAMP & POSIXct, POSIXt \\ 
+INSERTED\_BY & character \\ 
+LAST\_USER\_TO\_UPDATE & character \\ 
+FOOTNOTE & character \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-7}{%
+\section*{Category Description}\label{category-description-7}}
+\addcontentsline{toc}{section}{Category Description}
+
+This section contains variable coding for relevant columns within the
+eligibility categories table.
+
+\hypertarget{statistics-7}{%
+\section*{Statistics}\label{statistics-7}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+16 & 24 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{exemption_form_header}{%
+\chapter*{EXEMPTION\_FORM\_HEADER}\label{exemption_form_header}}
+\addcontentsline{toc}{chapter}{EXEMPTION\_FORM\_HEADER}
+
+\hypertarget{description-8}{%
+\section*{Description}\label{description-8}}
+\addcontentsline{toc}{section}{Description}
+
+The exemption\_form\_header contains a list of exemption request IDs,
+including the corresponding IRMS\_SYS\_IDs and IRMS\_PAT\_ID values.
+
+\hypertarget{columns-8}{%
+\section*{Columns}\label{columns-8}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+EXEMPTION\_REQUEST\_ID & numeric \\ 
+IRMS\_SYS\_ID & numeric \\ 
+IRMS\_PAT\_ID & character \\ 
+ASIIS\_PAT\_ID\_PTR & numeric \\ 
+ASIIS\_FAC\_ID & numeric \\ 
+ASIIS\_PHYS\_ID & numeric \\ 
+PHYSICIAN\_EMAIL & character \\ 
+APPROVAL\_STATUS & character \\ 
+LOCAL\_APPROVER\_SIGNATORY & character \\ 
+LOCAL\_APPROVER\_COMMENTS & character \\ 
+STATE\_APPROVER\_SIGNATORY & character \\ 
+STATE\_APPROVER\_COMMENTS & character \\ 
+SUBMISSION\_DATE & POSIXct, POSIXt \\ 
+SUBMITTED\_BY & character \\ 
+DELETION\_DATE & POSIXct, POSIXt \\ 
+LOCAL\_APPROVED\_BY & character \\ 
+LOCAL\_APPROVAL\_DATE & POSIXct, POSIXt \\ 
+STATE\_APPROVAL\_DATE & POSIXct, POSIXt \\ 
+APPROVED\_BY & character \\ 
+APPROVER & character \\ 
+EXPIRATION\_DATE & POSIXct, POSIXt \\ 
+DENIAL\_DATE & POSIXct, POSIXt \\ 
+INSERTED\_BY & character \\ 
+LAST\_USER\_TO\_UPDATE & character \\ 
+INSERT\_STAMP & POSIXct, POSIXt \\ 
+UPDATE\_STAMP & POSIXct, POSIXt \\ 
+SN\_EXEMPTION & character \\ 
+DENIED\_BY & character \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-8}{%
+\section*{Category Description}\label{category-description-8}}
+\addcontentsline{toc}{section}{Category Description}
+
+This section contains variable coding for relevant columns within the
+exemption form header table.
+
+\hypertarget{statistics-8}{%
+\section*{Statistics}\label{statistics-8}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+32 & 152150 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{exemption_form_vaccs}{%
+\chapter*{EXEMPTION\_FORM\_VACCS}\label{exemption_form_vaccs}}
+\addcontentsline{toc}{chapter}{EXEMPTION\_FORM\_VACCS}
+
+\hypertarget{description-9}{%
+\section*{Description}\label{description-9}}
+\addcontentsline{toc}{section}{Description}
+
+The exemption\_form\_vaccs table contains details on exemption form
+records, organized by disease name, request ID, and vaccination code.
+
+\hypertarget{columns-9}{%
+\section*{Columns}\label{columns-9}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+EXEMPTION\_REQUEST\_ID & numeric \\ 
+IRMS\_SYS\_ID & numeric \\ 
+IRMS\_PAT\_ID & character \\ 
+ASIIS\_PAT\_ID\_PTR & numeric \\ 
+ASIIS\_FAC\_ID & numeric \\ 
+ASIIS\_PHYS\_ID & numeric \\ 
+PHYSICIAN\_EMAIL & character \\ 
+APPROVAL\_STATUS & character \\ 
+LOCAL\_APPROVER\_SIGNATORY & character \\ 
+LOCAL\_APPROVER\_COMMENTS & character \\ 
+STATE\_APPROVER\_SIGNATORY & character \\ 
+STATE\_APPROVER\_COMMENTS & character \\ 
+SUBMISSION\_DATE & POSIXct, POSIXt \\ 
+SUBMITTED\_BY & character \\ 
+DELETION\_DATE & POSIXct, POSIXt \\ 
+LOCAL\_APPROVED\_BY & character \\ 
+LOCAL\_APPROVAL\_DATE & POSIXct, POSIXt \\ 
+STATE\_APPROVAL\_DATE & POSIXct, POSIXt \\ 
+APPROVED\_BY & character \\ 
+APPROVER & character \\ 
+EXPIRATION\_DATE & POSIXct, POSIXt \\ 
+DENIAL\_DATE & POSIXct, POSIXt \\ 
+INSERTED\_BY & character \\ 
+LAST\_USER\_TO\_UPDATE & character \\ 
+INSERT\_STAMP & POSIXct, POSIXt \\ 
+UPDATE\_STAMP & POSIXct, POSIXt \\ 
+SN\_EXEMPTION & character \\ 
+DENIED\_BY & character \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-9}{%
+\section*{Category Description}\label{category-description-9}}
+\addcontentsline{toc}{section}{Category Description}
+
+This section contains variable coding for relevant columns within the
+exemption form header table.
+
+\hypertarget{statistics-9}{%
+\section*{Statistics}\label{statistics-9}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+32 & 152150 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{facility_master}{%
+\chapter*{FACILITY\_MASTER}\label{facility_master}}
+\addcontentsline{toc}{chapter}{FACILITY\_MASTER}
+
+\hypertarget{description-10}{%
+\section*{Description}\label{description-10}}
+\addcontentsline{toc}{section}{Description}
+
+The facility\_master table contains details of facilities in the
+repository, including details on the facility name, address, and
+delivery instructions.
+
+\hypertarget{columns-10}{%
+\section*{Columns}\label{columns-10}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+IRMS\_SYS\_ID & numeric \\ 
+IRMS\_FAC\_ID & character \\ 
+ASIIS\_FAC\_ID & numeric \\ 
+NAME & character \\ 
+ADDRESS\_STREET1 & character \\ 
+ADDRESS\_STREET2 & character \\ 
+PHYSICAL\_ADDRESS & character \\ 
+ADDRESS\_CITY & character \\ 
+ADDRESS\_STATE & character \\ 
+COUNTY\_CODE & numeric \\ 
+ADDRESS\_ZIP & numeric \\ 
+ADDRESS\_PHONE & numeric \\ 
+ADDRESS\_FAX & numeric \\ 
+EMAIL & character \\ 
+DISTRICT\_NUMBER & numeric \\ 
+GEOCODE\_X & numeric \\ 
+GEOCODE\_Y & numeric \\ 
+GEOCODE\_STATUS & numeric \\ 
+TIGER\_LINE\_ID & numeric \\ 
+GEOCODE\_MSTATUS & character \\ 
+CENSUS\_TRACT & numeric \\ 
+INACTIVE\_STATUS & character \\ 
+INSERT\_STAMP & POSIXct, POSIXt \\ 
+UPDATE\_STAMP & POSIXct, POSIXt \\ 
+OWNERSHIP\_BLOCKED & character \\ 
+HOME\_FACILITY & numeric \\ 
+VFC\_PIN & character \\ 
+FACILITY\_TYPE\_CODE & character \\ 
+CONTACT\_FIRST\_NAME & character \\ 
+CONTACT\_LAST\_NAME & character \\ 
+ORGANIZATION\_CATEGORY\_CODE & numeric \\ 
+LAST\_USER\_TO\_UPDATE & character \\ 
+PHONE\_EXT & numeric \\ 
+DISPLAY\_NAME & character \\ 
+STATUS\_ID & numeric \\ 
+STATUS\_COMMENT & character \\ 
+NUM\_PHYSICIANS\_PLANNED & numeric \\ 
+REPORTING\_METHOD & character \\ 
+VENDOR\_ID & numeric \\ 
+INSERTED\_BY & character \\ 
+INCLUDE\_IN\_MAILING & character \\ 
+LOCAL\_APPROVAL\_IRMS\_ID & numeric \\ 
+DEFAULT\_RECONCILIATION\_QOH & character \\ 
+SHIPPING\_CONTACT\_NAME & character \\ 
+SHIPPING\_ADDRESS\_STREET1 & character \\ 
+SHIPPING\_ADDRESS\_STREET2 & character \\ 
+SHIPPING\_ADDRESS\_CITY & character \\ 
+SHIPPING\_ADDRESS\_STATE & character \\ 
+SHIPPING\_ADDRESS\_ZIP & character \\ 
+SHIPPING\_INSTRUCTIONS & character \\ 
+ALLOW\_ONLINE\_ORDERS & character \\ 
+ALLOW\_VACCINE\_TRANSFERS & character \\ 
+ORDER\_SET\_ID & numeric \\ 
+MINIMUM\_ORDER\_DAYS & numeric \\ 
+MANAGES\_REGISTRY\_INVENTORY & character \\ 
+PREFERRED\_DELIVERY\_METHOD & character \\ 
+INSURER\_ID & character \\ 
+INSURANCE\_EXPIRE\_DATE & POSIXct, POSIXt \\ 
+INSURANCE\_COVERAGE & character \\ 
+FACILITY\_CODE & character \\ 
+FACILITY\_SIZE & character \\ 
+DELIVERY\_POINT & character \\ 
+ALTERNATE\_PHONE & numeric \\ 
+INACTIVE\_EFFECTIVE\_FROM\_DATE & POSIXct, POSIXt \\ 
+INACTIVE\_EFFECTIVE\_TO\_DATE & POSIXct, POSIXt \\ 
+DELIVERY\_DISTANCE & character \\ 
+DELIVERY\_ZONE & character \\ 
+PST\_STATUS & character \\ 
+GST\_STATUS & character \\ 
+IS\_COLD\_CHAIN\_CAPABLE & character \\ 
+IS\_COLD\_CHAIN\_COMPLIANT & character \\ 
+LAST\_INSPECTION\_DATE & POSIXct, POSIXt \\ 
+IS\_CONNECTED & character \\ 
+FACILITY\_COMMENT & character \\ 
+LICENSE\_NUMBER & character \\ 
+LICENSE\_EFFECTIVE\_FROM\_DATE & POSIXct, POSIXt \\ 
+LICENSE\_EFFECTIVE\_TO\_DATE & POSIXct, POSIXt \\ 
+ACCOUNTING\_CODE & character \\ 
+BILLING\_CONTACT\_NAME & character \\ 
+BILLING\_ADDRESS\_STREET1 & character \\ 
+BILLING\_ADDRESS\_STREET2 & character \\ 
+BILLING\_ADDRESS\_ROOM\_CODE & character \\ 
+BILLING\_ADDRESS\_CITY & character \\ 
+BILLING\_ADDRESS\_STATE & character \\ 
+BILLING\_ADDRESS\_ZIP & character \\ 
+SHIPPING\_ADDRESS\_ROOM\_CODE & character \\ 
+GST\_EXEMPTION\_CERTIFICATE & character \\ 
+SUSPENSION\_REASON\_CODE & character \\ 
+RECOMMENDED\_QTY\_CALCULATION & character \\ 
+FACILITY\_TYPE\_OTHER & character \\ 
+ALLOW\_PUBLIC\_VFC\_INELIGIBLE & character \\ 
+DTT\_PROFILE\_NAME & character \\ 
+ALLOW\_IRMS\_LEVEL\_DECREMENT & character \\ 
+ALLOW\_VACCINE\_RETURNS & character \\ 
+ENABLE\_AUTO\_RECEIVE & character \\ 
+EXTERNAL\_FACILITY\_ID & character \\ 
+VACCINE\_CHOICE\_TYPE & character \\ 
+ENABLE\_WAITING\_ROOM & character \\ 
+CERTIFYING\_PROVIDER & character \\ 
+CERTIFYING\_PROVIDER\_PHONE & numeric \\ 
+CERTIFYING\_PROVIDER\_FAX & numeric \\ 
+CERTIFYING\_PROVIDER\_EMAIL & character \\ 
+ORIGINAL\_VFC\_CERT\_DATE & POSIXct, POSIXt \\ 
+SHIPPING\_PHONE & numeric \\ 
+SHIPPING\_FAX & numeric \\ 
+SHIPPING\_EMAIL & character \\ 
+ORDER\_FREQUENCY & character \\ 
+ORDER\_TIMING & character \\ 
+ORDER\_FREQUENCY\_START\_MONTH & character \\ 
+ORDER\_THRESHOLD\_PERCENT & numeric \\ 
+IS\_FROZEN & character \\ 
+IS\_INSULATED\_DOOR & character \\ 
+MEASURE\_TEMP\_CODE & character \\ 
+FACILITY\_SIGNATORY & character \\ 
+SHIPPING\_ADDRESS\_COUNTY\_CODE & numeric \\ 
+GROUP\_NPI & character \\ 
+PROVIDER\_TAX\_ID & character \\ 
+PROVIDER\_TAX\_ID\_TYPE & character \\ 
+PROVIDER\_TAXONOMY & character \\ 
+MEDICARE\_PIN & character \\ 
+MEDICARE\_GROUP & character \\ 
+MEDICAID\_PIN & numeric \\ 
+MEDICAID\_GROUP & numeric \\ 
+BILLING\_ENTITY\_TYPE & character \\ 
+ENABLE\_PROVIDER\_AGREEMENT & character \\ 
+FACILITY\_SIGNATORY\_TITLE & character \\ 
+SHIPPING\_CONTACT\_NAME2 & character \\ 
+SHIPPING\_CONTACT\_NAME3 & character \\ 
+SHIPPING\_PHONE\_EXT & numeric \\ 
+MAILING\_ADDRESS\_STREET1 & character \\ 
+MAILING\_ADDRESS\_STREET2 & character \\ 
+MAILING\_ADDRESS\_CITY & character \\ 
+MAILING\_ADDRESS\_STATE & character \\ 
+MAILING\_COUNTY\_CODE & numeric \\ 
+MAILING\_ADDRESS\_ZIP & numeric \\ 
+MAILING\_ADDRESS\_PHONE & numeric \\ 
+MAILING\_ADDRESS\_FAX & numeric \\ 
+MAILING\_EMAIL & character \\ 
+MAILING\_CONTACT\_NAME1 & character \\ 
+MAILING\_CONTACT\_NAME2 & character \\ 
+MAILING\_CONTACT\_NAME3 & character \\ 
+MAILING\_PHONE\_EXT & numeric \\ 
+SHIPPING\_INFO\_CHANGED & character \\ 
+IS\_VACTRAK\_USER & character \\ 
+BYPASS\_DOSE\_LEVEL\_ACC & character \\ 
+VFC\_STATUS\_CODE & character \\ 
+UPLOAD\_TEMPERATURE\_DATA & character \\ 
+EXEMPTION\_EMAIL & character \\ 
+ENABLE\_EXEMPTION\_FORM & character \\ 
+VACCINE\_ADMIN\_MANUAL\_REPORT & character \\ 
+IMPORT\_INVENTORY\_DATA & character \\ 
+DEPOT\_SHIPPING\_INSTRUCTION & character \\ 
+PROVIDER\_FACILITY\_TYPE & character \\ 
+PROVIDER\_FACILITY\_TYPE\_OTHER & character \\ 
+ENROLL\_SITE\_VISIT\_COMPL\_DATE & POSIXct, POSIXt \\ 
+LAST\_SITE\_VISIT\_DATE & POSIXct, POSIXt \\ 
+COLD\_STORAGE\_PHYSICAL\_LOCATION & character \\ 
+IS\_DEPOT & character \\ 
+ASSIGNED\_DEPOT\_IRMS\_SYS\_ID & numeric \\ 
+ASSIGNED\_DEPOT\_ASIIS\_FAC\_ID & numeric \\ 
+INTERNATIONAL\_ZIP & character \\ 
+BILLING\_ADDRESS\_INT\_ZIP & character \\ 
+MAILING\_ADDRESS\_INT\_ZIP & character \\ 
+SHIPPING\_ADDRESS\_INT\_ZIP & character \\ 
+IS\_VACCINE\_RETURN\_DEPOT & character \\ 
+IRMS\_SYS\_ID\_RETURN\_DEPOT & numeric \\ 
+ASIIS\_FAC\_ID\_RETURN\_DEPOT & numeric \\ 
+DISABLE\_VFC\_PUBLICLY\_SUPPLIED & character \\ 
+OPT\_OUT\_REMINDER\_RECALL & character \\ 
+ENROLLMENT\_ID & numeric \\ 
+VFC\_ADDITIONAL\_STATUS & character \\ 
+PIN & character \\ 
+OVERRIDE\_RECONCILIATION\_HOLD & character \\ 
+ADDRESS\_VERIFIED & character \\ 
+DO\_NOT\_CLEANSE\_ADDRESS & character \\ 
+ADDRESS\_LONGITUDE & numeric \\ 
+ADDRESS\_LATITUDE & numeric \\ 
+SHIPPING\_ADDRESS\_VERIFIED & character \\ 
+DO\_NOT\_CLEANSE\_SHIPPING\_ADDR & character \\ 
+SHIPPING\_ADDRESS\_LONGITUDE & numeric \\ 
+SHIPPING\_ADDRESS\_LATITUDE & numeric \\ 
+MAILING\_ADDRESS\_VERIFIED & character \\ 
+DO\_NOT\_CLEANSE\_MAILING\_ADDR & character \\ 
+MAILING\_ADDRESS\_LONGITUDE & numeric \\ 
+MAILING\_ADDRESS\_LATITUDE & numeric \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-10}{%
+\section*{Category Description}\label{category-description-10}}
+\addcontentsline{toc}{section}{Category Description}
+
+This section contains variable coding for relevant columns within the
+facility master table.
+
+\hypertarget{statistics-10}{%
+\section*{Statistics}\label{statistics-10}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+189 & 9087 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{facility_type}{%
+\chapter*{FACILITY\_TYPE}\label{facility_type}}
+\addcontentsline{toc}{chapter}{FACILITY\_TYPE}
+
+\hypertarget{description-11}{%
+\section*{Description}\label{description-11}}
+\addcontentsline{toc}{section}{Description}
+
+The facility\_type table contains a list of facility type codes and the
+descriptions.
+
+\hypertarget{columns-11}{%
+\section*{Columns}\label{columns-11}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+FACILITY\_TYPE\_CODE & character \\ 
+DESCRIPTION & character \\ 
+FR\_INDICATOR & character \\ 
+CDC\_TYPE\_CODE & character \\ 
+INACTIVE\_STATUS & character \\ 
+IWEB\_INDICATOR & character \\ 
+DESIGNATION & character \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-11}{%
+\section*{Category Description}\label{category-description-11}}
+\addcontentsline{toc}{section}{Category Description}
+
+\hypertarget{statistics-11}{%
+\section*{Statistics}\label{statistics-11}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+11 & 69 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{geocoding_zipcodes}{%
+\chapter*{GEOCODING\_ZIPCODES}\label{geocoding_zipcodes}}
+\addcontentsline{toc}{chapter}{GEOCODING\_ZIPCODES}
+
+\hypertarget{description-12}{%
+\section*{Description}\label{description-12}}
+\addcontentsline{toc}{section}{Description}
+
+The geocoding\_zipcodes table contains a list of zip codes, and the
+corresponding city, state, and county information.
+
+\hypertarget{columns-12}{%
+\section*{Columns}\label{columns-12}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+ZIP & numeric \\ 
+CITY & character \\ 
+STATE & character \\ 
+COUNTY\_FIPS & numeric \\ 
+INTERNATIONAL\_ZIP & character \\ 
+IS\_LEAD\_HIGH\_RISK\_ZIP & character \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-12}{%
+\section*{Category Description}\label{category-description-12}}
+\addcontentsline{toc}{section}{Category Description}
+
+\hypertarget{statistics-12}{%
+\section*{Statistics}\label{statistics-12}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+10 & 133493 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{grade_levels}{%
+\chapter*{GRADE\_LEVELS}\label{grade_levels}}
+\addcontentsline{toc}{chapter}{GRADE\_LEVELS}
+
+\hypertarget{description-13}{%
+\section*{Description}\label{description-13}}
+\addcontentsline{toc}{section}{Description}
+
+The grade\_levels table contains a list of grade level ID records,
+including details such as the description, display values, and next
+grade level ID.
+
+\hypertarget{columns-13}{%
+\section*{Columns}\label{columns-13}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+GRADE\_LEVEL\_ID & numeric \\ 
+DISPLAY & character \\ 
+DESCRIPTION & character \\ 
+NEXT\_GRADE\_LEVEL\_ID & numeric \\ 
+INACTIVE\_STATUS & character \\ 
+DISPLAY\_TO\_USER & character \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-13}{%
+\section*{Category Description}\label{category-description-13}}
+\addcontentsline{toc}{section}{Category Description}
+
+\hypertarget{statistics-13}{%
+\section*{Statistics}\label{statistics-13}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+80 & 149599822 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{invalid_vaccination}{%
+\chapter*{INVALID\_VACCINATION}\label{invalid_vaccination}}
+\addcontentsline{toc}{chapter}{INVALID\_VACCINATION}
+
+\hypertarget{description-14}{%
+\section*{Description}\label{description-14}}
+\addcontentsline{toc}{section}{Description}
+
+The invalid\_vaccination table contains a list of record IDs associated
+with an invalid vaccination record. The vaccination code and invalid
+reason code are provided.
+
+\hypertarget{columns-14}{%
+\section*{Columns}\label{columns-14}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+ASIIS\_PAT\_ID & numeric \\ 
+FAMILY\_CODE & numeric \\ 
+VACC\_DATE & POSIXct, POSIXt \\ 
+ASIIS\_VACC\_CODE & numeric \\ 
+INVALID\_REASON\_CODE & numeric \\ 
+CONFIDENTIAL\_SERVICE & character \\ 
+IS\_COMPROMISED & character \\ 
+UPDATE\_STAMP & POSIXct, POSIXt \\ 
+SERIES\_COMPLETE & character \\ 
+IGNORE\_DOSE & character \\ 
+TRANSACTION\_COMPLETE & character \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-14}{%
+\section*{Category Description}\label{category-description-14}}
+\addcontentsline{toc}{section}{Category Description}
+
+Description
+
+\hypertarget{statistics-14}{%
+\section*{Statistics}\label{statistics-14}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+15 & 3351059 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{irms}{%
+\chapter*{IRMS}\label{irms}}
+\addcontentsline{toc}{chapter}{IRMS}
+
+\hypertarget{description-15}{%
+\section*{Description}\label{description-15}}
+\addcontentsline{toc}{section}{Description}
+
+The IRMS table contains a list of IRMS system ID records, with details
+on the facility name, address, and primary contact.
+
+\hypertarget{columns-15}{%
+\section*{Columns}\label{columns-15}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+IRMS\_SYS\_ID & numeric \\ 
+NAME & character \\ 
+CONTACT\_PERSON & character \\ 
+ADDRESS\_STREET1 & character \\ 
+ADDRESS\_STREET2 & character \\ 
+PHYSICAL\_ADDRESS & character \\ 
+ADDRESS\_CITY & character \\ 
+COUNTY\_CODE & numeric \\ 
+ADDRESS\_STATE & character \\ 
+ADDRESS\_ZIP & numeric \\ 
+ADDRESS\_EMAIL & character \\ 
+DISTRICT\_NUMBER & numeric \\ 
+XCOORD & numeric \\ 
+YCOORD & numeric \\ 
+GEOCODE\_STATUS & numeric \\ 
+TIGER\_LINE\_ID & numeric \\ 
+GEOCODE\_MSTATUS & character \\ 
+CENSUS\_TRACT & numeric \\ 
+PHONE & numeric \\ 
+PHONE\_EXTENSION & numeric \\ 
+FAX & numeric \\ 
+MODEM & numeric \\ 
+PCI\_VERSION & character \\ 
+RR\_VERSION & character \\ 
+PCIC\_VERSION & character \\ 
+GWC\_VERSION & character \\ 
+PCICTMR\_VERSION & character \\ 
+SITE\_TYPE & character \\ 
+REPORTING\_METHOD & character \\ 
+WINDOWS\_VERSION & character \\ 
+SONORA & character \\ 
+BILLING\_SYSTEM & character \\ 
+BS\_VENDOR & character \\ 
+PCI\_PASSWORD & character \\ 
+REGISTRY\_PASSWORD & character \\ 
+ENCRYPTION\_PASSWORD & character \\ 
+VFC\_PIN & character \\ 
+COMMENTS & character \\ 
+INACTIVE\_STATUS & character \\ 
+REASSIGNED\_TO\_IRMS & numeric \\ 
+OWNERSHIP\_BLOCKED & character \\ 
+INSERT\_STAMP & POSIXct, POSIXt \\ 
+INSERTED\_BY & character \\ 
+UPDATE\_STAMP & POSIXct, POSIXt \\ 
+UPDATED\_BY & character \\ 
+EXPIRE\_PASSWORD & character \\ 
+STATUS\_ID & numeric \\ 
+STATUS\_COMMENT & character \\ 
+VENDOR\_ID & numeric \\ 
+RECRUITER & character \\ 
+COMPUTERIZED & character \\ 
+INTERNET\_ACCESS\_TYPE & numeric \\ 
+NUM\_SITES\_PLANNED & numeric \\ 
+NUM\_PHYSICIANS\_PLANNED & numeric \\ 
+DEFERRED\_UNTIL & POSIXct, POSIXt \\ 
+ASIIS\_PHYS\_ID & numeric \\ 
+VFC\_NEXT\_VISIT & POSIXct, POSIXt \\ 
+HAS\_VENDOR\_EXPORT & character \\ 
+DTT\_PROFILE\_NAME & character \\ 
+VFC\_REPRESENTATIVE & character \\ 
+SUPPRESS\_IRMS\_NAME & character \\ 
+INCLUDE\_IN\_MAILING & character \\ 
+LOCAL\_APPROVAL\_IRMS\_ID & numeric \\ 
+DEFAULT\_RECONCILIATION\_QOH & character \\ 
+SHIPPING\_CONTACT\_NAME & character \\ 
+SHIPPING\_ADDRESS\_STREET1 & character \\ 
+SHIPPING\_ADDRESS\_STREET2 & character \\ 
+SHIPPING\_ADDRESS\_CITY & character \\ 
+SHIPPING\_ADDRESS\_STATE & character \\ 
+SHIPPING\_ADDRESS\_ZIP & character \\ 
+SHIPPING\_INSTRUCTIONS & character \\ 
+ALLOW\_ONLINE\_ORDERS & character \\ 
+ALLOW\_VACCINE\_TRANSFERS & character \\ 
+ORDER\_SET\_ID & numeric \\ 
+IS\_LOCAL\_ORDER\_APPROVER & character \\ 
+IS\_STATE\_ORDER\_APPROVER & character \\ 
+MINIMUM\_ORDER\_DAYS & numeric \\ 
+MANAGES\_REGISTRY\_INVENTORY & character \\ 
+RECOMMENDED\_QTY\_CALCULATION & character \\ 
+IRMS\_TYPE\_OTHER & character \\ 
+IS\_VACCINE\_RETURN\_DEPOT & character \\ 
+ALLOW\_VACCINE\_RETURNS & character \\ 
+IS\_VITAL\_STATISTICS & character \\ 
+ENABLE\_AUTO\_RECEIVE & character \\ 
+VACCINE\_CHOICE\_TYPE & character \\ 
+IS\_DEPOT & character \\ 
+IRMS\_GROUP\_ID & numeric \\ 
+ENABLE\_BAR\_CODE & character \\ 
+CERTIFYING\_PROVIDER & character \\ 
+CERTIFYING\_PROVIDER\_PHONE & numeric \\ 
+CERTIFYING\_PROVIDER\_FAX & numeric \\ 
+CERTIFYING\_PROVIDER\_EMAIL & character \\ 
+ORIGINAL\_VFC\_CERT\_DATE & POSIXct, POSIXt \\ 
+SHIPPING\_PHONE & numeric \\ 
+SHIPPING\_FAX & numeric \\ 
+SHIPPING\_EMAIL & character \\ 
+ORDER\_FREQUENCY & character \\ 
+ORDER\_TIMING & character \\ 
+ORDER\_FREQUENCY\_START\_MONTH & character \\ 
+ORDER\_THRESHOLD\_PERCENT & numeric \\ 
+FACILITY\_REQUIRED & character \\ 
+GROUP\_NPI & character \\ 
+PROVIDER\_TAX\_ID & character \\ 
+PROVIDER\_TAX\_ID\_TYPE & character \\ 
+PROVIDER\_TAXONOMY & character \\ 
+MEDICARE\_PIN & character \\ 
+MEDICARE\_GROUP & character \\ 
+MEDICAID\_PIN & numeric \\ 
+MEDICAID\_GROUP & numeric \\ 
+BILLING\_ENTITY\_TYPE & character \\ 
+ENABLE\_PROVIDER\_AGREEMENT & character \\ 
+ENROLLMENT\_ID & numeric \\ 
+SHIPPING\_INFO\_CHANGED & character \\ 
+REQ\_MAN\_DEDUP\_INTRA\_MRGS & character \\ 
+IS\_VACTRAK\_USER & character \\ 
+BYPASS\_DOSE\_LEVEL\_ACC & character \\ 
+MAILING\_ADDRESS\_STREET1 & character \\ 
+MAILING\_ADDRESS\_STREET2 & character \\ 
+MAILING\_ADDRESS\_CITY & character \\ 
+MAILING\_ADDRESS\_STATE & character \\ 
+MAILING\_COUNTY\_CODE & numeric \\ 
+MAILING\_ADDRESS\_ZIP & numeric \\ 
+SHIPPING\_ADDRESS\_COUNTY\_CODE & numeric \\ 
+IS\_FROZEN & character \\ 
+IS\_INSULATED\_DOOR & character \\ 
+MEASURE\_TEMP\_CODE & character \\ 
+CERTIFYING\_PROVIDER\_TITLE & character \\ 
+IRMS\_SIGNATORY & character \\ 
+IRMS\_SIGNATORY\_TITLE & character \\ 
+IS\_HEPB\_SCREEN\_PILOT\_SITE & character \\ 
+UPDATE\_WITH\_PREV\_BAD\_ADDRESS & character \\ 
+UPLOAD\_TEMPERATURE\_DATA & character \\ 
+EXEMPTION\_EMAIL & character \\ 
+ENABLE\_EXEMPTION\_FORM & character \\ 
+IMPORT\_INVENTORY\_DATA & character \\ 
+DEPOT\_SHIPPING\_INSTRUCTION & character \\ 
+NAMESPACE & character \\ 
+GLOBAL\_SUBMITTER & character \\ 
+PROVIDER\_FACILITY\_TYPE & character \\ 
+PROVIDER\_FACILITY\_TYPE\_OTHER & character \\ 
+COLD\_STORAGE\_PHYSICAL\_LOCATION & character \\ 
+ASSIGNED\_DEPOT\_IRMS\_SYS\_ID & numeric \\ 
+ASSIGNED\_DEPOT\_ASIIS\_FAC\_ID & numeric \\ 
+INTERNATIONAL\_ZIP & character \\ 
+MAILING\_ADDRESS\_INT\_ZIP & character \\ 
+SHIPPING\_ADDRESS\_INT\_ZIP & character \\ 
+IRMS\_SYS\_ID\_RETURN\_DEPOT & numeric \\ 
+ASIIS\_FAC\_ID\_RETURN\_DEPOT & numeric \\ 
+DISABLE\_VFC\_PUBLICLY\_SUPPLIED & character \\ 
+ALLOW\_EMAIL\_UPDATE\_IN\_MASTER & character \\ 
+OPT\_OUT\_REMINDER\_RECALL & character \\ 
+VFC\_STATUS\_CODE & character \\ 
+ADDRESS\_COUNTRY & character \\ 
+SHIPPING\_ADDRESS\_COUNTRY & character \\ 
+MAILING\_ADDRESS\_COUNTRY & character \\ 
+VFC\_ADDITIONAL\_STATUS & character \\ 
+PIN & character \\ 
+OVERRIDE\_RECONCILIATION\_HOLD & character \\ 
+ADDRESS\_VERIFIED & character \\ 
+DO\_NOT\_CLEANSE\_ADDRESS & character \\ 
+SHIPPING\_ADDRESS\_LONGITUDE & numeric \\ 
+SHIPPING\_ADDRESS\_LATITUDE & numeric \\ 
+SHIPPING\_ADDRESS\_VERIFIED & character \\ 
+DO\_NOT\_CLEANSE\_SHIPPING\_ADDR & character \\ 
+MAILING\_ADDRESS\_VERIFIED & character \\ 
+DO\_NOT\_CLEANSE\_MAILING\_ADDR & character \\ 
+MAILING\_ADDRESS\_LATITUDE & numeric \\ 
+MAILING\_ADDRESS\_LONGITUDE & numeric \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-15}{%
+\section*{Category Description}\label{category-description-15}}
+\addcontentsline{toc}{section}{Category Description}
+
+\hypertarget{statistics-15}{%
+\section*{Statistics}\label{statistics-15}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+172 & 3244 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{irms_facility_order_set}{%
+\chapter*{IRMS\_FACILITY\_ORDER\_SET}\label{irms_facility_order_set}}
+\addcontentsline{toc}{chapter}{IRMS\_FACILITY\_ORDER\_SET}
+
+\hypertarget{description-16}{%
+\section*{Description}\label{description-16}}
+\addcontentsline{toc}{section}{Description}
+
+The irms\_facility\_order\_set table contains a list of facility order
+set ID records, associated with an IRMS system ID and IIS facility ID.
+
+\hypertarget{columns-16}{%
+\section*{Columns}\label{columns-16}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+IRMS\_FAC\_ORDER\_SET\_ID & numeric \\ 
+IRMS\_SYS\_ID & numeric \\ 
+ASIIS\_FAC\_ID & numeric \\ 
+ORDER\_SET\_ID & numeric \\ 
+INSERT\_STAMP & POSIXct, POSIXt \\ 
+UPDATE\_STAMP & POSIXct, POSIXt \\ 
+INSERTED\_BY & character \\ 
+LAST\_USER\_TO\_UPDATE & character \\ 
+PROVIDER\_UPDATE\_STAMP & POSIXct, POSIXt \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-16}{%
+\section*{Category Description}\label{category-description-16}}
+\addcontentsline{toc}{section}{Category Description}
+
+\hypertarget{statistics-16}{%
+\section*{Statistics}\label{statistics-16}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+13 & 6841 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{lookup}{%
+\chapter*{LOOKUP}\label{lookup}}
+\addcontentsline{toc}{chapter}{LOOKUP}
+
+\hypertarget{description-17}{%
+\section*{Description}\label{description-17}}
+\addcontentsline{toc}{section}{Description}
+
+The lookup table is useful for identfying lookup type codes. The table
+contains a list of lookup type codes, as well as a description and
+lookup value.
+
+\hypertarget{columns-17}{%
+\section*{Columns}\label{columns-17}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+LOOKUP\_TYPE\_CODE & character \\ 
+LOOKUP\_VALUE & character \\ 
+DESCRIPTION & character \\ 
+INACTIVE\_STATUS & character \\ 
+DISPLAY\_TO\_USER & character \\ 
+DISPLAY\_ORDER & numeric \\ 
+CUSTOMER\_ID & character \\ 
+COMMENTS & character \\ 
+CONTEXT\_DEFINED\_COL & character \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-17}{%
+\section*{Category Description}\label{category-description-17}}
+\addcontentsline{toc}{section}{Category Description}
+
+\hypertarget{statistics-17}{%
+\section*{Statistics}\label{statistics-17}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+13 & 2399 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{lot_log_action_code}{%
+\chapter*{LOT\_LOG\_ACTION\_CODE}\label{lot_log_action_code}}
+\addcontentsline{toc}{chapter}{LOT\_LOG\_ACTION\_CODE}
+
+\hypertarget{description-18}{%
+\section*{Description}\label{description-18}}
+\addcontentsline{toc}{section}{Description}
+
+The lot\_log\_action\_code table contains a list of action codes within
+the system and their descriptions.
+
+\hypertarget{columns-18}{%
+\section*{Columns}\label{columns-18}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+ACTION\_CODE & numeric \\ 
+DESCRIPTION & character \\ 
+PLUS\_OR\_MINUS & character \\ 
+WASTED & character \\ 
+IS\_SYSTEM\_CODE & character \\ 
+INACTIVE\_STATUS & character \\ 
+LOT\_ACTION\_CATEGORY & character \\ 
+SMART\_VACCINE\_STATE & character \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-18}{%
+\section*{Category Description}\label{category-description-18}}
+\addcontentsline{toc}{section}{Category Description}
+
+\hypertarget{statistics-18}{%
+\section*{Statistics}\label{statistics-18}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+12 & 78 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{lot_number}{%
+\chapter*{LOT\_NUMBER}\label{lot_number}}
+\addcontentsline{toc}{chapter}{LOT\_NUMBER}
+
+\hypertarget{description-19}{%
+\section*{Description}\label{description-19}}
+\addcontentsline{toc}{section}{Description}
+
+The lot\_number table contains a list of lot number codes, as well as
+the corresponding lot numbers, IRMS system IDs, and manufacturer codes.
+
+\hypertarget{columns-19}{%
+\section*{Columns}\label{columns-19}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+LOT\_NUMBER\_CODE & numeric \\ 
+IRMS\_SYS\_ID & numeric \\ 
+MANU\_CODE & character \\ 
+LOT\_NUMBER & character \\ 
+ASIIS\_VACC\_CODE & numeric \\ 
+VFC\_SUPPLIED & character \\ 
+EXPIRATION\_DATE & POSIXct, POSIXt \\ 
+ASIIS\_FAC\_ID & numeric \\ 
+DOSES\_USED & numeric \\ 
+DOSES\_TOTAL & numeric \\ 
+INACTIVE\_STATUS & character \\ 
+DILUENT\_LOT\_CODE & numeric \\ 
+DILUTED\_DATE & POSIXct, POSIXt \\ 
+DILUTED\_STRENGTH & character \\ 
+LAST\_USER\_TO\_UPDATE & character \\ 
+INSERT\_STAMP & POSIXct, POSIXt \\ 
+UPDATE\_STAMP & POSIXct, POSIXt \\ 
+PENDING\_BULK\_DOSES & numeric \\ 
+IS\_BULK\_INVENTORY & character \\ 
+FULFILLING\_LOT\_NUMBER\_CODE & numeric \\ 
+TRADE\_NAME\_ID & numeric \\ 
+TYPICAL\_DOSAGE & numeric \\ 
+DOSAGE\_UOM & character \\ 
+INACTIVE\_REASON & character \\ 
+COLD\_CHAIN\_BREACH\_COUNT & numeric \\ 
+HOLDING\_POINT\_LOCATION\_ID & numeric \\ 
+LOT\_RECALL\_ID & numeric \\ 
+ORDER\_ID & numeric \\ 
+INACTIVE\_REASON\_OTHER & character \\ 
+DOSES\_IN\_TRANSIT & numeric \\ 
+VACMAN\_ASIIS\_CODE\_ID & numeric \\ 
+VACCINE\_PRODUCT\_ID & numeric \\ 
+FUNDING\_SOURCE\_ID & numeric \\ 
+INACTIVE\_STAMP & POSIXct, POSIXt \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-19}{%
+\section*{Category Description}\label{category-description-19}}
+\addcontentsline{toc}{section}{Category Description}
+
+Description
+
+\hypertarget{statistics-19}{%
+\section*{Statistics}\label{statistics-19}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+38 & 887895 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{lot_number_audit}{%
+\chapter*{LOT\_NUMBER\_AUDIT}\label{lot_number_audit}}
+\addcontentsline{toc}{chapter}{LOT\_NUMBER\_AUDIT}
+
+\hypertarget{description-20}{%
+\section*{Description}\label{description-20}}
+\addcontentsline{toc}{section}{Description}
+
+Description
+
+\hypertarget{columns-20}{%
+\section*{Columns}\label{columns-20}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+LOT\_NUMBER\_CODE & numeric \\ 
+IRMS\_SYS\_ID & numeric \\ 
+MANU\_CODE & character \\ 
+LOT\_NUMBER & character \\ 
+ASIIS\_VACC\_CODE & numeric \\ 
+VFC\_SUPPLIED & character \\ 
+EXPIRATION\_DATE & POSIXct, POSIXt \\ 
+ASIIS\_FAC\_ID & numeric \\ 
+DOSES\_USED & numeric \\ 
+DOSES\_TOTAL & numeric \\ 
+INACTIVE\_STATUS & character \\ 
+INACTIVE\_STATUS\_REASON & character \\ 
+INACTIVE\_REASON\_OTHER & character \\ 
+DILUENT\_LOT\_CODE & numeric \\ 
+DILUTED\_DATE & POSIXct, POSIXt \\ 
+DILUTED\_STRENGTH & character \\ 
+LAST\_USER\_TO\_UPDATE & character \\ 
+INSERT\_STAMP & POSIXct, POSIXt \\ 
+UPDATE\_STAMP & POSIXct, POSIXt \\ 
+TRADE\_NAME\_ID & numeric \\ 
+TYPICAL\_DOSAGE & numeric \\ 
+DOSAGE\_UOM & character \\ 
+PENDING\_BULK\_DOSES & numeric \\ 
+IS\_BULK\_INVENTORY & character \\ 
+FULFILLING\_LOT\_NUMBER\_CODE & numeric \\ 
+INACTIVE\_REASON & character \\ 
+COLD\_CHAIN\_BREACH\_COUNT & numeric \\ 
+HOLDING\_POINT\_LOCATION\_ID & numeric \\ 
+LOT\_RECALL\_ID & numeric \\ 
+ORDER\_ID & numeric \\ 
+AUDIT\_INSERT\_STAMP & POSIXct, POSIXt \\ 
+AUDIT\_TYPE & character \\ 
+AUDIT\_SEQUENCE\_ID & numeric \\ 
+DOSES\_IN\_TRANSIT & numeric \\ 
+VACMAN\_ASIIS\_CODE\_ID & numeric \\ 
+VACCINE\_PRODUCT\_ID & numeric \\ 
+FUNDING\_SOURCE\_ID & numeric \\ 
+INACTIVE\_STAMP & POSIXct, POSIXt \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-20}{%
+\section*{Category Description}\label{category-description-20}}
+\addcontentsline{toc}{section}{Category Description}
+
+\hypertarget{statistics-20}{%
+\section*{Statistics}\label{statistics-20}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+42 & 52020472 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{order_items}{%
+\chapter*{ORDER\_ITEMS}\label{order_items}}
+\addcontentsline{toc}{chapter}{ORDER\_ITEMS}
+
+\hypertarget{description-21}{%
+\section*{Description}\label{description-21}}
+\addcontentsline{toc}{section}{Description}
+
+The order\_items table contains a list of vaccine orders and their item
+codes/lot numbers. This table differs from the order table as it only
+contains information on the vaccine order details (quantity, lot number
+codes) rather than the request record.
+
+\hypertarget{columns-21}{%
+\section*{Columns}\label{columns-21}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+ORDER\_ID & numeric \\ 
+ORDER\_ITEM\_ID & numeric \\ 
+ASIIS\_VACC\_CODE & numeric \\ 
+ALLOCATION\_QUANTITY & numeric \\ 
+ORDER\_QUANTITY & numeric \\ 
+BACKORDER\_QUANTITY & numeric \\ 
+RECEIPT\_QUANTITY & numeric \\ 
+APPROVED\_QUANTITY & numeric \\ 
+LOT\_NUMBER\_CODE & numeric \\ 
+STATUS & character \\ 
+DENIAL\_REASON\_ID & character \\ 
+PREFERRED\_PACKAGING\_CODE & character \\ 
+INSERT\_STAMP & POSIXct, POSIXt \\ 
+UPDATE\_STAMP & POSIXct, POSIXt \\ 
+INSERTED\_BY & character \\ 
+LAST\_USER\_TO\_UPDATE & character \\ 
+CATALOG\_PRODUCT\_ID & numeric \\ 
+CONTRACT\_ID & numeric \\ 
+PALLET\_SIZE & character \\ 
+PURCHASE\_ORDER\_NUMBER & character \\ 
+BUYER & character \\ 
+COMMENTS & character \\ 
+SHIPPED\_QUANTITY & numeric \\ 
+VACMAN\_ASIIS\_CODE\_ID & numeric \\ 
+LOT\_NUMBER & character \\ 
+MANU\_CODE & character \\ 
+EXPIRATION\_DATE & POSIXct, POSIXt \\ 
+IS\_URGENT & character \\ 
+PRIORITY\_REASON & character \\ 
+EXCEPTION\_COMMENTS & character \\ 
+EXCEPTION\_REASON\_CODE & character \\ 
+RECOMMENDED\_QUANTITY & numeric \\ 
+EXCEPTION\_REVIEWED\_DATE & POSIXct, POSIXt \\ 
+EXCEPTION\_REVIEWED\_BY & character \\ 
+TRACKING\_NUMBER & character \\ 
+PUBLICLY\_SUPPLIED & character \\ 
+ORDER\_LINE\_NUMBER & numeric \\ 
+ACCEPT\_MDV\_AVAILABLE & character \\ 
+RECEIPT\_DATE & POSIXct, POSIXt \\ 
+IS\_MULTIPLE\_LOT & character \\ 
+SPLIT\_FROM\_ORDER\_ITEM & numeric \\ 
+CARRIER & character \\ 
+REJECTED\_QUANTITY & numeric \\ 
+PREFERRED\_TRADE\_NAME\_ID & character \\ 
+VTRCKS\_DELIVERY\_ID & character \\ 
+VTRCKS\_DELIVERY\_LINE\_NUMBER & character \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-21}{%
+\section*{Category Description}\label{category-description-21}}
+\addcontentsline{toc}{section}{Category Description}
+
+Description
+
+\hypertarget{statistics-21}{%
+\section*{Statistics}\label{statistics-21}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+50 & 1058627 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{order_set}{%
+\chapter*{ORDER\_SET}\label{order_set}}
+\addcontentsline{toc}{chapter}{ORDER\_SET}
+
+\hypertarget{description-22}{%
+\section*{Description}\label{description-22}}
+\addcontentsline{toc}{section}{Description}
+
+The order\_set table provides a list of order IDs, including the
+description and fulfillment type.
+
+\hypertarget{columns-22}{%
+\section*{Columns}\label{columns-22}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+ORDER\_SET\_ID & numeric \\ 
+DESCRIPTION & character \\ 
+INACTIVE\_STATUS & character \\ 
+EFFECTIVE\_FROM\_DATE & POSIXct, POSIXt \\ 
+EFFECTIVE\_TO\_DATE & POSIXct, POSIXt \\ 
+PROGRAM\_ID & numeric \\ 
+IS\_FUNDED & character \\ 
+REQUIRE\_PH\_AUTHORIZATION & character \\ 
+FULFILLMENT\_TYPE & character \\ 
+IRMS\_SYS\_ID & numeric \\ 
+ASIIS\_FAC\_ID & numeric \\ 
+REQUIRE\_LOCAL\_APPROVER & character \\ 
+LOCAL\_APPROVER\_IRMS & numeric \\ 
+IS\_CUSTOM & character \\ 
+SUBJECT\_TO\_EOQ & character \\ 
+PARENT\_ORDER\_SET\_ID & numeric \\ 
+IS\_PRE\_BOOKING & character \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-22}{%
+\section*{Category Description}\label{category-description-22}}
+\addcontentsline{toc}{section}{Category Description}
+
+Description
+
+\hypertarget{statistics-22}{%
+\section*{Statistics}\label{statistics-22}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+21 & 340 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{order_set_association}{%
+\chapter*{ORDER\_SET\_ASSOCIATION}\label{order_set_association}}
+\addcontentsline{toc}{chapter}{ORDER\_SET\_ASSOCIATION}
+
+\hypertarget{description-23}{%
+\section*{Description}\label{description-23}}
+\addcontentsline{toc}{section}{Description}
+
+The order\_set\_association table contains a list of order set ID
+records, including the IIS vaccine code and VACMAN code.
+
+\hypertarget{columns-23}{%
+\section*{Columns}\label{columns-23}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+ORDER\_SET\_ID & numeric \\ 
+ASIIS\_VACC\_CODE & numeric \\ 
+SORT\_ORDER & numeric \\ 
+VACMAN\_ASIIS\_CODE\_ID & numeric \\ 
+RESTRICT\_FROM\_ORDERING & character \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-23}{%
+\section*{Category Description}\label{category-description-23}}
+\addcontentsline{toc}{section}{Category Description}
+
+Description
+
+\hypertarget{statistics-23}{%
+\section*{Statistics}\label{statistics-23}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+9 & 6319 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{orders}{%
+\chapter*{ORDERS}\label{orders}}
+\addcontentsline{toc}{chapter}{ORDERS}
+
+\hypertarget{description-24}{%
+\section*{Description}\label{description-24}}
+\addcontentsline{toc}{section}{Description}
+
+The orders table contains a list of order records, including their
+status, approval dates, and tracking numbers.
+
+\hypertarget{columns-24}{%
+\section*{Columns}\label{columns-24}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+ORDER\_ID & numeric \\ 
+IRMS\_SYS\_ID & numeric \\ 
+ASIIS\_FAC\_ID & numeric \\ 
+STATUS & character \\ 
+SUBMIT\_DATE & POSIXct, POSIXt \\ 
+LOCAL\_APPROVAL\_DATE & POSIXct, POSIXt \\ 
+STATE\_APPROVAL\_DATE & POSIXct, POSIXt \\ 
+SHIP\_DATE & POSIXct, POSIXt \\ 
+RECEIPT\_DATE & POSIXct, POSIXt \\ 
+BACKORDER\_DATE & POSIXct, POSIXt \\ 
+APPROVAL\_TYPE & character \\ 
+COMMENTS & character \\ 
+INSERT\_STAMP & POSIXct, POSIXt \\ 
+UPDATE\_STAMP & POSIXct, POSIXt \\ 
+INSERTED\_BY & character \\ 
+LAST\_USER\_TO\_UPDATE & character \\ 
+CONTACT\_NAME & character \\ 
+CONTACT\_PHONE & numeric \\ 
+SHIP\_TO\_ADDRESS\_ID & numeric \\ 
+BILL\_TO\_ADDRESS\_ID & numeric \\ 
+VENDOR\_ID & numeric \\ 
+PURCHASE\_ORDER\_NUMBER & character \\ 
+BUYER & character \\ 
+BACKORDER\_FROM\_ORDER\_ID & numeric \\ 
+ORDER\_SOURCE & character \\ 
+DENIAL\_DATE & POSIXct, POSIXt \\ 
+EXCEPTION\_REASON\_CODE & character \\ 
+HISTORICAL\_ORDER\_NUMBER & character \\ 
+DELETION\_DATE & POSIXct, POSIXt \\ 
+ORDER\_SET\_ID & numeric \\ 
+SUBMITTED\_BY & character \\ 
+APPROVED\_BY & character \\ 
+LOCAL\_APPROVED\_BY & character \\ 
+RECEIVED\_BY & character \\ 
+EXCEPTION\_COMMENTS & character \\ 
+SHIPPING\_CERTIFIED & character \\ 
+TRACKING\_NUMBER & character \\ 
+EXCEPTION\_JUSTIFICATION & character \\ 
+APPROVER & character \\ 
+CONTACT\_FIRST\_NAME & character \\ 
+CONTACT\_MIDDLE\_NAME & character \\ 
+CONTACT\_LAST\_NAME & character \\ 
+CONTACT\_EMAIL & character \\ 
+CONTACT\_PHONE\_EXT & numeric \\ 
+BACKORDERED\_BY & character \\ 
+VTRCKS\_ORDER\_ID & numeric \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-24}{%
+\section*{Category Description}\label{category-description-24}}
+\addcontentsline{toc}{section}{Category Description}
+
+Description
+
+\hypertarget{statistics-24}{%
+\section*{Statistics}\label{statistics-24}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+50 & 228490 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{patient_contra_reserve}{%
+\chapter*{PATIENT\_CONTRA\_RESERVE}\label{patient_contra_reserve}}
+\addcontentsline{toc}{chapter}{PATIENT\_CONTRA\_RESERVE}
+
+\hypertarget{description-25}{%
+\section*{Description}\label{description-25}}
+\addcontentsline{toc}{section}{Description}
+
+The patient\_contra\_reserve table contains a list of patient IDs,
+categorized by IRMS system record ID. Contraindication codes and vaccine
+codes are provided.
+
+\hypertarget{columns-25}{%
+\section*{Columns}\label{columns-25}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+IRMS\_SYS\_ID & numeric \\ 
+IRMS\_PAT\_ID & character \\ 
+ASIIS\_VACC\_CODE & numeric \\ 
+CONTRA\_CODE & numeric \\ 
+ASIIS\_PAT\_ID\_PTR & numeric \\ 
+DISTRICT\_NUMBER & numeric \\ 
+LAST\_USER\_TO\_UPDATE & character \\ 
+PERMANENT & character \\ 
+INSERT\_STAMP & POSIXct, POSIXt \\ 
+UPDATE\_STAMP & POSIXct, POSIXt \\ 
+DELETION\_DATE & POSIXct, POSIXt \\ 
+SEQUENCE\_ID & numeric \\ 
+ASIIS\_FAC\_ID & numeric \\ 
+INSERTED\_BY & character \\ 
+RC\_SNAPSHOT\_ID & numeric \\ 
+IS\_UNVERIFIED & character \\ 
+DISEASE\_DATE & POSIXct, POSIXt \\ 
+DISPLAY\_DISEASE\_AGE & character \\ 
+EFFECTIVE\_FROM\_DATE & POSIXct, POSIXt \\ 
+EFFECTIVE\_TO\_DATE & POSIXct, POSIXt \\ 
+SOURCE\_OF\_EVIDENCE & character \\ 
+RECOMMENDED\_ACTION & character \\ 
+CONTRAINDICATION\_TYPE & character \\ 
+COMMENTS & character \\ 
+DATE\_DOCUMENTED & POSIXct, POSIXt \\ 
+IMPORT\_LOG\_ID & numeric \\ 
+UNIQUE\_IMPORT\_ID & numeric \\ 
+VACCINE\_FAMILY\_CODE & numeric \\ 
+OBX\_CODE & character \\ 
+OBSERVATION\_DATE & POSIXct, POSIXt \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-25}{%
+\section*{Category Description}\label{category-description-25}}
+\addcontentsline{toc}{section}{Category Description}
+
+\hypertarget{statistics-25}{%
+\section*{Statistics}\label{statistics-25}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+34 & 306236 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{patient_contraindication}{%
+\chapter*{PATIENT\_CONTRAINDICATION}\label{patient_contraindication}}
+\addcontentsline{toc}{chapter}{PATIENT\_CONTRAINDICATION}
+
+\hypertarget{description-26}{%
+\section*{Description}\label{description-26}}
+\addcontentsline{toc}{section}{Description}
+
+The patient\_contraindication table contains a list of patient records
+and their associated vaccine code(s) and contraindication code(s).
+
+\hypertarget{columns-26}{%
+\section*{Columns}\label{columns-26}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+ASIIS\_PAT\_ID\_PTR & numeric \\ 
+ASIIS\_VACC\_CODE & numeric \\ 
+CONTRA\_CODE & numeric \\ 
+LAST\_IRMS\_SYS\_ID\_TO\_UPDATE & numeric \\ 
+LAST\_IRMS\_PAT\_ID\_TO\_UPDATE & character \\ 
+LAST\_USER\_TO\_UPDATE & character \\ 
+DISTRICT\_NUMBER & numeric \\ 
+DELETION\_DATE & POSIXct, POSIXt \\ 
+FROM\_REGISTRY & character \\ 
+PERMANENT & character \\ 
+INSERT\_STAMP & POSIXct, POSIXt \\ 
+UPDATE\_STAMP & POSIXct, POSIXt \\ 
+ASIIS\_FAC\_ID & numeric \\ 
+INSERTED\_BY & character \\ 
+RC\_SNAPSHOT\_ID & numeric \\ 
+IS\_UNVERIFIED & character \\ 
+DISEASE\_DATE & POSIXct, POSIXt \\ 
+DISPLAY\_DISEASE\_AGE & character \\ 
+EFFECTIVE\_FROM\_DATE & POSIXct, POSIXt \\ 
+EFFECTIVE\_TO\_DATE & POSIXct, POSIXt \\ 
+SOURCE\_OF\_EVIDENCE & character \\ 
+RECOMMENDED\_ACTION & character \\ 
+CONTRAINDICATION\_TYPE & character \\ 
+COMMENTS & character \\ 
+DATE\_DOCUMENTED & POSIXct, POSIXt \\ 
+IMPORT\_LOG\_ID & numeric \\ 
+OBSERVATION\_DATE & POSIXct, POSIXt \\ 
+VACCINE\_FAMILY\_CODE & numeric \\ 
+OBX\_CODE & character \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-26}{%
+\section*{Category Description}\label{category-description-26}}
+\addcontentsline{toc}{section}{Category Description}
+
+Description
+
+\hypertarget{statistics-26}{%
+\section*{Statistics}\label{statistics-26}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+33 & 288122 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{patient_master}{%
+\chapter*{PATIENT\_MASTER}\label{patient_master}}
+\addcontentsline{toc}{chapter}{PATIENT\_MASTER}
+
+\hypertarget{description-27}{%
+\section*{Description}\label{description-27}}
+\addcontentsline{toc}{section}{Description}
+
+The patient\_master table contains the most up to date information on
+each patient including address, gender, race, and other demographic
+details.
+
+\hypertarget{columns-27}{%
+\section*{Columns}\label{columns-27}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+ASIIS\_PAT\_ID & numeric \\ 
+PAT\_FIRST\_NAME & character \\ 
+PAT\_FIRST\_NAME\_NS & character \\ 
+PAT\_MIDDLE\_NAME & character \\ 
+PAT\_MIDDLE\_NAME\_NS & character \\ 
+PAT\_LAST\_NAME & character \\ 
+PAT\_LAST\_NAME\_NS & character \\ 
+PAT\_SUFFIX & character \\ 
+PAT\_BIRTH\_DATE & POSIXct, POSIXt \\ 
+PAT\_GENDER & character \\ 
+PAT\_SSN & numeric \\ 
+PAT\_MEDICAID\_NUM & character \\ 
+PAT\_BIRTH\_FILE\_NUM & character \\ 
+PAT\_RACE & character \\ 
+PAT\_ETHNICITY\_CODE & numeric \\ 
+PAT\_LANGUAGE & character \\ 
+VFC\_ELIGIBLE & numeric \\ 
+ADDRESS\_STREET1 & character \\ 
+ADDRESS\_STREET2 & character \\ 
+PHYSICAL\_ADDRESS & character \\ 
+ADDRESS\_STREET\_MANGLED & character \\ 
+ADDRESS\_CITY & character \\ 
+ADDRESS\_STATE & character \\ 
+COUNTY\_CODE & numeric \\ 
+ADDRESS\_ZIP & numeric \\ 
+ADDRESS\_PHONE & numeric \\ 
+ADDRESS\_EMAIL & character \\ 
+DISTRICT\_NUMBER & numeric \\ 
+SCHOOL\_ID & numeric \\ 
+MOTHER\_MAIDEN & character \\ 
+MOTHER\_MAIDEN\_NS & character \\ 
+GRD\_FIRST\_NAME & character \\ 
+GRD\_FIRST\_NAME\_NS & character \\ 
+GRD\_MIDDLE\_NAME & character \\ 
+GRD\_LAST\_NAME & character \\ 
+GRD\_SSN & numeric \\ 
+HEALTH\_PLAN & character \\ 
+HEALTH\_PLAN\_ID & character \\ 
+HEALTH\_PLAN\_ENROLL & POSIXct, POSIXt \\ 
+HEALTH\_PLAN\_CODE & numeric \\ 
+BLOCK\_RECALL & character \\ 
+INACTIVE\_CODE & character \\ 
+NO\_EXPORT & character \\ 
+COMMENTS & character \\ 
+NEXT\_APPOINTMENT & POSIXct, POSIXt \\ 
+LAST\_IRMS\_SYS\_ID\_VISITED & numeric \\ 
+LAST\_IRMS\_PHYS\_ID\_VISITED & character \\ 
+LAST\_IRMS\_FAC\_ID\_VISITED & character \\ 
+LAST\_IRMS\_PAT\_ID\_TO\_UPDATE & character \\ 
+ASIIS\_FAC\_ID & numeric \\ 
+ASIIS\_PHYS\_ID & numeric \\ 
+CHART\_NUMBER & character \\ 
+LAST\_USER\_TO\_UPDATE & character \\ 
+MATCH\_CODE1 & character \\ 
+MATCH\_CODE2 & character \\ 
+MATCH\_CODE3 & character \\ 
+MATCH\_CODE4 & character \\ 
+MATCH\_CODE5 & character \\ 
+MATCH\_NUM1 & numeric \\ 
+MATCH\_NUM2 & numeric \\ 
+MATCH\_NUM3 & numeric \\ 
+MATCH\_NUM4 & numeric \\ 
+MATCH\_NUM5 & numeric \\ 
+NEEDS\_FORECAST & character \\ 
+NEEDS\_GEOCODE & character \\ 
+GEOCODE\_X & numeric \\ 
+GEOCODE\_Y & numeric \\ 
+GEOCODE\_STATUS & numeric \\ 
+TIGER\_LINE\_ID & numeric \\ 
+GEOCODE\_MSTATUS & character \\ 
+CENSUS\_TRACT & numeric \\ 
+LAST\_RECALL\_DATE & POSIXct, POSIXt \\ 
+RECALL\_COUNT & numeric \\ 
+FROM\_REGISTRY & character \\ 
+INSERT\_STAMP & POSIXct, POSIXt \\ 
+UPDATE\_STAMP & POSIXct, POSIXt \\ 
+REGISTRY\_ENTRY\_STAMP & POSIXct, POSIXt \\ 
+REGISTRY\_UPDATE\_STAMP & POSIXct, POSIXt \\ 
+PAT\_BIRTH\_STATE\_CODE & character \\ 
+PAT\_BIRTH\_COUNTRY\_CODE & character \\ 
+GRD\_FIRST\_NAME2 & character \\ 
+OWNER\_IRMS\_SYS\_ID & numeric \\ 
+OWNER\_IRMS\_PAT\_ID & character \\ 
+ARCHIVED\_DATE & POSIXct, POSIXt \\ 
+GRD\_MIDDLE\_NAME2 & character \\ 
+GRD\_LAST\_NAME2 & character \\ 
+WORK\_PHONE & numeric \\ 
+WORK\_PHONE\_EXT & numeric \\ 
+CELL\_PHONE & numeric \\ 
+PAGER & numeric \\ 
+ADDRESS\_EMAIL2 & character \\ 
+INCOME & numeric \\ 
+OCCUPATION\_CODE & character \\ 
+GRD\_WORK\_PHONE & numeric \\ 
+EMPLOYER\_ID & numeric \\ 
+RC\_SNAPSHOT\_ID & numeric \\ 
+PROFESSIONAL\_SUFFIX & character \\ 
+BLOCK\_MAIL\_REASON & character \\ 
+VALID\_ADDRESS & character \\ 
+ADDRESS\_PHONE\_EXT & numeric \\ 
+FAX & numeric \\ 
+INSERTED\_BY & character \\ 
+LEGACY\_PATIENT\_ID & character \\ 
+NUMBER\_IN\_FAMILY & numeric \\ 
+HEALTH\_PROMOTION\_COMMENTS & character \\ 
+IS\_ANONYMOUS & character \\ 
+MAILING\_NAME & character \\ 
+MPI\_ID & numeric \\ 
+SUGGESTED\_MPI\_ID & numeric \\ 
+INTERNATIONAL\_ZIP & character \\ 
+ADDRESS\_COUNTRY\_CODE & character \\ 
+BIRTH\_ORDER & numeric \\ 
+MULTIPLE\_BIRTH\_COUNT & numeric \\ 
+SIIS\_OPTOUT & character \\ 
+ALIAS\_FIRST\_NAME & character \\ 
+ALIAS\_LAST\_NAME & character \\ 
+PAT\_MEDICARE\_ID & character \\ 
+ALLERGIES & character \\ 
+OWNERSHIP\_DECLINED & character \\ 
+ASSOCIATION\_ID & numeric \\ 
+GRADE\_LEVEL\_ID & numeric \\ 
+MEDICAID\_PROVIDER\_ID & character \\ 
+PASPORT\_PHAME\_ID & character \\ 
+PAT\_GENDER\_OTHER & character \\ 
+INACTIVE\_CODE\_OTHER & character \\ 
+OPTOUT\_IRMS\_SYS\_ID & numeric \\ 
+IS\_MILITARY & character \\ 
+PAT\_DEATH\_DATE & POSIXct, POSIXt \\ 
+BIRTH\_FACILITY & character \\ 
+ADMISSION\_DATE & POSIXct, POSIXt \\ 
+SCHOOL\_ENTRY\_DATE & POSIXct, POSIXt \\ 
+HP\_DOB\_REVIEW\_DATE & POSIXct, POSIXt \\ 
+CHILD\_CARE\_ID & numeric \\ 
+SSN\_TYPE & character \\ 
+NEEDS\_RELINK & character \\ 
+STUDENT\_ID & character \\ 
+ADDRESS\_EMAIL\_VALID & character \\ 
+INVALID\_EMAIL\_REASON & character \\ 
+MAIL\_METHOD & character \\ 
+GRD\_TYPE & character \\ 
+FORECAST\_VERSION & character \\ 
+REMOTE\_SR\_ID & character \\ 
+REMOTE\_SR\_STATE & character \\ 
+MULTIPLE\_BIRTH\_INDICATOR & character \\ 
+IMPORT\_LOG\_ID & numeric \\ 
+UPDATE\_FORECAST & character \\ 
+GRD\_PHONE\_USE\_CODE & character \\ 
+GRD\_PHONE\_EQUIPMENT\_TYPE & character \\ 
+PUBLICITY\_CODE & character \\ 
+INACTIVE\_CODE\_MIGRATED & character \\ 
+PAT\_DEATH\_REPORTED\_DATE & POSIXct, POSIXt \\ 
+IRMS\_OWNERSHIP\_GIVEN\_AWAY\_BY & character \\ 
+IRMS\_OWNERSHIP\_GIVEN\_AWAY\_DATE & character \\ 
+FAC\_OWNERSHIP\_GIVEN\_AWAY\_BY & character \\ 
+FAC\_OWNERSHIP\_GIVEN\_AWAY\_DATE & character \\ 
+PAT\_NATIONALITY\_CODE & character \\ 
+ADDRESS\_BUILDING & character \\ 
+ADDRESS\_ZONE & character \\ 
+STATE\_JURISDICTIONAL\_STATUS & character \\ 
+COUNTY\_JURISDICTIONAL\_STATUS & character \\ 
+SET\_JURIS\_STATUS & character \\ 
+PAT\_NAME\_PART1 & character \\ 
+PAT\_NAME\_PART2 & character \\ 
+OFFICIAL\_PATIENT\_DATA & character \\ 
+ADDRESS\_INWANI\_STREET & character \\ 
+SMARTY\_STREETS\_ADDR\_ID & numeric \\ 
+DO\_NOT\_CLEAN\_ADDRESS & character \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-27}{%
+\section*{Category Description}\label{category-description-27}}
+\addcontentsline{toc}{section}{Category Description}
+
+This section contains variable coding for relevant columns within the
+patient master table.
+
+\setlength{\LTpost}{0mm}
+\begin{longtable}{l|ll}
+\caption*{
+{\large Variable Coding}
+} \\ 
+\toprule
+\multicolumn{1}{l}{} & Coding & Description \\ 
+\midrule
+\multicolumn{3}{l}{PAT\_GENDER} \\ 
+\midrule
+  & F & Female \\ 
+  & M & Male \\ 
+  & O & Other \\ 
+  & U & Unknown \\ 
+\midrule
+\multicolumn{3}{l}{PAT\_RACE\textsuperscript{1}} \\ 
+\midrule
+  & 1 & White \\ 
+  & 2 & Black or African American \\ 
+  & 4 & Asian \\ 
+  & 5 & American Indian or Alaskan Native \\ 
+  & 6 & Other \\ 
+  & 7 & Native Hawaiian or other Pacific Islander \\ 
+  & 8 & Multi\_racial \\ 
+  & 9 & Unknown \\ 
+\midrule
+\multicolumn{3}{l}{PAT\_ETHNICITY} \\ 
+\midrule
+  & 1 & Hispanic or Latino \\ 
+  & 2 & Not Hispanic or Latino \\ 
+  & 3 & Unknown \\ 
+\midrule
+\multicolumn{3}{l}{VFC\_ELIGIBLE} \\ 
+\midrule
+  & 0 & Ineligible \\ 
+  & 1 & Medicaid \\ 
+  & 2 & Uninsured \\ 
+  & 3 & Nat. Amer.or Alaskan \\ 
+  & 4 & Underinsured \\ 
+  & 5 & null \\ 
+  & 6 & KidsCare \\ 
+  & 7 & Hoosier HWise Pkg C \\ 
+  & 8 & CHIP \\ 
+  & 9 & Healthy Kids \\ 
+  & 10 & Private Insurance (WAA01) \\ 
+  & 11 & Adult State \\ 
+  & 12 & Private \\ 
+  & 13 & State Vaccine \\ 
+  & 14 & LACHIP-Affordable Plan Ineligible \\ 
+  & 15 & LAHIPP-Ineligible \\ 
+  & 16 & WAA01 \\ 
+  & 17 & 317 \\ 
+  & 18 & Medicare \\ 
+\bottomrule
+\end{longtable}
+\begin{minipage}{\linewidth}
+\textsuperscript{1}Each row may contain more than one selection for race.\\
+\end{minipage}
+
+\hypertarget{statistics-27}{%
+\section*{Statistics}\label{statistics-27}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+171 & 18162496 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{patient_race_master}{%
+\chapter*{PATIENT\_RACE\_MASTER}\label{patient_race_master}}
+\addcontentsline{toc}{chapter}{PATIENT\_RACE\_MASTER}
+
+\hypertarget{description-28}{%
+\section*{Description}\label{description-28}}
+\addcontentsline{toc}{section}{Description}
+
+The patient\_race\_master table contains a list of patient record IDs
+(ASIIS\_PAT\_ID\_PTR) and their respective pat\_race values. Update
+stamp records are provided.
+
+\hypertarget{columns-28}{%
+\section*{Columns}\label{columns-28}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+ASIIS\_PAT\_ID\_PTR & numeric \\ 
+PAT\_RACE & character \\ 
+LAST\_USER\_TO\_UPDATE & character \\ 
+INSERTED\_BY & character \\ 
+INSERT\_STAMP & POSIXct, POSIXt \\ 
+UPDATE\_STAMP & POSIXct, POSIXt \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-28}{%
+\section*{Category Description}\label{category-description-28}}
+\addcontentsline{toc}{section}{Category Description}
+
+Description
+
+\hypertarget{statistics-28}{%
+\section*{Statistics}\label{statistics-28}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+10 & 17528876 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{patient_reserve}{%
+\chapter*{PATIENT\_RESERVE}\label{patient_reserve}}
+\addcontentsline{toc}{chapter}{PATIENT\_RESERVE}
+
+\hypertarget{description-29}{%
+\section*{Description}\label{description-29}}
+\addcontentsline{toc}{section}{Description}
+
+The patient\_reserve table contains entries for each time patient
+information is updated. This includes information on each patient
+including address, gender, race, and other demographic details.
+
+\hypertarget{columns-29}{%
+\section*{Columns}\label{columns-29}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+IRMS\_SYS\_ID & numeric \\ 
+IRMS\_PAT\_ID & character \\ 
+ASIIS\_PAT\_ID\_PTR & numeric \\ 
+PAT\_FIRST\_NAME & character \\ 
+PAT\_FIRST\_NAME\_NS & character \\ 
+PAT\_MIDDLE\_NAME & character \\ 
+PAT\_MIDDLE\_NAME\_NS & character \\ 
+PAT\_LAST\_NAME & character \\ 
+PAT\_LAST\_NAME\_NS & character \\ 
+PAT\_SUFFIX & character \\ 
+PROFESSIONAL\_SUFFIX & character \\ 
+PAT\_BIRTH\_DATE & POSIXct, POSIXt \\ 
+PAT\_GENDER & character \\ 
+PAT\_SSN & numeric \\ 
+PAT\_MEDICAID\_NUM & character \\ 
+PAT\_BIRTH\_FILE\_NUM & character \\ 
+PAT\_BIRTH\_STATE\_CODE & character \\ 
+PAT\_BIRTH\_COUNTRY\_CODE & character \\ 
+PAT\_RACE & character \\ 
+PAT\_ETHNICITY\_CODE & numeric \\ 
+PAT\_LANGUAGE & character \\ 
+VFC\_ELIGIBLE & numeric \\ 
+ADDRESS\_STREET1 & character \\ 
+ADDRESS\_STREET2 & character \\ 
+PHYSICAL\_ADDRESS & character \\ 
+ADDRESS\_STREET\_MANGLED & character \\ 
+ADDRESS\_CITY & character \\ 
+ADDRESS\_STATE & character \\ 
+COUNTY\_CODE & numeric \\ 
+ADDRESS\_ZIP & numeric \\ 
+ADDRESS\_PHONE & numeric \\ 
+ADDRESS\_EMAIL & character \\ 
+DISTRICT\_NUMBER & numeric \\ 
+SCHOOL\_ID & numeric \\ 
+MOTHER\_MAIDEN & character \\ 
+MOTHER\_MAIDEN\_NS & character \\ 
+GRD\_FIRST\_NAME & character \\ 
+GRD\_FIRST\_NAME2 & character \\ 
+GRD\_FIRST\_NAME\_NS & character \\ 
+GRD\_MIDDLE\_NAME & character \\ 
+GRD\_MIDDLE\_NAME2 & character \\ 
+GRD\_LAST\_NAME & character \\ 
+GRD\_LAST\_NAME2 & character \\ 
+GRD\_SSN & numeric \\ 
+GRD\_WORK\_PHONE & numeric \\ 
+HEALTH\_PLAN & character \\ 
+HEALTH\_PLAN\_ID & character \\ 
+HEALTH\_PLAN\_ENROLL & POSIXct, POSIXt \\ 
+PROGRAM\_LIST & character \\ 
+BLOCK\_RECALL & character \\ 
+INACTIVE\_CODE & character \\ 
+COMMENTS & character \\ 
+NEXT\_APPOINTMENT & POSIXct, POSIXt \\ 
+IRMS\_FAC\_ID & character \\ 
+IRMS\_PHY\_ID & character \\ 
+CHART\_NUMBER & character \\ 
+MATCH\_CODE1 & character \\ 
+MATCH\_CODE2 & character \\ 
+MATCH\_CODE3 & character \\ 
+MATCH\_CODE4 & character \\ 
+MATCH\_CODE5 & character \\ 
+MATCH\_NUM1 & numeric \\ 
+MATCH\_NUM2 & numeric \\ 
+MATCH\_NUM3 & numeric \\ 
+MATCH\_NUM4 & numeric \\ 
+MATCH\_NUM5 & numeric \\ 
+DUPLICATE & character \\ 
+DUP\_IDENTIFIED\_BY & character \\ 
+MATCH\_IRMS\_SYS\_ID & numeric \\ 
+MATCH\_IRMS\_PAT\_ID & character \\ 
+INSERT\_STAMP & POSIXct, POSIXt \\ 
+UPDATE\_STAMP & POSIXct, POSIXt \\ 
+REGISTRY\_ENTRY\_STAMP & POSIXct, POSIXt \\ 
+REGISTRY\_UPDATE\_STAMP & POSIXct, POSIXt \\ 
+SEND\_TO\_REGISTRY & character \\ 
+LAST\_USER\_TO\_UPDATE & character \\ 
+HISTORICAL & character \\ 
+WORK\_PHONE & numeric \\ 
+WORK\_PHONE\_EXT & numeric \\ 
+CELL\_PHONE & numeric \\ 
+PAGER & numeric \\ 
+ADDRESS\_EMAIL2 & character \\ 
+INCOME & numeric \\ 
+EMPLOYER\_ID & numeric \\ 
+OCCUPATION\_CODE & character \\ 
+RC\_SNAPSHOT\_ID & numeric \\ 
+SEQUENCE\_ID & numeric \\ 
+BLOCK\_MAIL\_REASON & character \\ 
+VALID\_ADDRESS & character \\ 
+ADDRESS\_PHONE\_EXT & numeric \\ 
+FAX & numeric \\ 
+INSERTED\_BY & character \\ 
+LEGACY\_PATIENT\_ID & character \\ 
+NUMBER\_IN\_FAMILY & numeric \\ 
+HEALTH\_PROMOTION\_COMMENTS & character \\ 
+IS\_ANONYMOUS & character \\ 
+INTERNATIONAL\_ZIP & character \\ 
+ADDRESS\_COUNTRY\_CODE & character \\ 
+BIRTH\_ORDER & numeric \\ 
+MULTIPLE\_BIRTH\_COUNT & numeric \\ 
+SIIS\_OPTOUT & character \\ 
+ALIAS\_FIRST\_NAME & character \\ 
+ALIAS\_LAST\_NAME & character \\ 
+PAT\_MEDICARE\_ID & character \\ 
+HEALTH\_PLAN\_CODE & numeric \\ 
+PROBABILISTIC\_SCORE & numeric \\ 
+ALLERGIES & character \\ 
+OWNERSHIP\_DECLINED & character \\ 
+ASSOCIATION\_ID & numeric \\ 
+GRADE\_LEVEL\_ID & numeric \\ 
+MEDICAID\_PROVIDER\_ID & character \\ 
+PASPORT\_PHAME\_ID & character \\ 
+PAT\_GENDER\_OTHER & character \\ 
+INACTIVE\_CODE\_OTHER & character \\ 
+OPTOUT\_IRMS\_SYS\_ID & numeric \\ 
+IS\_MILITARY & character \\ 
+PAT\_DEATH\_DATE & POSIXct, POSIXt \\ 
+BIRTH\_FACILITY & character \\ 
+ADMISSION\_DATE & POSIXct, POSIXt \\ 
+SCHOOL\_ENTRY\_DATE & POSIXct, POSIXt \\ 
+REPORTING\_METHOD & character \\ 
+ICCP & character \\ 
+SSN\_TYPE & character \\ 
+WAITING\_ROOM\_ADD\_DATE & POSIXct, POSIXt \\ 
+WAITING\_ROOM\_DEFER\_DATE & POSIXct, POSIXt \\ 
+WAITING\_ROOM\_STATUS & character \\ 
+STUDENT\_ID & character \\ 
+ADDRESS\_EMAIL\_VALID & character \\ 
+INVALID\_EMAIL\_REASON & character \\ 
+MAIL\_METHOD & character \\ 
+GRD\_TYPE & character \\ 
+MULTIPLE\_BIRTH\_INDICATOR & character \\ 
+IMPORT\_LOG\_ID & numeric \\ 
+ADV\_SCORE\_TOTAL & numeric \\ 
+GRD\_PHONE\_USE\_CODE & character \\ 
+GRD\_PHONE\_EQUIPMENT\_TYPE & character \\ 
+PUBLICITY\_CODE & character \\ 
+UNIQUE\_IMPORT\_ID & numeric \\ 
+PAT\_NATIONALITY\_CODE & character \\ 
+ADDRESS\_BUILDING & character \\ 
+ADDRESS\_ZONE & character \\ 
+PAT\_NAME\_PART1 & character \\ 
+PAT\_NAME\_PART2 & character \\ 
+ADDRESS\_INWANI\_STREET & character \\ 
+SMARTY\_STREETS\_ADDR\_ID & numeric \\ 
+DO\_NOT\_CLEAN\_ADDRESS & character \\ 
+MYIR\_EMAIL\_INVITATION\_SENT & character \\ 
+SUBSCRIPTION\_SERVICE\_FLAG & character \\ 
+TRANSACTION\_COMPLETE & character \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-29}{%
+\section*{Category Description}\label{category-description-29}}
+\addcontentsline{toc}{section}{Category Description}
+
+This section contains variable coding for relevant columns within the
+patient reserve table.
+
+\setlength{\LTpost}{0mm}
+\begin{longtable}{l|ll}
+\caption*{
+{\large Variable Coding}
+} \\ 
+\toprule
+\multicolumn{1}{l}{} & Coding & Description \\ 
+\midrule
+\multicolumn{3}{l}{PAT\_GENDER} \\ 
+\midrule
+  & F & Female \\ 
+  & M & Male \\ 
+  & O & Other \\ 
+  & U & Unknown \\ 
+\midrule
+\multicolumn{3}{l}{PAT\_RACE\textsuperscript{1}} \\ 
+\midrule
+  & 1 & White \\ 
+  & 2 & Black or African American \\ 
+  & 4 & Asian \\ 
+  & 5 & American Indian or Alaskan Native \\ 
+  & 6 & Other \\ 
+  & 7 & Native Hawaiian or other Pacific Islander \\ 
+  & 8 & Multi\_racial \\ 
+  & 9 & Unknown \\ 
+\midrule
+\multicolumn{3}{l}{PAT\_ETHNICITY} \\ 
+\midrule
+  & 1 & Hispanic or Latino \\ 
+  & 2 & Not Hispanic or Latino \\ 
+  & 3 & Unknown \\ 
+\midrule
+\multicolumn{3}{l}{VFC\_ELIGIBLE} \\ 
+\midrule
+  & 0 & Ineligible \\ 
+  & 1 & Medicaid \\ 
+  & 2 & Uninsured \\ 
+  & 3 & Nat. Amer.or Alaskan \\ 
+  & 4 & Underinsured \\ 
+  & 5 & null \\ 
+  & 6 & KidsCare \\ 
+  & 7 & Hoosier HWise Pkg C \\ 
+  & 8 & CHIP \\ 
+  & 9 & Healthy Kids \\ 
+  & 10 & Private Insurance (WAA01) \\ 
+  & 11 & Adult State \\ 
+  & 12 & Private \\ 
+  & 13 & State Vaccine \\ 
+  & 14 & LACHIP-Affordable Plan Ineligible \\ 
+  & 15 & LAHIPP-Ineligible \\ 
+  & 16 & WAA01 \\ 
+  & 17 & 317 \\ 
+  & 18 & Medicare \\ 
+\bottomrule
+\end{longtable}
+\begin{minipage}{\linewidth}
+\textsuperscript{1}Each row may contain more than one selection for race.\\
+\end{minipage}
+
+\hypertarget{statistics-29}{%
+\section*{Statistics}\label{statistics-29}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+153 & 85265582 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{patient_school_nurse}{%
+\chapter*{PATIENT\_SCHOOL\_NURSE}\label{patient_school_nurse}}
+\addcontentsline{toc}{chapter}{PATIENT\_SCHOOL\_NURSE}
+
+\hypertarget{description-30}{%
+\section*{Description}\label{description-30}}
+\addcontentsline{toc}{section}{Description}
+
+The patient\_school\_nurse table contains school report information by
+patient ID record. Report information includes the status of primary
+(required) vaccine record reports.
+
+\hypertarget{columns-30}{%
+\section*{Columns}\label{columns-30}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+ASIIS\_PAT\_ID\_PTR & numeric \\ 
+SCHOOL\_ID\_PTR & numeric \\ 
+GRADE\_LEVEL\_ID\_PTR & numeric \\ 
+EXEMPTION & numeric \\ 
+INSERT\_STAMP & POSIXct, POSIXt \\ 
+IMMUNIZATION\_STATUS & character \\ 
+BATCH & character \\ 
+SN\_REPORT\_STATUS & character \\ 
+SN\_DTAP\_REPORT\_STATUS & character \\ 
+SN\_DIPHTHERIA\_REPORT\_STATUS & character \\ 
+SN\_TETANUS\_REPORT\_STATUS & character \\ 
+SN\_PERTUSSIS\_REPORT\_STATUS & character \\ 
+SN\_POLIO\_REPORT\_STATUS & character \\ 
+SN\_MMR\_REPORT\_STATUS & character \\ 
+SN\_MEASLES\_REPORT\_STATUS & character \\ 
+SN\_MUMPS\_REPORT\_STATUS & character \\ 
+SN\_RUBELLA\_REPORT\_STATUS & character \\ 
+SN\_HEPB\_REPORT\_STATUS & character \\ 
+SN\_VARICELLA\_REPORT\_STATUS & character \\ 
+EXEMPT\_VACCINE\_LIST & character \\ 
+OOC\_VACCINE\_LIST & character \\ 
+CONDITIONAL\_VACCINE\_LIST & character \\ 
+SN\_PNEUMO\_REPORT\_STATUS & character \\ 
+SN\_HIB\_REPORT\_STATUS & character \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-30}{%
+\section*{Category Description}\label{category-description-30}}
+\addcontentsline{toc}{section}{Category Description}
+
+Description
+
+\hypertarget{statistics-30}{%
+\section*{Statistics}\label{statistics-30}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+28 & 3947502 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{patient_vaccine_deferral}{%
+\chapter*{PATIENT\_VACCINE\_DEFERRAL}\label{patient_vaccine_deferral}}
+\addcontentsline{toc}{chapter}{PATIENT\_VACCINE\_DEFERRAL}
+
+\hypertarget{description-31}{%
+\section*{Description}\label{description-31}}
+\addcontentsline{toc}{section}{Description}
+
+The patient\_vaccine\_deferral table contains a list of patient record
+IDs and their associated deferral records. Details include the vaccine
+code, dose number, deferral date, and deferral reason.
+
+\hypertarget{columns-31}{%
+\section*{Columns}\label{columns-31}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+ASIIS\_PAT\_ID\_PTR & numeric \\ 
+ASIIS\_VACC\_CODE & numeric \\ 
+FAMILY\_CODE & numeric \\ 
+DOSE\_NUMBER & numeric \\ 
+DEFERRAL\_DATE & POSIXct, POSIXt \\ 
+LAST\_IRMS\_SYS\_ID\_TO\_UPDATE & numeric \\ 
+LAST\_IRMS\_PAT\_ID\_TO\_UPDATE & character \\ 
+LAST\_USER\_TO\_UPDATE & character \\ 
+INSERTED\_BY & character \\ 
+ASIIS\_FAC\_ID & numeric \\ 
+DISTRICT\_NUMBER & numeric \\ 
+INSERT\_STAMP & POSIXct, POSIXt \\ 
+UPDATE\_STAMP & POSIXct, POSIXt \\ 
+DEFERRAL\_END\_DATE & POSIXct, POSIXt \\ 
+DEFERRAL\_REASON & character \\ 
+DEFERRAL\_REASON\_OTHER & character \\ 
+COMPLETION\_STATUS & character \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-31}{%
+\section*{Category Description}\label{category-description-31}}
+\addcontentsline{toc}{section}{Category Description}
+
+This section contains variable coding for relevant columns within the
+PATIENT\_VACCINE\_DEFERRAL table.
+
+\setlength{\LTpost}{0mm}
+\begin{longtable}{l|ll}
+\caption*{
+{\large Variable Coding}
+} \\ 
+\toprule
+\multicolumn{1}{l}{} & Coding & Description \\ 
+\midrule
+\multicolumn{3}{l}{ASIIS\_VACC\_CODE\textsuperscript{1}} \\ 
+\midrule
+  & 921 & Tdap \\ 
+  & 75 & influenza, injectable, quadrivalent, preservative free \\ 
+  & 2061 & zoster recombinant \\ 
+  & 73 & influenza, injectable, quadrivalent \\ 
+  & 61 & Influenza, seasonal, injectable \\ 
+  & 614 & Pneumococcal conjugate PCV 13 \\ 
+  & 2033 & HPV9 \\ 
+  & 31 & pneumococcal polysaccharide PPV23 \\ 
+  & 2080 & COVID-19, mRNA, LNP-S, PF, 100 mcg/0.5mL dose or 50 mcg/0.25mL dose \\ 
+  & 108 & influenza, unspecified formulation \\ 
+\midrule
+\multicolumn{3}{l}{DEFERRAL\_REASON} \\ 
+\midrule
+  & ALTSCHEDULE & Patient/Parent Chooses Alternate Schedule \\ 
+  & SHORTAGE & Vaccine Shortage \\ 
+  & 02 & Other \\ 
+  & 03 & Patient Decision \\ 
+  & WAIT & Patient/Parent Chooses to Wait \\ 
+  & ILLNESS & Temporary Acute Illness \\ 
+  & 01 & Religious exemption \\ 
+  & 00 & Parental Decision \\ 
+\bottomrule
+\end{longtable}
+\begin{minipage}{\linewidth}
+\textsuperscript{1}A full list of IIS Vaccination Codes is available at: \href{https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared\%20Documents/CEDAR/CEDAR\%20Data\%20Dictionaries/ASIIS_Vacc_Code\%20Values\%20Table\%20with\%20CDC\%20and\%20CPT\%20Codes.xlsx?d=w58a7246c67aa491fbfef19172d5ca393\&csf=1\&web=1\&e=rIrViQ}{https://www2a.cdc.gov/vaccines/iis/iisstandards/?rpt=cpt}\\
+\end{minipage}
+
+\hypertarget{statistics-31}{%
+\section*{Statistics}\label{statistics-31}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+21 & 143248 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{phone_reserve}{%
+\chapter*{PHONE\_RESERVE}\label{phone_reserve}}
+\addcontentsline{toc}{chapter}{PHONE\_RESERVE}
+
+\hypertarget{description-32}{%
+\section*{Description}\label{description-32}}
+\addcontentsline{toc}{section}{Description}
+
+The phone\_reserve table contains a list of phone number records for
+each vaccine record ID.
+
+\hypertarget{columns-32}{%
+\section*{Columns}\label{columns-32}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+IRMS\_SYS\_ID & numeric \\ 
+IRMS\_PAT\_ID & character \\ 
+ASIIS\_PAT\_ID\_PTR & numeric \\ 
+IRMS\_FAC\_ID & character \\ 
+SEQUENCE\_ID & numeric \\ 
+PHONE\_NUMBER & character \\ 
+EXTENSION & character \\ 
+EQUIPMENT\_TYPE & character \\ 
+USE\_CODE & character \\ 
+IS\_PRIMARY & character \\ 
+INSERT\_STAMP & POSIXct, POSIXt \\ 
+INSERTED\_BY & character \\ 
+UPDATE\_STAMP & POSIXct, POSIXt \\ 
+LAST\_USER\_TO\_UPDATE & character \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-32}{%
+\section*{Category Description}\label{category-description-32}}
+\addcontentsline{toc}{section}{Category Description}
+
+Description
+
+\hypertarget{statistics-32}{%
+\section*{Statistics}\label{statistics-32}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+18 & 54156500 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{physician_master}{%
+\chapter*{PHYSICIAN\_MASTER}\label{physician_master}}
+\addcontentsline{toc}{chapter}{PHYSICIAN\_MASTER}
+
+\hypertarget{description-33}{%
+\section*{Description}\label{description-33}}
+\addcontentsline{toc}{section}{Description}
+
+The physician\_master table contains a list of physician IDs with
+details, including name of the physician, NPI, tax ID, contact address,
+and phone numbers.
+
+\hypertarget{columns-33}{%
+\section*{Columns}\label{columns-33}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+IRMS\_SYS\_ID & numeric \\ 
+IRMS\_PHYS\_ID & character \\ 
+IRMS\_FAC\_ID & character \\ 
+ASIIS\_PHYS\_ID & numeric \\ 
+ASIIS\_FAC\_ID & numeric \\ 
+FIRST\_NAME & character \\ 
+MIDDLE\_NAME & character \\ 
+LAST\_NAME & character \\ 
+SUFFIX & character \\ 
+SSN & numeric \\ 
+BOMEX & numeric \\ 
+DO & character \\ 
+PHONE & numeric \\ 
+FAX & numeric \\ 
+EMAIL & character \\ 
+DISTRICT\_NUMBER & numeric \\ 
+MEDICAID\_PIN & numeric \\ 
+MEDICAID\_GROUP & numeric \\ 
+INACTIVE\_STATUS & character \\ 
+INSERT\_STAMP & POSIXct, POSIXt \\ 
+UPDATE\_STAMP & POSIXct, POSIXt \\ 
+OWNERSHIP\_BLOCKED & character \\ 
+PHYSICIAN\_CODE & character \\ 
+PHONE\_EXT & numeric \\ 
+IS\_VACCINE\_SAFETY\_MONITOR & character \\ 
+LAST\_USER\_TO\_UPDATE & character \\ 
+COMMENTS & character \\ 
+OTHER\_PROVIDER\_ID & character \\ 
+GROUP\_NPI & character \\ 
+PROVIDER\_TAX\_ID & character \\ 
+PROVIDER\_TAX\_ID\_TYPE & character \\ 
+PROVIDER\_TAXONOMY & character \\ 
+MEDICARE\_PIN & character \\ 
+MEDICARE\_GROUP & character \\ 
+BILLING\_ENTITY\_TYPE & character \\ 
+MEDICAL\_LICENSE\_NUMBER & character \\ 
+PROVIDER\_SPECIALITY & character \\ 
+BIRTH\_DATE & POSIXct, POSIXt \\ 
+NPI & character \\ 
+TERMINAL\_DIST\_LICENSE\_NUMBER & character \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-33}{%
+\section*{Category Description}\label{category-description-33}}
+\addcontentsline{toc}{section}{Category Description}
+
+Description
+
+\hypertarget{statistics-33}{%
+\section*{Statistics}\label{statistics-33}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+44 & 67065 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{school}{%
+\chapter*{SCHOOL}\label{school}}
+\addcontentsline{toc}{chapter}{SCHOOL}
+
+\hypertarget{description-34}{%
+\section*{Description}\label{description-34}}
+\addcontentsline{toc}{section}{Description}
+
+The school table contains a list of school record IDs, including the
+school description and address.
+
+\hypertarget{columns-34}{%
+\section*{Columns}\label{columns-34}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+SCHOOL\_ID & numeric \\ 
+DESCRIPTION & character \\ 
+STATE\_CODE & character \\ 
+ADDRESS\_STREET & character \\ 
+ADDRESS\_CITY & character \\ 
+ADDRESS\_ZIP & numeric \\ 
+INACTIVE\_STATUS & character \\ 
+PUBLIC\_SCHOOL & character \\ 
+OTHER\_SYSTEM\_ID & character \\ 
+XCOORD & numeric \\ 
+YCOORD & numeric \\ 
+GEOCODE\_STATUS & numeric \\ 
+TIGER\_LINE\_ID & numeric \\ 
+GEOCODE\_MSTATUS & character \\ 
+CENSUS\_TRACT & numeric \\ 
+COUNTY\_CODE & numeric \\ 
+SCHOOL\_TYPE\_ID & numeric \\ 
+SCHOOL\_DISTRICT\_ID & numeric \\ 
+AVERAGE\_ATTENDANCE & numeric \\ 
+PHONE & numeric \\ 
+PHONE\_EXTENSION & numeric \\ 
+FAX & numeric \\ 
+NO\_GRADE & character \\ 
+NO\_ENROLLMENT & character \\ 
+NON\_REPORTING & character \\ 
+FINAL\_REPORT\_SUBMITTED & character \\ 
+COUNTY\_DISTRICT\_NUM & numeric \\ 
+SCHOOL\_EMAIL\_ADDRESS & character \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-34}{%
+\section*{Category Description}\label{category-description-34}}
+\addcontentsline{toc}{section}{Category Description}
+
+Description
+
+\hypertarget{statistics-34}{%
+\section*{Statistics}\label{statistics-34}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+32 & 123397 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{school_district}{%
+\chapter*{SCHOOL\_DISTRICT}\label{school_district}}
+\addcontentsline{toc}{chapter}{SCHOOL\_DISTRICT}
+
+\hypertarget{description-35}{%
+\section*{Description}\label{description-35}}
+\addcontentsline{toc}{section}{Description}
+
+The school\_district table contains a list of school district IDs,
+including respective school names and addresses.
+
+\hypertarget{columns-35}{%
+\section*{Columns}\label{columns-35}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+SCHOOL\_DISTRICT\_ID & numeric \\ 
+NAME & character \\ 
+CONTACT\_PERSON & character \\ 
+ADDRESS\_STREET1 & character \\ 
+ADDRESS\_STREET2 & character \\ 
+ADDRESS\_CITY & character \\ 
+COUNTY\_CODE & numeric \\ 
+ADDRESS\_STATE & character \\ 
+ADDRESS\_ZIP & numeric \\ 
+PHONE & numeric \\ 
+PHONE\_EXTENSION & numeric \\ 
+FAX & numeric \\ 
+INSERT\_STAMP & POSIXct, POSIXt \\ 
+UPDATE\_STAMP & POSIXct, POSIXt \\ 
+INSERTED\_BY & character \\ 
+LAST\_USER\_TO\_UPDATE & character \\ 
+DELETION\_DATE & POSIXct, POSIXt \\ 
+SCHOOL\_DISTRICT\_NBR & character \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-35}{%
+\section*{Category Description}\label{category-description-35}}
+\addcontentsline{toc}{section}{Category Description}
+
+Description
+
+\hypertarget{statistics-35}{%
+\section*{Statistics}\label{statistics-35}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+22 & 610 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{school_nurse_immunity}{%
+\chapter*{SCHOOL\_NURSE\_IMMUNITY}\label{school_nurse_immunity}}
+\addcontentsline{toc}{chapter}{SCHOOL\_NURSE\_IMMUNITY}
+
+\hypertarget{description-36}{%
+\section*{Description}\label{description-36}}
+\addcontentsline{toc}{section}{Description}
+
+The school\_nurse\_immunity table provides a list of immunity ID
+records, including details on the disease name, vaccine group code and
+patient record ID.
+
+\hypertarget{columns-36}{%
+\section*{Columns}\label{columns-36}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+IMMUNITY\_ID & numeric \\ 
+IRMS\_SYS\_ID & numeric \\ 
+IRMS\_PAT\_ID & character \\ 
+ASIIS\_PAT\_ID\_PTR & numeric \\ 
+VACC\_GROUP\_CODE & numeric \\ 
+DISEASE\_NAME & character \\ 
+IS\_IMMUNITY & character \\ 
+INSERTED\_BY & character \\ 
+LAST\_USER\_TO\_UPDATE & character \\ 
+INSERT\_STAMP & POSIXct, POSIXt \\ 
+UPDATE\_STAMP & POSIXct, POSIXt \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-36}{%
+\section*{Category Description}\label{category-description-36}}
+\addcontentsline{toc}{section}{Category Description}
+
+\hypertarget{statistics-36}{%
+\section*{Statistics}\label{statistics-36}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+15 & 1568 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{serology_invalid_data}{%
+\chapter*{SEROLOGY\_INVALID\_DATA}\label{serology_invalid_data}}
+\addcontentsline{toc}{chapter}{SEROLOGY\_INVALID\_DATA}
+
+\hypertarget{description-37}{%
+\section*{Description}\label{description-37}}
+\addcontentsline{toc}{section}{Description}
+
+The serology\_invalid\_data table will contain a list of system IDs with
+invalid serology results. The table is currently empty.
+
+\hypertarget{columns-37}{%
+\section*{Columns}\label{columns-37}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+IRMS\_SYS\_ID & numeric \\ 
+IRMS\_PAT\_ID & character \\ 
+IRMS\_FAC\_ID & character \\ 
+SEROLOGY\_DRAW\_DATE & POSIXct, POSIXt \\ 
+TITER\_VALUE & character \\ 
+REFERENCE\_RANGE & character \\ 
+INSERT\_STAMP & POSIXct, POSIXt \\ 
+UPDATE\_STAMP & POSIXct, POSIXt \\ 
+INSERTED\_BY & character \\ 
+LAST\_USER\_TO\_UPDATE & character \\ 
+DELETION\_DATE & POSIXct, POSIXt \\ 
+SEQUENCE\_ID & numeric \\ 
+SEROLOGY\_TEST\_LOINC\_CODE & character \\ 
+SEROLOGY\_TEST\_DESCRIPTION & character \\ 
+MANUFACTURER & character \\ 
+SEROLOGY\_RESULT\_CODE & character \\ 
+SEROLOGY\_RESULT\_DESCRIPTION & character \\ 
+UNIQUE\_IMPORT\_ID & numeric \\ 
+IMPORT\_LOG\_ID & numeric \\ 
+INVALID\_REASON & numeric \\ 
+SEROLOGY\_TYPE\_CODE & numeric \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-37}{%
+\section*{Category Description}\label{category-description-37}}
+\addcontentsline{toc}{section}{Category Description}
+
+Description
+
+\hypertarget{statistics-37}{%
+\section*{Statistics}\label{statistics-37}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+25 & NA \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{serology_test_result}{%
+\chapter*{SEROLOGY\_TEST\_RESULT}\label{serology_test_result}}
+\addcontentsline{toc}{chapter}{SEROLOGY\_TEST\_RESULT}
+
+\hypertarget{description-38}{%
+\section*{Description}\label{description-38}}
+\addcontentsline{toc}{section}{Description}
+
+The serology\_test\_result table contains a list of serology result IDs,
+as well as details on the result LOINC codes, SNOMED codes, and result
+description.
+
+\hypertarget{columns-38}{%
+\section*{Columns}\label{columns-38}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+SEROLOGY\_RESULT\_ID & numeric \\ 
+RESULT\_SET\_ID & character \\ 
+RESULT\_LOINC\_CODE & character \\ 
+RESULT\_SNOMED\_CODE & character \\ 
+RESULT\_DESCRIPTION & character \\ 
+CONTRA\_CODE & numeric \\ 
+INACTIVE\_STATUS & character \\ 
+INSERT\_STAMP & POSIXct, POSIXt \\ 
+INSERTED\_BY & character \\ 
+UPDATE\_STAMP & POSIXct, POSIXt \\ 
+LAST\_USER\_TO\_UPDATE & character \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-38}{%
+\section*{Category Description}\label{category-description-38}}
+\addcontentsline{toc}{section}{Category Description}
+
+\begin{longtable}{l|ll}
+\caption*{
+{\large Variable Coding}
+} \\ 
+\toprule
+\multicolumn{1}{l}{} & Coding & Description \\ 
+\midrule
+\multicolumn{3}{l}{RESULT\_LOINC\_CODE} \\ 
+\midrule
+  & LA6576-8 & Positive result - SARS-CoV-2 (COVID-19) E gene [Presence] in Respiratory specimen by NAA with probe detection \\ 
+  & LA6577-6 & Negative result - SARS-CoV-2 (COVID-19) RNA [Presence] in Respiratory specimen by NAA with probe detection \\ 
+  & LA11885-3 & Equivocal result - SARS-CoV-2 (COVID-19) N gene [Presence] in Serum or Plasma by NAA with probe detection \\ 
+  & LA15841-2 & Invalid result - SARS-CoV-2 (COVID-19) ORF1ab region [Presence] in Respiratory specimen by NAA with probe detection \\ 
+  & LA11882-0 & Detected - Parainfluenza virus 1 RNA [Presence] in Nasopharynx by NAA with non-probe detection \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{statistics-38}{%
+\section*{Statistics}\label{statistics-38}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+15 & 31 \\ 
+\bottomrule
+\end{longtable}
+
+:::
+
+\hypertarget{serology_type_code}{%
+\chapter*{SEROLOGY\_TYPE\_CODE}\label{serology_type_code}}
+\addcontentsline{toc}{chapter}{SEROLOGY\_TYPE\_CODE}
+
+\hypertarget{description-39}{%
+\section*{Description}\label{description-39}}
+\addcontentsline{toc}{section}{Description}
+
+The serology\_type\_code table contains details on serology codes within
+IIS, including the respective CPT codes and description of each serology
+code. Updates to the serology code records are tracked with updating
+user and the date of each record update.
+
+\hypertarget{columns-39}{%
+\section*{Columns}\label{columns-39}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+SEROLOGY\_TYPE\_CODE & numeric \\ 
+DESCRIPTION & character \\ 
+CPT\_CODE & numeric \\ 
+INACTIVE\_STATUS & character \\ 
+SORT\_ORDER & numeric \\ 
+IS\_HISTORY\_SHORTCUT & character \\ 
+INSERT\_STAMP & POSIXct, POSIXt \\ 
+UPDATE\_STAMP & POSIXct, POSIXt \\ 
+INSERTED\_BY & character \\ 
+LAST\_USER\_TO\_UPDATE & character \\ 
+ASIIS\_VACC\_CODE & numeric \\ 
+REFERENCE\_CODE & character \\ 
+SEROLOGY\_LOINC\_CODE & character \\ 
+VACCINE\_FAMILY\_CODE & numeric \\ 
+RESULT\_SET\_ID & character \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-39}{%
+\section*{Category Description}\label{category-description-39}}
+\addcontentsline{toc}{section}{Category Description}
+
+\begin{longtable}{l|ll}
+\caption*{
+{\large Variable Coding}
+} \\ 
+\toprule
+\multicolumn{1}{l}{} & Coding & Description \\ 
+\midrule
+\multicolumn{3}{l}{SEROLOGY\_TYPE\_CODE} \\ 
+\midrule
+  & 1 & Varicella \\ 
+  & 50 & Serology confirmed Mumps \\ 
+  & 51 & Serology confirmed Rubella \\ 
+  & 52 & Serology confirmed Measles \\ 
+  & 53 & Serology confirmed Varicella \\ 
+  & 54 & Serology confirmed Hepatitis B \\ 
+  & 55 & Serology confirmed Hepatitis A \\ 
+  & 56 & SARS-CoV-2 IgG qualitative \\ 
+  & 57 & SARS-CoV-2 RdRp gene result \\ 
+  & 58 & SARS-CoV-2 result \\ 
+  & 59 & Overall SARS-CoV-2 result \\ 
+  & 60 & SARS-CoV-2 N gene result \\ 
+  & 61 & SARS-related CoV result \\ 
+  & 62 & SARS-CoV-2 ORF1ab region result \\ 
+  & 63 & SARS-CoV-2 Ab qualitative \\ 
+  & 64 & TB Gold, QuantiFERON \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{statistics-39}{%
+\section*{Statistics}\label{statistics-39}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+19 & 16 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{transfer}{%
+\chapter*{TRANSFER}\label{transfer}}
+\addcontentsline{toc}{chapter}{TRANSFER}
+
+\hypertarget{description-40}{%
+\section*{Description}\label{description-40}}
+\addcontentsline{toc}{section}{Description}
+
+Like the transfer\_items table, the transfer table contains a list of
+transfer IDs and details associated with each transfer, including the
+status of the transfer, approving user, and receiving user. Key
+information on the reviewing user, including userID, approval or denial
+date of the transfer, is included.
+
+\hypertarget{columns-40}{%
+\section*{Columns}\label{columns-40}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{ll}
+\toprule
+Columns & Type \\ 
+\midrule
+TRANSFER\_ID & character \\ 
+SENDING\_IRMS\_SYS\_ID & character \\ 
+SENDING\_ASIIS\_FAC\_ID & character \\ 
+RECEIVING\_IRMS\_SYS\_ID & character \\ 
+RECEIVING\_ASIIS\_FAC\_ID & character \\ 
+SUBMIT\_DATE & character \\ 
+APPROVAL\_DATE & character \\ 
+SHIP\_DATE & character \\ 
+RECEIPT\_DATE & character \\ 
+STATUS & character \\ 
+INSERT\_STAMP & character \\ 
+UPDATE\_STAMP & character \\ 
+LAST\_USER\_TO\_UPDATE & character \\ 
+INSERTED\_BY & character \\ 
+SUBMITTED\_BY & character \\ 
+APPROVED\_BY & character \\ 
+RECEIVED\_BY & character \\ 
+DENIED\_BY & character \\ 
+TRANSFER\_REJECTING\_REASON & character \\ 
+DENIAL\_DATE & character \\ 
+LOCAL\_APPROVER & character \\ 
+LOCAL\_APPROVER\_DATE & character \\ 
+STATE\_APPROVER & character \\ 
+STATE\_APPROVER\_DATE & character \\ 
+FIRST\_NAME & character \\ 
+LAST\_NAME & character \\ 
+PHONE\_NUMBER & character \\ 
+EMAIL\_ADDRESS & character \\ 
+SHIPPING\_METHOD & character \\ 
+CREATEDATETIME & character \\ 
+SysStartTime & character \\ 
+SysEndTime & character \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-40}{%
+\section*{Category Description}\label{category-description-40}}
+\addcontentsline{toc}{section}{Category Description}
+
+\hypertarget{statistics-40}{%
+\section*{Statistics}\label{statistics-40}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+33 & 44845 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{transfer_items}{%
+\chapter*{TRANSFER\_ITEMS}\label{transfer_items}}
+\addcontentsline{toc}{chapter}{TRANSFER\_ITEMS}
+
+\hypertarget{description-41}{%
+\section*{Description}\label{description-41}}
+\addcontentsline{toc}{section}{Description}
+
+The transfer\_items table contains a list of vaccine transfer request
+IDs with details, including transfer reason, approved quantity, transfer
+quantity, and lot number code.
+
+\hypertarget{columns-41}{%
+\section*{Columns}\label{columns-41}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{ll}
+\toprule
+Columns & Type \\ 
+\midrule
+TRANSFER\_ID & character \\ 
+TRANSFER\_ITEM\_ID & character \\ 
+LOT\_NUMBER\_CODE & character \\ 
+TRANSFER\_QUANTITY & character \\ 
+RECEIPT\_QUANTITY & character \\ 
+DENIAL\_REASON\_ID & character \\ 
+INSERT\_STAMP & character \\ 
+UPDATE\_STAMP & character \\ 
+INSERTED\_BY & character \\ 
+LAST\_USER\_TO\_UPDATE & character \\ 
+APPROVED\_QUANTITY & character \\ 
+TRANSFER\_REASON\_ID & character \\ 
+VACMAN\_ASIIS\_CODE\_ID & character \\ 
+PREVIOUSLY\_EXPORTED & character \\ 
+EXIS\_RETURN\_ID & character \\ 
+VTRCKS\_DATE\_SENT & character \\ 
+TRANSFER\_REASON\_COMMENT & character \\ 
+DENIAL\_DATE & character \\ 
+DENIED\_BY & character \\ 
+WASTAGE\_QUANTITY & character \\ 
+RECEIPT\_DATE & character \\ 
+STATUS & character \\ 
+BACKORDER\_QUANTITY & character \\ 
+CREATEDATETIME & character \\ 
+SysStartTime & character \\ 
+SysEndTime & character \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-41}{%
+\section*{Category Description}\label{category-description-41}}
+\addcontentsline{toc}{section}{Category Description}
+
+\hypertarget{statistics-41}{%
+\section*{Statistics}\label{statistics-41}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+27 & 75595 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{vacc_group_family}{%
+\chapter*{VACC\_GROUP\_FAMILY}\label{vacc_group_family}}
+\addcontentsline{toc}{chapter}{VACC\_GROUP\_FAMILY}
+
+\hypertarget{description-42}{%
+\section*{Description}\label{description-42}}
+\addcontentsline{toc}{section}{Description}
+
+The vacc\_group\_family table contains the descriptions of each
+respective group and family vaccine code. There are 33 codes total.
+
+\hypertarget{columns-42}{%
+\section*{Columns}\label{columns-42}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+GROUP\_CODE & numeric \\ 
+FAMILY\_CODE & numeric \\ 
+DESCRIPTION & character \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-42}{%
+\section*{Category Description}\label{category-description-42}}
+\addcontentsline{toc}{section}{Category Description}
+
+\setlength{\LTpost}{0mm}
+\begin{longtable}{l|ll}
+\caption*{
+{\large Variable Coding}
+} \\ 
+\toprule
+\multicolumn{1}{l}{} & Coding & Description \\ 
+\midrule
+\multicolumn{3}{l}{GROUP\_CODE\textsuperscript{1}} \\ 
+\midrule
+  & 10 & DTaP \\ 
+  & 11 & Tdap \\ 
+  & 25 & MENINGOCOCCAL B, RECOMBINANT \\ 
+  & 26 & MENINGOCOCCAL B, OMV \\ 
+  & 30 & Polio \\ 
+  & 40 & MMR \\ 
+  & 50 & Hib \\ 
+  & 60 & Hep A \\ 
+  & 70 & Hep B \\ 
+  & 80 & Varicella \\ 
+  & 110 & Rotavirus \\ 
+  & 120 & Influenza \\ 
+  & 130 & Pneumo (PCV7) \\ 
+  & 170 & Hep B - 2 Dose \\ 
+  & 180 & Anthrax \\ 
+  & 190 & Smallpox Vaccination \\ 
+  & 220 & Measles \\ 
+  & 230 & Mumps \\ 
+  & 240 & Rubella \\ 
+  & 250 & Pneumo (PPV23) \\ 
+  & 260 & Meningococcal \\ 
+  & 271 & HPV \\ 
+  & 280 & Herpes Zoster \\ 
+  & 290 & NOVEL INFLUENZA H1N1-09 \\ 
+  & 300 & Cholera \\ 
+  & 310 & Japanese Encephalitis \\ 
+  & 320 & Rabies \\ 
+  & 330 & Typhoid \\ 
+  & 340 & Yellow Fever \\ 
+  & 350 & Coronavirus (SARS-CoV-2)(COVID-19) \\ 
+  & 360 & Ebola \\ 
+  & 370 & Dengue \\ 
+  & 380 & Orthopoxvirus \\ 
+\midrule
+\multicolumn{3}{l}{FAMILY\_CODE\textsuperscript{1}} \\ 
+\midrule
+  & 1 & DTaP \\ 
+  & 24 & Tdap \\ 
+  & 25 & MENINGOCOCCAL B, RECOMBINANT \\ 
+  & 26 & MENINGOCOCCAL B, OMV \\ 
+  & 3 & Polio \\ 
+  & 5 & MMR \\ 
+  & 2 & Hib \\ 
+  & 9 & Hep A \\ 
+  & 4 & Hep B \\ 
+  & 6 & Varicella \\ 
+  & 20 & Rotavirus \\ 
+  & 10 & Influenza \\ 
+  & 11 & Pneumo (PCV7) \\ 
+  & 12 & Hep B - 2 Dose \\ 
+  & 13 & Anthrax \\ 
+  & 14 & Smallpox Vaccination \\ 
+  & 15 & Measles \\ 
+  & 16 & Mumps \\ 
+  & 17 & Rubella \\ 
+  & 18 & Pneumo (PPV23) \\ 
+  & 7 & Meningococcal \\ 
+  & 21 & HPV \\ 
+  & 22 & Herpes Zoster \\ 
+  & 23 & NOVEL INFLUENZA H1N1-09 \\ 
+  & 28 & Cholera \\ 
+  & 29 & Japanese Encephalitis \\ 
+  & 30 & Rabies \\ 
+  & 31 & Typhoid \\ 
+  & 32 & Yellow Fever \\ 
+  & 33 & Coronavirus (SARS-CoV-2)(COVID-19) \\ 
+  & 34 & Ebola \\ 
+  & 35 & Dengue \\ 
+  & 36 & Orthopoxvirus \\ 
+\bottomrule
+\end{longtable}
+\begin{minipage}{\linewidth}
+\textsuperscript{1}A full list of Family and Group codes is available at: https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared\%20Documents/CEDAR/CEDAR\%20Data\%20Dictionaries/Vaccine\%20Group\%20Code\%20Values\%20Table.xlsx?d=wa5d24116122446c89b871b14addcdf63\&csf=1\&web=1\&e=pE54y9\\
+\end{minipage}
+
+\begin{longtable}{ll}
+\caption*{
+{\large Full Code Lists for Vaccine Group Family Table}
+} \\ 
+\toprule
+Codes & Links \\ 
+\midrule
+Family and Group Codes & <p><a href = "https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared%20Documents/CEDAR/CEDAR%20Data%20Dictionaries/Vaccine%20Group%20Code%20Values%20Table.xlsx?d=wa5d24116122446c89b871b14addcdf63&csf=1&web=1&e=pE54y9">https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared%20Documents/CEDAR/CEDAR%20Data%20Dictionaries/Vaccine%20Group%20Code%20Values%20Table.xlsx?d=wa5d24116122446c89b871b14addcdf63&csf=1&web=1&e=pE54y9</a> \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{statistics-42}{%
+\section*{Statistics}\label{statistics-42}}
+\addcontentsline{toc}{section}{Statistics}
+
+Insert statistics here
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+7 & 33 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{vaccination_forecast}{%
+\chapter*{VACCINATION\_FORECAST}\label{vaccination_forecast}}
+\addcontentsline{toc}{chapter}{VACCINATION\_FORECAST}
+
+\hypertarget{description-43}{%
+\section*{Description}\label{description-43}}
+\addcontentsline{toc}{section}{Description}
+
+The vaccination\_forecast table contains administrative details on
+forecasted vaccine data.
+
+\hypertarget{columns-43}{%
+\section*{Columns}\label{columns-43}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+ASIIS\_PAT\_ID & numeric \\ 
+FAMILY\_CODE & numeric \\ 
+DOSE\_NUMBER & numeric \\ 
+DUE\_DATE & POSIXct, POSIXt \\ 
+MINIMUM\_DATE & POSIXct, POSIXt \\ 
+MAXIMUM\_DATE & POSIXct, POSIXt \\ 
+PAST\_DUE\_DATE & POSIXct, POSIXt \\ 
+CONFIDENTIAL\_SERVICE & character \\ 
+FORECAST\_SCHEDULE\_ID & numeric \\ 
+USED\_FORECAST\_PREF & character \\ 
+IS\_BOOSTER & character \\ 
+CDC\_VACCINE\_GROUP & character \\ 
+FORECAST\_CVX\_CODE & numeric \\ 
+FINAL\_DOSE & character \\ 
+TRANSACTION\_COMPLETE & character \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-43}{%
+\section*{Category Description}\label{category-description-43}}
+\addcontentsline{toc}{section}{Category Description}
+
+\setlength{\LTpost}{0mm}
+\begin{longtable}{l|ll}
+\caption*{
+{\large Variable Coding}
+} \\ 
+\toprule
+\multicolumn{1}{l}{} & Coding & Description \\ 
+\midrule
+\multicolumn{3}{l}{FAMILY\_CODE\textsuperscript{1}} \\ 
+\midrule
+  & 10 & Flu \\ 
+  & 5 & MMR \\ 
+  & 1 & DTaP/DT/Td \\ 
+  & 24 & Tdap \\ 
+  & 33 & Coronavirus (SARS-CoV-2)(COVID-19) \\ 
+\midrule
+\multicolumn{3}{l}{FORECAST\_CVX\_CODE\textsuperscript{2}} \\ 
+\midrule
+  & 88 & influenza, unspecified formulation \\ 
+  & 3 & MMR \\ 
+  & 115 & Tdap \\ 
+  & 213 & SARS-COV-2 (COVID-19) vaccine,UNSPECIFIED \\ 
+  & 139 & Td(adult) unspecified formulation \\ 
+\bottomrule
+\end{longtable}
+\begin{minipage}{\linewidth}
+\textsuperscript{1}A full list of Family Codes is available at: https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared\%20Documents/CEDAR/CEDAR\%20Data\%20Dictionaries/Family\_Code\%20Values\%20Table.xlsx?d=w545db4b21b99464ea49f8f2a26656d4a\&csf=1\&web=1\&e=PT3WT6\\
+\textsuperscript{2}A full list of Forecast CVX codes is available at: https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cvx\\
+\end{minipage}
+
+\begin{longtable}{ll}
+\caption*{
+{\large Full Code Lists for Vaccine Forecast Table}
+} \\ 
+\toprule
+Codes & Links \\ 
+\midrule
+Family Codes & <p><a href = "https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared%20Documents/CEDAR/CEDAR%20Data%20Dictionaries/Family_Code%20Values%20Table.xlsx?d=w545db4b21b99464ea49f8f2a26656d4a&csf=1&web=1&e=PT3WT6">https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared%20Documents/CEDAR/CEDAR%20Data%20Dictionaries/Family_Code%20Values%20Table.xlsx?d=w545db4b21b99464ea49f8f2a26656d4a&csf=1&web=1&e=PT3WT6</a> \\ 
+Forecast CVX Codes & <p><a href = "https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cvx">https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cvx</a> \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{statistics-43}{%
+\section*{Statistics}\label{statistics-43}}
+\addcontentsline{toc}{section}{Statistics}
+
+Insert statistics here
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+19 & 83332175 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{vaccination_master}{%
+\chapter*{VACCINATION\_MASTER}\label{vaccination_master}}
+\addcontentsline{toc}{chapter}{VACCINATION\_MASTER}
+
+\hypertarget{description-44}{%
+\section*{Description}\label{description-44}}
+\addcontentsline{toc}{section}{Description}
+
+The vaccination\_master table contains details on vaccination events,
+including vaccination code, facility and ordering provider, lot number,
+and manufacturer details.
+
+\hypertarget{columns-44}{%
+\section*{Columns}\label{columns-44}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+ASIIS\_PAT\_ID\_PTR & numeric \\ 
+ASIIS\_VACC\_CODE & numeric \\ 
+VACC\_DATE & POSIXct, POSIXt \\ 
+CDC\_VACC\_CODE & numeric \\ 
+CPT\_VACC\_CODE & numeric \\ 
+HISTORICAL & character \\ 
+LOT\_ASIIS\_FAC\_ID & numeric \\ 
+LOT\_NUM & character \\ 
+MANUFACTURER & character \\ 
+MANU\_CODE & character \\ 
+VACCINATOR & character \\ 
+VFC\_ELIGIBLE & numeric \\ 
+ANATOMICAL\_SITE & character \\ 
+ADVERSE\_REACTION\_CODE & numeric \\ 
+LAST\_IRMS\_SYS\_ID\_TO\_UPDATE & numeric \\ 
+LAST\_IRMS\_PAT\_ID\_TO\_UPDATE & character \\ 
+LAST\_IRMS\_PHY\_ID\_TO\_UPDATE & character \\ 
+LAST\_IRMS\_FAC\_ID\_TO\_UPDATE & character \\ 
+ASIIS\_FAC\_ID & numeric \\ 
+ASIIS\_PHYS\_ID & numeric \\ 
+DISTRICT\_NUMBER & numeric \\ 
+DELETION\_DATE & POSIXct, POSIXt \\ 
+VACC\_DELETE\_REASON\_CODE & numeric \\ 
+FROM\_REGISTRY & character \\ 
+LAST\_USER\_TO\_UPDATE & character \\ 
+VIS\_PUBLICATION & POSIXct, POSIXt \\ 
+VIS\_PUBLICATION2 & POSIXct, POSIXt \\ 
+VIS\_PUBLICATION3 & POSIXct, POSIXt \\ 
+VIS\_PUBLICATION4 & POSIXct, POSIXt \\ 
+VIS\_FORM\_GIVEN & POSIXct, POSIXt \\ 
+TB\_INDURATION & numeric \\ 
+INSERT\_STAMP & POSIXct, POSIXt \\ 
+UPDATE\_STAMP & POSIXct, POSIXt \\ 
+PVN & character \\ 
+LOT\_NUMBER\_CODE & numeric \\ 
+DILUENT\_LOT\_CODE & numeric \\ 
+DILUENT\_MANU\_CODE & character \\ 
+DILUENT\_LOT\_NUM & character \\ 
+DILUTED\_DATE & POSIXct, POSIXt \\ 
+REFERRING\_ORGANIZATION\_CODE & numeric \\ 
+USE\_REGISTRY\_INVENTORY & character \\ 
+RC\_SNAPSHOT\_ID & numeric \\ 
+INSERTED\_BY & character \\ 
+IS\_PUBLICLY\_SUPPLIED & character \\ 
+COMMENTS & character \\ 
+COMPROMISED\_CODE & numeric \\ 
+VACCINE\_SAFETY\_MONITOR & character \\ 
+HISTORICAL\_DATA & character \\ 
+IS\_UNVERIFIED & character \\ 
+CC\_VOLUME & numeric \\ 
+INVALID\_REASON\_CODE & numeric \\ 
+INVALID\_FAMILY\_CODE & numeric \\ 
+OWNERSHIP\_DECLINED & character \\ 
+HISTORICAL\_INFO\_SOURCE & character \\ 
+ANATOMICAL\_ROUTE & character \\ 
+DOSAGE\_UOM & character \\ 
+VERIFIED\_BY & numeric \\ 
+FORCED\_DOSE\_NUMBER & numeric \\ 
+FORCED\_DOSE\_REASON & character \\ 
+SERVICE\_TYPE & character \\ 
+IS\_MASTER\_DEDUP & character \\ 
+CONFIDENTIAL\_SERVICE & character \\ 
+ICD9\_CODE & character \\ 
+CAMPAIGN\_ID & numeric \\ 
+LINKING\_UPDATE\_STAMP & POSIXct, POSIXt \\ 
+DOSE\_SIZE & numeric \\ 
+TIER\_ID & numeric \\ 
+MAP\_VFC\_ELIGIBLE & character \\ 
+ORDERING\_PROVIDER\_ID & numeric \\ 
+FUNDING\_SOURCE\_ID & numeric \\ 
+IMPORT\_LOG\_ID & numeric \\ 
+LOT\_DEC\_FAIL\_CD & numeric \\ 
+VACCINE\_ORDER\_INTENT & character \\ 
+IWEB\_VACC\_EVENT\_ID & character \\ 
+TRANSACTION\_COMPLETE & character \\ 
+ORIGINATING\_IIS & character \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-44}{%
+\section*{Category Description}\label{category-description-44}}
+\addcontentsline{toc}{section}{Category Description}
+
+\setlength{\LTpost}{0mm}
+\begin{longtable}{l|ll}
+\caption*{
+{\large Variable Coding}
+} \\ 
+\toprule
+\multicolumn{1}{l}{} & Coding & Description \\ 
+\midrule
+\multicolumn{3}{l}{ASIIS\_VACC\_CODE} \\ 
+\midrule
+  & 3036 & COVID-19, mRNA, LNP-S, bivalent booster, PF, 30 mcg/0.3 mL dose (CDC code 300) \\ 
+  & 75 & Influenza, injectable, quadrivalent, preservative free (CDC code 150) \\ 
+  & 3035 & COVID-19, mRNA, LNP-S, bivalent booster, PF, 50 mcg/0.5 mL or 25mcg/0.25 mL dose (CDC code 229) \\ 
+  & 2070 & influenza, high-dose seasonal, quadrivalent, preservative free (CDC code 197) \\ 
+  & 2041 & Influenza, injectable, Madin Darby Canine Kidney, preservative free, quadrivalent 
+                      (CDC code 171) \\ 
+\midrule
+\multicolumn{3}{l}{CDC\_VACC\_CODE\textsuperscript{1}} \\ 
+\midrule
+  & 300 & COVID-19, mRNA, LNP-S, bivalent booster, PF, 30 mcg/0.3 mL dose \\ 
+  & 150 & Influenza, injectable, quadrivalent, preservative free \\ 
+  & 229 & COVID-19, mRNA, LNP-S, bivalent booster, PF, 50 mcg/0.5 mL or 25mcg/0.25 mL dose \\ 
+  & 197 & Influenza, high-dose, quadrivalent \\ 
+  & 171 & Influenza, injectable, MDCK, preservative free, quadrivalent \\ 
+\midrule
+\multicolumn{3}{l}{CPT\_VACC\_CODE\textsuperscript{2}} \\ 
+\midrule
+  & 91312 & Pfizer™ COVID-19 Vaccine - Bivalent Booster, Gray Cap \\ 
+  & 90715 & Adacel™ Tdap Vaccine \\ 
+  & 90686 & Fluarix™ Influenza Vaccine \\ 
+  & 90670 & Prevnar 13™ Pneumococcal Vaccine \\ 
+  & 90750 & Shingrix™ Zoster Vaccine \\ 
+\midrule
+\multicolumn{3}{l}{manufacturer\textsuperscript{3}} \\ 
+\midrule
+  & PFR & Pfizer, Inc. \\ 
+  & PMC & Sanofi Pasteur \\ 
+  & MOD & Moderna US, Inc. \\ 
+  & SEQ & Seqirus \\ 
+  & SKB & GlaxoSmithKline \\ 
+  & MSD & Merck and Co., Inc. \\ 
+  & IDB & ID Biomedical \\ 
+  & MSP & MSP Vaccine Company - (partnership Merck and Sanofi Pasteur) \\ 
+  & SP & Assumed misscoded value for Sanofi Pasteur (PMC) \\ 
+  & BN & Bavarian Nordic A/S \\ 
+  & MBL & Massachusetts Biologic Laboratories \\ 
+  & JSN & Janssen \\ 
+  & DVX & Dynavax, Inc. \\ 
+  & WAL & Wyeth \\ 
+  & MED & MedImmune, Inc. (AstraZeneca) \\ 
+\midrule
+\multicolumn{3}{l}{anatomical\_site\textsuperscript{4}} \\ 
+\midrule
+  & LD & Left Deltoid \\ 
+  & RD & Right Deltoid \\ 
+  & LVL & Left Vastus Lateralis \\ 
+  & RVL & Right Vastus Lateralis \\ 
+  & LLFA & Left Lower Forearm \\ 
+  & RLFA & Right Lower Forearm \\ 
+  & 26 & Other \\ 
+\midrule
+\multicolumn{3}{l}{adverse\_reaction} \\ 
+\midrule
+  & 42 & Vasovagal syncope (7 days) \\ 
+  & 44 & Life threatening adverse event \\ 
+  & 48 & An important medical event that based on appropriate medical judgement may jeopardize the
+                         individual and may require medical or surgical intervention \\ 
+  & 46 & Persistent or significant incapacity or substantial disruption of the ability to 
+                         conduct normal life functions \\ 
+  & 51 & Serious Adverse Event regardless of causality \\ 
+  & 32 & Any acute complications or sequelae (including death) of above events 
+                         (interval - not applicable) \\ 
+\bottomrule
+\end{longtable}
+\begin{minipage}{\linewidth}
+\textsuperscript{1}A full list of CDC Vaccination Codes is available at: https://www2a.cdc.gov/vaccines/iis/iisstandards/?rpt=cpt\\
+\textsuperscript{2}A full list of Vaccination CPT Codes is available at: https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cpt\\
+\textsuperscript{3}A full list of Vaccine Manufacter Codes is available at: https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=mvx\\
+\textsuperscript{4}A full vocabulary list of coded terms for vaccination sites is available at: https://phinvads.cdc.gov/vads/ViewValueSet.action?id=98257779-17B8-DF11-9BDD-0015173D1785\\
+\end{minipage}
+
+\begin{longtable}{ll}
+\caption*{
+{\large Full Code Lists for Vaccine Master Table}
+} \\ 
+\toprule
+Codes & Links \\ 
+\midrule
+CDC Vaccination Codes & <p><a href = "https://www2a.cdc.gov/vaccines/iis/iisstandards/?rpt=cpt">https://www2a.cdc.gov/vaccines/iis/iisstandards/?rpt=cpt</a> \\ 
+Vaccination CPT Codes & <p><a href = "https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cpt">https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cpt</a> \\ 
+Vaccine Manufacter Codes & <p><a href = "https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=mvx">https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=mvx</a> \\ 
+Vaccination Sites & <p><a href = "https://phinvads.cdc.gov/vads/ViewValueSet.action?id=98257779-17B8-DF11-9BDD-0015173D1785">https://phinvads.cdc.gov/vads/ViewValueSet.action?id=98257779-17B8-DF11-9BDD-0015173D1785</a> \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{statistics-44}{%
+\section*{Statistics}\label{statistics-44}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+80 & 149599822 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{vaccination_reserve}{%
+\chapter*{VACCINATION\_RESERVE}\label{vaccination_reserve}}
+\addcontentsline{toc}{chapter}{VACCINATION\_RESERVE}
+
+\hypertarget{description-45}{%
+\section*{Description}\label{description-45}}
+\addcontentsline{toc}{section}{Description}
+
+The vaccination\_reserve table contains details on historical
+vaccination data, including registry information, vaccination dosage and
+data sources.
+
+\hypertarget{columns-45}{%
+\section*{Columns}\label{columns-45}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+IRMS\_SYS\_ID & numeric \\ 
+IRMS\_PAT\_ID & character \\ 
+ASIIS\_PAT\_ID\_PTR & numeric \\ 
+ASIIS\_VACC\_CODE & numeric \\ 
+CDC\_VACC\_CODE & numeric \\ 
+CPT\_VACC\_CODE & numeric \\ 
+VACC\_DATE & POSIXct, POSIXt \\ 
+HISTORICAL & character \\ 
+LOT\_NUM & character \\ 
+MANUFACTURER & character \\ 
+MANU\_CODE & character \\ 
+VACCINATOR & character \\ 
+VFC\_ELIGIBLE & numeric \\ 
+ANATOMICAL\_SITE & character \\ 
+ADVERSE\_REACTION\_CODE & numeric \\ 
+IRMS\_FAC\_ID & character \\ 
+IRMS\_PHY\_ID & character \\ 
+DISTRICT\_NUMBER & numeric \\ 
+LAST\_USER\_TO\_UPDATE & character \\ 
+VIS\_PUBLICATION & POSIXct, POSIXt \\ 
+VIS\_PUBLICATION2 & POSIXct, POSIXt \\ 
+VIS\_PUBLICATION3 & POSIXct, POSIXt \\ 
+VIS\_PUBLICATION4 & POSIXct, POSIXt \\ 
+VIS\_FORM\_GIVEN & POSIXct, POSIXt \\ 
+TB\_INDURATION & numeric \\ 
+INSERT\_STAMP & POSIXct, POSIXt \\ 
+UPDATE\_STAMP & POSIXct, POSIXt \\ 
+REGISTRY\_ENTRY\_STAMP & POSIXct, POSIXt \\ 
+REGISTRY\_UPDATE\_STAMP & POSIXct, POSIXt \\ 
+DELETION\_DATE & POSIXct, POSIXt \\ 
+SEQUENCE\_ID & numeric \\ 
+PVN & character \\ 
+USE\_REGISTRY\_INVENTORY & character \\ 
+LOT\_NUMBER\_CODE & numeric \\ 
+RC\_SNAPSHOT\_ID & numeric \\ 
+INSERTED\_BY & character \\ 
+IS\_PUBLICLY\_SUPPLIED & character \\ 
+REFERRING\_ORGANIZATION\_CODE & numeric \\ 
+COMMENTS & character \\ 
+COMPROMISED\_CODE & numeric \\ 
+VACCINE\_SAFETY\_MONITOR & character \\ 
+HISTORICAL\_DATA & character \\ 
+IS\_UNVERIFIED & character \\ 
+CC\_VOLUME & numeric \\ 
+OWNERSHIP\_DECLINED & character \\ 
+IS\_MAPPED\_RECORD & character \\ 
+HISTORICAL\_INFO\_SOURCE & character \\ 
+ANATOMICAL\_ROUTE & character \\ 
+DOSAGE\_UOM & character \\ 
+VERIFIED\_BY & numeric \\ 
+FORCED\_DOSE\_NUMBER & numeric \\ 
+FORCED\_DOSE\_REASON & character \\ 
+SERVICE\_TYPE & character \\ 
+CONFIDENTIAL\_SERVICE & character \\ 
+ICD9\_CODE & character \\ 
+CAMPAIGN\_ID & numeric \\ 
+REPORTING\_METHOD & character \\ 
+DOSE\_SIZE & numeric \\ 
+TIER\_ID & numeric \\ 
+MAP\_VFC\_ELIGIBLE & character \\ 
+IRMS\_VACC\_ID & character \\ 
+ORDERING\_PROVIDER\_ID & numeric \\ 
+FUNDING\_SOURCE\_ID & numeric \\ 
+IMPORT\_LOG\_ID & numeric \\ 
+NDC\_NUMBER & character \\ 
+UNIQUE\_IMPORT\_ID & numeric \\ 
+LOT\_DEC\_FAIL\_CD & numeric \\ 
+MAP\_IS\_PROCESSED & character \\ 
+COMPLETION\_STATUS & character \\ 
+VACCINE\_ORDER\_INTENT & character \\ 
+IS\_FM\_ELIMINATED\_SITE\_VACC & character \\ 
+IWEB\_VACC\_EVENT\_ID & character \\ 
+ORIGINATING\_IIS & character \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-45}{%
+\section*{Category Description}\label{category-description-45}}
+\addcontentsline{toc}{section}{Category Description}
+
+\setlength{\LTpost}{0mm}
+\begin{longtable}{l|ll}
+\caption*{
+{\large Variable Coding}
+} \\ 
+\toprule
+\multicolumn{1}{l}{} & Coding & Description \\ 
+\midrule
+\multicolumn{3}{l}{ASIIS\_VACC\_CODE} \\ 
+\midrule
+  & 3036 & COVID-19, mRNA, LNP-S, bivalent booster, PF, 30 mcg/0.3 mL dose (CDC code 300) \\ 
+  & 75 & Influenza, injectable, quadrivalent, preservative free (CDC code 150) \\ 
+  & 3035 & COVID-19, mRNA, LNP-S, bivalent booster, PF, 50 mcg/0.5 mL or 25mcg/0.25 mL dose (CDC code 229) \\ 
+  & 2070 & influenza, high-dose seasonal, quadrivalent, preservative free (CDC code 197) \\ 
+  & 2041 & Influenza, injectable, Madin Darby Canine Kidney, preservative free, quadrivalent (CDC code 
+                       171) \\ 
+\midrule
+\multicolumn{3}{l}{CDC\_VACC\_CODE\textsuperscript{1}} \\ 
+\midrule
+  & 300 & COVID-19, mRNA, LNP-S, bivalent booster, PF, 30 mcg/0.3 mL dose \\ 
+  & 150 & Influenza, injectable, quadrivalent, preservative free \\ 
+  & 229 & COVID-19, mRNA, LNP-S, bivalent booster, PF, 50 mcg/0.5 mL or 25mcg/0.25 mL dose \\ 
+  & 197 & Influenza, high-dose, quadrivalent \\ 
+  & 171 & Influenza, injectable, MDCK, preservative free, quadrivalent \\ 
+\midrule
+\multicolumn{3}{l}{CPT\_VACC\_CODE\textsuperscript{2}} \\ 
+\midrule
+  & 91312 & Pfizer™ COVID-19 Vaccine - Bivalent Booster, Gray Cap \\ 
+  & 90715 & Adacel™ Tdap Vaccine \\ 
+  & 90686 & Fluarix™ Influenza Vaccine \\ 
+  & 90670 & Prevnar 13™ Pneumococcal Vaccine \\ 
+  & 90750 & Shingrix™ Zoster Vaccine \\ 
+\midrule
+\multicolumn{3}{l}{manufacturer\textsuperscript{3}} \\ 
+\midrule
+  & PFR & Pfizer, Inc. \\ 
+  & PMC & Sanofi Pasteur \\ 
+  & MOD & Moderna US, Inc. \\ 
+  & SEQ & Seqirus \\ 
+  & SKB & GlaxoSmithKline \\ 
+  & MSD & Merck and Co., Inc. \\ 
+  & IDB & ID Biomedical \\ 
+  & MSP & MSP Vaccine Company - (partnership Merck and Sanofi Pasteur) \\ 
+  & SP & Assumed misscoded value for Sanofi Pasteur (PMC) \\ 
+  & BN & Bavarian Nordic A/S \\ 
+  & MBL & Massachusetts Biologic Laboratories \\ 
+  & JSN & Janssen \\ 
+  & DVX & Dynavax, Inc. \\ 
+  & WAL & Wyeth \\ 
+  & MED & MedImmune, Inc. (AstraZeneca) \\ 
+\midrule
+\multicolumn{3}{l}{anatomical\_site\textsuperscript{4}} \\ 
+\midrule
+  & LD & Left Deltoid \\ 
+  & RD & Right Deltoid \\ 
+  & LVL & Left Vastus Lateralis \\ 
+  & RVL & Right Vastus Lateralis \\ 
+  & LLFA & Left Lower Forearm \\ 
+  & RLFA & Right Lower Forearm \\ 
+\midrule
+\multicolumn{3}{l}{adverse\_reaction\textsuperscript{5}} \\ 
+\midrule
+  & 26 & Other \\ 
+  & 42 & Vasovagal syncope (7 days) \\ 
+  & 44 & Life threatening adverse event \\ 
+  & 48 & An important medical event that based on appropriate medical judgement may jeopardize the
+                         individual and may require medical or surgical intervention \\ 
+  & 46 & Persistent or significant incapacity or substantial disruption of the ability to 
+                         conduct normal life functions \\ 
+  & 51 & Serious Adverse Event regardless of causality \\ 
+  & 32 & Any acute complications or sequelae (including death) of above events 
+                         (interval - not applicable) \\ 
+\midrule
+\multicolumn{3}{l}{reporting\_method} \\ 
+\midrule
+  & DTT & DTT Import: Entered into the IIS via a manual data upload \\ 
+  & REALTIME\_HL7 & HL7: Entered into the IIS via an HL7 message from a provider’s EHR \\ 
+  & DIRECT\_DATA\_ENTRY & Direct data entry: Entered into the IIS manually \\ 
+  & VITAL\_STATISTICS & Entered into the IIS via vital statistics record \\ 
+  & VITAL\_STATS & Entered into the IIS via vital statistics record \\ 
+  & BATCH\_HL7 & Batch HL7 import \\ 
+  & PAPER\_DATA\_ENTRY & Direct data entry from paper record \\ 
+  & REMOTE\_CLINIC & Direct data entry from Remote clinic \\ 
+\midrule
+\multicolumn{3}{l}{ndc\_number\textsuperscript{6}} \\ 
+\midrule
+  & 59267-1000-02 & Pfizer COVID-19, mRNA, LNP-S, PF, 30 mcg/0.3 mL dose \\ 
+  & 80777-0273-99 & Moderna COVID-19, mRNA, LNP-S, PF, 100 mcg/0.5mL dose or 50 mcg/0.25mL dose \\ 
+  & 58160-0823-11 & Shingrix zoster recombinant \\ 
+  & 80777-0273-10 & Moderna COVID-19, mRNA, LNP-S, PF, 100 mcg/0.5mL dose or 50 mcg/0.25mL dose \\ 
+  & 00005-1971-02 & Prevnar 13 Pneumococcal conjugate PCV 13 \\ 
+\bottomrule
+\end{longtable}
+\begin{minipage}{\linewidth}
+\textsuperscript{1}A full list of CDC Vaccination Codes is available at: https://www2a.cdc.gov/vaccines/iis/iisstandards/?rpt=cpt\\
+\textsuperscript{2}A full list of Vaccination CPT Codes is available at: https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cpt\\
+\textsuperscript{3}A full list of Vaccine Manufacter Codes is available at: https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=mvx\\
+\textsuperscript{4}A full vocabulary list of coded terms for vaccination sites is available at: https://phinvads.cdc.gov/vads/ViewValueSet.action?id=98257779-17B8-DF11-9BDD-0015173D1785\\
+\textsuperscript{5}A full list of Reaction Site Codes is available at: https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared\%20Documents/CEDAR/CEDAR\%20Data\%20Dictionaries/Adverse\_Reaction\%20Code\%20Values\%20Table.xlsx?d=w7ac90aeede44401db78dddf8cbdee908\&csf=1\&web=1\&e=7PJKg9\\
+\textsuperscript{6}A full list of NDC Number Codes is available at: https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=ndc\\
+\end{minipage}
+
+\begin{longtable}{ll}
+\caption*{
+{\large Full Code Lists for Vaccine Reserve Table}
+} \\ 
+\toprule
+Codes & Links \\ 
+\midrule
+CDC Vaccination Codes & <p><a href = "https://www2a.cdc.gov/vaccines/iis/iisstandards/?rpt=cpt">https://www2a.cdc.gov/vaccines/iis/iisstandards/?rpt=cpt</a> \\ 
+Vaccination CPT Codes & <p><a href = "https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cpt">https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cpt</a> \\ 
+Vaccine Manufacter Codes & <p><a href = "https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=mvx">https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=mvx</a> \\ 
+Vaccination Sites & <p><a href = "https://phinvads.cdc.gov/vads/ViewValueSet.action?id=98257779-17B8-DF11-9BDD-0015173D1785">https://phinvads.cdc.gov/vads/ViewValueSet.action?id=98257779-17B8-DF11-9BDD-0015173D1785</a> \\ 
+Reaction Site Codes & <p><a href = "https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared%20Documents/CEDAR/CEDAR%20Data%20Dictionaries/Adverse_Reaction%20Code%20Values%20Table.xlsx?d=w7ac90aeede44401db78dddf8cbdee908&csf=1&web=1&e=7PJKg9">https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared%20Documents/CEDAR/CEDAR%20Data%20Dictionaries/Adverse_Reaction%20Code%20Values%20Table.xlsx?d=w7ac90aeede44401db78dddf8cbdee908&csf=1&web=1&e=7PJKg9</a> \\ 
+NDC Number Codes & <p><a href = "https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=ndc">https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=ndc</a> \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{statistics-45}{%
+\section*{Statistics}\label{statistics-45}}
+\addcontentsline{toc}{section}{Statistics}
+
+Insert statistics here
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+77 & 196191717 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{vaccine_family}{%
+\chapter*{VACCINE\_FAMILY}\label{vaccine_family}}
+\addcontentsline{toc}{chapter}{VACCINE\_FAMILY}
+
+\hypertarget{description-46}{%
+\section*{Description}\label{description-46}}
+\addcontentsline{toc}{section}{Description}
+
+The vaccine\_family table contains information on asiis\_vacc\_code
+values and each respective family code.
+
+\hypertarget{columns-46}{%
+\section*{Columns}\label{columns-46}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+FAMILY\_CODE & numeric \\ 
+ASIIS\_VACC\_CODE & numeric \\ 
+COMBO\_VACCINE\_ORDER & numeric \\ 
+VACCINE\_REPORT\_GROUPING & numeric \\ 
+COMMENTS & character \\ 
+SMART\_VACCINE\_GROUP & character \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-46}{%
+\section*{Category Description}\label{category-description-46}}
+\addcontentsline{toc}{section}{Category Description}
+
+\setlength{\LTpost}{0mm}
+\begin{longtable}{l|ll}
+\caption*{
+{\large Variable Coding}
+} \\ 
+\toprule
+\multicolumn{1}{l}{} & Coding & Description \\ 
+\midrule
+\multicolumn{3}{l}{GROUP\_CODE\textsuperscript{1}} \\ 
+\midrule
+  & 10 & DTaP \\ 
+  & 11 & Tdap \\ 
+  & 25 & MENINGOCOCCAL B, RECOMBINANT \\ 
+  & 26 & MENINGOCOCCAL B, OMV \\ 
+  & 30 & Polio \\ 
+  & 40 & MMR \\ 
+  & 50 & Hib \\ 
+  & 60 & Hep A \\ 
+  & 70 & Hep B \\ 
+  & 80 & Varicella \\ 
+  & 110 & Rotavirus \\ 
+  & 120 & Influenza \\ 
+  & 130 & Pneumo (PCV7) \\ 
+  & 170 & Hep B - 2 Dose \\ 
+  & 180 & Anthrax \\ 
+  & 190 & Smallpox Vaccination \\ 
+  & 220 & Measles \\ 
+  & 230 & Mumps \\ 
+  & 240 & Rubella \\ 
+  & 250 & Pneumo (PPV23) \\ 
+  & 260 & Meningococcal \\ 
+  & 271 & HPV \\ 
+  & 280 & Herpes Zoster \\ 
+  & 290 & NOVEL INFLUENZA H1N1-09 \\ 
+  & 300 & Cholera \\ 
+  & 310 & Japanese Encephalitis \\ 
+  & 320 & Rabies \\ 
+  & 330 & Typhoid \\ 
+  & 340 & Yellow Fever \\ 
+  & 350 & Coronavirus (SARS-CoV-2)(COVID-19) \\ 
+  & 360 & Ebola \\ 
+  & 370 & Dengue \\ 
+  & 380 & Orthopoxvirus \\ 
+\midrule
+\multicolumn{3}{l}{FAMILY\_CODE} \\ 
+\midrule
+  & 1 & DTaP \\ 
+  & 24 & Tdap \\ 
+  & 25 & MENINGOCOCCAL B, RECOMBINANT \\ 
+  & 26 & MENINGOCOCCAL B, OMV \\ 
+  & 3 & Polio \\ 
+  & 5 & MMR \\ 
+  & 2 & Hib \\ 
+  & 9 & Hep A \\ 
+  & 4 & Hep B \\ 
+  & 6 & Varicella \\ 
+  & 20 & Rotavirus \\ 
+  & 10 & Influenza \\ 
+  & 11 & Pneumo (PCV7) \\ 
+  & 12 & Hep B - 2 Dose \\ 
+  & 13 & Anthrax \\ 
+  & 14 & Smallpox Vaccination \\ 
+  & 15 & Measles \\ 
+  & 16 & Mumps \\ 
+  & 17 & Rubella \\ 
+  & 18 & Pneumo (PPV23) \\ 
+  & 7 & Meningococcal \\ 
+  & 21 & HPV \\ 
+  & 22 & Herpes Zoster \\ 
+  & 23 & NOVEL INFLUENZA H1N1-09 \\ 
+  & 28 & Cholera \\ 
+  & 29 & Japanese Encephalitis \\ 
+  & 30 & Rabies \\ 
+  & 31 & Typhoid \\ 
+  & 32 & Yellow Fever \\ 
+  & 33 & Coronavirus (SARS-CoV-2)(COVID-19) \\ 
+  & 34 & Ebola \\ 
+  & 35 & Dengue \\ 
+  & 36 & Orthopoxvirus \\ 
+\bottomrule
+\end{longtable}
+\begin{minipage}{\linewidth}
+\textsuperscript{1}A full list of group and family vaccination codes is available at: https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared\%20Documents/CEDAR/CEDAR\%20Data\%20Dictionaries/Vaccine\%20Group\%20Code\%20Values\%20Table.xlsx?d=wa5d24116122446c89b871b14addcdf63\&csf=1\&web=1\\
+\end{minipage}
+
+\hypertarget{statistics-46}{%
+\section*{Statistics}\label{statistics-46}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+10 & 224 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{vaccine_family_code}{%
+\chapter*{VACCINE\_FAMILY\_CODE}\label{vaccine_family_code}}
+\addcontentsline{toc}{chapter}{VACCINE\_FAMILY\_CODE}
+
+\hypertarget{description-47}{%
+\section*{Description}\label{description-47}}
+\addcontentsline{toc}{section}{Description}
+
+The vaccine\_family\_code table contains a list of the IIS vaccine
+family codes with details including their respective descriptions,
+vaccination grace period(s), and licensure date.
+
+\hypertarget{columns-47}{%
+\section*{Columns}\label{columns-47}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+FAMILY\_CODE & numeric \\ 
+DESCRIPTION & character \\ 
+INCLUDE\_IN\_RECALL & character \\ 
+VACCINATION\_GRACE\_PERIOD & numeric \\ 
+RESPONDER & character \\ 
+DISPLAY\_SINGLE\_ANTIGEN & character \\ 
+SUPPRESS\_DOSE1\_FORECAST & character \\ 
+INCLUDE\_IN\_WIC & character \\ 
+MAXIMUM\_AGE\_TO\_FORECAST & numeric \\ 
+MAXIMUM\_AGE\_TO\_FORECAST\_UNITS & character \\ 
+END\_FORECAST\_DOSE\_NO & numeric \\ 
+INCLUDE\_IN\_CHILD\_CARE & character \\ 
+LICENSURE\_DATE & POSIXct, POSIXt \\ 
+CDC\_VACCINE\_GROUP & character \\ 
+INCLUDE\_IN\_VALIDATION & character \\ 
+INCLUDE\_IN\_FORECAST & character \\ 
+DISPLAY\_IN\_PREFS & character \\ 
+MINIMUM\_AGE\_TO\_FORECAST & numeric \\ 
+MINIMUM\_AGE\_TO\_FORECAST\_UNITS & character \\ 
+PRIMARY\_FORECAST\_CVX & numeric \\ 
+SECONDARY\_FORECAST\_CVX & numeric \\ 
+OTHER\_FORECAST\_CVX & numeric \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-47}{%
+\section*{Category Description}\label{category-description-47}}
+\addcontentsline{toc}{section}{Category Description}
+
+\setlength{\LTpost}{0mm}
+\begin{longtable}{l|ll}
+\caption*{
+{\large Variable Coding}
+} \\ 
+\toprule
+\multicolumn{1}{l}{} & Coding & Description \\ 
+\midrule
+\multicolumn{3}{l}{FAMILY\_CODE\textsuperscript{1}} \\ 
+\midrule
+  & 1 & DTaP \\ 
+  & 24 & Tdap \\ 
+  & 25 & MENINGOCOCCAL B, RECOMBINANT \\ 
+  & 26 & MENINGOCOCCAL B, OMV \\ 
+  & 3 & Polio \\ 
+  & 5 & MMR \\ 
+  & 2 & Hib \\ 
+  & 9 & Hep A \\ 
+  & 4 & Hep B \\ 
+  & 6 & Varicella \\ 
+  & 20 & Rotavirus \\ 
+  & 10 & Influenza \\ 
+  & 11 & Pneumo (PCV7) \\ 
+  & 12 & Hep B - 2 Dose \\ 
+  & 13 & Anthrax \\ 
+  & 14 & Smallpox Vaccination \\ 
+  & 15 & Measles \\ 
+  & 16 & Mumps \\ 
+  & 17 & Rubella \\ 
+  & 18 & Pneumo (PPV23) \\ 
+  & 7 & Meningococcal \\ 
+  & 21 & HPV \\ 
+  & 22 & Herpes Zoster \\ 
+  & 23 & NOVEL INFLUENZA H1N1-09 \\ 
+  & 28 & Cholera \\ 
+  & 29 & Japanese Encephalitis \\ 
+  & 30 & Rabies \\ 
+  & 31 & Typhoid \\ 
+  & 32 & Yellow Fever \\ 
+  & 33 & Coronavirus (SARS-CoV-2)(COVID-19) \\ 
+  & 34 & Ebola \\ 
+  & 35 & Dengue \\ 
+  & 36 & Orthopoxvirus \\ 
+\bottomrule
+\end{longtable}
+\begin{minipage}{\linewidth}
+\textsuperscript{1}A full list of vaccine family and group codes is available at: https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared\%20Documents/CEDAR/CEDAR\%20Data\%20Dictionaries/Vaccine\%20Group\%20Code\%20Values\%20Table.xlsx?d=wa5d24116122446c89b871b14addcdf63\&csf=1\&web=1\&e=pE54y9\\
+\end{minipage}
+
+\begin{longtable}{ll}
+\caption*{
+{\large Full Code Lists for Vaccine Group Family Table}
+} \\ 
+\toprule
+Codes & Links \\ 
+\midrule
+Family and Group Codes & <p><a href = "https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared%20Documents/CEDAR/CEDAR%20Data%20Dictionaries/Vaccine%20Group%20Code%20Values%20Table.xlsx?d=wa5d24116122446c89b871b14addcdf63&csf=1&web=1&e=pE54y9">https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared%20Documents/CEDAR/CEDAR%20Data%20Dictionaries/Vaccine%20Group%20Code%20Values%20Table.xlsx?d=wa5d24116122446c89b871b14addcdf63&csf=1&web=1&e=pE54y9</a> \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{statistics-47}{%
+\section*{Statistics}\label{statistics-47}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+26 & 34 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{vaccine_funding_source}{%
+\chapter*{VACCINE\_FUNDING\_SOURCE}\label{vaccine_funding_source}}
+\addcontentsline{toc}{chapter}{VACCINE\_FUNDING\_SOURCE}
+
+\hypertarget{description-48}{%
+\section*{Description}\label{description-48}}
+\addcontentsline{toc}{section}{Description}
+
+The vaccine\_funding\_source table contains descriptions of
+funding\_source\_id coded values, as well as the vtracks\_code and
+quick\_indicator values.
+
+\hypertarget{columns-48}{%
+\section*{Columns}\label{columns-48}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+FUNDING\_SOURCE\_ID & numeric \\ 
+SORT\_ORDER & numeric \\ 
+INTERNAL\_DESCRIPTION & character \\ 
+HL7\_CODE & character \\ 
+QUICK\_INDICATOR & character \\ 
+PUBLICLY\_SUPPLIED & character \\ 
+INCLUDE\_IN\_IIS\_DROP\_DOWN & character \\ 
+VTRCKS\_CODE & character \\ 
+INSERT\_STAMP & POSIXct, POSIXt \\ 
+UPDATE\_STAMP & POSIXct, POSIXt \\ 
+INSERTED\_BY & character \\ 
+LAST\_USER\_TO\_UPDATE & character \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-48}{%
+\section*{Category Description}\label{category-description-48}}
+\addcontentsline{toc}{section}{Category Description}
+
+\begin{longtable}{l|ll}
+\caption*{
+{\large Variable Coding}
+} \\ 
+\toprule
+\multicolumn{1}{l}{} & Coding & Description \\ 
+\midrule
+\multicolumn{3}{l}{FUNDING\_SOURCE\_ID} \\ 
+\midrule
+  & 30 & Not applicable \\ 
+  & 60 & PHSA - Section 317 \\ 
+  & 20 & Privately Supplied \\ 
+  & 50 & State Supplied \\ 
+  & 40 & Vaccine for Children \\ 
+  & 100 & Pandemic \\ 
+  & 70 & Split \\ 
+  & 10 & Publicly Supplied \\ 
+\midrule
+\multicolumn{3}{l}{vtrcks\_code} \\ 
+\midrule
+  & NA & Not applicable \\ 
+  & 317 & PHSA - Section 317 \\ 
+  & PRVT & Privately Supplied \\ 
+  & STATE & State Supplied \\ 
+  & VFC & Vaccine for Children \\ 
+  & PAN & Pandemic \\ 
+  & SPLIT & Split \\ 
+  & PUB & Publicly Supplied \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{statistics-48}{%
+\section*{Statistics}\label{statistics-48}}
+\addcontentsline{toc}{section}{Statistics}
+
+Insert statistics here
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+16 & 8 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{vaccine_product}{%
+\chapter*{VACCINE\_PRODUCT}\label{vaccine_product}}
+\addcontentsline{toc}{chapter}{VACCINE\_PRODUCT}
+
+\hypertarget{description-49}{%
+\section*{Description}\label{description-49}}
+\addcontentsline{toc}{section}{Description}
+
+The vaccine\_product table contains a list of vaccine product IDs and
+their corresponding ASIIS\_VACC\_CODE values. This table also contains a
+description and the maker of the vaccine product.
+
+\hypertarget{columns-49}{%
+\section*{Columns}\label{columns-49}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+VACCINE\_PRODUCT\_ID & numeric \\ 
+ASIIS\_VACC\_CODE & numeric \\ 
+PRODUCT\_NAME & character \\ 
+MAKER & character \\ 
+OUTER\_PKG\_SIZE & numeric \\ 
+PRESENTATION & character \\ 
+VOLUME & character \\ 
+INACTIVE\_STATUS & character \\ 
+INSERT\_STAMP & POSIXct, POSIXt \\ 
+UPDATE\_STAMP & POSIXct, POSIXt \\ 
+INSERTED\_BY & character \\ 
+LAST\_USER\_TO\_UPDATE & character \\ 
+CDC\_VACC\_CODE & numeric \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-49}{%
+\section*{Category Description}\label{category-description-49}}
+\addcontentsline{toc}{section}{Category Description}
+
+This section contains variable coding for relevant columns within the
+VACCINE\_PRODUCT table.
+
+\setlength{\LTpost}{0mm}
+\begin{longtable}{l|ll}
+\caption*{
+{\large Variable Coding}
+} \\ 
+\toprule
+\multicolumn{1}{l}{} & Coding & Description \\ 
+\midrule
+\multicolumn{3}{l}{ASIIS\_VACC\_CODE\textsuperscript{1}} \\ 
+\midrule
+  & 3036 & COVID-19, mRNA, LNP-S, bivalent booster, PF, 30 mcg/0.3 mL dose \\ 
+  & 75 & influenza, injectable, quadrivalent, preservative free \\ 
+  & 3035 & COVID-19, mRNA, LNP-S, bivalent booster, PF, 50 mcg/0.5 mL or 25mcg/0.25 mL dose \\ 
+  & 2070 & influenza, high-dose, quadrivalent \\ 
+  & 2041 & Influenza, injectable, MDCK, preservative free, quadrivalent \\ 
+\bottomrule
+\end{longtable}
+\begin{minipage}{\linewidth}
+\textsuperscript{1}A full list of commonly used IIS Vaccination Codes in WA is available at: https://doh.wa.gov/sites/default/files/2022-02/348-580-ConsolidatedBestChoicesGuide.pdf\\
+\end{minipage}
+
+\hypertarget{statistics-49}{%
+\section*{Statistics}\label{statistics-49}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+17 & 430 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{vaccine_product_mapping}{%
+\chapter*{VACCINE\_PRODUCT\_MAPPING}\label{vaccine_product_mapping}}
+\addcontentsline{toc}{chapter}{VACCINE\_PRODUCT\_MAPPING}
+
+\hypertarget{description-50}{%
+\section*{Description}\label{description-50}}
+\addcontentsline{toc}{section}{Description}
+
+The vaccine\_product\_mapping table contains a list of vaccine product
+ID values by system mapping ID.
+
+\hypertarget{columns-50}{%
+\section*{Columns}\label{columns-50}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+MAPPING\_ID & numeric \\ 
+VACCINE\_PRODUCT\_ID & numeric \\ 
+GTIN & character \\ 
+DIN\_NUMBER & character \\ 
+NDC\_NUMBER & character \\ 
+IS\_USE\_NDC & character \\ 
+INACTIVE\_STATUS & character \\ 
+INSERT\_STAMP & POSIXct, POSIXt \\ 
+UPDATE\_STAMP & POSIXct, POSIXt \\ 
+INSERTED\_BY & character \\ 
+LAST\_USER\_TO\_UPDATE & character \\ 
+IS\_SALE\_NDC & character \\ 
+CDC\_VACC\_CODE & numeric \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-50}{%
+\section*{Category Description}\label{category-description-50}}
+\addcontentsline{toc}{section}{Category Description}
+
+\hypertarget{statistics-50}{%
+\section*{Statistics}\label{statistics-50}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+17 & 789 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{vacman_asiis_code}{%
+\chapter*{VACMAN\_ASIIS\_CODE}\label{vacman_asiis_code}}
+\addcontentsline{toc}{chapter}{VACMAN\_ASIIS\_CODE}
+
+\hypertarget{description-51}{%
+\section*{Description}\label{description-51}}
+\addcontentsline{toc}{section}{Description}
+
+The vacman\_asiis\_code table contains details from the VacMan database
+managemnt system, including the ASIIS vaccine code, maker, description,
+and funding source of each vaccine. NDC and contract number information
+is provided. The VacMan system allows providers to submit vaccine
+inventory information to their state registry.
+
+\hypertarget{columns-51}{%
+\section*{Columns}\label{columns-51}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{ll}
+\toprule
+Columns & Type \\ 
+\midrule
+ASIIS\_VACC\_CODE\_BKP & character \\ 
+VACMAN\_VACC\_CODE & character \\ 
+DESCRIPTION\_BKP & character \\ 
+MAKER\_BKP & character \\ 
+PKG\_SIZE\_BKP & character \\ 
+NDC\_NUMBER\_BKP & character \\ 
+COST & character \\ 
+CONTRACT & character \\ 
+VACMAN\_ASIIS\_CODE\_ID & character \\ 
+PKG\_TYPE & character \\ 
+DELETION\_DATE & character \\ 
+FUNDING\_SOURCE & character \\ 
+IS\_DEFAULT & character \\ 
+ORDERING\_INTENTION & character \\ 
+STATE\_PO\_NUMBER & character \\ 
+INACTIVE\_STATUS & character \\ 
+VOLUME & character \\ 
+INSERT\_STAMP & character \\ 
+UPDATE\_STAMP & character \\ 
+IS\_LIMITED & character \\ 
+FUNDING\_LIMIT & character \\ 
+DOSE\_LIMIT & character \\ 
+IRMS\_SYS\_ID & character \\ 
+ASIIS\_FAC\_ID & character \\ 
+VACCINE\_LEVEL & character \\ 
+PVD\_VACMAN\_ASIIS\_CODE\_ID & character \\ 
+VACCINE\_PRODUCT\_ID & character \\ 
+MIN\_ORDER\_QTY & character \\ 
+DIRECT\_SHIP & character \\ 
+IS\_RESTRICT\_FROM\_ORDERING & character \\ 
+CREATEDATETIME & character \\ 
+SysStartTime & character \\ 
+SysEndTime & character \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-51}{%
+\section*{Category Description}\label{category-description-51}}
+\addcontentsline{toc}{section}{Category Description}
+
+This section contains variable coding for relevant columns within the
+ASIIS\_VACC\_CODE table.
+
+\setlength{\LTpost}{0mm}
+\begin{longtable}{l|ll}
+\caption*{
+{\large Variable Coding}
+} \\ 
+\toprule
+\multicolumn{1}{l}{} & Coding & Description \\ 
+\midrule
+\multicolumn{3}{l}{ASIIS\_VACC\_CODE\_BKP\textsuperscript{1}} \\ 
+\midrule
+  & 3036 & COVID-19, mRNA, LNP-S, bivalent booster, PF, 30 mcg/0.3 mL dose \\ 
+  & 75 & influenza, injectable, quadrivalent, preservative free \\ 
+  & 3035 & COVID-19, mRNA, LNP-S, bivalent booster, PF, 50 mcg/0.5 mL or 25mcg/0.25 mL dose \\ 
+  & 2070 & influenza, high-dose, quadrivalent \\ 
+  & 2041 & Influenza, injectable, MDCK, preservative free, quadrivalent \\ 
+\bottomrule
+\end{longtable}
+\begin{minipage}{\linewidth}
+\textsuperscript{1}A full list of the most common IIS codes in WA is available at: https://doh.wa.gov/sites/default/files/2022-02/348-580-ConsolidatedBestChoicesGuide.pdf\\
+\end{minipage}
+
+\hypertarget{statistics-51}{%
+\section*{Statistics}\label{statistics-51}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+34 & 420 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{valid_vaccination}{%
+\chapter*{VALID\_VACCINATION}\label{valid_vaccination}}
+\addcontentsline{toc}{chapter}{VALID\_VACCINATION}
+
+\hypertarget{description-52}{%
+\section*{Description}\label{description-52}}
+\addcontentsline{toc}{section}{Description}
+
+The valid\_vaccination table contains details on asiis\_pat\_id values
+filtered by valid vaccination indicator (`Y'). Values for the
+vaccination date and most recent record update are included.
+
+\hypertarget{columns-52}{%
+\section*{Columns}\label{columns-52}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+ASIIS\_PAT\_ID & numeric \\ 
+FAMILY\_CODE & numeric \\ 
+VACC\_DATE & POSIXct, POSIXt \\ 
+ASIIS\_VACC\_CODE & numeric \\ 
+SCHEDULE\_ID & numeric \\ 
+DOSE\_NUMBER & numeric \\ 
+DERIVED\_DOSE & character \\ 
+VALID\_VACC & character \\ 
+MEETS\_ALT\_INTERVAL & character \\ 
+INVALID\_REASON\_CODE & numeric \\ 
+FOOTNOTE\_FLAG & character \\ 
+CONFIDENTIAL\_SERVICE & character \\ 
+IS\_COMPROMISED & character \\ 
+UPDATE\_STAMP & POSIXct, POSIXt \\ 
+SERIES\_COMPLETE & character \\ 
+IGNORE\_DOSE & character \\ 
+IS\_BOOSTER & character \\ 
+IS\_TDAP & character \\ 
+TRANSACTION\_COMPLETE & character \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-52}{%
+\section*{Category Description}\label{category-description-52}}
+\addcontentsline{toc}{section}{Category Description}
+
+\begin{longtable}{l|ll}
+\caption*{
+{\large Variable Coding}
+} \\ 
+\toprule
+\multicolumn{1}{l}{} & Coding & Description \\ 
+\midrule
+\multicolumn{3}{l}{FAMILY\_CODE} \\ 
+\midrule
+  & 1 & DTaP \\ 
+  & 24 & Tdap \\ 
+  & 25 & MENINGOCOCCAL B,RECOMBINANT \\ 
+  & 26 & MENINGOCOCCAL B,OMV \\ 
+  & 3 & Polio \\ 
+  & 5 & MMR \\ 
+  & 2 & Hib \\ 
+  & 9 & Hep A \\ 
+  & 4 & Hep B \\ 
+  & 6 & Varicella \\ 
+  & 20 & Rotavirus \\ 
+  & 10 & Influenza \\ 
+  & 11 & Pneumo (PCV7) \\ 
+  & 12 & Hep B - 2 Dose \\ 
+  & 13 & Anthrax \\ 
+  & 14 & Smallpox Vaccination \\ 
+  & 15 & Measles \\ 
+  & 16 & Mumps \\ 
+  & 17 & Rubella \\ 
+  & 18 & Pneumo (PPV23) \\ 
+  & 7 & Meningococcal \\ 
+  & 21 & HPV \\ 
+  & 22 & Herpes Zoster \\ 
+  & 23 & NOVEL INFLUENZA H1N1-09 \\ 
+  & 28 & Cholera \\ 
+  & 29 & Japanese Encephalitis \\ 
+  & 30 & Rabies \\ 
+  & 31 & Typhoid \\ 
+  & 32 & Yellow Fever \\ 
+  & 33 & Coronavirus (SARS-CoV-2)(COVID-19) \\ 
+  & 34 & Ebola \\ 
+  & 35 & Dengue \\ 
+  & 36 & Orthopoxvirus \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{statistics-52}{%
+\section*{Statistics}\label{statistics-52}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+23 & 196201104 \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{web_vaccine_family_code}{%
+\chapter*{WEB\_VACCINE\_FAMILY\_CODE}\label{web_vaccine_family_code}}
+\addcontentsline{toc}{chapter}{WEB\_VACCINE\_FAMILY\_CODE}
+
+\hypertarget{description-53}{%
+\section*{Description}\label{description-53}}
+\addcontentsline{toc}{section}{Description}
+
+The web\_vaccine\_family\_code table contains a list of usernames
+associated with the update of vaccine family codes in WA IIS. Username
+records may be included or excluded from display in IIS.
+
+\hypertarget{columns-53}{%
+\section*{Columns}\label{columns-53}}
+\addcontentsline{toc}{section}{Columns}
+
+\begin{longtable}{lc}
+\toprule
+Columns & Type \\ 
+\midrule
+USERNAME & character \\ 
+FAMILY\_CODE & numeric \\ 
+MAXIMUM\_FORECAST\_AGE & numeric \\ 
+AGE\_UNITS & character \\ 
+EXCLUDE\_STANDARD\_DISPLAY & character \\ 
+EXCLUDE\_FR\_DISPLAY & character \\ 
+CREATEDATETIME & POSIXct, POSIXt \\ 
+SysStartTime & POSIXct, POSIXt \\ 
+SysEndTime & POSIXct, POSIXt \\ 
+tsExtract & character \\ 
+\bottomrule
+\end{longtable}
+
+\hypertarget{category-description-53}{%
+\section*{Category Description}\label{category-description-53}}
+\addcontentsline{toc}{section}{Category Description}
+
+Description
+
+\hypertarget{statistics-53}{%
+\section*{Statistics}\label{statistics-53}}
+\addcontentsline{toc}{section}{Statistics}
+
+\begin{longtable}{rr}
+\toprule
+Number of Columns & Number of Rows \\ 
+\midrule
+10 & 3820 \\ 
+\bottomrule
+\end{longtable}
+
+
+
+\end{document}

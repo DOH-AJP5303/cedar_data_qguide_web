@@ -19,10 +19,32 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The order_set_association table contains a list of order set ID records, including the IIS vaccine code and VACMAN code.
 
 ## Columns
 
+```{r}
+#| label: ordsetas-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_ORDER_SET_ASSOCIATION")) %>% colnames()),
+       Type = tbl(synapse, in_schema("dbo", "H33_ORDER_SET_ASSOCIATION")) %>% head(1) %>% as_tibble() %>% sapply(class)
+       ) %>%
+ gt() %>%
+ gt_theme_espn()
+```
+
 ## Category Description
 
+Description
+
 ## Statistics
+
+```{r}
+#| label: ordsetas-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_ORDER_SET_ASSOCIATION")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_ORDER_SET_ASSOCIATION"))) %>% nrow2()
+       ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```

@@ -19,7 +19,7 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The country_code table contains a list of country code IDs, associated with FIPS codes. The country names and sovereign details are provided.
 
 ## Columns
 

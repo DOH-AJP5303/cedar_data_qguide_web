@@ -19,10 +19,92 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The vaccine_family table contains information on asiis_vacc_code values and each respective family code.
 
 ## Columns
 
+```{r}
+#| label: vaccfamily-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_VACCINE_FAMILY")) %>% colnames()),
+       Type = tbl(synapse, in_schema("dbo", "H33_VACCINE_FAMILY")) %>% head(1) %>% as_tibble() %>% sapply(class)
+ ) %>%
+ gt() %>%
+ gt_theme_espn()
+```
+
 ## Category Description
 
+```{r}
+#| label: vaccfamily-table
+vaccfamily_tabl <-
+tibble(Coding = c(#group_code codes
+                  "10","11","25","26","30","40","50","60","70","80","110","120","130","170","180","190","220",
+                  "230","240","250","260","271","280","290","300","310","320","330","340","350","360","370","380",
+
+                  #family codes
+                  "1","24","25","26","3","5","2","9","4","6","20","10","11","12","13","14","15","16","17","18",
+                  "7","21","22","23","28","29","30","31","32","33","34","35","36"),
+        
+       Description = c(#descriptor for group code
+                      "DTaP","Tdap","MENINGOCOCCAL B, RECOMBINANT","MENINGOCOCCAL B, OMV","Polio","MMR",
+                      "Hib","Hep A","Hep B","Varicella","Rotavirus","Influenza","Pneumo (PCV7)","Hep B - 2 Dose",
+                      "Anthrax","Smallpox Vaccination","Measles","Mumps","Rubella","Pneumo (PPV23)","Meningococcal",
+                      "HPV","Herpes Zoster","NOVEL INFLUENZA H1N1-09","Cholera","Japanese Encephalitis","Rabies",
+                      "Typhoid","Yellow Fever","Coronavirus (SARS-CoV-2)(COVID-19)","Ebola","Dengue","Orthopoxvirus",
+                      
+                      #descriptor for family code
+                      "DTaP","Tdap","MENINGOCOCCAL B, RECOMBINANT","MENINGOCOCCAL B, OMV","Polio","MMR",
+                      "Hib","Hep A","Hep B","Varicella","Rotavirus","Influenza","Pneumo (PCV7)","Hep B - 2 Dose",
+                      "Anthrax","Smallpox Vaccination","Measles","Mumps","Rubella","Pneumo (PPV23)","Meningococcal",
+                      "HPV","Herpes Zoster","NOVEL INFLUENZA H1N1-09","Cholera","Japanese Encephalitis","Rabies",
+                      "Typhoid","Yellow Fever","Coronavirus (SARS-CoV-2)(COVID-19)","Ebola","Dengue","Orthopoxvirus"),
+
+       Variable = c(#group_code category
+                    "GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE",
+                    "GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE",
+                    "GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE",
+                    "GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE",
+                    "GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE","GROUP_CODE",
+                    "GROUP_CODE","GROUP_CODE","GROUP_CODE",
+                    
+                    #family_code category
+                    "FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE",
+                    "FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE",
+                    "FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE",
+                    "FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE",
+                    "FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE",
+                    "FAMILY_CODE","FAMILY_CODE","FAMILY_CODE"),
+                    
+      Space = " ") %>%
+  
+       gt(rowname_col = "Space", groupname_col = "Variable") %>%
+       tab_header(title = "Variable Coding") %>%
+       cols_width(Coding~px(200),
+                  Description~px(400),
+                  Space~px(100)) %>%
+       cols_align(align = "left") %>%
+       tab_footnote(
+                    footnote = 
+                      gt::md(paste0("A full list of group and family vaccination codes is available at: ",
+                    {"https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared%20Documents/CEDAR/CEDAR%20Data%20Dictionaries/Vaccine%20Group%20Code%20Values%20Table.xlsx?d=wa5d24116122446c89b871b14addcdf63&csf=1&web=1"}
+                    )),
+                    locations = cells_row_groups(groups = "GROUP_CODE")
+       ) %>%
+       gt_theme_espn()
+
+vaccfamily_tabl
+```
+
 ## Statistics
+
+```{r}
+#| label: vaccfamily-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_VACCINE_FAMILY")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_VACCINE_FAMILY"))) %>% nrow2()
+       ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```
+

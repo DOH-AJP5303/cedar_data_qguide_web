@@ -19,10 +19,32 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The web_vaccine_family_code table contains a list of usernames associated with the update of vaccine family codes in WA IIS. Username records may be included or excluded from display in IIS.
 
 ## Columns
 
+```{r}
+#| label: webvaccfam-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_WEB_VACCINE_FAMILY_CODE")) %>% colnames()),
+       Type = tbl(synapse, in_schema("dbo", "H33_WEB_VACCINE_FAMILY_CODE")) %>% head(1) %>% as_tibble() %>% sapply(class)
+       ) %>%
+ gt() %>%
+ gt_theme_espn()
+```
+
 ## Category Description
 
+Description
+
 ## Statistics
+
+```{r}
+#| label: webvaccfam-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_WEB_VACCINE_FAMILY_CODE")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_WEB_VACCINE_FAMILY_CODE"))) %>% nrow2()
+       ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```

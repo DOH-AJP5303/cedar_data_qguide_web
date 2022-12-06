@@ -9,6 +9,9 @@ book:
   sidebar:
     style: "docked"
     search: true
+    
+execute:
+  freeze: auto
   
   chapters:
     - index.qmd
@@ -71,15 +74,15 @@ book:
         - WEB_VACCINE_FAMILY_CODE.qmd
         
   page-navigation: true
-  updated: today
 
 bibliography: references.bib
 
 format:
   html:
-    theme: cosmo
+    theme: 
+        - cosmo
+    fontsize: 0.95em
     toc: true
-    css: styles2.scss
     
   pdf:
     documentclass: scrreprt

@@ -19,10 +19,71 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The valid_vaccination table contains details on asiis_pat_id values filtered by valid vaccination indicator ('Y'). Values for the vaccination date and most recent record update are included.
+
+```{r}
+#| label: tab-validvacc-tab
+```
 
 ## Columns
 
+```{r}
+#| label: validvacc-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_VALID_VACCINATION")) %>% colnames()),
+       Type = tbl(synapse, in_schema("dbo", "H33_VALID_VACCINATION")) %>% head(1) %>% as_tibble() %>% sapply(class)
+  ) %>%
+  gt() %>%
+  gt_theme_espn()
+```
+
 ## Category Description
 
+```{r}
+#| label: validvacc-table
+validvacc_tabl <-
+tibble(Coding = c(#family codes
+                  "1","24","25","26","3","5","2","9","4","6","20","10","11","12","13","14","15","16","17",
+                  "18","7","21","22","23","28","29","30","31","32","33","34","35","36"),
+        
+                   
+       Description = c(#descriptor 
+                      "DTaP","Tdap","MENINGOCOCCAL B,RECOMBINANT","MENINGOCOCCAL B,OMV","Polio","MMR","Hib",
+                      "Hep A","Hep B","Varicella","Rotavirus","Influenza","Pneumo (PCV7)",
+                      "Hep B - 2 Dose","Anthrax","Smallpox Vaccination",
+                      "Measles","Mumps","Rubella","Pneumo (PPV23)","Meningococcal","HPV","Herpes Zoster",
+                      "NOVEL INFLUENZA H1N1-09","Cholera","Japanese Encephalitis","Rabies","Typhoid",
+                      "Yellow Fever","Coronavirus (SARS-CoV-2)(COVID-19)","Ebola","Dengue","Orthopoxvirus"),
+                   
+       Variable = c(#family_code category
+                    "FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE",
+                    "FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE",
+                    "FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE",
+                    "FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE",
+                    "FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE",
+                    "FAMILY_CODE","FAMILY_CODE","FAMILY_CODE"),
+                   
+      Space = " ") %>%
+  
+       gt(rowname_col = "Space", groupname_col = "Variable") %>%
+       tab_header(title = "Variable Coding") %>%
+       cols_width(Coding~px(200),
+                  Description~px(400),
+                  Space~px(100)) %>%
+       cols_align(align = "left") %>%
+       gt_theme_espn()
+
+validvacc_tabl
+```
+
 ## Statistics
+
+```{r}
+#| label: validvacc-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_VALID_VACCINATION")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_VALID_VACCINATION"))) %>% nrow2()
+  ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```

@@ -19,10 +19,30 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The irms_facility_order_set table contains a list of facility order set ID records, associated with an IRMS system ID and IIS facility ID.
 
 ## Columns
+
+```{r}
+#| label: irmsfac-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_IRMS_FACILITY_ORDER_SET")) %>% colnames()),
+       Type = tbl(synapse, in_schema("dbo", "H33_IRMS_FACILITY_ORDER_SET")) %>% head(1) %>% as_tibble() %>% sapply(class)
+       ) %>%
+ gt() %>%
+ gt_theme_espn()
+```
 
 ## Category Description
 
 ## Statistics
+
+```{r}
+#| label: irmsfac-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_IRMS_FACILITY_ORDER_SET")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_IRMS_FACILITY_ORDER_SET"))) %>% nrow2()
+       ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```

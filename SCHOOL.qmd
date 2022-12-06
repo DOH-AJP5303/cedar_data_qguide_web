@@ -19,10 +19,32 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The school table contains a list of school record IDs, including the school description and address.
 
 ## Columns
 
+```{r}
+#| label: school-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_SCHOOL")) %>% colnames()),
+       Type = tbl(synapse, in_schema("dbo", "H33_SCHOOL")) %>% head(1) %>% as_tibble() %>% sapply(class)
+       ) %>%
+ gt() %>%
+ gt_theme_espn()
+```
+
 ## Category Description
 
+Description
+
 ## Statistics
+
+```{r}
+#| label: school-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_SCHOOL")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_SCHOOL"))) %>% nrow2()
+       ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```

@@ -19,10 +19,30 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The lookup table is useful for identfying lookup type codes. The table contains a list of lookup type codes, as well as a description and lookup value.
 
 ## Columns
+
+```{r}
+#| label: lkup-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_LOOKUP")) %>% colnames()),
+       Type = tbl(synapse, in_schema("dbo", "H33_LOOKUP")) %>% head(1) %>% as_tibble() %>% sapply(class)
+       ) %>%
+ gt() %>%
+ gt_theme_espn()
+```
 
 ## Category Description
 
 ## Statistics
+
+```{r}
+#| label: lkup-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_LOOKUP")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_LOOKUP"))) %>% nrow2()
+       ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```

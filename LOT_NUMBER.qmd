@@ -19,10 +19,32 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The lot_number table contains a list of lot number codes, as well as the corresponding lot numbers, IRMS system IDs, and manufacturer codes.
 
 ## Columns
 
+```{r}
+#| label: lotnum-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_LOT_NUMBER")) %>% colnames()),
+       Type = tbl(synapse, in_schema("dbo", "H33_LOT_NUMBER")) %>% head(1) %>% as_tibble() %>% sapply(class)
+       ) %>%
+ gt() %>%
+ gt_theme_espn()
+```
+
 ## Category Description
 
+Description
+
 ## Statistics
+
+```{r}
+#| label: lotnum-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_LOT_NUMBER")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_LOT_NUMBER"))) %>% nrow2()
+       ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```

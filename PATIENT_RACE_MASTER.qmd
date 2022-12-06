@@ -19,10 +19,32 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The patient_race_master table contains a list of patient record IDs (ASIIS_PAT_ID_PTR) and their respective pat_race values. Update stamp records are provided.
 
 ## Columns
 
+```{r}
+#| label: ptrcmstr-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_PATIENT_RACE_MASTER")) %>% colnames()),
+       Type = tbl(synapse, in_schema("dbo", "H33_PATIENT_RACE_MASTER")) %>% head(1) %>% as_tibble() %>% sapply(class)
+       ) %>%
+ gt() %>%
+ gt_theme_espn()
+```
+
 ## Category Description
 
+Description
+
 ## Statistics
+
+```{r}
+#| label: ptrcmstr-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_PATIENT_RACE_MASTER")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_PATIENT_RACE_MASTER"))) %>% nrow2()
+       ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```

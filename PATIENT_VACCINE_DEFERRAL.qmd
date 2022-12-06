@@ -19,10 +19,81 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The patient_vaccine_deferral table contains a list of patient record IDs and their associated deferral records. Details include the vaccine code, dose number, deferral date, and deferral reason.
 
 ## Columns
 
+```{r}
+#| label: ptvacdef-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_PATIENT_VACCINE_DEFERRAL")) %>% colnames()),
+       Type = tbl(synapse, in_schema("dbo", "H33_PATIENT_VACCINE_DEFERRAL")) %>% head(1) %>% as_tibble() %>% sapply(class)
+       ) %>%
+ gt() %>%
+ gt_theme_espn()
+```
+
 ## Category Description
 
+This section contains variable coding for relevant columns within the PATIENT_VACCINE_DEFERRAL table.
+
+```{r}
+#| label: tab-ptvacdef
+ptvacdef_tabl <-
+tibble(Coding = c(#top 10 iis vaccination code 
+                  "921","75","2061","73","61","614","2033","31","2080","108",
+                  
+                   #top 8 deferral reasons
+                  "ALTSCHEDULE","SHORTAGE","02","03","WAIT","ILLNESS","01","00"), 
+                  
+       Description = c(#iis vacc code descriptor
+                     "Tdap","influenza, injectable, quadrivalent, preservative free","zoster recombinant",
+                     "influenza, injectable, quadrivalent","Influenza, seasonal, injectable",
+                     "Pneumococcal conjugate PCV 13","HPV9","pneumococcal polysaccharide PPV23",
+                     "COVID-19, mRNA, LNP-S, PF, 100 mcg/0.5mL dose or 50 mcg/0.25mL dose",
+                     "influenza, unspecified formulation",
+                      
+                       #deferral reasons descriptor
+                      "Patient/Parent Chooses Alternate Schedule","Vaccine Shortage","Other",
+                      "Patient Decision","Patient/Parent Chooses to Wait","Temporary Acute Illness",
+                      "Religious exemption","Parental Decision"),
+                  
+      Variable = c(#vaccination code category
+                    "ASIIS_VACC_CODE","ASIIS_VACC_CODE","ASIIS_VACC_CODE","ASIIS_VACC_CODE","ASIIS_VACC_CODE",
+                    "ASIIS_VACC_CODE","ASIIS_VACC_CODE","ASIIS_VACC_CODE","ASIIS_VACC_CODE","ASIIS_VACC_CODE",
+                    
+                    #deferral reasons 
+                    "DEFERRAL_REASON","DEFERRAL_REASON","DEFERRAL_REASON","DEFERRAL_REASON","DEFERRAL_REASON",
+                    "DEFERRAL_REASON","DEFERRAL_REASON","DEFERRAL_REASON"),
+                    
+                    
+      Space = " ") %>%
+       gt(rowname_col = "Space", groupname_col = "Variable") %>%
+       tab_header(title = "Variable Coding") %>%
+       cols_width(Coding~px(200),
+                  Description~px(600),
+                  Space~px(150)) %>%
+       cols_align(align = "left") %>%
+       tab_footnote(
+                    footnote = 
+                      gt::md(paste0("A full list of IIS Vaccination Codes is available at: ",
+                    {"[https://www2a.cdc.gov/vaccines/iis/iisstandards/?rpt=cpt](https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared%20Documents/CEDAR/CEDAR%20Data%20Dictionaries/ASIIS_Vacc_Code%20Values%20Table%20with%20CDC%20and%20CPT%20Codes.xlsx?d=w58a7246c67aa491fbfef19172d5ca393&csf=1&web=1&e=rIrViQ)"}
+                    )),
+                    locations = cells_row_groups(groups = "ASIIS_VACC_CODE")
+       ) %>%
+       gt_theme_espn()
+
+ptvacdef_tabl
+```
+
 ## Statistics
+
+```{r}
+#| label: ptvacdef-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_PATIENT_VACCINE_DEFERRAL")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_PATIENT_VACCINE_DEFERRAL"))) %>% nrow2()
+       ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```

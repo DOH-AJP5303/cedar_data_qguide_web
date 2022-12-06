@@ -19,10 +19,30 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The IRMS table contains a list of IRMS system ID records, with details on the facility name, address, and primary contact.
 
 ## Columns
+
+```{r}
+#| label: irms-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_IRMS")) %>% colnames()),
+       Type = tbl(synapse, in_schema("dbo", "H33_IRMS")) %>% head(1) %>% as_tibble() %>% sapply(class)
+       ) %>%
+ gt() %>%
+ gt_theme_espn()
+```
 
 ## Category Description
 
 ## Statistics
+
+```{r}
+#| label: irms-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_IRMS")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_IRMS"))) %>% nrow2()
+       ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```

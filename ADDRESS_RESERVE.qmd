@@ -19,7 +19,7 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-address reserve description
+The address_reserve table contains details of unique address IDs within the repository, including the street name, city, state, and zip code.
 
 ## Columns
 
@@ -33,8 +33,6 @@ tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_ADDRESS_RESERVE")) %>% coln
 ```
 
 ## Category Description
-
-This section contains variable coding for relevant columns within the address reserve table.
 
 ```{r}
 #| label: addrsv-ptvartab

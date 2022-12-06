@@ -19,7 +19,7 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The exemption_form_header contains a list of exemption request IDs, including the corresponding IRMS_SYS_IDs and IRMS_PAT_ID values.
 
 ## Columns
 
@@ -36,10 +36,6 @@ tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_EXEMPTION_FORM_HEADER")) %>
 
 This section contains variable coding for relevant columns within the exemption form header table.
 
-```{r}
-#| label: tab-exemptfdtab
-
-```
 
 ## Statistics
 

@@ -19,10 +19,32 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The serology_invalid_data table will contain a list of system IDs with invalid serology results. The table is currently empty.
 
 ## Columns
 
+```{r}
+#| label: seroinv-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_SEROLOGY_INVALID_DATA")) %>% colnames()),
+       Type = tbl(synapse, in_schema("dbo", "H33_SEROLOGY_INVALID_DATA")) %>% head(1) %>% as_tibble() %>% sapply(class)
+       ) %>%
+ gt() %>%
+ gt_theme_espn()
+```
+
 ## Category Description
 
+Description
+
 ## Statistics
+
+```{r}
+#| label: seroinv-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_SEROLOGY_INVALID_DATA")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_SEROLOGY_INVALID_DATA"))) %>% nrow2()
+       ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```

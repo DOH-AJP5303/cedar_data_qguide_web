@@ -19,10 +19,30 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The geocoding_zipcodes table contains a list of zip codes, and the corresponding city, state, and county information.
 
 ## Columns
+
+```{r}
+#| label: geocdzip-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_GEOCODING_ZIPCODES")) %>% colnames()),
+       Type = tbl(synapse, in_schema("dbo", "H33_GEOCODING_ZIPCODES")) %>% head(1) %>% as_tibble() %>% sapply(class)
+       ) %>%
+ gt() %>%
+ gt_theme_espn()
+```
 
 ## Category Description
 
 ## Statistics
+
+```{r}
+#| label: geocdzip-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_GEOCODING_ZIPCODES")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_GEOCODING_ZIPCODES"))) %>% nrow2()
+       ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```

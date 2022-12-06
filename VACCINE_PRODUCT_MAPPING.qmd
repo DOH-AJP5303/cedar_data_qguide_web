@@ -19,10 +19,31 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The vaccine_product_mapping table contains a list of vaccine product ID values by system mapping ID.
 
 ## Columns
+
+```{r}
+#| label: vprodmap-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_VACCINE_PRODUCT_MAPPING")) %>% colnames()),
+       Type = tbl(synapse, in_schema("dbo", "H33_VACCINE_PRODUCT_MAPPING")) %>% head(1) %>% as_tibble() %>% sapply(class)
+  ) %>%
+  gt() %>%
+  gt_theme_espn()
+```
 
 ## Category Description
 
 ## Statistics
+
+```{r}
+#| label: vprodmap-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_VACCINE_PRODUCT_MAPPING")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_VACCINE_PRODUCT_MAPPING"))) %>% nrow2()
+  ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```
+

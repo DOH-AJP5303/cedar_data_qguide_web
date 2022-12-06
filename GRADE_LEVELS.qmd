@@ -19,10 +19,30 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The grade_levels table contains a list of grade level ID records, including details such as the description, display values, and next grade level ID.
 
 ## Columns
+
+```{r}
+#| label: grdlvl-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_GRADE_LEVELS")) %>% colnames()),
+       Type = tbl(synapse, in_schema("dbo", "H33_GRADE_LEVELS")) %>% head(1) %>% as_tibble() %>% sapply(class)
+       ) %>%
+ gt() %>%
+ gt_theme_espn()
+```
 
 ## Category Description
 
 ## Statistics
+
+```{r}
+#| label: grdlvl-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_VACCINATION_MASTER")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_VACCINATION_MASTER"))) %>% nrow2()
+       ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```

@@ -19,11 +19,32 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-Description
+The order_items table contains a list of vaccine orders and their item codes/lot numbers. This table differs from the order table as it only contains information on the vaccine order details (quantity, lot number codes) rather than the request record.
 
 ## Columns
 
+```{r}
+#| label: orditem-colnames
+tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_ORDER_ITEMS")) %>% colnames()),
+       Type = tbl(synapse, in_schema("dbo", "H33_ORDER_ITEMS")) %>% head(1) %>% as_tibble() %>% sapply(class)
+       ) %>%
+ gt() %>%
+ gt_theme_espn()
+```
+
 ## Category Description
+
+Description
 
 ## Statistics
 
+```{r}
+#| label: orditem-stats
+tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_ORDER_ITEMS")) %>% ncol()),
+       rowcnt = (tbl(synapse, in_schema("dbo", "H33_ORDER_ITEMS"))) %>% nrow2()
+       ) %>%
+  gt() %>%
+  cols_label(columncnt = "Number of Columns",
+             rowcnt = "Number of Rows")  %>%
+  gt_theme_espn()
+```
