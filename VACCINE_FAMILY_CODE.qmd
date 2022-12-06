@@ -47,22 +47,17 @@ tibble(Coding = c( #family codes
                        "Hep B - 2 Dose","Anthrax","Smallpox Vaccination","Measles","Mumps","Rubella",
                        "Pneumo (PPV23)","Meningococcal","HPV","Herpes Zoster","NOVEL INFLUENZA H1N1-09",
                        "Cholera","Japanese Encephalitis","Rabies","Typhoid","Yellow Fever",
-                       "Coronavirus (SARS-CoV-2)(COVID-19)","Ebola","Dengue","Orthopoxvirus",
-                       "DTaP","Tdap","MENINGOCOCCAL B, RECOMBINANT","MENINGOCOCCAL B, OMV","Polio",
-                       "MMR","Hib","Hep A","Hep B","Varicella","Rotavirus","Influenza","Pneumo (PCV7)",
-                       "Hep B - 2 Dose","Anthrax","Smallpox Vaccination","Measles","Mumps","Rubella",
-                       "Pneumo (PPV23)","Meningococcal","HPV","Herpes Zoster","NOVEL INFLUENZA H1N1-09","Cholera",
-                       "Japanese Encephalitis","Rabies","Typhoid","Yellow Fever","Coronavirus (SARS-CoV-2)(COVID-19)",
-                       "Ebola","Dengue","Orthopoxvirus"),
+                       "Coronavirus (SARS-CoV-2)(COVID-19)","Ebola","Dengue","Orthopoxvirus"
+                       ),
 
   Variable = c(#group_code category
-                    #family_code category
                     "FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE",
                     "FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE",
                     "FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE",
                     "FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE",
                     "FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE","FAMILY_CODE",
-                    "FAMILY_CODE","FAMILY_CODE","FAMILY_CODE"),
+                    "FAMILY_CODE","FAMILY_CODE","FAMILY_CODE"
+                    ),
                     
       Space = " ") %>%
       gt(rowname_col = "Space", groupname_col = "Variable") %>%
@@ -77,9 +72,10 @@ tibble(Coding = c( #family codes
                       gt::md(paste0("A full list of vaccine family and group codes is available at: ",
                     {"https://stateofwa.sharepoint.com/:x:/r/sites/DOH-oiinformatics/Shared%20Documents/CEDAR/CEDAR%20Data%20Dictionaries/Vaccine%20Group%20Code%20Values%20Table.xlsx?d=wa5d24116122446c89b871b14addcdf63&csf=1&web=1&e=pE54y9"}
                     )),
-                    locations = cells_row_groups(groups = c("FAMILY_CODE","GROUP_CODE"))
+                    locations = cells_row_groups(groups = c("FAMILY_CODE"))
        ) %>%
        gt_theme_espn()
+
 vacfamcd_tabl
 ```
 

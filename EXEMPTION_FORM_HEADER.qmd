@@ -36,10 +36,6 @@ tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_EXEMPTION_FORM_HEADER")) %>
 
 This section contains variable coding for relevant columns within the exemption form header table.
 
-```{r}
-#| label: tab-exemptfdtab
-
-```
 
 ## Statistics
 

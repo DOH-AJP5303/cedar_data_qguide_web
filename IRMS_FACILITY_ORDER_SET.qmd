@@ -19,7 +19,7 @@ source(paste0(dr,"/dqguide_functions.R"))
 
 ## Description
 
-The irms_facility_order_set table contains a list of facility order set ID records, associated with an IRMS system ID and IIS facility ID. 
+The irms_facility_order_set table contains a list of facility order set ID records, associated with an IRMS system ID and IIS facility ID.
 
 ## Columns
 
