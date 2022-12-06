@@ -32,15 +32,6 @@ tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_LOT_NUMBER_AUDIT")) %>% col
  gt_theme_espn()
 ```
 
-## Category Description
-
-This section contains variable coding for relevant columns within the lot_number_audit table.
-
-```{r}
-#| label: tab-lotnumadttab
-```
-
-
 ## Statistics
 
 ```{r}

@@ -32,8 +32,6 @@ tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_LOT_LOG_ACTION_CODE")) %>% 
  gt_theme_espn()
 ```
 
-## Category Description
-
 ## Statistics
 
 ```{r}

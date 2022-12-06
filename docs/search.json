@@ -515,7 +515,7 @@
     "href": "LOT_NUMBER_AUDIT.html#description",
     "title": "LOT_NUMBER_AUDIT",
     "section": "Description",
-    "text": "Description\nDescription"
+    "text": "Description\nThe lot_number_audit table contains a list of lot number codes and associated vaccination details."
   },
   {
     "objectID": "LOT_NUMBER_AUDIT.html#columns",
@@ -529,7 +529,7 @@
     "href": "LOT_NUMBER_AUDIT.html#category-description",
     "title": "LOT_NUMBER_AUDIT",
     "section": "Category Description",
-    "text": "Category Description"
+    "text": "Category Description\nThis section contains variable coding for relevant columns within the lot_number_audit table."
   },
   {
     "objectID": "LOT_NUMBER_AUDIT.html#statistics",
@@ -1489,5 +1489,26 @@
     "title": "WEB_VACCINE_FAMILY_CODE",
     "section": "Statistics",
     "text": "Statistics\n\n\n\n\n\n\n  \n  \n    \n      Number of Columns\n      Number of Rows\n    \n  \n  \n    10\n3820"
+  },
+  {
+    "objectID": "IRMS.html#description",
+    "href": "IRMS.html#description",
+    "title": "IRMS",
+    "section": "Description",
+    "text": "Description\nThe IRMS table contains a list of IRMS system ID records, with details on the facility name, address, and primary contact."
+  },
+  {
+    "objectID": "IRMS.html#columns",
+    "href": "IRMS.html#columns",
+    "title": "IRMS",
+    "section": "Columns",
+    "text": "Columns\n\n\n\n\n\n\n  \n  \n    \n      Columns\n      Type\n    \n  \n  \n    IRMS_SYS_ID\nnumeric\n    NAME\ncharacter\n    CONTACT_PERSON\ncharacter\n    ADDRESS_STREET1\ncharacter\n    ADDRESS_STREET2\ncharacter\n    PHYSICAL_ADDRESS\ncharacter\n    ADDRESS_CITY\ncharacter\n    COUNTY_CODE\nnumeric\n    ADDRESS_STATE\ncharacter\n    ADDRESS_ZIP\nnumeric\n    ADDRESS_EMAIL\ncharacter\n    DISTRICT_NUMBER\nnumeric\n    XCOORD\nnumeric\n    YCOORD\nnumeric\n    GEOCODE_STATUS\nnumeric\n    TIGER_LINE_ID\nnumeric\n    GEOCODE_MSTATUS\ncharacter\n    CENSUS_TRACT\nnumeric\n    PHONE\nnumeric\n    PHONE_EXTENSION\nnumeric\n    FAX\nnumeric\n    MODEM\nnumeric\n    PCI_VERSION\ncharacter\n    RR_VERSION\ncharacter\n    PCIC_VERSION\ncharacter\n    GWC_VERSION\ncharacter\n    PCICTMR_VERSION\ncharacter\n    SITE_TYPE\ncharacter\n    REPORTING_METHOD\ncharacter\n    WINDOWS_VERSION\ncharacter\n    SONORA\ncharacter\n    BILLING_SYSTEM\ncharacter\n    BS_VENDOR\ncharacter\n    PCI_PASSWORD\ncharacter\n    REGISTRY_PASSWORD\ncharacter\n    ENCRYPTION_PASSWORD\ncharacter\n    VFC_PIN\ncharacter\n    COMMENTS\ncharacter\n    INACTIVE_STATUS\ncharacter\n    REASSIGNED_TO_IRMS\nnumeric\n    OWNERSHIP_BLOCKED\ncharacter\n    INSERT_STAMP\nPOSIXct, POSIXt\n    INSERTED_BY\ncharacter\n    UPDATE_STAMP\nPOSIXct, POSIXt\n    UPDATED_BY\ncharacter\n    EXPIRE_PASSWORD\ncharacter\n    STATUS_ID\nnumeric\n    STATUS_COMMENT\ncharacter\n    VENDOR_ID\nnumeric\n    RECRUITER\ncharacter\n    COMPUTERIZED\ncharacter\n    INTERNET_ACCESS_TYPE\nnumeric\n    NUM_SITES_PLANNED\nnumeric\n    NUM_PHYSICIANS_PLANNED\nnumeric\n    DEFERRED_UNTIL\nPOSIXct, POSIXt\n    ASIIS_PHYS_ID\nnumeric\n    VFC_NEXT_VISIT\nPOSIXct, POSIXt\n    HAS_VENDOR_EXPORT\ncharacter\n    DTT_PROFILE_NAME\ncharacter\n    VFC_REPRESENTATIVE\ncharacter\n    SUPPRESS_IRMS_NAME\ncharacter\n    INCLUDE_IN_MAILING\ncharacter\n    LOCAL_APPROVAL_IRMS_ID\nnumeric\n    DEFAULT_RECONCILIATION_QOH\ncharacter\n    SHIPPING_CONTACT_NAME\ncharacter\n    SHIPPING_ADDRESS_STREET1\ncharacter\n    SHIPPING_ADDRESS_STREET2\ncharacter\n    SHIPPING_ADDRESS_CITY\ncharacter\n    SHIPPING_ADDRESS_STATE\ncharacter\n    SHIPPING_ADDRESS_ZIP\ncharacter\n    SHIPPING_INSTRUCTIONS\ncharacter\n    ALLOW_ONLINE_ORDERS\ncharacter\n    ALLOW_VACCINE_TRANSFERS\ncharacter\n    ORDER_SET_ID\nnumeric\n    IS_LOCAL_ORDER_APPROVER\ncharacter\n    IS_STATE_ORDER_APPROVER\ncharacter\n    MINIMUM_ORDER_DAYS\nnumeric\n    MANAGES_REGISTRY_INVENTORY\ncharacter\n    RECOMMENDED_QTY_CALCULATION\ncharacter\n    IRMS_TYPE_OTHER\ncharacter\n    IS_VACCINE_RETURN_DEPOT\ncharacter\n    ALLOW_VACCINE_RETURNS\ncharacter\n    IS_VITAL_STATISTICS\ncharacter\n    ENABLE_AUTO_RECEIVE\ncharacter\n    VACCINE_CHOICE_TYPE\ncharacter\n    IS_DEPOT\ncharacter\n    IRMS_GROUP_ID\nnumeric\n    ENABLE_BAR_CODE\ncharacter\n    CERTIFYING_PROVIDER\ncharacter\n    CERTIFYING_PROVIDER_PHONE\nnumeric\n    CERTIFYING_PROVIDER_FAX\nnumeric\n    CERTIFYING_PROVIDER_EMAIL\ncharacter\n    ORIGINAL_VFC_CERT_DATE\nPOSIXct, POSIXt\n    SHIPPING_PHONE\nnumeric\n    SHIPPING_FAX\nnumeric\n    SHIPPING_EMAIL\ncharacter\n    ORDER_FREQUENCY\ncharacter\n    ORDER_TIMING\ncharacter\n    ORDER_FREQUENCY_START_MONTH\ncharacter\n    ORDER_THRESHOLD_PERCENT\nnumeric\n    FACILITY_REQUIRED\ncharacter\n    GROUP_NPI\ncharacter\n    PROVIDER_TAX_ID\ncharacter\n    PROVIDER_TAX_ID_TYPE\ncharacter\n    PROVIDER_TAXONOMY\ncharacter\n    MEDICARE_PIN\ncharacter\n    MEDICARE_GROUP\ncharacter\n    MEDICAID_PIN\nnumeric\n    MEDICAID_GROUP\nnumeric\n    BILLING_ENTITY_TYPE\ncharacter\n    ENABLE_PROVIDER_AGREEMENT\ncharacter\n    ENROLLMENT_ID\nnumeric\n    SHIPPING_INFO_CHANGED\ncharacter\n    REQ_MAN_DEDUP_INTRA_MRGS\ncharacter\n    IS_VACTRAK_USER\ncharacter\n    BYPASS_DOSE_LEVEL_ACC\ncharacter\n    MAILING_ADDRESS_STREET1\ncharacter\n    MAILING_ADDRESS_STREET2\ncharacter\n    MAILING_ADDRESS_CITY\ncharacter\n    MAILING_ADDRESS_STATE\ncharacter\n    MAILING_COUNTY_CODE\nnumeric\n    MAILING_ADDRESS_ZIP\nnumeric\n    SHIPPING_ADDRESS_COUNTY_CODE\nnumeric\n    IS_FROZEN\ncharacter\n    IS_INSULATED_DOOR\ncharacter\n    MEASURE_TEMP_CODE\ncharacter\n    CERTIFYING_PROVIDER_TITLE\ncharacter\n    IRMS_SIGNATORY\ncharacter\n    IRMS_SIGNATORY_TITLE\ncharacter\n    IS_HEPB_SCREEN_PILOT_SITE\ncharacter\n    UPDATE_WITH_PREV_BAD_ADDRESS\ncharacter\n    UPLOAD_TEMPERATURE_DATA\ncharacter\n    EXEMPTION_EMAIL\ncharacter\n    ENABLE_EXEMPTION_FORM\ncharacter\n    IMPORT_INVENTORY_DATA\ncharacter\n    DEPOT_SHIPPING_INSTRUCTION\ncharacter\n    NAMESPACE\ncharacter\n    GLOBAL_SUBMITTER\ncharacter\n    PROVIDER_FACILITY_TYPE\ncharacter\n    PROVIDER_FACILITY_TYPE_OTHER\ncharacter\n    COLD_STORAGE_PHYSICAL_LOCATION\ncharacter\n    ASSIGNED_DEPOT_IRMS_SYS_ID\nnumeric\n    ASSIGNED_DEPOT_ASIIS_FAC_ID\nnumeric\n    INTERNATIONAL_ZIP\ncharacter\n    MAILING_ADDRESS_INT_ZIP\ncharacter\n    SHIPPING_ADDRESS_INT_ZIP\ncharacter\n    IRMS_SYS_ID_RETURN_DEPOT\nnumeric\n    ASIIS_FAC_ID_RETURN_DEPOT\nnumeric\n    DISABLE_VFC_PUBLICLY_SUPPLIED\ncharacter\n    ALLOW_EMAIL_UPDATE_IN_MASTER\ncharacter\n    OPT_OUT_REMINDER_RECALL\ncharacter\n    VFC_STATUS_CODE\ncharacter\n    ADDRESS_COUNTRY\ncharacter\n    SHIPPING_ADDRESS_COUNTRY\ncharacter\n    MAILING_ADDRESS_COUNTRY\ncharacter\n    VFC_ADDITIONAL_STATUS\ncharacter\n    PIN\ncharacter\n    OVERRIDE_RECONCILIATION_HOLD\ncharacter\n    ADDRESS_VERIFIED\ncharacter\n    DO_NOT_CLEANSE_ADDRESS\ncharacter\n    SHIPPING_ADDRESS_LONGITUDE\nnumeric\n    SHIPPING_ADDRESS_LATITUDE\nnumeric\n    SHIPPING_ADDRESS_VERIFIED\ncharacter\n    DO_NOT_CLEANSE_SHIPPING_ADDR\ncharacter\n    MAILING_ADDRESS_VERIFIED\ncharacter\n    DO_NOT_CLEANSE_MAILING_ADDR\ncharacter\n    MAILING_ADDRESS_LATITUDE\nnumeric\n    MAILING_ADDRESS_LONGITUDE\nnumeric\n    CREATEDATETIME\nPOSIXct, POSIXt\n    SysStartTime\nPOSIXct, POSIXt\n    SysEndTime\nPOSIXct, POSIXt\n    tsExtract\ncharacter"
+  },
+  {
+    "objectID": "IRMS.html#statistics",
+    "href": "IRMS.html#statistics",
+    "title": "IRMS",
+    "section": "Statistics",
+    "text": "Statistics\n\n\n\n\n\n\n  \n  \n    \n      Number of Columns\n      Number of Rows\n    \n  \n  \n    172\n3244"
   }
 ]

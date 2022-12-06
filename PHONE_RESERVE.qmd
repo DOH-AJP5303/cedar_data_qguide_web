@@ -32,10 +32,6 @@ tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_PHONE_RESERVE")) %>% colnam
  gt_theme_espn()
 ```
 
-## Category Description
-
-Description
-
 ## Statistics
 
 ```{r}

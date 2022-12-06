@@ -33,15 +33,6 @@ tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_ADVERSE_REACTION_RESERVE"))
   gt_theme_espn()
 ```
 
-## Category Description
-
-This section contains variable coding for relevant columns within the adverse reaction table.
-
-```{r}
-#| label: tab-advrrtab
-
-```
-
 ## Statistics
 
 ```{r}

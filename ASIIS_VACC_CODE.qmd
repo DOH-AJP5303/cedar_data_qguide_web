@@ -32,15 +32,6 @@ tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_ASIIS_VACC_CODE")) %>% coln
   gt_theme_espn()
 ```
 
-## Category Description
-
-This section contains variable coding for relevant columns within the ASIIS VACC_CODE table.
-
-```{r}
-#| label: tab-asissvctab
-
-```
-
 ## Statistics
 
 ```{r}

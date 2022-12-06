@@ -32,10 +32,6 @@ tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_PHYSICIAN_MASTER")) %>% col
  gt_theme_espn()
 ```
 
-## Category Description
-
-Description
-
 ## Statistics
 
 ```{r}

@@ -32,8 +32,6 @@ tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_IRMS_FACILITY_ORDER_SET")) 
  gt_theme_espn()
 ```
 
-## Category Description
-
 ## Statistics
 
 ```{r}

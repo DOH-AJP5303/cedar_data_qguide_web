@@ -32,8 +32,6 @@ tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_FACILITY_TYPE")) %>% colnam
   gt_theme_espn()
 ```
 
-## Category Description
-
 ## Statistics
 
 ```{r}

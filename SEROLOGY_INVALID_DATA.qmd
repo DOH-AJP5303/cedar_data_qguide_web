@@ -32,10 +32,6 @@ tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_SEROLOGY_INVALID_DATA")) %>
  gt_theme_espn()
 ```
 
-## Category Description
-
-Description
-
 ## Statistics
 
 ```{r}

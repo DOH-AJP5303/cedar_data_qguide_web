@@ -32,13 +32,6 @@ tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_ADDRESS_RESERVE")) %>% coln
  gt_theme_espn()
 ```
 
-## Category Description
-
-```{r}
-#| label: addrsv-ptvartab
-
-```
-
 ## Statistics
 
 ```{r}

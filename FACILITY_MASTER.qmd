@@ -32,15 +32,6 @@ tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_FACILITY_MASTER")) %>% coln
   gt_theme_espn()
 ```
 
-## Category Description
-
-This section contains variable coding for relevant columns within the facility master table.
-
-```{r}
-#| label: tab-facmstrtab
-
-```
-
 ## Statistics
 
 ```{r}

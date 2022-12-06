@@ -32,15 +32,6 @@ tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_COUNTY_CODE")) %>% colnames
   gt_theme_espn()
 ```
 
-## Category Description
-
-This section contains variable coding for relevant columns within the county code table.
-
-```{r}
-#| label: tab-cntcdtab
-
-```
-
 ## Statistics
 
 ```{r}

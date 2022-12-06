@@ -32,8 +32,6 @@ tibble(Columns = (tbl(synapse, in_schema("dbo", "H33_VACCINE_PRODUCT_MAPPING")) 
   gt_theme_espn()
 ```
 
-## Category Description
-
 ## Statistics
 
 ```{r}
