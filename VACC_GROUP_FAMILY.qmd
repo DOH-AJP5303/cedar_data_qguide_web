@@ -118,8 +118,6 @@ vacgrpcode_tab
 
 ## Statistics
 
-Insert statistics here
-
 ```{r}
 #| label: vcgrp-stats
 tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_VACC_GROUP_FAMILY")) %>% ncol()),

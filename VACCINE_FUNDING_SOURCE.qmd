@@ -76,8 +76,6 @@ vcfund_tabl
 
 ## Statistics
 
-Insert statistics here
-
 ```{r}
 #| label: vcfund-stats
 tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_VACCINE_FUNDING_SOURCE")) %>% ncol()),
