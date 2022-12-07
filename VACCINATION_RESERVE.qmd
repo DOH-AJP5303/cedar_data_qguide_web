@@ -261,8 +261,6 @@ vaccrsvcode_tab
 
 ## Statistics
 
-Insert statistics here
-
 ```{r}
 #| label: vcrsv-stats
 tibble(columncnt = (tbl(synapse, in_schema("dbo", "H33_VACCINATION_RESERVE")) %>% ncol()),
